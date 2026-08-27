@@ -1,6 +1,6 @@
 # Notes
 
-This repository is a collection of notes and documents (kernel experiments, physics notes, Typst sources, and small utilities). Some content is published to [`nexus`](https://lvyuemeng.github.io/Nexus-Blog); the `kernel/` section is commonly posted.
+This repository is a collection of notes and documents (kernel experiments, physics notes, Typst sources, and small utilities). Some content is published to [`nexus`](https://nostalume.github.io/Nexus-Blog); the `kernel/` section is commonly posted.
 
 ## Layout
 

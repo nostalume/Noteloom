@@ -369,7 +369,7 @@ We use a `AtomicBool` to indicate the discard signal when future `drop(fut)`. Th
 
 [Evering ref]: https://github.com/loichyan/openoscamp-2025s/tree/main/evering
 
-[Mine Evering ref]: https://github.com/lvyuemeng/Evering (I will use a refactor version based on my understanding.)
+[Mine Evering ref]: https://github.com/nostalume/Evering (I will use a refactor version based on my understanding.)
 
 ---
 

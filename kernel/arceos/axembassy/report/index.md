@@ -4,6 +4,6 @@ draft = false
 title = 'AxEmbassy Report'
 tag = ["embed", "embassy"]
 author = ["nostalgia"]
+type = "pdf"
+document = "report.pdf"
 +++
-
-{{< pdf src="./report.pdf" >}}

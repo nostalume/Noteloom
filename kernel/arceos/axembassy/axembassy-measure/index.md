@@ -105,7 +105,7 @@ With the assemble experiment construction, we list few adaptation for this.
 
 - We varying `volume` to acquire `sum per secs`. Because iterations increase cause the same effect and huge level will break the original intention of such experiment.
 
-![](../charts/preempt-atomic-sum/atomic-volume.png)
+![](atomic-volume.png)
 
 The reason of thread task only reaching `175` in volume is due to the memory restriction. However, we can see a evident decrease of thread task due to collision. However, async task retains a roughly constant throughput per seconds due to the mechanism of async task in single thread.
 
