@@ -1,12 +1,4 @@
 [module]
 [[module.mounts]]
-source = "kernel/arceos/axembassy"
-target = "content/posts/nostalgia"
-
-[[module.mounts]]
-source = "kernel/ipc"
-target = "content/posts/nostalgia"
-
-[[module.mounts]]
 source = "physics/sr.md"
 target = "content/posts/nostalgia/physics/sr.md"

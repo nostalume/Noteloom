@@ -1,3 +1,3 @@
-[submodule "typst/manus"]
-	path = typst/manus
-	url = git@github.com:nostalume/Manus.git
+[submodule "manus"]
+	path = manus
+	url = https://github.com/nostalume/Manus.git

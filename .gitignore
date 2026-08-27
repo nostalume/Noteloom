@@ -1,3 +1,9 @@
 # info sensitive
 info.typ
-typst/**/*.pdf
+**/*.pdf
+!/physics/condensed.pdf
+!/physics/homo.pdf
+/physics/am/cm-2.html
+/.hugo_build.lock
+/.rumdl_cache/
+/.agents/
