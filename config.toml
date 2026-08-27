@@ -1,4 +1,4 @@
 [module]
 [[module.mounts]]
-source = "physics/sr.md"
+source = "physics/relativity/special-relativity.md"
 target = "content/posts/nostalgia/physics/sr.md"

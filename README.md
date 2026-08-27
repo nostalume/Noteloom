@@ -30,5 +30,5 @@ git submodule update --init --recursive
 Compile a document from the repository root, for example:
 
 ```bash
-typst compile --root . physics/condensed.typ
+typst compile --root . physics/condensed-matter/notes.typ
 ```

@@ -1,9 +1,8 @@
-# info sensitive
+# Local identity metadata must never be committed.
 info.typ
 **/*.pdf
-!/physics/condensed.pdf
-!/physics/homo.pdf
-/physics/am/cm-2.html
+!/physics/condensed-matter/notes.pdf
+!/physics/mathematical-physics/homology.pdf
 /.hugo_build.lock
 /.rumdl_cache/
 /.agents/
