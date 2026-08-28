@@ -174,12 +174,20 @@ and a solvable limit.
 The print companion [notes.typ](notes.typ) develops operators, spin, standard
 one-dimensional models, and perturbation theory.
 
+## Advanced manuscripts
+
+- [Symmetry and quantum fields](symmetry-and-quantum-fields.typ) develops group
+  actions, moment maps, Lie and Clifford representations, angular momentum,
+  path integrals, and field-theory structures.
+- [Relativistic representations](relativistic-representations.typ) studies
+  Poincare and Lorentz representations and their associated wave equations.
+
 ## References and next steps
 
 - Barton Zwiebach, [MIT 8.04 Quantum Physics I lecture notes](https://ocw.mit.edu/courses/8-04-quantum-physics-i-spring-2016/pages/lecture-notes/).
 - David Tong, [Quantum Mechanics](https://www.damtp.cam.ac.uk/user/tong/qm/qmhtml/S1.html) and [the formalism of quantum mechanics](https://www.damtp.cam.ac.uk/user/tong/qm/qmhtml/S3.html).
 
 The next coherent extension is density operators and open systems, followed by
-angular momentum addition and scattering. Relativistic representations should
-be treated only after special relativity and group representations have their
-own stable foundations.
+angular momentum addition and scattering. The advanced manuscripts should be
+edited against stable special-relativity and representation-theory foundations
+without discarding their existing derivations.

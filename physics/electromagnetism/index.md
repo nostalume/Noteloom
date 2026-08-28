@@ -164,6 +164,14 @@ must satisfy a continuity equation.
 The print companion [notes.typ](notes.typ) contains longer electrostatic,
 magnetic, tensor, and radiation calculations.
 
+## Detailed notes
+
+- [Green functions in electrostatics](green-functions.md)
+- [Magnetostatics](magnetostatics.md)
+- [Electromagnetic media](media.md)
+- [Electromagnetic field tensor](field-tensor.md)
+- [Waves and waveguides](waves-and-guides.md)
+
 ## References and next steps
 
 - David Tong, [Lectures on Electromagnetism](https://www.damtp.cam.ac.uk/user/tong/em.html).

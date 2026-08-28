@@ -175,6 +175,15 @@ frames, rigid bodies, Hamilton--Jacobi theory, and problem work. The separate
 [Galilean symmetry study](galilean-symmetry.typ) treats Lie groups, Noether
 theory, and rigid-body reduction in greater depth.
 
+## Detailed notes
+
+- [Classical mechanics](classical-mechanics.md)
+- [Particle systems](particle-systems.md)
+- [Rigid-body dynamics](rigid-body-dynamics.md)
+- [Non-inertial frames](non-inertial-frames.md)
+- [Canonical mechanics](canonical-mechanics.md)
+- [Noether's theorem in field theory](noether-field-theory.md)
+
 ## References and next steps
 
 - Iain Stewart, [MIT 8.09 Classical Mechanics III lecture notes](https://ocw.mit.edu/courses/8-09-classical-mechanics-iii-fall-2014/pages/lecture-notes/).
