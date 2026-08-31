@@ -181,6 +181,13 @@ one-dimensional models, and perturbation theory.
   path integrals, and field-theory structures.
 - [Relativistic representations](relativistic-representations.typ) studies
   Poincare and Lorentz representations and their associated wave equations.
+- [Poincare representations to free fields](poincare-to-free-fields.typ) develops
+  the supported representation-to-field construction as a focused manuscript.
+- [From field equations to computable observables](field-equations-to-computable-observables.md)
+  synthesizes the mechanics, particle, collective, and observable-compression
+  continuation while retaining its limitations and failed routes.
+- [Relativistic-representation research graph](relativistic-representations-research/plan.md)
+  preserves the wider node, source, computation, and synthesis worktable.
 
 ## References and next steps
 
