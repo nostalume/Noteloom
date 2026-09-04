@@ -1,9 +1,9 @@
 # Nonintegrable Composite Robustness Source Contracts
 
 These contracts support
-[N4x](../nodes/04x-nonintegrable-composite-robustness.md). They distinguish a
-controlled deformation of the N4w breather from the exact factorization that
-made N4w solvable.
+[field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md). They distinguish a
+controlled deformation of the node 09 breather from the exact factorization that
+made node 09 solvable.
 
 ## NI-01 — Form factors reduce the first nonintegrable mass shift to one scalar
 
@@ -23,7 +23,7 @@ made N4w solvable.
   paper also identifies elastic factorization and absence of production as
   special consequences of integrability rather than generic relativistic
   kinematics.
-- **Research use:** N4x turns the exact N4w rest mass into a one-form-factor
+- **Research use:** node 09 turns the exact node 09 rest mass into a one-form-factor
   tangent and keeps the normalization, remainder, and isolation hypotheses
   visible.
 - **Boundary:** this is a perturbative expansion, not an all-orders persistence
@@ -71,7 +71,7 @@ made N4w solvable.
   first-order periodic counterterms in the strict two-frequency description.
   The paper also supplies finite-volume truncated-space checks of form-factor
   perturbation theory in the rational-frequency model.
-- **Research use:** at N4x's benchmark `xi=1/5`, `beta^2=4 pi/3` and
+- **Research use:** at node 09's benchmark `xi=1/5`, `beta^2=4 pi/3` and
   `alpha=2 beta`, so `alpha^2=16 pi/3<8 pi` and
   `alpha beta=8 pi/3<4 pi`. The perturbation is relevant, strictly
   two-frequency at this order, and not another integrable sine-Gordon coupling.
@@ -92,7 +92,7 @@ made N4w solvable.
 - **Research use:** the diagonal connected values for
   `Psi=cos(2 beta phi)` are computable scalar inputs to NI-01; an odd
   exponential combination continues to test local access to `B_1`.
-- **Boundary:** N4x has reduced the nonintegrable tangent to these values but has
+- **Boundary:** node 09 has reduced the nonintegrable tangent to these values but has
   not yet implemented their analytic continuation, vacuum normalization, and
   numerical quadrature. The finite regression therefore treats certified form-
   factor bounds as inputs rather than inventing a number.
@@ -108,11 +108,11 @@ made N4w solvable.
   form-factor perturbation theory, tested on double sine-Gordon vacuum energy
   and breather mass corrections and compared with truncated conformal-space
   calculations.
-- **Research use:** N4x places second and higher orders in a computation node;
+- **Research use:** node 09 places second and higher orders in a computation node;
   they are not hidden behind `O(lambda^2)` as if the exact bootstrap survived.
 - **Boundary:** the published double-sine-Gordon evaluation uses its own
   frequency and normalization choices. It supplies a method contract, not the
-  missing numerical coefficient for N4x's second-harmonic benchmark.
+  missing numerical coefficient for node 09's second-harmonic benchmark.
 
 ## NI-06 — The counter-perturbation produces a new meson problem
 
@@ -124,7 +124,7 @@ made N4w solvable.
 - **Output consumed:** the deformation linearly confines sine-Gordon solitons;
   neutral soliton pairs form mesons, with controlled weak-confinement mass
   expansions in several parameter regions.
-- **Research use:** this confirms that failure of N4w's single-soliton fusion
+- **Research use:** this confirms that failure of node 09's single-soliton fusion
   channel is a semantic reconstruction of the particle basis, not disappearance
   of all composite prediction.
 - **Boundary:** the meson expansions answer a different spectral question from

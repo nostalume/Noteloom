@@ -1,9 +1,9 @@
 # Coupling-Measure Construction Route Contracts
 
 Recorded: 2026-08-30  
-Used by: [N9b coupling-measure routes](../nodes/09b-coupling-measure-routes.md)
+Used by: [visible spectral measure](../nodes/11-visible-spectral-measure.md)
 
-N9b internally proves the coupling-visible cyclic reduction, transform identities,
+node 11 internally proves the coupling-visible cyclic reduction, transform identities,
 channel decomposition, finite-moment example, and route comparisons. This packet
 owns the theorem and model boundaries that are not reproved there.
 
@@ -15,8 +15,8 @@ owns the theorem and model boundaries that are not reproved there.
   complementary Hamiltonian, and a bounded departure map.
 - **Output consumed:** the corresponding matrix-valued resolvent function has a
   positive operator-valued measure representation and matrix-valued boundary/
-  support theory. With N9b's convention, `-Sigma` rather than `Sigma` is Herglotz.
-- **Internal use:** N9b constructs `M(Delta)=B^dagger E_Q(Delta)B` directly and
+  support theory. With node 11's convention, `-Sigma` rather than `Sigma` is Herglotz.
+- **Internal use:** node 11 constructs `M(Delta)=B^dagger E_Q(Delta)B` directly and
   uses the source for the general matrix-valued representation and inversion
   contract.
 - **Boundary:** a positive matrix-valued function does not make its boundary value
@@ -32,7 +32,7 @@ owns the theorem and model boundaries that are not reproved there.
 - **Output consumed:** an exact unitary map replaces the continuum by a
   semi-infinite nearest-neighbor chain whose coefficients are recurrence
   coefficients of the orthogonal polynomials for that weight.
-- **Internal use:** N9b derives the coupling-visible cyclic subspace and its first
+- **Internal use:** node 11 derives the coupling-visible cyclic subspace and its first
   two Jacobi sites directly. CR-02 supports the infinite-chain model contract and
   its open-system interpretation.
 - **Boundary:** truncating the chain is an approximation. Finite moment matching
@@ -48,7 +48,7 @@ owns the theorem and model boundaries that are not reproved there.
 - **Output consumed:** smeared spectral densities can be extracted with declared
   resolution and uncertainty; pointwise unsmeared inversion is a difficult
   inverse problem.
-- **Internal use:** N9b proves that the Euclidean correlator is the Laplace
+- **Internal use:** node 11 proves that the Euclidean correlator is the Laplace
   transform of the same coupling measure and gives a positive-measure
   finite-precision counterexample. CR-03 supplies the practical smeared-output
   contract.
@@ -69,8 +69,8 @@ owns the theorem and model boundaries that are not reproved there.
   function and its spectral measure into a sum of squared form factors integrated
   over multiparticle phase space; in the cited integrable examples the terms can
   be evaluated explicitly.
-- **Internal use:** N9b constructs the spectral sum from a declared resolution of
-  identity and binds this path to N4w/N4x.
+- **Internal use:** node 11 constructs the spectral sum from a declared resolution of
+  identity and binds this path to node 11.
 - **Boundary:** convergence, completeness, disconnected terms, and normalization
   are model-specific. Generic nonintegrable or infraparticle theories do not
   inherit an exact low-particle truncation.

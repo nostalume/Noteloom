@@ -1,5 +1,7 @@
 # GS09 — Field on the Poincare Group and Orientable Objects
 
+Consumed by: [representation spaces](../nodes/02-representation-spaces.md).
+
 ## Raw locator
 
 - Paper: D. M. Gitman and A. L. Shelepin, _Field on Poincare group and quantum

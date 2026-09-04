@@ -1,6 +1,6 @@
 # Neutral Composite Fiber Source Contracts
 
-These contracts support [N4t](../nodes/04t-neutral-composite-same-state.md).
+These contracts support [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md).
 They separate the physical Pauli--Fierz ground-band theorem from the stronger
 Rayleigh-scattering theorem proved for a simplified infrared-cutoff model.
 
@@ -18,7 +18,7 @@ Rayleigh-scattering theorem proved for a simplified infrared-cutoff model.
   momentum and decomposes as `direct-integral H(P) dP`; for a neutral system no
   infrared cutoff is required in the ground-state theorem; under the stated
   binding and momentum bounds, `H(P)` has a ground state.
-- **Research use:** N4t obtains a physically meaningful dressed neutral-atom
+- **Research use:** node 09 obtains a physically meaningful dressed neutral-atom
   fiber branch without calling the internal Coulomb eigenvalue the full atom
   energy.
 - **Boundary:** the theorem gives existence, not a simple eigenvalue, a smooth
@@ -47,7 +47,7 @@ Rayleigh-scattering theorem proved for a simplified infrared-cutoff model.
   asymptotic photon fields; an isometric wave operator on the dressed-atom plus
   free-photon channel; and asymptotic completeness below the paper's restricted
   threshold.
-- **Research use:** N4t identifies the same dressed-atom vector as a fiber
+- **Research use:** node 09 identifies the same dressed-atom vector as a fiber
   spectral state and as the zero-asymptotic-photon channel, then separates the
   stable atom from emitted photons without a trajectory calculation.
 - **Boundary:** this is a simplified nonrelativistic model. Photon helicity is
@@ -58,11 +58,11 @@ Rayleigh-scattering theorem proved for a simplified infrared-cutoff model.
 ## NC-03 — Prepared spectral weight survives a massless threshold
 
 - **Sources:** NC-01 and NC-02, together with
-  [N4r's operator contract](field-mechanics-variation-contracts.md).
+  [node 09's operator contract](field-mechanics-variation-contracts.md).
 - **Output consumed:** the neutral dressed ground state can exist at the bottom
   of a massless continuum. Consequently, `E(P)-QH(P)Q` need not be invertible
   even when `E(P)` is a fiber eigenvalue.
-- **Research use:** N4t uses the spectral atom
+- **Research use:** node 09 uses the spectral atom
 
   ```text
   s-lim_(epsilon down to 0)
@@ -84,4 +84,4 @@ The sources support a nonrelativistic dressed-composite band and, in the
 simplified model, its Rayleigh asymptotic channel. They do not support the claim
 that this band is already a relativistic composite particle or that a local
 vacuum-sector field creates the atom. Those are the two exact obligations passed
-back to N4s.
+back to node 09.

@@ -1,6 +1,6 @@
 # Effective-Mass Route Source Contracts
 
-These contracts support [N4u](../nodes/04u-effective-mass-route-audit.md).
+These contracts support [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md).
 They type the differentiable fiber branch, the full-space response formula, and
 the analytic expansion used by the one-photon reduction.
 
@@ -28,7 +28,7 @@ the analytic expansion used by the one-photon reduction.
   grad E_g(P)=<psi_P,(P-P_f)/M psi_P>.
   ```
 
-- **Research use:** N4u constructs the effective-mass tensor from the curvature
+- **Research use:** node 09 constructs the effective-mass tensor from the curvature
   of this same branch and performs ordinary Feshbach differentiation only in the
   gapped modified/no-soft sector.
 - **Boundary:** the source does not evaluate the second derivative or prove that
@@ -47,11 +47,11 @@ the analytic expansion used by the one-photon reduction.
 - **Output consumed:** effective mass as the inverse Hessian of the ground energy
   at zero momentum and the exact current--reduced-resolvent formula. Positivity
   of the reduced inverse shows mass enhancement in the paper's model.
-- **Research use:** N4u reconstructs the formula invariantly for the NC-02
+- **Research use:** node 09 reconstructs the formula invariantly for the NC-02
   composite fiber instead of importing the paper's spin matrices or component
   expansion.
 - **Boundary:** the paper studies a single dressed electron, not the neutral
-  composite of N4t; its ultraviolet asymptotics are not transferred to that
+  composite of node 09; its ultraviolet asymptotics are not transferred to that
   atom.
 
 ## EM-03 — Isolated analytic eigenbranches admit controlled differentiation
@@ -65,7 +65,7 @@ the analytic expansion used by the one-photon reduction.
 - **Output consumed:** a local analytic eigenvalue/eigenprojection branch and a
   convergent perturbative expansion whose remainder is controlled on a smaller
   parameter neighborhood.
-- **Research use:** N4u expands the gapped scalar atom--radiation self-energy to
+- **Research use:** node 09 expands the gapped scalar atom--radiation self-energy to
   second order in `g`, where field parity removes odd powers.
 - **Boundary:** this theorem cannot be applied directly after the gap closes.
   Removing the infrared modification requires separate uniform estimates; a

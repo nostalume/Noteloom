@@ -1,7 +1,9 @@
 # Projected-Carrier Operation Contracts
 
-Status: primary-source boundary for N10n; the sources motivate traceless projectors,
-Fischer decomposition, and generalized gradients, while N10n owns its obstruction
+Consumed by: [carrier/source obstructions](../nodes/15-carrier-source-obstructions.md).
+
+Status: primary-source boundary for node 15; the sources motivate traceless projectors,
+Fischer decomposition, and generalized gradients, while node 15 owns its obstruction
 derivation and exact finite Hom-space calculation
 
 ## `PC-01` — Traceless projection is a genuine representation-theoretic operation
@@ -16,7 +18,7 @@ derivation and exact finite Hom-space calculation
 - Research use: supports treating `ker T` and more general trace-free Young
   carriers as constructed projected representations, rather than as a decorative
   field constraint.
-- Boundary: N10n does not import the paper's closed projector. It derives the
+- Boundary: node 15 does not import the paper's closed projector. It derives the
   rank-one momentum-raising correction from failure to preserve `ker T` and uses
   the source only to delimit the broader mixed-projector horizon.
 
@@ -31,9 +33,9 @@ derivation and exact finite Hom-space calculation
   Laplacian, metric multiplication, and Euler degree operator form the invariant
   `sl(2)` algebra underlying this decomposition.
 - Research use: justifies the polynomial realization
-  `H_r=ker T subset Sym^r(V*)` and the invariant algebra `{T,U,E}` used by N10n.
+  `H_r=ker T subset Sym^r(V*)` and the invariant algebra `{T,U,E}` used by node 15.
 - Boundary: the source's superspace exceptional regimes are outside this bench.
-  N10n works in ordinary dimension at least three and derives all momentum
+  node 15 works in ordinary dimension at least three and derives all momentum
   relations directly.
 
 ## `PC-03` — Projected first-order maps are generalized gradients
@@ -45,18 +47,18 @@ derivation and exact finite Hom-space calculation
 - Contract: first-order operators on symmetric trace-free tensors arise by
   projecting the tensor product with a covector into irreducible orthogonal-group
   summands; their adjoint compositions support invariant second-order identities.
-- Research use: prevents N10n from claiming novelty for projected gradients as
+- Research use: prevents node 15 from claiming novelty for projected gradients as
   objects. Its contribution is the compiler interface: generate the projection
   coefficient from the preservation obstruction, expose the omitted summand, and
   pass the rank-indexed relation to a downstream residual calculation.
-- Boundary: the source is Riemannian and geometric. N10n's flat symbol algebra and
+- Boundary: the source is Riemannian and geometric. node 15's flat symbol algebra and
   computability verdict are independently constructed.
 
 ## Current source verdict
 
 The sources establish that trace-free projectors, harmonic decomposition, and
 projected gradients are established tools. They do not provide the answer-bearing
-input used by N10n. The node's supported claim is narrower and operational:
+input used by node 15. The node's supported claim is narrower and operational:
 
 ```text
 carrier constraint T f=0
@@ -75,9 +77,9 @@ carrier constraint T f=0
   parameters; removing those restrictions requires additional compensator and
   multiplier carriers in a local formulation. Thus constrained and unconstrained
   presentations trade algebraic restrictions against extra fields.
-- Research use: prevents N10n from promoting `H_r` to a consequence of the
-  particle representation. N10o must state the requested carrier/interface
+- Research use: prevents node 15 from promoting `H_r` to a consequence of the
+  particle representation. node 15 must state the requested carrier/interface
   capability first, then let the residual choose between a parameter constraint,
   an added compensator, or reconsideration of the projected presentation.
-- Boundary: N10o's compensator is generated for its own harmonic projected
+- Boundary: node 15's compensator is generated for its own harmonic projected
   residual and is not identified with the full Fronsdal compensator system.

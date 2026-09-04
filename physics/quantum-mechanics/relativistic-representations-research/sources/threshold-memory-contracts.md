@@ -1,9 +1,9 @@
 # Threshold, Memory, and Friedrichs-Model Contracts
 
 Recorded: 2026-08-30  
-Used by: [N9a threshold spectral measure](../nodes/09a-threshold-spectral-measure.md)
+Used by: [visible spectral measure](../nodes/11-visible-spectral-measure.md)
 
-N9a derives the rank-one block elimination, coupling measure, pole residue,
+node 11 derives the rank-one block elimination, coupling measure, pole residue,
 boundary density, and explicit example internally. These contracts delimit the
 operator-theoretic and scattering claims that are not reproved there.
 
@@ -20,7 +20,7 @@ operator-theoretic and scattering claims that are not reproved there.
   from the continuum spectral measure; real solutions outside the continuum give
   bound states, while continuation through the continuum boundary describes
   resonances.
-- **Internal use:** N9a chooses a bounded rank-one coupling and computes all scalar
+- **Internal use:** node 11 chooses a bounded rank-one coupling and computes all scalar
   formulas directly. The papers supply the unbounded/self-adjoint model contract
   and the interpretation of continued self-energy poles.
 - **Boundary:** this is a one-excitation, rank-one realization. It does not by
@@ -38,7 +38,7 @@ operator-theoretic and scattering claims that are not reproved there.
 - **Output consumed:** a bound pole is a real eigenvalue outside the continuum; a
   resonance is a pole/zero on a continued sheet, not merely a maximum of the real
   boundary density.
-- **Internal use:** N9a computes the exact continuum boundary density and a real
+- **Internal use:** node 11 computes the exact continuum boundary density and a real
   on-shell center/width scale. It deliberately does not rename these data an
   exact resonance pole.
 - **Boundary:** existence and uniqueness of a second-sheet pole require analytic
@@ -55,7 +55,7 @@ operator-theoretic and scattering claims that are not reproved there.
 - **Output consumed:** threshold branch structure produces inverse-power long-time
   behavior; absorption of a bound state at threshold can enhance the
   non-Markovian contribution.
-- **Internal use:** N9a derives its chosen `t^-2` memory exactly from the coupling
+- **Internal use:** node 11 derives its chosen `t^-2` memory exactly from the coupling
   density. This source supports the broader interpretation and warns against an
   exact exponential-decay claim.
 - **Boundary:** the power and crossover depend on the actual threshold density and
@@ -72,7 +72,7 @@ operator-theoretic and scattering claims that are not reproved there.
   the scalar resolvent denominator.
 - **Output consumed:** in the chosen convention the on-shell scattering factor is
   the ratio of the two boundary denominators and is unitary on the real continuum.
-- **Internal use:** N9a verifies the algebraic unit modulus of that ratio. Its
+- **Internal use:** node 11 verifies the algebraic unit modulus of that ratio. Its
   identification as the physical scattering matrix is consumed from this
   contract.
 - **Boundary:** multichannel models replace the scalar phase by an operator-valued

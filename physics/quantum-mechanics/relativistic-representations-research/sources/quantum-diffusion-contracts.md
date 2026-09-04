@@ -1,10 +1,10 @@
 # Dephased Quantum-Chain Transport Contracts
 
 Recorded: 2026-08-30  
-Used by: [N8c dephased quantum chain and SSEP recovery](../nodes/08c-dephased-quantum-ssep.md)
-and [N8d two-time quantum charge](../nodes/08d-two-time-quantum-charge.md)
+Used by: [collective-response boundary](../nodes/10-collective-response-boundary.md)
+and [collective-response boundary](../nodes/10-collective-response-boundary.md)
 
-This packet binds only the theorem-scale statements that N8c/N8d do not reproduce.
+This packet binds only the theorem-scale statements that node 10 does not reproduce.
 The local continuity equation, current relaxation, Green--Kubo coefficient, and
 second-order pointer-state generator are reconstructed inside the node.
 
@@ -25,8 +25,8 @@ second-order pointer-state generator are reconstructed inside the node.
 
   for a fermionic/XY hopping chain, its pointer-state probabilities evolve as
   SSEP.
-- **Internal use:** N8c evaluates this operator on the same occupation projector
-  and obtains its rate in N8c's `J,gamma` convention.
+- **Internal use:** node 10 evaluates this operator on the same occupation projector
+  and obtains its rate in node 10's `J,gamma` convention.
 - **Boundary:** trajectory convergence is weak (the cited paper formulates it at
   the level of finite correlation functions), and the limit uses a rescaled slow
   time. It does not state equality of finite-dephasing quantum trajectories with
@@ -43,11 +43,11 @@ second-order pointer-state generator are reconstructed inside the node.
 - **Output consumed:** exact closure of fixed-order correlations, a diffusive
   low-lying Liouvillian band, and reduction of the strong-dephasing slow sector
   to the classical ferromagnetic/SSEP generator.
-- **Internal use:** this contract supports promoting N8c's exact current
+- **Internal use:** this contract supports promoting node 10's exact current
   relaxation coefficient to the hydrodynamic diffusion datum and supplies an
   independent spectral boundary check.
 - **Boundary:** the paper uses its own hopping and dephasing normalization and an
-  imaginary-coupling Hubbard/Bethe representation. N8c does not import those
+  imaginary-coupling Hubbard/Bethe representation. node 10 does not import those
   component Bethe equations to determine its coefficient; it computes the
   coefficient directly in its declared convention.
 
@@ -62,7 +62,7 @@ second-order pointer-state generator are reconstructed inside the node.
 - **Output consumed:** diffusive/Ohmic transport is exactly accessible through
   selected one-particle/Keldysh objects even though the density-matrix
   Liouvillian is not a free quadratic generator.
-- **Internal use:** N8c uses this as a scope check for its observable-relative
+- **Internal use:** node 10 uses this as a scope check for its observable-relative
   compression: exact density transport must not be advertised as a solution of
   arbitrary many-body coherences or current statistics.
 - **Boundary:** reservoir conductance and the present periodic equilibrium
@@ -74,7 +74,7 @@ second-order pointer-state generator are reconstructed inside the node.
 João Costa, Pedro Ribeiro, and Andrea De Luca, [Emergence of universality in
 transport of noisy free fermions](https://arxiv.org/abs/2504.00188), reports a
 strong-noise Q-SSEP universality class whose transferred-charge large-deviation
-function agrees with classical SSEP. N8c records this as a downstream candidate,
+function agrees with classical SSEP. node 10 records this as a downstream candidate,
 not as support for finite-`gamma` current statistics of the deterministic local-
 dephasing Lindblad semigroup. Q-SSEP uses stochastic hopping amplitudes and retains
 coherence fluctuations that the unconditional dephasing state does not specify.
@@ -91,10 +91,10 @@ coherence fluctuations that the unconditional dephasing state does not specify.
   `D(n)=constant` and `sigma(n)=2D n(1-n)`; numerical higher-cumulant/additivity
   evidence; and a thermodynamic current generating function matching the open
   SSEP after normalization.
-- **Internal use:** N8d uses this as evidence that finite dephasing need not destroy
+- **Internal use:** node 10 uses this as evidence that finite dephasing need not destroy
   SSEP hydrodynamic current statistics at large scale.
-- **Boundary:** this is not N8b's infinite-line annealed equilibrium current and
-  not N8d's isolated-system two-projective-measurement charge difference. The
+- **Boundary:** this is not node 10's infinite-line annealed equilibrium current and
+  not node 10's isolated-system two-projective-measurement charge difference. The
   reservoir-jump long-time limit at fixed length, thermodynamic limit, and
   equilibrium half-filling Gaussian specialization must not be transferred across
   those geometries without a constructed bridge.

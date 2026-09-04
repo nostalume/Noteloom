@@ -1,6 +1,8 @@
 # Source contracts — higher-spin curvature and gauge compatibility
 
-Status: primary-source boundary for N10j/N10l; their chiral construction,
+Consumed by: [carrier/source obstructions](../nodes/15-carrier-source-obstructions.md).
+
+Status: primary-source boundary for node 15; its chiral construction,
 physical-shell calculation, compatible source complex, and normalization remain
 internal
 
@@ -16,7 +18,7 @@ internal
 - Exact output used: higher-spin curvatures belong to a systematic generalized
   differential complex; local exactness requires the theorem's Young-diagram and
   regularity hypotheses.
-- Boundary: N10j does not import the paper's full mixed-symmetry complex or claim
+- Boundary: node 15 does not import the paper's full mixed-symmetry complex or claim
   curved-background exactness. It internally constructs only the symmetric
   four-dimensional chiral output needed by the current spine.
 
@@ -31,7 +33,7 @@ internal
 - Exact output used: generalized curvature and its derivatives own the local
   gauge-invariant content under the paper's constrained/unconstrained hypotheses.
 - Boundary: this classification validates the capability target; it does not
-  construct N10j's minimal-degree chiral map or its selector cost.
+  construct node 15's minimal-degree chiral map or its selector cost.
 
 ## HS-CURV-03 — Derivative order and geometric equations
 
@@ -43,7 +45,7 @@ internal
 - Exact output used: the generalized curvature contains `s` derivatives, while
   obtaining unconstrained geometric equations from its traces can introduce
   inverse powers of the wave operator beyond the Maxwell/Einstein cases.
-- Boundary: N10j generates the local forward curvature observable, not those
+- Boundary: node 15 generates the local forward curvature observable, not those
   nonlocal kinetic equations, an unconstrained action, or an interacting theory.
 
 ## HS-CURV-04 — Curvature/Fronsdal differential identity
@@ -56,7 +58,7 @@ internal
   Fronsdal tensor on flat spacetime.
 - Exact output used: the higher-derivative curvature equation is a projected chain
   of curls of the Fronsdal tensor; in flat space the identity is locally integrable.
-- Boundary: N10l does not import the paper's frame variables, AdS corrections, or
+- Boundary: node 15 does not import the paper's frame variables, AdS corrections, or
   unconstrained compensator theory. It internally constructs the four-dimensional
   chiral source complex and uses the flat identity only as an independent theorem
   contract for the generated source-lift syzygy.

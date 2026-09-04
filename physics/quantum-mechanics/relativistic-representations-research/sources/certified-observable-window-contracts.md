@@ -1,7 +1,7 @@
 # Certified Observable-Window Source Contracts
 
 These contracts support
-[N9f](../nodes/09f-certified-observable-window.md). N9f derives its combined
+[certified observable window](../nodes/12-certified-observable-window.md). node 12 derives its combined
 parity quotient, form constants, scalar error formula, finite-sector norms, and
 numerical window internally.
 
@@ -16,7 +16,7 @@ numerical window internally.
 - **Output consumed:** the Feshbach--Schur map is a fixed-point construction for
   the perturbed eigenvalue/eigenvector and supports explicit eigenvalue and
   eigenvector estimates.
-- **Internal replacement:** N9f computes the one-dimensional Schur equation,
+- **Internal replacement:** node 12 computes the one-dimensional Schur equation,
   inverse identity, and constants directly for the scalar model rather than
   importing the paper's estimates.
 - **Boundary:** the theorem concerns isolated spectrum. It does not control the
@@ -32,10 +32,10 @@ numerical window internally.
   conditions.
 - **Output consumed:** the Hamiltonian and its unitary dynamics are legitimate
   operator-theoretic objects once the form-factor hypotheses are imposed.
-- **Internal replacement:** N9e supplies self-adjointness for the massive
-  Gaussian model; N9f acts only on its finite-particle analytic core when it
+- **Internal replacement:** node 11 supplies self-adjointness for the massive
+  Gaussian model; node 12 acts only on its finite-particle analytic core when it
   iterates Duhamel and then uses unitarity for the unexpanded left factor.
-- **Boundary:** N9f does not transfer arbitrary-coupling spectral conclusions or
+- **Boundary:** node 12 does not transfer arbitrary-coupling spectral conclusions or
   positive-temperature Liouvillean results.
 
 ## COW-03 — A perturbative boundary is not a resonance theorem
@@ -47,10 +47,10 @@ numerical window internally.
   perturbative decay scale and a constructed resonance.
 - **Output consumed:** a finite-coupling resonance needs additional spectral
   deformation, multiscale estimates, and Feshbach--Schur analysis.
-- **Research use:** N9f interprets failure of its long-time norm certificate as
+- **Research use:** node 12 interprets failure of its long-time norm certificate as
   a re-entry condition for such a new construction, not as permission to
-  exponentiate N9d's boundary rate.
-- **Boundary:** N9f is massive and finite-time; it imports neither the critical
+  exponentiate node 11's boundary rate.
+- **Boundary:** node 12 is massive and finite-time; it imports neither the critical
   massless form factor nor the resonance result.
 
 ## Supported boundary

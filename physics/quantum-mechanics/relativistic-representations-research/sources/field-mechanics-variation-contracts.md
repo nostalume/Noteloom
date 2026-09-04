@@ -1,6 +1,6 @@
 # Field/Mechanics Variation Source Contracts
 
-These contracts support [N4r](../nodes/04r-field-mechanics-stability.md). They
+These contracts support [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md). They
 separate exact sector algebra, field-theoretic realization, and the heavy-source
 approximation. None of the sources by itself derives a cutoff-independent QED
 Hamiltonian or makes its atomic spectrum easy.
@@ -19,7 +19,7 @@ Hamiltonian or makes its atomic spectrum easy.
   window, and the full eigenvector is reconstructed from its `P` component.
   The later paper also gives explicit discrete-spectrum perturbation bounds
   under relative-form and gap hypotheses.
-- **Research use:** N4r derives the elementary projected-resolvent and recovery
+- **Research use:** node 09 derives the elementary projected-resolvent and recovery
   identities on one typed vector, then uses this theorem contract only for the
   unbounded-operator hypotheses and quantitative perturbation boundary.
 - **Boundary:** the eliminated resolvent may be as hard as the original problem.
@@ -37,11 +37,11 @@ Hamiltonian or makes its atomic spectrum easy.
   energy part produces a no-pair Dirac--Coulomb(--Breit) reference, while the
   relative-energy, transverse, retardation, pair, and crossed-photon content
   remains in an energy-dependent correction.
-- **Research use:** this validates the *shape* of N4r's field/mechanics bridge:
+- **Research use:** this validates the *shape* of node 09's field/mechanics bridge:
   an instantaneous mechanical representative plus an energy-dependent field
   self-energy, both observed through the same projected Green object.
 - **Boundary:** this review does not supply a nonperturbative error bound for the
-  one-electron Dirac--Coulomb limit used in N4o. Kernel truncation, gauge
+  one-electron Dirac--Coulomb limit used in node 09. Kernel truncation, gauge
   consistency, renormalization, and numerical recovery remain separate work.
 
 ## FM-03 — A compact charged source contributes effective data, not a universal
@@ -57,11 +57,11 @@ point boundary condition
   field, while finite size and other short-distance physics enter running
   near-source couplings/boundary data. The standard point-source condition is a
   limit, not an input valid for every source.
-- **Research use:** N4r treats charge distribution, heavy-source preparation,
+- **Research use:** node 09 treats charge distribution, heavy-source preparation,
   and short-distance data as coordinates of the admissible model family rather
   than hiding them inside one `-nu/r` formula.
 - **Boundary:** the paper computes within a spherical short-distance expansion
-  and uses radial solutions for applications. N4r consumes only the source-to-
+  and uses radial solutions for applications. node 09 consumes only the source-to-
   effective-data contract; it does not import the component calculation as its
   reduction principle.
 
@@ -75,9 +75,9 @@ point boundary condition
   self-adjoint realization and its gap eigenvalues admit min--max
   characterizations.
 - **Research use:** this is the domain/stability theorem contract for the
-  finite-source mechanical representatives in N4r.
+  finite-source mechanical representatives in node 09.
 - **Boundary:** norm-resolvent continuity for every singular source variation is
-  not inferred. N4r's explicit contour estimate is supported first for bounded
+  not inferred. node 09's explicit contour estimate is supported first for bounded
   effective-kernel variation; singular point limits need a separate form- or
   resolvent-convergence theorem.
 

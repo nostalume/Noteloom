@@ -1,7 +1,7 @@
 # Fermionic Action and Green Contracts
 
 Recorded: 2026-08-29  
-Used by: [N4i half-integer hyperbolic completion](../nodes/04i-half-integer-green-construction.md) and [N4j causal quotient theorem](../nodes/04j-half-integer-causal-quotient.md)
+Used by: [fermionic free-field machine](../nodes/07-fermionic-free-field-machine.md) and [fermionic free-field machine](../nodes/07-fermionic-free-field-machine.md)
 
 ## FH-01 — Constrained Fang--Fronsdal action
 
@@ -13,7 +13,7 @@ Used by: [N4i half-integer hyperbolic completion](../nodes/04i-half-integer-gree
   Fang--Fronsdal equation.
 - **Output consumed:** this constrained system admits a local gauge-invariant
   quadratic action for each finite half-integer spin.
-- **Internal obligation:** N4i constructs the Dirac--Fischer pairing, proves the
+- **Internal obligation:** node 07 constructs the Dirac--Fischer pairing, proves the
   trace reversal invertible in four dimensions, computes the formal-adjoint
   defect, and derives the source condition. These facts are not imported merely
   from the existence of the historical action.
@@ -32,7 +32,7 @@ Used by: [N4i half-integer hyperbolic completion](../nodes/04i-half-integer-gree
 - **Research use:** independent all-rank evidence that the constrained Euler
   representative is not a low-spin accident.
 - **Boundary:** the unconstrained BRST carrier has auxiliary fields and reducible
-  gauge structure. N4i does not identify it with the constrained carrier without
+  gauge structure. node 07 does not identify it with the constrained carrier without
   the stated reduction.
 
 ## FH-03 — Green-hyperbolic gauge theorem and spin-three-halves check
@@ -46,11 +46,11 @@ Used by: [N4i half-integer hyperbolic completion](../nodes/04i-half-integer-gree
   source/solution construction. Their Rarita--Schwinger example uses an invertible
   gamma-trace reversal; after gauge completion its field and parameter operators
   are of Dirac or wave type.
-- **Research use:** low-spin and analytic boundary for N4i. N4i's all-rank flat
+- **Research use:** low-spin and analytic boundary for node 07. node 07's all-rank flat
   identities are derived internally and are not attributed to the spin-`3/2`
   example.
-- **Output additionally consumed by N4j:** the source/solution quotient theorem
-  follows from Green-hyperbolic gauge compatibility. N4j reconstructs the needed
+- **Output additionally consumed by node 07:** the source/solution quotient theorem
+  follows from Green-hyperbolic gauge compatibility. node 07 reconstructs the needed
   flat all-rank support argument directly from the wave exact sequence rather than
   assuming that its constrained operators fit the abstract theorem automatically.
 
@@ -63,8 +63,8 @@ Used by: [N4i half-integer hyperbolic completion](../nodes/04i-half-integer-gree
   unique retarded and advanced Green operators with causal support; their causal
   propagators satisfy the standard exact sequence. The wave Green maps extend
   uniquely to past-compact and future-compact sections, which is the support
-  operation used in N4j's temporal-cutoff construction.
-- **Internal flat-space use:** N4i needs only the scalar wave Green maps on the
+  operation used in node 07's temporal-cutoff construction.
+- **Internal flat-space use:** node 07 needs only the scalar wave Green maps on the
   finite-rank constrained bundles. Its identity
 
   ```text
@@ -74,7 +74,7 @@ Used by: [N4i half-integer hyperbolic completion](../nodes/04i-half-integer-gree
   then constructs the fermionic sourced response without an explicit propagator
   numerator.
 - **Boundary:** this contract does not prove the half-integer gauge quotient by
-  itself; N4j supplies the missing constructions. It also does not prove
+  itself; node 07 supplies the missing constructions. It also does not prove
   positive-frequency faithfulness or density.
 
 ## Supported source boundary
@@ -82,8 +82,8 @@ Used by: [N4i half-integer hyperbolic completion](../nodes/04i-half-integer-gree
 The literature supports the constrained all-rank action family, the general
 Green-hyperbolic gauge framework, and the complete spin-`3/2` example. The uniform
 four-dimensional identities for `M_n`, `B_n`, and the admissible-source response
-are internal results of N4i. N4j proves causal quotient bijectivity from those
-identities and wave support exactness. N4k separately constructs the positive
-particle/antiparticle completion, and N4l proves its gauge-rank shell-map
-faithfulness. N4z closes causal-Euler/CAR normalization downstream. Density and
+are internal results of node 07. node 07 proves causal quotient bijectivity from those
+identities and wave support exactness. node 07 separately constructs the positive
+particle/antiparticle completion, and node 07 proves its gauge-rank shell-map
+faithfulness. node 07 closes causal-Euler/CAR normalization downstream. Density and
 countable-spin estimates remain separate claims.

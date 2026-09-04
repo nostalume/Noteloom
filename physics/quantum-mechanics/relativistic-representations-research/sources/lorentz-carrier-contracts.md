@@ -1,6 +1,8 @@
 # Lorentz-Carrier Theorem Contracts
 
-Status: source packet for `N2a/N2b`; sources delimit theorem contracts and do not
+Consumed by: [spin, helicity, and carriers](../nodes/03-spin-helicity-carriers.md).
+
+Status: source packet for node 03; sources delimit theorem contracts and do not
 replace the node's internal constructions
 
 ## `LC-01` — Spin cover and representation scope
@@ -13,7 +15,7 @@ replace the node's internal constructions
 - Contract: in four dimensions, single- and double-valued Lorentz
   representations are treated as genuine representations of the spin cover.
 - Boundary: this source does not construct the particular
-  `SL(2,C)->SO^+(1,3)` map used by N2b.
+  `SL(2,C)->SO^+(1,3)` map used by node 03.
 
 ## `LC-02` — Concrete spinor covering map
 
@@ -48,7 +50,7 @@ replace the node's internal constructions
 - Contract: a finite-helicity field-state matrix element lies in the sector fixed
   by the invariant Abelian subgroup of the null little group.
 - Boundary: this does not say that every carrier contains the desired direct
-  line. N2b constructs an extremal line; gauge subquotients remain in N3/N4a.
+  line. N2b constructs an extremal line; gauge subquotients remain in N3/node 05.
 
 ## `LC-05` — Algebraic classification contracts
 

@@ -1,8 +1,8 @@
 # Field-Derived Coupling-Measure Source Contracts
 
 These contracts support
-[N9c](../nodes/09c-field-derived-coupling-measure.md). The numerical bench is
-defined and derived inside N9c; the sources delimit which parts transfer to
+[visible spectral measure](../nodes/11-visible-spectral-measure.md). The numerical bench is
+defined and derived inside node 11; the sources delimit which parts transfer to
 atom--radiation fibers, effective-mass response, and open channels.
 
 ## FM-01 — Fixed-total-momentum field fibers and one-boson departure
@@ -23,12 +23,12 @@ atom--radiation fibers, effective-mass response, and open channels.
 
   and the fact that one application of a linear field coupling to a vacuum
   preparation enters the one-boson sector.
-- **Research use:** N9c removes the internal atom to form the smallest scalar
+- **Research use:** node 11 removes the internal atom to form the smallest scalar
   regression that still retains recoil, a field continuum, and a genuine Fock
   Hamiltonian. Its Gaussian form factor and massive dispersion are declared
   benchmark choices, not claims copied from the source.
 - **Boundary:** the paper's physical model is richer and includes the atomic
-  internal space. N9c does not claim to compute its exact interacting spectral
+  internal space. node 11 does not claim to compute its exact interacting spectral
   measure.
 
 ## FM-02 — Effective mass is a same-branch spectral response
@@ -42,10 +42,10 @@ atom--radiation fibers, effective-mass response, and open channels.
 - **Output consumed:** effective mass as the inverse curvature of the same
   ground-energy branch and its representation by a positive complementary
   resolvent response.
-- **Research use:** N9c derives the scalar order-`g^2` curvature internally and
+- **Research use:** node 11 derives the scalar order-`g^2` curvature internally and
   checks that it is a weighted transform of the same radial departure measure.
 - **Boundary:** spin matrices and the paper's ultraviolet asymptotics are not
-  imported. A scalar energy measure determines the weight used by N9c only
+  imported. A scalar energy measure determines the weight used by node 11 only
   because its radial channel energy is injective.
 
 ## FM-03 — A field boundary needs channel dynamics before it is scattering
@@ -59,10 +59,10 @@ atom--radiation fibers, effective-mass response, and open channels.
   threshold, and wave-operator/channel hypotheses.
 - **Output consumed:** vacuum and one-particle sectors are meaningful
   scattering objects only together with comparison dynamics and wave operators.
-- **Research use:** N9c calls `2 pi m(E)` a continuum boundary loss or channel
+- **Research use:** node 11 calls `2 pi m(E)` a continuum boundary loss or channel
   access density. It becomes a decay rate or cross-section ingredient only
   after a prepared energy and channel normalization are supplied.
-- **Boundary:** N9c does not establish asymptotic completeness, a full
+- **Boundary:** node 11 does not establish asymptotic completeness, a full
   scattering matrix, or a resonance pole.
 
 ## Supported boundary
@@ -71,5 +71,5 @@ The contracts support the chosen field-fiber structure, curvature observable,
 and distinction between a resolvent boundary and a scattering theorem. The
 actual density, transforms, moments, and regression numbers are internally
 constructed. Exact finite-coupling spectral data would still require the
-interacting complementary Fock dynamics; N9c controls only the first nonzero
+interacting complementary Fock dynamics; node 11 controls only the first nonzero
 order in `g`.

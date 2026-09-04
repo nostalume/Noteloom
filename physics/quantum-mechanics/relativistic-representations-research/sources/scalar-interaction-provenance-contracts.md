@@ -1,7 +1,7 @@
 # Scalar Interaction-Provenance Source Contracts
 
 These contracts support
-[N9e](../nodes/09e-scalar-interaction-provenance.md). N9e constructs its shell
+[visible spectral measure](../nodes/11-visible-spectral-measure.md). node 11 constructs its shell
 normalization, translation commutators, fiber unitary, preparation, and departure
 measure internally. The sources delimit the model class and the claims that may
 be transferred from it.
@@ -17,9 +17,9 @@ be transferred from it.
 - **Output consumed:** the structural fact that total-momentum reduction turns
   the matter kinetic energy into a recoil term involving `p-P_f`, while a
   translated field coupling becomes independent of the center coordinate.
-- **Internal replacement:** N9e proves the required commutator cancellation and
+- **Internal replacement:** node 11 proves the required commutator cancellation and
   unitary conjugations directly for its scalar two-level model.
-- **Boundary:** the source studies a richer atomic model and scattering. N9e
+- **Boundary:** the source studies a richer atomic model and scattering. node 11
   imports neither its electromagnetic interaction nor its completeness theorem.
 
 ## SIP-02 — Translation invariance is the reason for the fiber, not notation
@@ -33,8 +33,8 @@ be transferred from it.
 - **Output consumed:** such Hamiltonians are fibered with respect to total
   momentum; their spectral and scattering analysis is then performed on the
   fiber Hamiltonians.
-- **Research use:** N9e constructs the relevant conserved generator before it
-  writes `H_g(p)`. N9d's `p` is therefore the spectrum variable of `P_tot`, not
+- **Research use:** node 11 constructs the relevant conserved generator before it
+  writes `H_g(p)`. node 11's `p` is therefore the spectrum variable of `P_tot`, not
   an externally inserted parameter.
 - **Boundary:** fiber decomposition alone supplies neither asymptotic fields nor
   scattering completeness.
@@ -50,9 +50,9 @@ be transferred from it.
 - **Output consumed:** the two-level/Fock Hamiltonian is an interacting field
   model, while promoting a perturbative boundary to a resonance requires
   additional complex-deformation, multiscale, and Feshbach--Schur work.
-- **Research use:** N9e closes Hamiltonian provenance but leaves N9d's stop before
+- **Research use:** node 11 closes Hamiltonian provenance but leaves node 11's stop before
   resonance intact.
-- **Boundary:** N9e uses a massive Gaussian shell amplitude and mobile recoil; it
+- **Boundary:** node 11 uses a massive Gaussian shell amplitude and mobile recoil; it
   does not import the paper's massless critical coupling or resonance theorem.
 
 ## SIP-04 — Regular form factors support closed Hamiltonians
@@ -65,16 +65,16 @@ be transferred from it.
   approximations.
 - **Output consumed:** self-adjointness/domain control is a separate operator
   obligation and can be stable under normalizable ultraviolet cutoffs.
-- **Internal replacement:** N9e uses the stronger regular Gaussian assumptions
+- **Internal replacement:** node 11 uses the stronger regular Gaussian assumptions
   and records the elementary creation/annihilation energy estimates that make
   its interaction infinitesimally form-bounded.
-- **Boundary:** the source permits singular rotating-wave form factors; N9e does
+- **Boundary:** the source permits singular rotating-wave form factors; node 11 does
   not claim that generality.
 
 ## Supported boundary
 
 The contracts support the translation-invariant mobile field model, total-momentum
 fiber interpretation, two-level coupling class, and operator-domain obligation.
-The exact source--shell normalization and recovery of N9d are internal
+The exact source--shell normalization and recovery of node 11 are internal
 calculations. No source is used to claim that Poincare representation theory
 selects the interaction profile, internal system, or coupling strength.

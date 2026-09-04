@@ -1,7 +1,9 @@
 # Maxwell Green-Operator Contracts
 
+Consumed by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md).
+
 Recorded: 2026-08-29  
-Role: authoritative boundaries for N4e; the active node reconstructs the semantic
+Role: authoritative boundaries for node 06; the active node reconstructs the semantic
 bridge rather than importing these sources as deductions
 
 ## MG-01 — Green-hyperbolic operator contract
@@ -60,11 +62,11 @@ cohomologies](https://arxiv.org/abs/1401.7563), 2014.
   remain.
 - **Semantic bridge:** the quotient is not only pointwise gauge removal; support
   and topology determine its global completion.
-- **Boundary:** N4e specializes to topologically trivial Minkowski spacetime and
+- **Boundary:** node 06 specializes to topologically trivial Minkowski spacetime and
   does not transfer nondegeneracy claims to arbitrary backgrounds.
 
 ## Extraction rule
 
-N4e may consume only the theorem contracts above. Its displayed Maxwell
+node 06 may consume only the theorem contracts above. Its displayed Maxwell
 identities must still be computed from `d^2=delta^2=0`, formal adjointness,
 Green-operator uniqueness, and the declared support spaces.

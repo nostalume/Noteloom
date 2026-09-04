@@ -1,7 +1,7 @@
 # Collective Response Contracts
 
 Recorded: 2026-08-30  
-Used by: [N8 collective diffusion response](../nodes/08-collective-diffusion-response.md)
+Used by: [collective-response boundary](../nodes/10-collective-response-boundary.md)
 
 This packet isolates the external analytic contracts for the first genuinely
 collective branch. The node itself constructs the slow variable, response, and
@@ -18,7 +18,7 @@ recovery map from one conserved microscopic observable.
   long-wavelength/low-frequency derivative expansion.
 - **Output consumed:** the diffusion equation, `D=sigma/chi`, and the retarded
   density response with its hydrodynamic pole at `omega=-iDk^2`.
-- **Internal use:** N8 re-derives the response from continuity and the leading
+- **Internal use:** node 10 re-derives the response from continuity and the leading
   constitutive map, fixes its own source/sign convention, and checks the two
   noncommuting static and homogeneous limits.
 - **Boundary:** hydrodynamics determines the response from `chi` and `sigma`; it
@@ -38,7 +38,7 @@ recovery map from one conserved microscopic observable.
   slow variables, locality, and the stated KMS assumptions.
 - **Output consumed:** a local effective description of dissipative response and
   fluctuations, with fluctuation relations constraining noise and transport.
-- **Internal use:** N8 uses this only to type the downstream stochastic/large-
+- **Internal use:** node 10 uses this only to type the downstream stochastic/large-
   deviation continuation. The deterministic diffusion reduction does not depend
   on importing the full effective action.
 - **Boundary:** local KMS and a derivative expansion are physical assumptions,

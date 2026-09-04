@@ -1,6 +1,9 @@
 # Global Semantic-Computability Source Contracts
 
-These sources type irreducible theorem inputs and boundaries for N4q. They do not
+Consumed by: [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md)
+and [certified observable window](../nodes/12-certified-observable-window.md).
+
+These sources type irreducible theorem inputs and boundaries for node 09. They do not
 replace the internal same-observable computations in that node.
 
 ## GC-01 — Isospectral sector elimination

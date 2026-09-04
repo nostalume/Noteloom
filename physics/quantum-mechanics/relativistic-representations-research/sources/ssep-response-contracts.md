@@ -1,13 +1,13 @@
 # SSEP Response and Fluctuation Contracts
 
 Recorded: 2026-08-30  
-Used by: [N8a exact SSEP collective regression](../nodes/08a-ssep-exact-collective-regression.md)
-and [N8b equilibrium SSEP current large deviations](../nodes/08b-ssep-current-large-deviation.md)
+Used by: [collective-response boundary](../nodes/10-collective-response-boundary.md)
+and [collective-response boundary](../nodes/10-collective-response-boundary.md)
 
 This packet binds the microscopic model and macroscopic fluctuation statements
 needed for the first evaluated collective response. The linear response,
 transport coefficients, lattice symbol, continuum error, and equilibrium rate
-function are reconstructed inside N8a.
+function are reconstructed inside node 10.
 
 ## SR-01 — Microscopic exclusion and macroscopic fluctuation theory
 
@@ -21,7 +21,7 @@ function are reconstructed inside N8a.
 - **Output consumed:** continuity plus a diffusive constitutive current; the
   mobility-weighted trajectory large-deviation functional; and the microscopic-
   to-hydrodynamic theorem boundary for exclusion processes.
-- **Internal use:** N8a computes the SSEP density generator and response exactly
+- **Internal use:** node 10 computes the SSEP density generator and response exactly
   before using the source to type the full trajectory large-deviation
   continuation.
 - **Boundary:** macroscopic fluctuation theory is a scaling theorem/description,
@@ -40,10 +40,10 @@ function are reconstructed inside N8a.
 - **Output consumed:** diffusion coefficient `D=1`, MFT noise mobility
   `sigma_MFT(rho)=2rho(1-rho)`, the Bernoulli free-energy functional, and an
   exact time-dependent current-fluctuation check against microscopic results.
-- **Internal use:** N8a distinguishes this noise mobility from N8's linear
+- **Internal use:** node 10 distinguishes this noise mobility from node 10's linear
   conductivity, which differs by the conventional factor two, and uses the
   Bernoulli input to reconstruct susceptibility and the static rate function.
-  N8b binds the paper's optimized current function to the same microscopic
+  node 10 binds the paper's optimized current function to the same microscopic
   current evaluated by SR-03.
 - **Boundary:** the paper solves a particular time-dependent MFT current problem
   by an integrable transformation. The nodes use its theorem output without
@@ -77,7 +77,7 @@ function are reconstructed inside N8a.
 
   together with the equilibrium second and fourth cumulants and the current
   large-deviation tail.
-- **Internal use:** N8b specializes both input densities to the same `rho`,
+- **Internal use:** node 10 specializes both input densities to the same `rho`,
   derives the reduced scalar `omega_rho(lambda)`, reconstructs the cumulants,
   and performs the one-dimensional Legendre computation. The exact microscopic
   determinant/Bethe-ansatz derivation remains attached to this source contract.
@@ -87,7 +87,7 @@ function are reconstructed inside N8a.
   universal consequence of diffusion alone.
 
 SR-02 independently recovers this same current generating function from the
-time-dependent SSEP macroscopic fluctuation equations. N8b uses that agreement as
+time-dependent SSEP macroscopic fluctuation equations. node 10 uses that agreement as
 a same-observable microscopic/macroscopic witness, not as permission to transfer
 SSEP integrability to a generic diffusive theory.
 

@@ -15,6 +15,13 @@ determine the scope of the supported result. Detailed derivations, source
 contracts, and executable checks remain in the linked research graph rather than
 being copied here.
 
+The supported generative sub-spine has now been composed separately as
+[*From Field Presentations to Observable-Visible Spectral
+Measures*](observable-visible-spectral-measures.typ), with a compiled
+[PDF](observable-visible-spectral-measures.pdf). That paper follows the concise
+obstruction-to-tool deduction; this Markdown document continues to preserve the
+broader exploration, rejected routes, and changes of viewpoint.
+
 ## 1. A field equation is a presentation, not a prediction
 
 The representation-to-field construction ends with an admissible physical space
@@ -44,7 +51,7 @@ and observable are transported together. It may expose locality, sparsity, or
 conditioning, but it is not automatically a computation reduction. The complete
 cost also includes constructing the transformation, solving in the new
 representation, and recovering the observable. This distinction is developed in
-[N4q](relativistic-representations-research/nodes/04q-semantic-computability.md).
+[field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md).
 
 ## 2. The failed universal-solver search changes the question
 
@@ -52,7 +59,7 @@ The first continuation asked whether bounded spectra could be extracted by a
 universal algebraic replacement for radial or coordinate calculation. The answer
 was negative, but the failure was constructive.
 
-[N4n](relativistic-representations-research/nodes/04n-algebraic-spectrum-bridge.md)
+[field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
 tests several mechanisms on the same capability: hidden symmetry for Coulomb,
 normal form for the oscillator, variational computation for the quartic
 oscillator, isospectral embedding for integrable many-body systems, and resolvent
@@ -61,11 +68,11 @@ one discoverable algebra. What survives is an open graph of verified reductions:
 each edge must name its input, output, equality or error witness, observable
 recovery, and complete cost.
 
-The Dirac--Coulomb branch makes the limitation sharper. [N4o](relativistic-representations-research/nodes/04o-dirac-coulomb-local-graph.md)
+The Dirac--Coulomb branch makes the limitation sharper. [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
 constructs the coupled Hamiltonian from the massive representation carrier, a
 local \(U(1)\) comparison, and a selected time direction. Curvature obstructs the
 free scalar factorization. Rotations still supply an exact invariant
-decomposition, but [N4p](relativistic-representations-research/nodes/04p-dirac-angular-reduction.md)
+decomposition, but [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
 shows that its half-line blocks retain the hard spectral problem. Exact
 decomposition is therefore not the same as semantic or computational compression.
 
@@ -101,13 +108,13 @@ J^\dagger(z-H)^{-1}J
 \]
 
 This is not yet an approximation: it is a block-resolvent identity on its stated
-domain. [N4r](relativistic-representations-research/nodes/04r-field-mechanics-stability.md)
+domain. [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
 uses it to construct prepared mechanics, reconstruction of the eliminated field,
 and observable-stable variation. Difficulty may remain inside \(\Sigma\), so the
 identity is a semantic reduction only when the requested observable needs less
 than the complete field state.
 
-[N4s](relativistic-representations-research/nodes/04s-field-particle-extraction.md)
+[field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
 reverses the earlier representation-to-field direction. A sharp isolated
 translation shell constructs a particle representation; a stable asymptotic
 channel constructs a scattering particle; loss of a sharp shell changes the
@@ -116,22 +123,22 @@ Elementary and composite particles use the same spectral criterion.
 
 The following nodes test how much of this picture survives in concrete models:
 
-- [N4t](relativistic-representations-research/nodes/04t-neutral-composite-same-state.md)
+- [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
   follows one neutral dressed atom through its fiber band, mechanical preparation,
   global spectral selection, and asymptotic channel.
-- [N4u](relativistic-representations-research/nodes/04u-effective-mass-route-audit.md)
+- [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
   compares direct eigenstate differentiation with self-energy curvature on the
   same effective-mass observable. Their common target is exact, while the
   weak-coupling route removes the full Fock eigenproblem only at its declared
   order.
-- [N4v](relativistic-representations-research/nodes/04v-relativistic-mass-shell.md)
+- [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
   shows that a covariant isolated shell constructs its dispersion from one rest
   datum and identifies rest, curvature, and invariant mass under the stated
   differentiability assumptions.
-- [N4w](relativistic-representations-research/nodes/04w-sine-gordon-breather-rest-pole.md)
+- [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
   uses the sine--Gordon breather as an integrable regression: a physical-strip pole
   and residue construct a stable composite mass and fusion channel.
-- [N4x](relativistic-representations-research/nodes/04x-nonintegrable-composite-robustness.md)
+- [field--mechanics boundary](relativistic-representations-research/nodes/09-field-mechanics-reduction-boundary.md)
   separates what survives loss of integrability from what was purchased by
   factorization. Stability can preserve the pole and shell; a channel-destroying
   perturbation shows that symmetry alone need not preserve the old composite.
@@ -146,21 +153,21 @@ The field/particle branch does not cover collective response. A collective
 variable can become autonomous only after an exact quotient or a controlled scale
 limit.
 
-[N8](relativistic-representations-research/nodes/08-collective-diffusion-response.md)
+[collective-response boundary](relativistic-representations-research/nodes/10-collective-response-boundary.md)
 constructs density from a microscopic conserved observable, derives continuity,
 and states a same-observable recovery contract for diffusion. The SSEP regression
 then tests every part of that contract:
 
-- [N8a](relativistic-representations-research/nodes/08a-ssep-exact-collective-regression.md)
+- [collective-response boundary](relativistic-representations-research/nodes/10-collective-response-boundary.md)
   obtains exact finite-lattice density dynamics, susceptibility, conductivity, and
   the continuum error from the microscopic generator.
-- [N8b](relativistic-representations-research/nodes/08b-ssep-current-large-deviation.md)
+- [collective-response boundary](relativistic-representations-research/nodes/10-collective-response-boundary.md)
   constructs a current event and compresses its path law to a scaled generating
   function and one-dimensional dual rate computation.
-- [N8c](relativistic-representations-research/nodes/08c-dephased-quantum-ssep.md)
+- [collective-response boundary](relativistic-representations-research/nodes/10-collective-response-boundary.md)
   derives current relaxation and diffusion in a dephased quantum chain, then
   constructs the classical SSEP quotient by eliminating one-hop coherence.
-- [N8d](relativistic-representations-research/nodes/08d-two-time-quantum-charge.md)
+- [collective-response boundary](relativistic-representations-research/nodes/10-collective-response-boundary.md)
   holds the finite two-time charge event fixed and verifies convergence of its
   complete law, not only its variance.
 
@@ -174,7 +181,7 @@ scales close under the same underlying evolution.
 
 ## 5. One coupling-visible measure unifies several queries
 
-[N9](relativistic-representations-research/nodes/09-observable-dynamics.md)
+[visible spectral measure](relativistic-representations-research/nodes/11-visible-spectral-measure.md)
 classifies three possibilities after selecting an observable:
 
 1. its kernel is invariant, so the observable descends to autonomous dynamics;
@@ -198,8 +205,8 @@ K(t)=\int e^{-it\lambda}M_B(d\lambda).
 \]
 
 Thus the prepared resolvent, memory kernel, threshold boundary, and moment chain
-are different queries on one coupling-visible object. [N9a](relativistic-representations-research/nodes/09a-threshold-spectral-measure.md)
-tests this unity in a rank-one threshold model. [N9b](relativistic-representations-research/nodes/09b-coupling-measure-routes.md)
+are different queries on one coupling-visible object. [visible spectral measure](relativistic-representations-research/nodes/11-visible-spectral-measure.md)
+tests this unity in a rank-one threshold model. [visible spectral measure](relativistic-representations-research/nodes/11-visible-spectral-measure.md)
 then compares symmetry-channel, resolvent, real-time, moment/Lanczos, Euclidean,
 and form-factor routes. They construct or observe the same target with different
 resolution, conditioning, and recovery costs; no route dominates independently of
@@ -211,14 +218,14 @@ The decisive bench asks whether \(M_B\) can be constructed from an actual field
 Hamiltonian and preparation without solving the complete dressed Fock problem,
 then used for both a bound and an open-channel observable.
 
-[N9c](relativistic-representations-research/nodes/09c-field-derived-coupling-measure.md)
+[visible spectral measure](relativistic-representations-research/nodes/11-visible-spectral-measure.md)
 constructs the order-\(g^2\) measure of a regulated massive scalar model. Exact
 boson-number, rotational, and dispersion reductions turn the leading return
 coefficient into one radial energy measure. Its transforms yield a bound pole
 shift, residue/effective-mass data, memory and threshold behavior, and a moment
 chain without reconstructing the dressed state.
 
-[N9d](relativistic-representations-research/nodes/09d-operational-bound-open-channel.md)
+[visible spectral measure](relativistic-representations-research/nodes/11-visible-spectral-measure.md)
 enlarges the prepared space to contain ground and excited inputs. The same
 operator-valued measure then controls a bound observable and a finite-time emitted-
 boson detector event. The continuum boundary is interpreted only through that
@@ -226,7 +233,7 @@ constructed event; it is not silently renamed an \(S\)-matrix or exponential
 lifetime.
 
 The original bridge defect was that this Hamiltonian and its Gaussian profile had
-been supplied independently of the free-field construction. [N9e](relativistic-representations-research/nodes/09e-scalar-interaction-provenance.md)
+been supplied independently of the free-field construction. [visible spectral measure](relativistic-representations-research/nodes/11-visible-spectral-measure.md)
 closes the defect for one model:
 
 ```text
@@ -235,7 +242,7 @@ massive scalar positive shell
   -> declared mobile two-level coupling
   -> self-adjoint translation-covariant Hamiltonian
   -> exact total-momentum fiber
-  -> departure map and the N9d measure.
+  -> departure map and the node 11 measure.
 ```
 
 The profile, two-level system, coupling, and nonrelativistic matter dynamics remain
@@ -245,13 +252,13 @@ Poincare representation theory.
 ### 5.2 Prediction requires an error-bearing window
 
 A complete perturbative coefficient is not automatically a finite-coupling
-prediction. [N9f](relativistic-representations-research/nodes/09f-certified-observable-window.md)
+prediction. [certified observable window](relativistic-representations-research/nodes/12-certified-observable-window.md)
 constructs combined parity before estimating, then obtains a controlled ground-
 energy window and an exact finite-time detector remainder. The norm route becomes
 vacuous at the earlier long-time rate probe, which records a genuine limitation
 rather than an invitation to call the coefficient a lifetime.
 
-[N9g](relativistic-representations-research/nodes/09g-kinetic-scale-reconstruction.md)
+[certified observable window](relativistic-representations-research/nodes/12-certified-observable-window.md)
 constructs the kinetic generator selected by the same measure and proves the
 exponential law in an exact one-excitation Friedrichs comparator. Transfer to the
 full recoil model remains obstructed by a named multiparticle remainder and cross

@@ -6,3 +6,6 @@ info.typ
 /.hugo_build.lock
 /.rumdl_cache/
 /.agents/
+**/.venv/
+**/__pycache__/
+**/*.py[cod]

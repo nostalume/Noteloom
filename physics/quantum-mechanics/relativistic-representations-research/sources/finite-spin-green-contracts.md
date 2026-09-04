@@ -1,8 +1,10 @@
 # Finite-Spin Green Contracts
 
+Consumed by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md).
+
 Recorded: 2026-08-29  
-Role: independent analytic and spin-two boundaries for N4f; the uniform flat-space
-integer-spin construction remains internal to N4a/N4c/N4f
+Role: independent analytic and spin-two boundaries for node 06; the uniform flat-space
+integer-spin construction remains internal to nodes 05 and 06
 
 ## FG-01 — Linearized-gravity Green contract
 
@@ -18,9 +20,9 @@ Mathematical Physics* 25 (2013), 1330003,
   vector and symmetric-tensor wave operators; divergence-free compact test tensors
   generate gauge-invariant observables and causal solution representatives.
 - **Independent check:** the flat, zero-cosmological-constant specialization agrees
-  with N4f's spin-two completion and source quotient.
+  with node 06's spin-two completion and source quotient.
 - **Boundary:** transverse-traceless gauge has additional global obstructions, and
-  phase-space nondegeneracy depends on background topology. N4f uses de Donder, not
+  phase-space nondegeneracy depends on background topology. node 06 uses de Donder, not
   TT gauge, and stays on Minkowski spacetime.
 
 ## FG-02 — Abstract linear gauge contract
@@ -36,8 +38,8 @@ Relativity and Gravitation* 45 (2013), 877-910,
   to solution classes and define a gauge-invariant presymplectic structure.
 - **Semantic bridge:** Green compatibility belongs to a typed gauge complex, not to
   an isolated inverse matrix.
-- **Boundary:** the theorem does not establish the N4a trace-constrained identities;
-  N4f must construct those internally for every finite `s`.
+- **Boundary:** the theorem does not establish the node 05 trace-constrained identities;
+  node 06 must construct those internally for every finite `s`.
 
 ## FG-03 — Symmetric integer-spin action contract
 
@@ -49,14 +51,14 @@ spin](https://doi.org/10.1103/PhysRevD.18.3624), *Physical Review D* 18 (1978),
   rank-`s-1` gauge parameter on flat spacetime.
 - **Output used:** a local gauge-invariant quadratic action and its projected source
   conservation law.
-- **Internal construction already supplied:** N4a constructs `R,C,D` and their
-  shell cohomology; N4c constructs `M`, its inverse, the constrained pairing,
+- **Internal construction already supplied:** node 05 constructs `R,C,D` and their
+  shell cohomology; node 05 constructs `M`, its inverse, the constrained pairing,
   formal self-adjointness, and the Euler operator `E=M D`.
 - **Boundary:** the historical action does not by itself prove causal Green
   compatibility or a countable-spin completion.
 
 ## Extraction rule
 
-N4f may use MG-01's causal exact sequence and FG-01/FG-02 as theorem contracts for
+node 06 may use MG-01's causal exact sequence and FG-01/FG-02 as theorem contracts for
 Green-hyperbolic analysis. Every finite-spin carrier identity, source transformation,
-quotient map, and shell coincidence must be evaluated inside N4f.
+quotient map, and shell coincidence must be evaluated inside node 06.

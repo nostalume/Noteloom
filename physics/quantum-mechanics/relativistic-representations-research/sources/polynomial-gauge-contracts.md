@@ -1,6 +1,8 @@
 # Polynomial Gauge-Resolution Contracts
 
-Status: source packet for `N4a/N4b`; the source bounds comparison claims and does not
+Consumed by: [local symbol complex](../nodes/05-local-symbol-complex.md).
+
+Status: source packet for node 05; the source bounds comparison claims and does not
 replace the node's polynomial-lift or fiber computations
 
 ## `PG-01` — Module-to-gauge construction
@@ -25,7 +27,7 @@ replace the node's polynomial-lift or fiber computations
   different local presentations of the same free module.
 - Boundary: adding an arbitrary contractible polynomial pair or applying a field
   redefinition can change differential order, characteristic strata, or locality
-  of inverse maps. N4a therefore records these costs rather than treating every
+  of inverse maps. node 05 therefore records these costs rather than treating every
   quasi-isomorphism as equally economical.
 
 ## `PG-03` — Physical Wigner content requires an independent check
@@ -35,12 +37,12 @@ replace the node's polynomial-lift or fiber computations
 - Contract: the gauge-inequivalent solutions of the constructed system are checked
   against the irreducible Poincare module induced from the relevant Wigner
   little-group representation.
-- Research use: corroborates N4a's insistence that polynomial covariance and a
+- Research use: corroborates node 05's insistence that polynomial covariance and a
   gauge identity do not by themselves establish the physical fiber.
-- Internal completion: N4a now performs this computation for the symmetric
+- Internal completion: node 05 now performs this computation for the symmetric
   bosonic integer-spin complex through an intrinsic screen exact sequence.
-- Boundary: PG-03 and the N4a bosonic proof do not cover arbitrary mixed-symmetry
-  or half-integer potential complexes; N4b and PG-04 treat the symmetric
+- Boundary: PG-03 and the node 05 bosonic proof do not cover arbitrary mixed-symmetry
+  or half-integer potential complexes; node 05 and PG-04 treat the symmetric
   half-integer branch separately.
 
 ## `PG-04` — Symmetric half-integer potential data
@@ -53,8 +55,8 @@ replace the node's polynomial-lift or fiber computations
   with spinor-traceless parameter.
 - Contract: the constrained symmetric spinor-tensor equation is a local gauge
   formulation intended to transmit the massless half-integer spin sector.
-- Internal completion: N4b reconstructs its auxiliary-variable symbol from the
+- Internal completion: node 05 reconstructs its auxiliary-variable symbol from the
   Clifford action, proves the gauge identity, and computes the little-group
   cohomology and characteristic set.
-- Boundary: neither the source contract nor N4b supplies an action comparison,
+- Boundary: neither the source contract nor node 05 supplies an action comparison,
   massive deformation, mixed-symmetry fermion, or interacting theory.

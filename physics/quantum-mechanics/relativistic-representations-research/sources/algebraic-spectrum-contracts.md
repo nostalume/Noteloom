@@ -1,8 +1,7 @@
 # Algebraic Spectrum and Scattering Contracts
 
 Recorded: 2026-08-29  
-Used by: [N4n adaptive observable reduction
-audit](../nodes/04n-algebraic-spectrum-bridge.md)
+Used by: [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md)
 
 ## AS-01 — Hydrogen dynamical symmetry
 
@@ -38,7 +37,7 @@ audit](../nodes/04n-algebraic-spectrum-bridge.md)
   hypotheses and converts a full spectral equation into an effective equation on
   a selected subspace; the latter source gives explicit eigenvalue/eigenfunction
   fixed-point estimates for discrete spectra.
-- **Internal use:** N4n derives the elementary block elimination directly on the
+- **Internal use:** node 09 derives the elementary block elimination directly on the
   same vector. The source contract supplies analytic hypotheses and the boundary
   of the formal inverse.
 - **Boundary:** above an eliminated-sector threshold, boundary values and open
@@ -79,7 +78,7 @@ audit](../nodes/04n-algebraic-spectrum-bridge.md)
   problem require model-specific construction; rigorous absence results require a
   separately declared integrability class and obstruction method, such as the
   differential-Galois conditions used in the second source.
-- **Research use:** N4n treats hidden-algebra discovery as a bounded ansatz search
+- **Research use:** node 09 treats hidden-algebra discovery as a bounded ansatz search
   with an explicit failure boundary. It does not infer global nonintegrability from
   failure of one vector ansatz.
 - **Boundary:** neither source provides a universal decision procedure for all
@@ -101,7 +100,7 @@ audit](../nodes/04n-algebraic-spectrum-bridge.md)
   extension despite formal scale structure; optimized Ritz spaces compute strongly
   anharmonic spectra; Lax and `R`-matrix constructions produce conserved charges
   within integrable model classes.
-- **Research use:** N4n uses these as four counterexamples to any mandatory
+- **Research use:** node 09 uses these as four counterexamples to any mandatory
   hidden-algebra route, then internally constructs one minimal equality or bound
   for each mechanism.
 - **Boundary:** the sources validate class-specific methods. They do not provide an
@@ -114,7 +113,7 @@ audit](../nodes/04n-algebraic-spectrum-bridge.md)
 - **Output consumed:** for a constructed class of translationally invariant,
   nearest-neighbour two-dimensional quantum spin systems, deciding gapped versus
   gapless is undecidable.
-- **Research use:** N4n therefore cannot claim an algorithm that discovers or
+- **Research use:** node 09 therefore cannot claim an algorithm that discovers or
   selects a successful reduction for every Hamiltonian. It retains only an open
   graph language for auditing reductions that research actually constructs.
 - **Boundary:** this theorem does not make the finite Dirac--Coulomb problem

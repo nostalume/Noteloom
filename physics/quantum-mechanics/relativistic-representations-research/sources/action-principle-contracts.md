@@ -1,6 +1,9 @@
 # Action-Principle Contracts
 
-Status: primary-source packet for `N4c`; historical action claims are bounded here,
+Consumed by: [local symbol complex](../nodes/05-local-symbol-complex.md) and
+[carrier/source obstructions](../nodes/15-carrier-source-obstructions.md).
+
+Status: primary-source packet for `node 05`; historical action claims are bounded here,
 while adjoint identities and equivalence maps must be reconstructed internally
 
 ## `AP-01` — Constrained bosonic action
@@ -16,7 +19,7 @@ while adjoint identities and equivalence maps must be reconstructed internally
   vanish; the traceless projection of the divergence must vanish.
 - Internal obligation: construct the trace-reversal map from the invariant fiber
   pairing, prove formal self-adjointness, derive the projected Noether identity,
-  and prove equivalence with N4a's equation on the constrained carrier.
+  and prove equivalence with node 05's equation on the constrained carrier.
 - Boundary: the paper does not make the action unique from Poincare symmetry alone
   and does not supply an interacting completion.
 
@@ -31,9 +34,9 @@ while adjoint identities and equivalence maps must be reconstructed internally
 - Source consequence: the source condition is a projected divergence condition,
   matched to the constrained gauge parameter rather than ordinary unconstrained
   conservation.
-- Internal completion: N4i chooses the invariant complex Dirac--Fischer pairing,
+- Internal completion: node 07 chooses the invariant complex Dirac--Fischer pairing,
   constructs the gamma/metric trace-reversal map, proves its formal adjoint
-  identity, and compares its Euler equation with N4b's symbol complex.
+  identity, and compares its Euler equation with node 05's symbol complex.
 - Remaining obligation: select a Majorana or other real Grassmann form and its
   sign convention before claiming a real action.
 - Boundary: Majorana reality, positivity, normalization, gauge fixing,
@@ -47,12 +50,12 @@ while adjoint identities and equivalence maps must be reconstructed internally
 - Contract: removing the Fronsdal/Fang--Fronsdal trace constraints while retaining
   locality and an action requires additional compensator and multiplier fields in
   the minimal construction: ranks `s-3,s-4` for bosons and `n-2,n-3` for fermions.
-- Research use: this is not evidence that N4a/N4b are incomplete as constrained
+- Research use: this is not evidence that node 05 is incomplete as a constrained
   free systems. It identifies a distinct off-shell design choice and its auxiliary
   cost.
 - Boundary: equivalence must be tested through local maps, eliminated auxiliary
   equations, and source exchange; equality of free helicity fibers is insufficient.
-- Internal status: N10a and N10b construct the bosonic and fermionic
+- Internal status: node 14 and node 14 construct the bosonic and fermionic
   compensator-only local equation complexes from their gauge residuals and prove
   gauge-quotient equivalence with the corresponding constrained complexes. They do
   not promote those results to Euler/action or source-response equivalences; the
@@ -66,6 +69,6 @@ while adjoint identities and equivalence maps must be reconstructed internally
   in free current exchange, whereas a gauge-invariant nonlocal equation is not
   selected uniquely by its vacuum solution space; the Bianchi identity and source
   coupling distinguish the proper Lagrangian representative.
-- Research use: N4c must audit equation equivalence at three different strengths:
+- Research use: node 05 must audit equation equivalence at three different strengths:
   physical quotient, local off-shell Euler complex, and source-response kernel.
 - Boundary: this contract does not establish an interacting equivalence.

@@ -1,7 +1,7 @@
 # Sine-Gordon Breather Source Contracts
 
 These contracts support
-[N4w](../nodes/04w-sine-gordon-breather-rest-pole.md). They separate exact
+[field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md). They separate exact
 factorized-scattering inputs, field-access inputs, ultraviolet scale matching,
 and the still-open constructive-locality boundary.
 
@@ -12,7 +12,7 @@ and the still-open constructive-locality boundary.
 - **Output consumed:** an exactly solvable `1+1`-dimensional gauge model can
   generate a nonzero particle mass without a conventional symmetry-breaking
   mass term.
-- **Research use:** N4w retains the massless Schwinger model as a semantic-
+- **Research use:** node 09 retains the massless Schwinger model as a semantic-
   reconstruction control but does not select it for the present test, because
   the target requires a nontrivial constituent-channel bound pole and scattering
   fusion.
@@ -38,7 +38,7 @@ and the still-open constructive-locality boundary.
 
   residue fusion rules defining amplitudes with breathers; and odd charge parity
   of `B_1`.
-- **Research use:** N4w reconstructs the mass formula from the pole rapidity and
+- **Research use:** node 09 reconstructs the mass formula from the pole rapidity and
   total invariant instead of importing the displayed spectrum as an unexplained
   result.
 - **Boundary:** the S-matrix solution assumes the factorized-scattering framework;
@@ -54,7 +54,7 @@ and the still-open constructive-locality boundary.
 - **Output consumed:** the sine-Gordon soliton is identified with the massive-
   Thirring fermion, while the neutral sine-Gordon sector corresponds to the
   neutral Thirring sector.
-- **Research use:** N4w interprets a breather pole as a fermion--antifermion bound
+- **Research use:** node 09 interprets a breather pole as a fermion--antifermion bound
   state without making constituent appearance the definition of the particle.
 - **Boundary:** modern global-form and operator-algebra refinements of bosonization
   are not reconstructed here; the correspondence is not used as the proof of the
@@ -68,8 +68,8 @@ and the still-open constructive-locality boundary.
   and the paper's normalization of local exponential fields.
 - **Output consumed:** explicit integral representations for matrix elements of
   local exponential fields between the vacuum and asymptotic particle states.
-- **Research use:** N4w selects an odd local combination with nonzero `B_1`
-  one-particle form factor, which supplies N4s's nonzero field-access map.
+- **Research use:** node 09 selects an odd local combination with nonzero `B_1`
+  one-particle form factor, which supplies node 09's nonzero field-access map.
 - **Boundary:** form-factor solutions provide local-operator matrix elements
   within the bootstrap framework; they do not alone prove existence of the full
   Haag--Kastler net.
@@ -82,8 +82,8 @@ and the still-open constructive-locality boundary.
   normalization of the cosine operator and its dimensional coupling.
 - **Output consumed:** an exact relation between that ultraviolet coupling and
   the asymptotic soliton mass, plus the vacuum energy.
-- **Research use:** this contract can replace N4w's physical input `M_s` when the
-  ultraviolet normalization is fixed exactly. N4w keeps `M_s` as its primary
+- **Research use:** this contract can replace node 09's physical input `M_s` when the
+  ultraviolet normalization is fixed exactly. node 09 keeps `M_s` as its primary
   renormalization condition so convention-dependent constants do not enter the
   pole-to-mass construction.
 - **Boundary:** the formula must not be transferred across action, normal-ordering,
@@ -97,11 +97,11 @@ and the still-open constructive-locality boundary.
   and the operator-algebraic wedge-local construction.
 - **Output consumed:** a bound-state operator can cancel pole residues and produce
   weakly commuting wedge-field candidates on a dense domain.
-- **Research use:** N4w uses this as evidence that fusion-pole data participate in
+- **Research use:** node 09 uses this as evidence that fusion-pole data participate in
   field construction, not only in spectral naming.
 - **Boundary:** self-adjointness, strong commutativity, nontrivial local
   intersections, and extension to the matrix-valued sine-Gordon S-matrix remain
-  open in the cited construction. N4w therefore does not label its bootstrap
+  open in the cited construction. node 09 therefore does not label its bootstrap
   field-access result a complete constructive local-net theorem.
 
 ## Supported boundary
