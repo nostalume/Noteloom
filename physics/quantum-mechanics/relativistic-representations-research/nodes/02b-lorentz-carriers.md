@@ -363,6 +363,10 @@ the massless case. [N3](03-realization-bridge.md) uses that map to construct the
 orbitwise field intertwiner. [N4](04-local-symbol-extension.md) must separately
 construct a Lorentz-equivariant polynomial symbol with the stated standard-fiber
 kernel. Carrier occurrence does not imply locality.
+[N10h](10h-carrier-to-grammar.md) separately consumes the vector metric, symmetric
+carrier functor, and N4b's Clifford extension to generate natural-operator grammars;
+it proves that the highest-weight label and physical intertwiner alone are
+insufficient inputs for that task.
 
 ## Checks and boundary
 

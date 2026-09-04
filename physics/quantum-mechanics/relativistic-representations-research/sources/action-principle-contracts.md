@@ -52,6 +52,11 @@ while adjoint identities and equivalence maps must be reconstructed internally
   cost.
 - Boundary: equivalence must be tested through local maps, eliminated auxiliary
   equations, and source exchange; equality of free helicity fibers is insufficient.
+- Internal status: N10a and N10b construct the bosonic and fermionic
+  compensator-only local equation complexes from their gauge residuals and prove
+  gauge-quotient equivalence with the corresponding constrained complexes. They do
+  not promote those results to Euler/action or source-response equivalences; the
+  multipliers and current-exchange obligations remain here.
 
 ## `AP-04` — Current exchange distinguishes equation presentations
 

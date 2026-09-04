@@ -1,14 +1,18 @@
 # N5 — Low-Spin Comparison as a Recovery Test
 
-Status: supported bounded synthesis for spins `0,1/2,1,3/2,2`; conventional
-massive spin-`3/2` and spin-`2` carrier equivalences remain open  
+Status: supported bounded synthesis for spins `0,1/2,1,3/2,2`; N10j upgrades the
+massless integer-spin potential/curvature comparison to a polynomial forward map
+and physical-shell isomorphism, while conventional massive spin-`3/2` and spin-`2`
+carrier equivalences remain open
 Consumes: [N3 realization bridge](03-realization-bridge.md),
 [N3a massive spin one](03a-massive-spin-one.md),
 [N3b massless helicity one](03b-massless-helicity-one.md),
 [N4 local symbols](04-local-symbol-extension.md),
 [N4a bosonic potentials](04a-polynomial-complex-details.md),
 [N4b fermionic potentials](04b-half-integer-potential.md), and
-[N4o massive Dirac construction](04o-dirac-coulomb-local-graph.md)  
+[N4o massive Dirac construction](04o-dirac-coulomb-local-graph.md), with the
+[N10j curvature generator](10j-generated-curvature-compatibility.md) as a later
+revision of the integer-spin comparison
 Produces: the bounded comparison contract and the supported input for manuscript
 Section 7
 
@@ -212,9 +216,16 @@ ker D_2(k)/im R_2(k)
 
 The direct chiral curvature systems at `h=3/2` and `h=2`, together with their
 conjugates, have the same two character lines. The common-fiber construction in
-Section 1 therefore gives orbitwise representation equivalences. No polynomial
-intertwiner with a local inverse between those curvatures and the potentials has
-yet been constructed, so the stronger local-complex claim remains open.
+Section 1 therefore gives orbitwise representation equivalences.
+
+N10j now strengthens the integer-spin statement. For every `s>=1`, it generates a
+degree-`s` polynomial map from the symmetric potential to the paired chiral
+curvature, proves that it kills the gradient gauge image, and computes that its
+two screen endpoint lines map nontrivially to the two direct chiral kernels. Thus
+spin two has a physical-shell potential/curvature isomorphism, not merely a
+common-fiber comparison. Momentum homogeneity simultaneously proves that its
+inverse cannot be a nonnegative-degree polynomial local operator. The half-integer
+spin-`3/2` local curvature map remains open.
 
 The `n=1` vector-spinor complex may be called the massless symmetric
 Rarita--Schwinger/Fang--Fronsdal branch, and the `s=2` symmetric tensor complex the
@@ -230,7 +241,7 @@ outputs of N4 and are not comparison theorems of this node.
 | `1/2` | massless blockwise identity; massive orbitwise equivalence after Dirac factorization | chirality pairing, first order, mass coupling, parity |
 | `1` | Maxwell potential/curvature physical-shell isomorphism; Proca/chiral orbitwise equivalence | gauge or vector carrier, duality/reality, minimality conditions |
 | `3/2` | massless common-fiber orbitwise equivalence | vector-spinor potential, gamma constraints, gauge; local curvature map open |
-| `2` | massless common-fiber orbitwise equivalence | metric potential, trace constraints, gauge; local curvature map open |
+| `2` | degree-two polynomial forward curvature map and physical-shell isomorphism | metric potential, trace constraints, gauge; polynomial local inverse obstructed |
 
 The low-spin cases validate the universal physical fibers and expose presumption
 debt. They do not select a unique equation. This is the stopping benchmark:
@@ -245,3 +256,5 @@ paper's supported representation-recovery theorem and requires a separate node.
   are promoted.
 - `N5 -> N7`: the failure to upgrade most common-fiber maps to local action
   equivalences supplies the equivalence hierarchy and stop boundary.
+- `N5 -> N10j`: pass the common-fiber-only integer-spin boundary; N10j owns the
+  generated strengthening, while this table is updated as its compact synopsis.

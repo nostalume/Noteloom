@@ -453,3 +453,14 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   console.table(positiveShellResults);
   console.log('half-integer positive spinor-screen metric checks: pass');
 }
+
+export {
+  fieldConstraint,
+  gammaInsertion,
+  gammaTrace,
+  kronecker,
+  momentumClifford,
+  screenRestriction,
+  spinorRealDimension,
+  symbols,
+};

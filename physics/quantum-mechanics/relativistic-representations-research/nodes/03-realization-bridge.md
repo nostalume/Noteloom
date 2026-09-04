@@ -259,6 +259,11 @@ Still open outside this node:
 - polynomial potential resolutions and their extra characteristic branches;
 - parity, reality, action, interaction, and countable-tower completion.
 
+[N10h](10h-carrier-to-grammar.md) sharpens the first two boundaries: once a
+symmetric off-shell carrier functor is declared, its invariant operator grammar can
+be generated and consumed by the residual solver; the physical fiber or Lorentz
+label alone is correctly refused because it does not choose that presentation.
+
 ## Downstream interacting reversal
 
 [N4s](04s-field-particle-extraction.md) reverses this node's question for an

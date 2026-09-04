@@ -125,6 +125,22 @@ function traceSymbol(degree) {
   return matrix;
 }
 
+function metricInsertionSymbol(degree) {
+  if (degree < 0) return zeros(0, 0);
+  const input = basis(degree);
+  const output = basis(degree + 2);
+  const outputIndex = indexOfBasis(degree + 2);
+  const matrix = zeros(output.length, input.length);
+  input.forEach((exponent, column) => {
+    for (let index = 0; index < 4; index += 1) {
+      const target = [...exponent];
+      target[index] += 2;
+      matrix[outputIndex.get(target.join(','))][column] += metric[index];
+    }
+  });
+  return matrix;
+}
+
 function rank(matrix) {
   if (matrix.length === 0) return 0;
   const work = matrix.map((row) => [...row]);
@@ -273,12 +289,14 @@ export {
   contractionSymbol,
   identity,
   metric,
+  metricInsertionSymbol,
   multiply,
   multiplicationSymbol,
   nullspace,
   rank,
   scale,
   tolerance,
+  traceSymbol,
   vertical,
   zeros,
 };
