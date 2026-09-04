@@ -472,7 +472,7 @@ $
 We still apply quantum style where the commutator generate $i$ the imaginary unit.
 
 $
-  [hat(Gamma)^i, hat(Gamma)^j] = i epsilon^(i j k)hat(Gamma)_k
+  [hat(Gamma)^i, hat(Gamma)^j] = i epsilon^(i j k) hat(Gamma)_k
 $
 
 $
@@ -538,7 +538,7 @@ $
 Indeed, $kappa = plus.minus m s$.
 
 $
-  f_"rest" (x,theta) = C_1 e^(i m x_0) (cosh theta/2)^(2s) + C_2 e^(-i m x_0) (sinh theta/2)^(2s)
+  f_"rest" (x,theta) = C_1 e^(i m x_0) (cosh theta/2)^(2 s) + C_2 e^(-i m x_0) (sinh theta/2)^(2 s)
 $
 
 For a *fixed* axial spin system.
@@ -1052,7 +1052,7 @@ $
 $
 
 $
-  overline(phi)(S,n)(bold(z)) = sum_(n=0)^(2 S) N(S,n) (-z_1)^(n) z_2^(2S-n), quad S + m_s = n, thick S-m_s = 2 S - n
+  overline(phi)(S,n)(bold(z)) = sum_(n=0)^(2 S) N(S,n) (-z_1)^(n) z_2^(2 S-n), quad S + m_s = n, thick S-m_s = 2 S - n
 $
 
 If we fix $hat(S)$ as matrix act on $psi(x)$ in decomposition
@@ -1495,5 +1495,5 @@ $
 
 $
                                            (hat(p)_mu R^mu) f(j_1,j_2) & = m f(j_1 -1/2,j_2 + 1/2) \
-  ((2j_1) !)/((2j_2) !)(hat(p)_mu R^(mu))^(2abs(j_1 - j_2)) f(j_1,j_2) & = m^(2abs(j_1-j_2)) f(j_2,j_1)
+  ((2 j_1) !)/((2 j_2) !)(hat(p)_mu R^(mu))^(2 abs(j_1 - j_2)) f(j_1,j_2) & = m^(2 abs(j_1-j_2)) f(j_2,j_1)
 $

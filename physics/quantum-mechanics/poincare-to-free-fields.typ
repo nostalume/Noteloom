@@ -151,7 +151,7 @@ Thus a momentum is a joint spectral value of translations. The Lorentz action on
 momenta is forced by preservation of the translation pairing:
 
 $
-  (A dot p)(a):=p(Lambda(A)^(-1)a),
+  (A dot p)(a):=p(Lambda(A)^(-1) a),
   quad
   (A dot p)(Lambda(A)a)=p(a).
 $
@@ -237,7 +237,7 @@ expresses a bundle section as $[B(p),psi(p)]$. If
 $B'(p)=B(p)r(p)$, equality of the same bundle element computes
 
 $
-  psi'(p)=sigma(r(p))^(-1)psi(p).
+  psi'(p)=sigma(r(p))^(-1) psi(p).
 $
 
 The coordinate changes; the state does not.
@@ -545,7 +545,7 @@ It distributes one symmetric tensor between the two carrier factors. Multiplying
 the output by $Omega^r$ then constructs, for $0<=r<=min(m,n)$,
 
 $
-  I_r:"Sym"^(m+n-2r)(W)
+  I_r:"Sym"^(m+n-2 r)(W)
       arrow.r "Sym"^m(W) times.o "Sym"^n(W),
   \
   I_r(f)=Omega^r dot Delta_(m-r,n-r)(f).
@@ -562,7 +562,7 @@ $
 then yields the multiplicity-free restriction
 
 $
-  Res_(K_k)F_(m,n)
+  Res_(K_k) F_(m,n)
     tilde.equiv
     "Sym"^(m+n)(W) plus.o "Sym"^(m+n-2)(W)
       plus.o dots plus.o "Sym"^abs(m-n)(W).
@@ -575,7 +575,7 @@ $
 $
 
 and the actual map passed downstream is
-$j_s^(m,n)=I_r:V_s arrow.r F_(m,n)$. In the chiral carrier $F_(2s,0)$ this
+  $j_s^(m,n)=I_r:V_s arrow.r F_(m,n)$. In the chiral carrier $F_(2 s,0)$ this
 map is the identity and no lower rest spin occurs.
 
 == Null restriction and the direct helicity line
@@ -619,7 +619,7 @@ kernel modulo a gauge image, constructed in @sec-realization.
 #remark[Section output][
   For each directly occurring massive spin or massless
   helicity, the construction exports
-  $(F_(m,n),Res_(K_k)F_(m,n),j_sigma)$ with an explicit $K_k$ intertwiner.
+  $(F_(m,n),Res_(K_k) F_(m,n),j_sigma)$ with an explicit $K_k$ intertwiner.
   Occurrence inside a carrier does not yet provide a local equation, a positive
   norm on the whole carrier, or a gauge resolution.
 ]
@@ -662,7 +662,7 @@ the orbit is fixed by its value above $k$, and that value must satisfy the same
 stabilizer identity. Ordinary orbitwise realizations are therefore classified by
 
 $
-  "Hom"_(K_k)(V_sigma,"Res"_(K_k)F).
+  "Hom"_(K_k)(V_sigma,"Res"_(K_k) F).
 $
 
 Using the standard transport only for coordinates, the resulting field amplitude
@@ -673,16 +673,16 @@ $
 $
 
 If $B'(p)=B(p)r(p)$, the same state has
-$psi'(p)=sigma(r(p))^(-1)psi(p)$, and the two field expressions coincide:
+$psi'(p)=sigma(r(p))^(-1) psi(p)$, and the two field expressions coincide:
 
 $
   rho(B'(p))j psi'(p)
-    =rho(B(p))rho(r(p))j sigma(r(p))^(-1)psi(p)
+    =rho(B(p))rho(r(p))j sigma(r(p))^(-1) psi(p)
     =rho(B(p))j psi(p).
 $
 
 To verify covariance, put $q=A^(-1) dot p$ and use the already constructed
-$w(A,p)=B(p)^(-1)A B(q)$. Evaluation on the same wavefunction gives
+$w(A,p)=B(p)^(-1) A B(q)$. Evaluation on the same wavefunction gives
 
 $
   rho(A)[cal(W)_j psi](q)
@@ -796,7 +796,7 @@ treats. @sec-realization does not infer it from the algebraic intertwiner.
 For a cyclic covector $lambda in F^*$, a covariant field may be encoded by
 
 $
-  [cal(C)_(rho,lambda)Phi](x,B)
+  [cal(C)_(rho,lambda) Phi](x,B)
     =lambda(rho(B^(-1))Phi(x)).
 $
 
@@ -805,8 +805,8 @@ covectors in the orbit span annihilate $Phi$, hence $Phi=0$. Evaluating the left
 Poincare action on the same field gives
 
 $
-  L_g cal(C)_(rho,lambda)Phi
-    =cal(C)_(rho,lambda)T_rho(g)Phi.
+  L_g cal(C)_(rho,lambda) Phi
+    =cal(C)_(rho,lambda) T_rho(g)Phi.
 $
 
 This map points from a field to scalar coefficient functions. For a nontrivial
@@ -904,7 +904,7 @@ families below establish existence by constructing their symbols explicitly.
 Fix $m>0$ and $s in 1/2 bb(N)_0$. @sec-lorentz-carriers constructed the chiral carrier
 
 $
-  F_s^("ch")="Sym"^(2s)(S),
+  F_s^("ch")="Sym"^(2 s)(S),
 $
 
 whose restriction to the massive stabilizer is exactly $V_s$, with no lower rest
@@ -999,7 +999,7 @@ Fourier substitution yields the familiar index form only after the invariant map
 has been constructed:
 
 $
-  partial^(A A') phi_(A A_2 dots A_(2h))=0.
+  partial^(A A') phi_(A A_2 dots A_(2 h))=0.
 $
 
 This is a gauge-free curvature realization. A potential requires a longer complex
@@ -1278,8 +1278,8 @@ $
 the invariant equation $Gamma_Q r=0$ evaluates to
 
 $
-  partial_(z_-)f_+=0,
-  quad partial_(z_+)f_-=0.
+  partial_(z_-) f_+=0,
+  quad partial_(z_+) f_-=0.
 $
 
 Homogeneity then leaves
@@ -1320,9 +1320,9 @@ For every separate finite label, @tab-local-families summarizes the checked rout
     table.header(
       [*Input*], [*Carrier*], [*Symbol/complex*], [*Physical fiber*],
     ),
-    [massive $s$], [chiral $"Sym"^(2s)(S)$],
+    [massive $s$], [chiral $"Sym"^(2 s)(S)$],
       [$p^2-m^2$], [$V_s$],
-    [massless $h$], [chiral $"Sym"^(2h)(S)$],
+    [massless $h$], [chiral $"Sym"^(2 h)(S)$],
       [first-order contraction], [$bb(C)_(-h)$; conjugate gives $+h$],
     [integer $s>=1$], [double-traceless symmetric potential],
       [$G_s arrow.r F_s arrow.r F_s$], [$bb(C)_(+s) plus.o bb(C)_(-s)$],
@@ -1440,7 +1440,7 @@ $
 $
 
 Thus a compact source $J$ couples gauge-invariantly precisely when
-$R_s^dagger J=0$. For the trace-reversed source $K=M_s^(-1)J$, the same identity
+$R_s^dagger J=0$. For the trace-reversed source $K=M_s^(-1) J$, the same identity
 turns admissibility into $C_s K=0$.
 
 === Fermionic trace reversal
@@ -1475,7 +1475,7 @@ Evaluation on those same layers gives
 $
   M_n h_0=h_0,
   quad M_n(Y h_1)=-n Y h_1,
-  quad M_n(Y^2h_2)=-n Y^2h_2.
+  quad M_n(Y^2 h_2)=-n Y^2 h_2.
 $
 
 Hence $M_0=1$ and $M_n$ is invertible for every $n>=1$ without a component
@@ -1499,7 +1499,7 @@ $
   R_n^dagger M_n=B_n.
 $
 
-Thus $R_n^dagger J=0$ becomes $B_n M_n^(-1)J=0$. A real Grassmann or Majorana
+Thus $R_n^dagger J=0$ becomes $B_n M_n^(-1) J=0$. A real Grassmann or Majorana
 action would require an additional real-form convention; the complex
 formal-adjoint construction does not select one.
 
@@ -1526,7 +1526,7 @@ retarded support for $tau=+$ and advanced support for $tau=-$. Naturality and
 uniqueness make them commute with the constant-coefficient complex maps
 @baer2015 @hack-schenkel2013.
 
-For an admissible bosonic source, set $K=M_s^(-1)J$ and define
+For an admissible bosonic source, set $K=M_s^(-1) J$ and define
 
 $
   phi_J^tau=G_(F,s)^tau K,
@@ -1542,7 +1542,7 @@ $
     =J.
 $
 
-For a fermionic source put $K=M_n^(-1)J$ and
+For a fermionic source put $K=M_n^(-1) J$ and
 
 $
   psi_J^tau=S_n g_n^tau K,
@@ -1592,15 +1592,15 @@ The causal map is
 
 $
   cal(I)_s[J]
-    =[Delta_(F,s)M_s^(-1)J].
+    =[Delta_(F,s) M_s^(-1) J].
 $
 
 If $J$ changes by $E_s a$, then
 
 $
-  Delta_(F,s)M_s^(-1)E_s a
+  Delta_(F,s) M_s^(-1) E_s a
     =Delta_(F,s)(p^2-R_s C_s)a
-    =-R_s Delta_(G,s)C_s a,
+    =-R_s Delta_(G,s) C_s a,
 $
 
 which is gauge. Hence $cal(I)_s$ is a map of quotient classes.
@@ -1615,27 +1615,27 @@ $
   phi'=phi+R_s epsilon.
 $
 
-Then $C_s phi'=0$ and $H_(F,s)phi'=0$. Wave exactness constructs compact $a,b$
+Then $C_s phi'=0$ and $H_(F,s) phi'=0$. Wave exactness constructs compact $a,b$
 with
 
 $
-  Delta_(F,s)a=phi',
+  Delta_(F,s) a=phi',
   quad
-  C_s a=H_(G,s)b.
+  C_s a=H_(G,s) b.
 $
 
 The corrected compact datum $a'=a-R_s b$ obeys $C_s a'=0$ and
-$[Delta_(F,s)a']=[phi]$. Thus $J=M_s a'$ is admissible and
+$[Delta_(F,s) a']=[phi]$. Thus $J=M_s a'$ is admissible and
 $cal(I)_s[J]=[phi]$.
 
-For injectivity, suppose $Delta_(F,s)S=R_s chi$ with compact $S$, $C_s S=0$, and
+For injectivity, suppose $Delta_(F,s) S=R_s chi$ with compact $S$, $C_s S=0$, and
 spacelike-compact $chi$. Applying $C_s$ and then wave exactness constructs compact
 $b,a$ such that
 
 $
-  chi=Delta_(G,s)b,
+  chi=Delta_(G,s) b,
   quad
-  S-R_s b=H_(F,s)a.
+  S-R_s b=H_(F,s) a.
 $
 
 Applying $C_s$ to the second equality gives
@@ -1672,7 +1672,7 @@ $
 The causal bridge is
 
 $
-  cal(I)_n[J]=[S_n Delta_n M_n^(-1)J].
+  cal(I)_n[J]=[S_n Delta_n M_n^(-1) J].
 $
 
 Its inverse is explicitly support preserving. For a solution $psi$, choose a
@@ -1712,7 +1712,7 @@ exactness steps construct compact $b,c$ with
 $
   epsilon=Delta_n b,
   quad
-  S_n K-R_n b=p^2c.
+  S_n K-R_n b=p^2 c.
 $
 
 Applying $B_n$ makes compact wave uniqueness give $b=-2B_n c$; substitution and
@@ -1738,12 +1738,12 @@ For $p in cal(O)_+={p mid p^2=0,p^0>0}$, define on the same source class
 
 $
   W_s[J](p)
-    ="res"_p(M_s^(-1)J_hat(p))
+    ="res"_p(M_s^(-1) J_hat(p))
     in "Sym"_0^s(Q_p times.o bb(C))^*.
 $
 
 Admissibility places the trace-reversed datum in $ker D_s(p)$. If the source
-changes by $E_s a$, then on shell $M_s^(-1)E_s a=-R_s C_s a$, and screen restriction
+changes by $E_s a$, then on shell $M_s^(-1) E_s a=-R_s C_s a$, and screen restriction
 kills the gauge image. Thus $W_s$ is defined on $cal(O)_s^bb(R)$.
 
 The Euclidean screen metric and the invariant measure
@@ -1796,7 +1796,7 @@ $
 
 === Fermionic particle and antiparticle map
 
-For a fermionic source set $K_J=M_n^(-1)J$ and first construct an actual on-shell
+For a fermionic source set $K_J=M_n^(-1) J$ and first construct an actual on-shell
 field amplitude
 
 $
@@ -1950,14 +1950,14 @@ Thus quantization returns exactly the shell vector that entered it.
 For fermions, realify the paired source image and define
 
 $
-  b_n(x)=a(W_n^("pair")x)+a^dagger(W_n^("pair")x)
+  b_n(x)=a(W_n^("pair") x)+a^dagger(W_n^("pair") x)
 $
 
 on $Gamma_-(cal(H)_("src",n))$. The normalized causal equality gives
 
 $
   {b_n(x),b_n(y)}
-    =2 "Re" innerproduct(W_n^("pair")x,W_n^("pair")y)
+    =2 "Re" innerproduct(W_n^("pair") x,W_n^("pair") y)
     =tau_n(x,y)1.
 $
 
@@ -1965,7 +1965,7 @@ It vanishes for causally disjoint supports, proving graded locality. The same
 vacuum calculation gives
 
 $
-  P_1 b_n(x)Omega=iota_1(W_n^("pair")x).
+  P_1 b_n(x)Omega=iota_1(W_n^("pair") x).
 $
 
 Faithfulness on both branches makes the recovery null spaces coincide:
@@ -1974,7 +1974,7 @@ $
   x=0
   <=> W x=0
   <=> "field"(x)Omega=0
-  <=> P_1"field"(x)Omega=0.
+  <=> P_1 "field"(x)Omega=0.
 $
 
 #theorem[Causal and free-quantum recovery][
@@ -2039,7 +2039,7 @@ $
 then the common-fiber composite
 
 $
-  bar(L)_k=(j')^(-1)j
+  bar(L)_k=(j')^(-1) j
 $
 
 is an orbitwise representation equivalence. It depends on the choices in $j,j'$
@@ -2190,7 +2190,7 @@ At $s=1$, the bosonic potential complex evaluates to
 $
   R(p)alpha=p alpha,
   quad
-  K_"Max"(p)A=i_p(p and A)=p^2A-p(p dot A).
+  K_"Max"(p)A=i_p(p and A)=p^2 A-p(p dot A).
 $
 
 The curvature operation kills gauge on the same scalar:
@@ -2369,7 +2369,7 @@ Poincare intertwiner. If that intertwiner is unitary, symmetric or antisymmetric
 functoriality constructs
 
 $
-  Gamma_(epsilon_("stat"))(U_1)iota_1(u)=iota_1(U_1u),
+  Gamma_(epsilon_("stat"))(U_1)iota_1(u)=iota_1(U_1 u),
   quad epsilon_("stat") in {+,-}.
 $
 
@@ -2396,7 +2396,7 @@ map $L$, the required equalities have the form
 $
   cal(A)'[L phi]=cal(A)[phi]+"boundary",
   quad
-  J'=L^(-dagger)J,
+  J'=L^(-dagger) J,
   quad
   innerproduct(J',L phi)=innerproduct(J,phi).
 $

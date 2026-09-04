@@ -340,7 +340,7 @@ $
 Given $H$:
 
 $
-  B = mat(0, B_(12), B_(13), dots.c, B_(1n); -B_(12), 0, B_(23), dots.c, B_(2n); -B_(13), -B_(23), 0, dots.c, B_(3n); dots.c; -B_(1n), -B_(2n), -B_(3n), dots.c, 0) \
+    B = mat(0, B_(1 2), B_(1 3), dots.c, B_(1 n); -B_(1 2), 0, B_(2 3), dots.c, B_(2 n); -B_(1 3), -B_(2 3), 0, dots.c, B_(3 n); dots.c; -B_(1 n), -B_(2 n), -B_(3 n), dots.c, 0) \
   H = 1/2 sum_(j,k=1)^n B_(j k) theta_j theta_k \
 $
 
@@ -745,7 +745,7 @@ And we actually acquire a more ease representation as $H_bold(alpha)$.
   As for algebra $lie(s o)(2n)$, the antisymmetric matrix should be denoted as $M_(i j) = - M_(j i) = - M_(i j)^T$ for $i, j = 1,dots.c,2n$.
 
   $
-    (M_(i j))_(alpha beta) = delta_(a,alpha)delta_(b,beta) - delta_(a,beta) delta_(b,alpha) \
+    (M_(i j))_(alpha beta) = delta_(a,alpha) delta_(b,beta) - delta_(a,beta) delta_(b,alpha) \
   $
 
   We should notie that one should transpose the index to sum again in second term, thus given $(i,j) (k,l)$, we should merge $j,k$ first and then $i,k$.
@@ -757,7 +757,7 @@ And we actually acquire a more ease representation as $H_bold(alpha)$.
   We define the Cartan subalgebra as, for maximal $n$ ranks for $lie(s o)(2n)$:
 
   $
-    H_i = M_(2i-1,2i) quad i = 1,2,dots.c,n
+  H_i = M_(2 i-1,2 i) quad i = 1,2,dots.c,n
   $
 
   Which is *not* diagonalizable actually, that it must mix four elements by previous calculation. If one need to diagonalize such basis, we should take in $bb(C)$ with $i$ factor appended. Rank $n$ is the consequence derived from maximally $n$ independent rotation.
@@ -765,16 +765,16 @@ And we actually acquire a more ease representation as $H_bold(alpha)$.
   We aren't lucky enough to extract the scalar for a single basis, rather those are scalars distributing around different ones. Thus, we choose a vector format to calculate by choose a various $j,k = 1,2,dots.c,n$ basis:
 
   $
-    bold(M) = a M_(2j-1,2k-1) + b M_(2j,2k-1) + c M_(2j-1,2k) + d M_(2j,2k) \
-    [H_i,bold(M)] = a (delta_(2i,2j-1) M_(2i-1,2k-1) - delta_(2i-1,2j-1) M_(2i,2k-1) + delta_(2k-1,2i-1) M_(2i,2j-1) - delta_(2k-1,2i) M_(2i-1,2j-1)) + dots.c \
+  bold(M) = a M_(2 j-1,2 k-1) + b M_(2 j,2 k-1) + c M_(2 j-1,2 k) + d M_(2 j,2 k) \
+  [H_i,bold(M)] = a (delta_(2 i,2 j-1) M_(2 i-1,2 k-1) - delta_(2 i-1,2 j-1) M_(2 i,2 k-1) + delta_(2 k-1,2 i-1) M_(2 i,2 j-1) - delta_(2 k-1,2 i) M_(2 i-1,2 j-1)) + dots.c \
   $
 
-  We suddenly found that $2i != 2j-1$ ever and ever because one is odd and one is even! We immediately reduce the index into $2i-1,2j-1$ or $2k-1,2i-1$. Then, we note that $delta_(i,j) M_(2i,2k-1) = M_(2j,2k-1)$, $delta_(k,i) M_(2i,2j-1) = - M_(2j-1,2k)$.
+We suddenly found that $2 i != 2 j-1$ ever and ever because one is odd and one is even! We immediately reduce the index into $2 i-1,2 j-1$ or $2 k-1,2 i-1$. Then, we note that $delta_(i,j) M_(2 i,2 k-1) = M_(2 j,2 k-1)$, $delta_(k,i) M_(2 i,2 j-1) = - M_(2 j-1,2 k)$.
 
   Thus we choose:
   $
     & balpha = eta bue_j + eta' bue_k quad j!= k quad eta, eta' = 1,-1 \
-    & E_balpha = 1/2 (M_(2j-1,2k-1) + eta M_(2j,2k-1) + eta' M_(2j-1,2k) - eta eta' M_(2j,2k)) \
+  & E_balpha = 1/2 (M_(2 j-1,2 k-1) + eta M_(2 j,2 k-1) + eta' M_(2 j-1,2 k) - eta eta' M_(2 j,2 k)) \
     & balpha(H_i) = eta delta_(i,j) + eta' delta_(i,k) \
     & [H_i, E_balpha] = (eta delta_(i,j) + eta' delta_(i,k)) E_balpha
   $
@@ -1245,8 +1245,8 @@ Isometry is given by $cal(F)^2[g](x) = g(-x)$. By duality, such operator could b
 For dimension 1, where a diagonalizable $B$:
 $
   cal(F)(exp(-1/2 B(x,x))) &= (2pi)^(-1/2) integral_(-infinity)^(infinity) exp(-i p x - 1/2 a x^2) d x \
-  &= (2 pi)^(-1/2) exp(-1/2 a^(-1) p^2) integral_(-infinity)^(infinity) exp(-1/2 a(x+i a^(-1)p)^2) d x \
-  &= (2 pi)^(-1/2) exp(-1/2 a^(-1) p^2) integral_(bb(R) + i a^(-1)p) exp(-1/2 a(x+i a^(-1)p)^2) d x \
+  &= (2 pi)^(-1/2) exp(-1/2 a^(-1) p^2) integral_(-infinity)^(infinity) exp(-1/2 a(x+i a^(-1) p)^2) d x \
+  &= (2 pi)^(-1/2) exp(-1/2 a^(-1) p^2) integral_(bb(R) + i a^(-1) p) exp(-1/2 a(x+i a^(-1) p)^2) d x \
   &= a^(-1/2) exp(-1/2 a^(-1) p^2)
 $
 
@@ -1268,8 +1268,8 @@ $
 $
 
 $
-  I[g;B] (planck) & = innerproduct(g(planck^(1/2)x), exp(-1/2 B(x,x))) \
-                  & = planck^(-d/2) (det B)^(-1/2) innerproduct(cal(F)[g](planck^(-1/2)p), exp(-1/2 B^(-1)(p,p))) \
+  I[g;B] (planck) & = innerproduct(g(planck^(1/2) x), exp(-1/2 B(x,x))) \
+                  & = planck^(-d/2) (det B)^(-1/2) innerproduct(cal(F)[g](planck^(-1/2) p), exp(-1/2 B^(-1)(p,p))) \
                   & = (det B)^(-1/2) innerproduct(cal(F)[g](p), exp(- planck/2 B^(-1)(p,p))) \
 $
 
@@ -1278,11 +1278,11 @@ Where $planck -> 0 ~> exp(-planck/2 B^(-1)(p,p)) = 1$.
 If $l in V^*$ and $g in cal(S)(V)$, then:
 
 $
-  I[l g;B] (planck) & = innerproduct(l(planck^(1/2) x) g(planck^(1/2)x), exp(-1/2 B(x,x))) \
-                    & = planck^(1/2) innerproduct(g(planck^(1/2)x), l(x) exp(-1/2 B(x,x))) \
-                    & = - planck^(1/2) innerproduct(g(planck^(1/2)x), partial_(B^(-1) l) exp(-1/2 B(x,x))) \
-                    & = planck^(1/2) innerproduct(partial_(B^(-1) l) g(planck^(1/2)x), exp(-1/2 B(x,x))) \
-                    & = planck innerproduct((partial_(B^(-1)l) g) (planck^(1/2) x), exp(-1/2 B(x,x))) \
+  I[l g;B] (planck) & = innerproduct(l(planck^(1/2) x) g(planck^(1/2) x), exp(-1/2 B(x,x))) \
+                    & = planck^(1/2) innerproduct(g(planck^(1/2) x), l(x) exp(-1/2 B(x,x))) \
+                    & = - planck^(1/2) innerproduct(g(planck^(1/2) x), partial_(B^(-1) l) exp(-1/2 B(x,x))) \
+                    & = planck^(1/2) innerproduct(partial_(B^(-1) l) g(planck^(1/2) x), exp(-1/2 B(x,x))) \
+                    & = planck innerproduct((partial_(B^(-1) l) g) (planck^(1/2) x), exp(-1/2 B(x,x))) \
                     & = planck I [partial_(B^(-1) l) g;B] (planck)
 $
 
@@ -1362,7 +1362,7 @@ $
   planck^(1/2) I[g;f] = planck^(1/2) e^(- f(c)/planck) I[tilde(g);B] = (2pi planck)^(1/2) e^(-f(c)/planck) sum_(n>=0) a_n planck^n
 $
 
-The Gaussian integral can be expanded as $integral_(-infinity)^(infinity) y^(2m) e^(-y^2/2) d y = (2pi)^(1/2) (2m-1)!!$, So we can exploit the constant that $tilde(g)(y) = sum_(n>=0)^(infinity) b_n y^n -> a_n = b_(2n) (2m-1)!!$.
+The Gaussian integral can be expanded as $integral_(-infinity)^(infinity) y^(2 m) e^(-y^2/2) d y = (2pi)^(1/2) (2 m-1)!!$, So we can exploit the constant that $tilde(g)(y) = sum_(n>=0)^(infinity) b_n y^n -> a_n = b_(2 n) (2 m-1)!!$.
 
 $
   integral_a^b g(x) e^((i f(x))/planck) d x = planck^(1/2) e^((i f(c))/planck) e^((plus.minus pi i)/4) I[g](planck)
@@ -1425,7 +1425,7 @@ $
 $
 
 $
-  x -> y = planck^(-1/2)x \
+  x -> y = planck^(-1/2) x \
   B_i (x,dots.c,x) -> planck^(i/2) B_i (x,dots.c,x) \
 $
 
@@ -1507,13 +1507,19 @@ $
 In expansion of $B_3$ and $B_4$ exponential will generate the 3-valent and 4-valent flowers, plus two external vertices $l_1,l_2$, all which will be contracted by the edges $B_2$.
 
 $
-  F_Gamma (l_1,l_2) = sum_i B^(-1)(l_1,b_i^1) B^(-1) (b_i^2,b_i^3) sum_(i j) B^(-1) (b_i^1,c^1_j) B^(-1) (b_i^2,c^2_j) B^(-1) (b_i^3,c^3_j) B^(-1) (c^4_j,l_2)
+  F_Gamma (l_1,l_2)
+    &= sum_i B^(-1)(l_1,b_i^1) B^(-1) (b_i^2,b_i^3) \
+    &quad times sum_(i j) B^(-1) (b_i^1,c^1_j) B^(-1) (b_i^2,c^2_j) \
+    &quad times B^(-1) (b_i^3,c^3_j) B^(-1) (c^4_j,l_2)
 $
 
 Suppose the coefficients $g_i = 1$, we acquire the general expression for expectation as sum of all possible graphs:
 
 $
-  expval(l_1 dots.c l_N) = sum_(Gamma in G(N)) planck^(-chi(Gamma))/(abs("Aut"(Gamma))) tilde(F)_Gamma (l_1,dots.c,l_N)
+  expval(l_1 dots.c l_N)
+    &= sum_(Gamma in G(N))
+      planck^(-chi(Gamma))/(abs("Aut"(Gamma))) \
+    &quad times tilde(F)_Gamma (l_1,dots.c,l_N)
 $
 
 Where we reduce the product of $product_i (g_i hbar^(i/2-1))$ in $hbar^(-chi(Gamma))$ by the Euler characteristic.
@@ -1521,29 +1527,46 @@ Where we reduce the product of $product_i (g_i hbar^(i/2-1))$ in $hbar^(-chi(Gam
 Now, suppose in $1$-dimension, given a examples as simple as possible that $B(y,y) = y^2$, $B_i = z^i$, $g_i = g$, $hbar = 1$:
 
 $
-  Z = (2pi)^(-1/2) integral_(-infinity)^(infinity) exp(- y^2/2 + g sum_(i>=0) (z x)^i/i!) d y = (2pi)^(-1/2) integral_(-infinity)^(infinity) exp(- y^2/2 + g e^(z x)) d y \
+  Z
+    &= (2pi)^(-1/2) integral_(-infinity)^(infinity)
+      exp(- y^2/2 + g sum_(i>=0) (z x)^i/i!) d y \
+    &= (2pi)^(-1/2) integral_(-infinity)^(infinity)
+      exp(- y^2/2 + g e^(z x)) d y
 $
 
 It actually contains infinite many vertices with arbitrary *valency*, we expand the second term $g e^(z x)$:
 
 $
-  Z = (2pi)^(-1/2) integral_(-infinity)^(infinity) exp(- y^2/2) sum_(n>=0) (g e^(z y))^n/n! d y = (2pi)^(-1/2) sum_(n>=0) g^n/n! integral_(-infinity)^(infinity) exp(-y^2/2 + n z y) d y \
+  Z
+    &= (2pi)^(-1/2) integral_(-infinity)^(infinity)
+      exp(- y^2/2) sum_(n>=0) (g e^(z y))^n/n! d y \
+    &= (2pi)^(-1/2) sum_(n>=0) g^n/n!
+      integral_(-infinity)^(infinity) exp(-y^2/2 + n z y) d y
 $
 
 We can explain that $z(dot)$ pair a vertex, thus $n$ vertices will contribute $n$ factors of $z$ as $z(dot) + z(dot) + dots.c$:
 
 $
-  integral exp(-y^2/2 + n z y) d y = exp((n^2 z^2)/2) integral exp(-1/2(y-n z^2)) d y = (2pi)^(1/2) exp((n^2 z^2)/2)
+  integral exp(-y^2/2 + n z y) d y
+    &= exp((n^2 z^2)/2) integral exp(-1/2(y-n z^2)) d y \
+    &= (2pi)^(1/2) exp((n^2 z^2)/2)
 $
 
 $
-  Z = sum_(n>=0) g^n/n! exp((n^2 z^2)/2) = sum_(n>=0) g^n/n! sum_(k>=0) (n^2 z^2/2)^k/k! = sum_(n,k>=0) (g^n n^(2k))/(2^k k! n!) z^(2k) = sum_(n>=0) g^n sum_(Gamma in G(n)) tilde(F)_Gamma/(abs("Aut"(Gamma)))
+  Z
+    &= sum_(n>=0) g^n/n! exp((n^2 z^2)/2) \
+    &= sum_(n>=0) g^n/n! sum_(k>=0) (n^2 z^2/2)^k/k! \
+    &= sum_(n,k>=0) (g^n n^(2 k))/(2^k k! n!) z^(2 k) \
+    &= sum_(n>=0) g^n sum_(Gamma in G(n))
+      tilde(F)_Gamma/(abs("Aut"(Gamma)))
 $
 
-Given a number of vertices $n$ with contribution $z y$ to each $B^(-1) (z y,z y) = z^2 B^(-1) (y,y) = z^2$. Thus a general graph with $k$ edges contribute $F_Gamma = z^(2 k) times (B^(-1))^k = z^(2k)$. It can also be evaluated by expanding $exp(n z y)$ then integrating. Therefore, we can identify the $abs("Aut"(Gamma))$ too:
+Given a number of vertices $n$ with contribution $z y$ to each $B^(-1) (z y,z y) = z^2 B^(-1) (y,y) = z^2$. Thus a general graph with $k$ edges contribute $F_Gamma = z^(2 k) times (B^(-1))^k = z^(2 k)$. It can also be evaluated by expanding $exp(n z y)$ then integrating. Therefore, we can identify the $abs("Aut"(Gamma))$ too:
 
 $
-  sum_(Gamma in G(n)) (dots.c) = sum_k sum_(Gamma in G(n;k)) 1/(abs("Aut"(Gamma))) = n^(2k)/(2^k k! n!)
+  sum_(Gamma in G(n)) (dots.c)
+    &= sum_k sum_(Gamma in G(n;k)) 1/(abs("Aut"(Gamma))) \
+    &= n^(2 k)/(2^k k! n!)
 $
 
 To scrutinize our answer in combinatorics, we pick out two vertices from $n$ vertices with $n^2$ choice with order. For list of $k$ edges, we have $n^2 dot n^2 dot dots.c = n^(2 k)$ choices. To cancel out the order, we first remove orientation of edges which contribute $2 dot 2 dot 2dots.c = 2^k$ choices. Then we reomove the permutation of edges #footnote[It should also be considered as the contraction order from $1$ to $k$, so if we pick out $(a_1,b_1), (a_2,b_2)$, it's also reasonable to pick out $(a_2,b_2),(a_1,b_1)$ which remove the contribution of edges order.] which contribute $k!$ choices. We still treats the vertices as labelled, so remove the permutation of vertices which contribute $n!$ choices.
@@ -1759,8 +1782,8 @@ $
 $
   -S(x_0) &= 1/(3g^2)((1-2g^2)^(3/2) - 1) + 1 \
   &= 1/(3g^2) sum_(n=0)^(infinity) 1/((n+1)!) 3/2 dot 1/2 dot dots.c dot (3-2n)/2 (-2)^(n+1) g^(2(n+1)) + 1/(3g^2) - 1/(3g^2) + 1 thick "by shift 1 index"\
-  &= sum_(n=1)^(infinity) 1/((n+1)!) 1/2 dot dots.c dot (2n - 3)/2 (-1)^(n) (-2)^(n) g^(2n) - 1 + 1 thick "by extract first term" \
-  &= sum_(n=1)^(infinity) (1 dot 3 dot dots.c dot (2n-3))/((n+1)!) g^(2n)
+  &= sum_(n=1)^(infinity) 1/((n+1)!) 1/2 dot dots.c dot (2 n - 3)/2 (-1)^(n) (-2)^(n) g^(2 n) - 1 + 1 thick "by extract first term" \
+  &= sum_(n=1)^(infinity) (1 dot 3 dot dots.c dot (2 n-3))/((n+1)!) g^(2 n)
 $
 
 Now we see each coefficients corresponds to counts of tree with $m = 2n$ vertices, if we multiply $2n$ then corresponds to the one with vertices labelled.
@@ -1791,11 +1814,11 @@ $
 $
 
 $
-  a^(-(p+1)) = x^(-(p+1)) e^((p+1) y), b^(-(q+1)) = y^(-(q+1)) e^((q+1)x)
+  a^(-(p+1)) = x^(-(p+1)) e^((p+1) y), b^(-(q+1)) = y^(-(q+1)) e^((q+1) x)
 $
 
 $
-  c_(p,q) &= 1/(2pi i)^2 integral.cont integral.cont x x^(-(p+1)) e^((p+1) y) y^(-(q+1)) e^((q+1)x) e^(-x-y) (1-x y) d x and d y \
+  c_(p,q) &= 1/(2pi i)^2 integral.cont integral.cont x x^(-(p+1)) e^((p+1) y) y^(-(q+1)) e^((q+1) x) e^(-x-y) (1-x y) d x and d y \
   &= 1/(2pi i)^2 integral.cont integral.cont (1-x y) x^(-p) y^(-(q+1)) e^(q x + p y) d x and d y \
 $
 
@@ -2046,7 +2069,7 @@ $
 One can construct a tree by sum its all possible ways: $cal(T) = union.big {"possible way to recover trees"}$. We should investigate the ways by distinguishing method. First, for any $k-$valent flower $lambda_k$ or closed $1-$valent $y$ vertex, we can attach it by deleting each closed vertex $y$ of $k$ trees and attach the flowers to connect $k$ trees or just amend attaching closed $1-$valent vertex for our deleted $1-$valent vertex. However, edge is more special, to attach a edge to recover a tree, we need to delete each vertex and its edge already in two trees and attach one new.#footnote[Or better, we remove each vertex of tree and one edge of *either* tree, then connect them together. The result is same: $1/(2 u) pdv(T, y)^2$] To summarize above operations, we should notice that edge operations are smaller one count than the vertex operations because a tree always has $V - E = 1$. The attaching ways of vertex are always one plus than the attaching ways of edge, yielding the below results.
 
 $
-  cal(T) tilde.eq union.big_(k>=1) vf(v)_k partial_(vf(v)_k) cal(T) \\ vf(e) dot cal(U)_2 compose (vf(e)^(-1) partial_(vf(v_1))cal(T))
+  cal(T) tilde.eq union.big_(k>=1) vf(v)_k partial_(vf(v)_k) cal(T) \\ vf(e) dot cal(U)_2 compose (vf(e)^(-1) partial_(vf(v_1)) cal(T))
 $
 
 $
@@ -2128,8 +2151,8 @@ $
 $
 
 $
-  &S(V) tilde.equiv S(V_0) times.o Lambda(V_1) tilde.equiv plus.o.big S^i (V_0) times.o plus.o.big Lambda^i (V_1): v times.o w = (-1)^(eta(v)eta(w)) w times.o v \
-  &Lambda(V) tilde.equiv Lambda(V_0) times.o S(V_1) tilde.equiv plus.o.big Lambda^i (V_0) times.o plus.o.big S^i (V_1): v and w = -(-1)^(eta(v)eta(w)) w and v \
+  &S(V) tilde.equiv S(V_0) times.o Lambda(V_1) tilde.equiv plus.o.big S^i (V_0) times.o plus.o.big Lambda^i (V_1): v times.o w = (-1)^(eta(v) eta(w)) w times.o v \
+  &Lambda(V) tilde.equiv Lambda(V_0) times.o S(V_1) tilde.equiv plus.o.big Lambda^i (V_0) times.o plus.o.big S^i (V_1): v and w = -(-1)^(eta(v) eta(w)) w and v \
 $
 
 $
@@ -2163,13 +2186,13 @@ $
 $
 
 $
-  F: M = bb(R)^(1|2) -> N = bb(R)^(1|2) = (x_1,xi_1,xi_2) -> (x + xi_1xi_2,xi_1,xi_2) \
+  F: M = bb(R)^(1|2) -> N = bb(R)^(1|2) = (x_1,xi_1,xi_2) -> (x + xi_1 xi_2,xi_1,xi_2) \
   F^* (f(x_1)) = f(x_1+xi_1 xi_2) = f(x) + f'(x) xi_1 xi_2
 $
 
 $
   R := R_0 plus.o R_1 quad R_i R_j subset.eq R_(i + j mod 2)\
-  x y = (-1)^(eta(x)eta(y)) y x
+  x y = (-1)^(eta(x) eta(y)) y x
 $
 
 $
@@ -2209,7 +2232,7 @@ $
 $
 
 // $
-//   "sTr"([A,B]) &= "sTr"(A B - (-1)^(eta(A)eta(B)) B A) \
+//   "sTr"([A,B]) &= "sTr"(A B - (-1)^(eta(A) eta(B)) B A) \
 //   &= "sTr"(A B + B A) \
 //   &= "Tr"(X Y) + epsilon "Tr"(Y X) = 0\
 // $
@@ -2243,7 +2266,7 @@ $
 
 $
   mat(A_00, A_01; A_10, A_11) & = mat(I, A_(01) A_11^(-1); 0, I) mat(A_00 - A_01 A_11^(-1) A_10, 0; A_10, A_11) \
-                              & = (dots) mat(A_00 - A_01 A_11^(-1) A_10, 0; 0, A_11) mat(I, 0; A_11^(-1)A_10, I)
+                              & = (dots) mat(A_00 - A_01 A_11^(-1) A_10, 0; 0, A_11) mat(I, 0; A_11^(-1) A_10, I)
 $
 
 $
@@ -2298,11 +2321,11 @@ We must have even numbers of odd variables due to unmatched integral for certain
 $
   (B(xi,xi))^k = (2 sum_(i<j) b_(i j) xi_i xi_j)^k &= 2^k sum_(sigma in Pi_k) b_(sigma(i_1)(j_1)) dots.c b_(sigma(i_k)(j_k)) xi_(sigma(i_1)) xi_(sigma(j_1)) dots.c xi_(sigma(i_k)) xi_(sigma(j_k)) \
   &= 2^k k! sum_(sigma in Pi_k) product_(m) b_(sigma(i_m)(j_m)) xi_(i_1) xi_(j_1) dots.c xi_(i_k) xi_(j_k) \
-  &= 2^k k! sum_(sigma in Pi_k) product_m b_(sigma(i_m)sigma(j_m)) eta(sigma) xi_1 xi_2 dots.c xi_(2m) \
+  &= 2^k k! sum_(sigma in Pi_k) product_m b_(sigma(i_m) sigma(j_m)) eta(sigma) xi_1 xi_2 dots.c xi_(2 m) \
 $
 
 $
-  integral e^(1/2 B(xi,xi)) d xi &= integral sum_(sigma in Pi_k) product_m b_(sigma(i_m) sigma(j_m)) eta(sigma) xi_1 dots.c xi_(2m) thick d xi_(2m) dots.c d xi_1 \
+  integral e^(1/2 B(xi,xi)) d xi &= integral sum_(sigma in Pi_k) product_m b_(sigma(i_m) sigma(j_m)) eta(sigma) xi_1 dots.c xi_(2 m) thick d xi_(2 m) dots.c d xi_1 \
   &= sum_(sigma in Pi_k) eta(sigma) product_(m) b_(sigma(i) sigma(j))
 $
 
