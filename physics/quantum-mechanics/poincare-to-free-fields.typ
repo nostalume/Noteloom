@@ -2,7 +2,7 @@
 #import "@preview/physica:0.9.8": *
 #import theorion: *
 
-#show: mine.with(
+#show: daily-en.with(
   title: [From Poincare Representations to Local Free Fields],
   abstract: [
     Poincare symmetry classifies a one-particle state representation, under

@@ -2,8 +2,7 @@
 #import "@preview/physica:0.9.8": *
 #import "@preview/lovelace:0.3.0": *
 
-#show: mine.with(
-  template: "daily-en",
+#show: daily-en.with(
   title: "Computational Physics",
 )
 

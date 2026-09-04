@@ -1,7 +1,7 @@
 #import "lib.typ": *
 
 
-#show: mine.with(
+#show: daily-en.with(
   title: "Phil",
 )
 

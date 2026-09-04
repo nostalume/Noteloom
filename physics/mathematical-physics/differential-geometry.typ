@@ -1,7 +1,7 @@
 #import "@preview/theorion:0.3.3": *
 #import "../lib.typ": *
 
-#show: mine.with(title: [Differential Geometry])
+#show: daily-en.with(title: [Differential Geometry])
 
 #show: show-theorion
 

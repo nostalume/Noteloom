@@ -1,6 +1,6 @@
 #import "../lib.typ": *
 
-#show: mine.with(
+#show: daily-en.with(
   title: "Review of Electronic Tech",
   eq-numbering: "(1.1)",
   eq-chapterwise: true,

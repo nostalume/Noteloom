@@ -2,7 +2,7 @@
 #import fletcher: diagram, node, edge
 #import theorion: *
 
-#show: mine.with(
+#show: daily-en.with(
   title: "Homology",
   eq-numbering: "(1.1)",
   eq-chapterwise: true,

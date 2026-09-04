@@ -2,7 +2,7 @@
 #import "@preview/physica:0.9.8": *
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node
 
-#show: mine.with(
+#show: daily-en.with(
   title: "Review of Quantum",
 )
 

@@ -2,7 +2,7 @@
 #import physica: *
 #import fletcher: diagram, edge, node
 
-#show: mine.with(
+#show: daily-en.with(
   title: "Condensed Matter Notes",
   eq-numbering: "(1.1)",
   eq-chapterwise: true,

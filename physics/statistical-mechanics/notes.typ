@@ -1,7 +1,7 @@
 #import "../lib.typ": *
 #import "@preview/physica:0.9.8": *
 
-#show: mine.with(
+#show: daily-en.with(
   title: "Statistical Mechanics",
 )
 

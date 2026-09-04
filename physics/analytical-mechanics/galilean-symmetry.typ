@@ -24,8 +24,7 @@
 
 #let keywords = ("李群", "伽利略群", "李代数", "诺特定理", "拉格朗日力学")
 
-#show: mine.with(
-  template: "am-zh",
+#show: am-zh.with(
   lang: "zh",
   title: "基于李群的伽利略不变性与刚体转动动力学研究",
   abstract: abstract,

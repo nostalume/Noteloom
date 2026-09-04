@@ -7,7 +7,7 @@
 
 #show: show-theorion
 
-#show: mine.with(title: [Category And Homology], eq-numbering: "(1.1)", eq-chapterwise: true)
+#show: daily-en.with(title: [Category And Homology], eq-numbering: "(1.1)", eq-chapterwise: true)
 
 #set par(
   first-line-indent: (
@@ -542,5 +542,4 @@ $
 The 3rd step is because if k $<$ l, first omit kth will results lth index becomes (l-1)th. Then each sum is symmetric, we get zero in end. It's like a discrete style of total derivative, which is also zero due to symmetry of partial derivative.
 
 However, could a topological space be decomposed by these minimal element? Actually, Partially is. Could the result be independent of triangulation? Yes with a lengthy theorem.
-
 

@@ -67,8 +67,7 @@
   "计算物理",
 )
 
-#show: mine.with(
-  template: "daily-en",
+#show: daily-en.with(
   title: (en: "Exploring Finite Difference and Pseudo-Spectral Methods",zh: "有限差分法与伪谱法探索"),
   abstract: abstract-en,
   keywords: keywords-en,
