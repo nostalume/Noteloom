@@ -171,8 +171,10 @@ pass through the discovery boundary. A bounded PDE-first matrix closure also
 recovers the effective `sl_2/sl_3` algebra and visible witness without a group
 label. Its symbol-fiber continuation also constructs the inner covariance
 derivations and pairing-dual second-order action without a supplied eigenvalue.
+The coupled-operator continuation now applies generated base/fiber actions to
+curvature and ordered lower terms before an optional Pauli observable consumer.
 Full regular-representation synthesis, arbitrary polynomial-jet stabilizers, and
-analytic promotion outside the visible compact adjoint block remain contract-level.
+analytic promotion outside declared theorem contracts remain contract-level.
 
 For bounded backend-independent discovery, the executable projection is
 `reduction-decision/v1`:
@@ -210,8 +212,13 @@ coefficient eigenvalue from their pairing-dual square.
 `natural-tensor-stabilizer/v1` constructs a finite tensor stabilizer from typed
 relations, while `coupled-carrier-covariance/v1` constructs joint base/fiber
 actions from metric and link covariance, quotients the ineffective fiber
-commutant, and returns exact linked-symbol projectors. Neither finite stabilizer
-schema by itself performs global group integration.
+commutant, and returns exact linked-symbol projectors.
+`coupled-operator-covariance/v1` consumes that generated quotient, intersects the
+curvature, first-order, and zeroth-order covariance kernels, and returns the
+surviving full-operator action. Pauli grading and channels are an optional
+observable consumer; the accepted domain record is a matched common-core theorem
+contract rather than an internally proved self-adjoint completion. None of these
+finite schemas by itself performs global group integration.
 
 The orbit constructor specializes the witness through
 
@@ -629,6 +636,10 @@ canonical form, zero test, and degree/order bounds must be recorded.
   The [bilateral executable projection](benchmarks/bilateral-pauli-router.md)
   passes the algebraic channel, charge-sign transfer, and spin-curvature refusal
   checks through the public decision interface. The
+  [group-free full-operator lift](full-operator-covariance-lift.md) independently
+  constructs the coupled action, reduces it by curvature and lower-order defects,
+  and recovers the same projector and channels on a matched common core. Its
+  successful first-order matrices are zero, so nonzero transport remains open. The
   [global analytic promotion](benchmarks/pauli-global-analytic.md) adds the unitary
   Landau/Fourier carrier, measure, finite Heisenberg degeneracy, self-adjoint
   domain contract, exact heat density, and topology/domain refusals on `T^2 x R`.

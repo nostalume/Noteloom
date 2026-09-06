@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from unittest.mock import patch
 
+from coupled_operator_router import discover_problem as discover_coupled_operator
 from coupled_relation_stabilizer import discover_problem as discover_coupled_relation
 from matrix_adjoint_global_router import discover_problem as discover_matrix_global
 from matrix_pde_inverse_router import discover_problem as discover_matrix_inverse
@@ -43,6 +44,18 @@ DIRECT_KEYS = frozenset({"backend", "decision", "outcome", "schema", "witness"})
 
 
 CASES = (
+    Case(
+        (
+            "discover",
+            str(EXAMPLES / "coupled-pauli-operator-positive.json"),
+            "--summary",
+        ),
+        "reduction-decision/v1",
+        "exact",
+        0,
+        "coupled-full-operator-kernel",
+        DISCOVERY_KEYS,
+    ),
     Case(
         (
             "discover",
@@ -154,6 +167,7 @@ CASES = (
 )
 
 DIRECT_DISCOVERY_CASES = (
+    (discover_coupled_operator, "coupled-pauli-operator-positive.json"),
     (discover_coupled_relation, "coupled-carrier-clifford-r3.json"),
     (discover_quadratic, "quadratic-survival-compressed.json"),
     (discover_pauli, "pauli-landau-positive.json"),

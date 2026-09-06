@@ -52,7 +52,12 @@ tolerances before accepting a new lock.
 | `natural_tensor_stabilizer.py` | selected-route execution, optional raw audit, and elasticity use witness |
 | `exact_gaussian_matrix.py` | exact Hermitian/skew-Hermitian matrix operations and canonical `u(S)` basis |
 | `coupled_covariance_core.py` | reusable linked-carrier covariance defects, ineffective commutant quotient, closure, and exact symbol projectors |
-| `coupled_relation_stabilizer.py` | coupled-relation JSON admission and public witness projection |
+| `coupled_relation_input.py` | shared coupled metric/link admission, capability validation, and exact budgets |
+| `coupled_relation_stabilizer.py` | coupled-relation orchestration and public witness projection |
+| `coupled_operator_input.py` | typed coupled-operator, domain-contract, optional-observable, and budget admission |
+| `full_operator_covariance.py` | curvature, first-order, and zeroth-order defect blocks on a generated coupled action |
+| `pauli_operator_channels.py` | optional curvature grading, projector, and Pauli channel consumer |
+| `coupled_operator_router.py` | generic operator-covariance orchestration and public witness projection |
 | `adjoint_algebra.py` | immutable rational matrices, Lie/Jordan operations, exact closure, coordinates, and pairing |
 | `quadratic_route_router.py` | independent factor/cyclic probes and observable-relative selection |
 | `pauli_bilateral_router.py` | local Clifford/PDE construction and coincidence |
@@ -83,6 +88,7 @@ fails.
 | `matrix-adjoint-semigroup/v1` | local symbol block to compact quotient and one heat-semigroup matrix element |
 | `natural-tensor-stabilizer/v1` | supplied natural tensors to an effective stabilizer and optional elasticity plane-wave witness |
 | `coupled-carrier-covariance/v1` | metric and link relations to an effective coupled action and exact linked-symbol projectors |
+| `coupled-operator-covariance/v1` | generated coupled action to ordered full-operator covariance, with optional Pauli channel recovery |
 
 Detailed mathematical contracts live in the neighboring
 [benchmarks](../benchmarks/). In particular, see the
@@ -91,7 +97,9 @@ Detailed mathematical contracts live in the neighboring
 [adjoint PDE lift](../benchmarks/su-adjoint-multiplicity-pde.md),
 [PDE-first matrix reconstruction](../benchmarks/pde-first-matrix-lie-reconstruction.md),
 [symbol covariance](../benchmarks/matrix-symbol-covariance-casimir.md), and
-[global adjoint semigroup](../benchmarks/matrix-adjoint-semigroup-global.md).
+[global adjoint semigroup](../benchmarks/matrix-adjoint-semigroup-global.md). The
+[full-operator lift](../full-operator-covariance-lift.md) owns the current coupled
+operator contract and its exact boundary.
 
 ## Reproducible verification
 
@@ -133,7 +141,9 @@ Admit a new route only when it provides:
 6. transfer and refusal tests; and
 7. a route-specific certificate preserved by the common envelope.
 
-New case-specific schema growth remains frozen. The
+New case-specific schema growth remains frozen. The generic coupled-operator schema
+is one composition boundary whose covariance result remains available without its
+optional Pauli consumer. The
 [seed--defect compiler](../defect-kernel-construction.md) passes its held-out
 isotropic-elasticity transfer, and [G1](../structured-seed-compression.md) now
 constructs `g^-1 Lambda^2(V*)` candidates and symmetry-orbit residuals before
@@ -146,5 +156,8 @@ operationally with recursive quotient-coordinate emission, checks budgets before
 materialization, and confines the raw/orbit route to explicit audit. G4 then uses
 the common defect compiler on a metric/Hermitian link, constructs its effective
 coupled action in ranks two and three, and returns exact principal-symbol
-projectors. Development now targets the full lower-order/domain lift to the
-existing Pauli observable, not another tensor or symbol-only variant.
+projectors. G5 now applies that generated action to curvature and ordered
+lower-term defects, returning a closed `3 -> 1` operator action before optional
+Pauli recovery. Its successful first-order coefficients are zero; the next
+discriminator is nonzero symmetry-compatible transport through the unchanged
+compiler, not another tensor or symbol-only variant.

@@ -65,6 +65,7 @@ group name.
 | select finite infinitesimal structures from typed defects | [seed--defect construction](defect-kernel-construction.md) | kernels, effective quotients, closure, and first obstruction |
 | compress natural tensor searches before elimination | [structured seed compression](structured-seed-compression.md) | metric-derived candidates, symmetry-orbit residuals, and exact span comparison |
 | construct linked-carrier covariance algebras | [coupled-carrier covariance](coupled-carrier-covariance.md) | joint actions, ineffective commutant quotient, and linked-symbol projectors |
+| lift a generated action through a full coupled operator | [full-operator covariance lift](full-operator-covariance-lift.md) | ordered curvature/lower-term defects, common-core admission, and optional Pauli recovery |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -141,9 +142,12 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   an explicit audit. G4 then constructs linked vector/spinor actions from metric
   and commutator-covariance relations without a group or preferred generators. It
   passes rank-two/rank-three construction, ineffective-phase quotient, refusal,
-  and exact principal-symbol projector tests. The active frontier is now lifting
-  that generated action through a full order-two operator, lower terms, and domain
-  to the same Pauli observable.
+  and exact principal-symbol projector tests. G5 lifts that generated action
+  through curvature, first-order, zeroth-order, and common-core contracts. It
+  reduces `3 -> 1`, independently recovers the Pauli projectors and channels, and
+  refuses both a covariance-breaking zeroth-order term and a mismatched domain.
+  The active frontier is now the first structurally nontrivial lower-order
+  transfer: nonzero longitudinal transport selected by the unchanged compiler.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

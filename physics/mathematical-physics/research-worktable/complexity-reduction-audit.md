@@ -604,7 +604,7 @@ must be included whenever audit is requested. G3 therefore supports operational
 and human compression only for recursive symmetric powers; the next cost question
 belongs to a different coupled carrier rather than another elasticity instance.
 
-## 26. Coupled covariance gives construction compression, not yet PDE leverage
+## 26. Coupled covariance gives construction compression
 
 G4 changes model family. Its input is a metric `g` and a Hermitian link
 `gamma:V -> End(S)`, not a stabilizer or group. The canonical seed and retained
@@ -622,9 +622,32 @@ with 11 residual coordinates. The human witness is two covariance laws, one
 ineffective quotient, one bracket closure, and two exact symbol projectors rather
 than a guessed spin-generator table followed by component diagonalization.
 
-This is exact internal and human construction evidence. It is not a runtime or
-full-PDE leverage result: the declared bracket bounds 2873 and 768 are conservative
-certificate budgets, and lower-order coefficients, domain preservation, analytic
-solution, and recovery of the existing Pauli observable have not yet been paid.
-The next fair comparison is therefore the full-operator lift, not a claim that
-principal-symbol covariance has solved the PDE.
+This is exact internal and human construction evidence. The declared bracket
+bounds 2873 and 768 are conservative certificate budgets rather than runtime
+measurements. G4 alone remains a principal-symbol result.
+
+## 27. Full-operator lift pays the ordered algebraic and recovery costs
+
+G5 does not restart from `End(V) direct-sum u(S)`. It consumes G4's three effective
+generators, allocates three curvature, twelve first-order, and four zeroth-order
+residual coordinates, and has a conservative bracket bound of 63. In the admitted
+Pauli input the exact rank path is
+
+```text
+G4 relation stage:       13 -> 4 -> 3,
+curvature covariance:     3 -> 1,
+first-order covariance:   1 -> 1,
+zeroth-order covariance:  1 -> 1.
+```
+
+Curvature and the Clifford link then construct one grading, two projectors, and
+`2(r+1)` channel records through requested level `r`. The independent bilateral
+route returns the same projector and channels. The full path uses zero coordinate
+eigenfunction expansions; a covariance-only request can stop before the Pauli use
+stage.
+
+This closes semantic and human compression for the bounded constant operator, not
+a runtime-leverage claim. Domain preservation is a matched Schwartz common-core
+theorem contract, and the successful first-order coefficients are zero. Runtime
+comparison and nonzero first-order transport remain open; the latter is the next
+structural discriminator because it can invalidate the operator-stage reuse claim.

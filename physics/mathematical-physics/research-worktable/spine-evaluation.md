@@ -21,7 +21,7 @@ closes appropriately and global hypotheses are supplied.
 | --- | --- | --- |
 | bilateral meaning | representation-first and PDE-first routes meet at comparable witnesses | round trips are equivalence tests, never unique inversion |
 | internal construction | bounded factor, centralizer, cyclic, orbit, complex, and mode-bundle constructors | completeness is local to each grammar and budget |
-| executable unity | three direct route families share `reduction-witness/v1`; quadratic, local/global Pauli, adjoint forward/inverse, symbol-covariance, and adjoint-semigroup schemas generate or compose candidates without a backend name | automatic probing remains confined to bounded families; general stabilizers, arbitrary jets, and variable-bundle routes remain outside it |
+| executable unity | three direct route families share `reduction-witness/v1`; quadratic, local/global Pauli, adjoint forward/inverse, symbol/full-operator covariance, and adjoint-semigroup schemas generate or compose candidates without a backend name | automatic probing remains confined to bounded families; general stabilizers, arbitrary jets, and variable-bundle routes remain outside it |
 | analytical computation | oscillator/Coulomb spectra, controlled finite-time/fixed-accuracy examples, a theorem-backed Landau/Fourier heat density, and one adjoint-visible compact heat block | domain, completeness, and convergence remain imported or open outside those declared theorem contracts; no full adjoint heat trace is computed |
 | human computation | kernels, projectors, recurrences, quotient sectors, and residuals replace component catalogues | description-length and derivation-depth costs are not yet normalized |
 | generality | evidence includes PDE-to-PDE, singular strata, an executable matrix-spinor bridge, polynomial closure, and observable-relative quotients | strongest executable cases remain structured, low-dimensional, constant-coefficient, and mostly self-adjoint |
@@ -54,9 +54,11 @@ library. Backend-free discovery is supported only for
 `pauli-landau-global/v1`, `su-adjoint-transition/v1`, `su-adjoint-pde/v1`, and
 `matrix-pde-inverse/v1`, `matrix-symbol-covariance/v1`,
 `matrix-adjoint-semigroup/v1`, and `natural-tensor-stabilizer/v1`, not as a
-complete search engine. The new `coupled-carrier-covariance/v1` schema extends
-that bounded discovery boundary to exact metric/Hermitian links and their
-principal-symbol projectors.
+complete search engine. The `coupled-carrier-covariance/v1` schema extends that
+bounded discovery boundary to exact metric/Hermitian links and their
+principal-symbol projectors. The `coupled-operator-covariance/v1` continuation
+applies the generated action to ordered curvature and lower-term defects before
+optional observable promotion.
 
 ## Strongest evidence
 
@@ -111,8 +113,13 @@ principal-symbol projectors.
 - The coupled-carrier route starts from `End(V) direct-sum u(S)`, imposes metric
   and link-covariance defects, discovers an ineffective fiber phase, and returns
   closed effective dimensions three and one in the rank-three/rank-two Clifford
-  benches. It uses those relations to construct exact principal-symbol projectors,
-  while leaving the full lower-order/domain lift open.
+  benches. It uses those relations to construct exact principal-symbol projectors.
+- The full-operator continuation reuses the generated rank-three quotient as its
+  candidate space. Constant curvature reduces it `3 -> 1`; zero first-order and
+  Pauli zeroth-order terms preserve that generator. Curvature constructs the
+  grading and exact channels, which match the independent bilateral Pauli route.
+  A transverse zeroth-order coefficient kills the last generator, and an
+  unmatched domain refuses common-core promotion.
 
 ## Feasibility boundary
 
@@ -134,11 +141,10 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Full-operator lift of coupled covariance:** G4 now constructs linked
-   vector/fiber actions from `[B,gamma(v)]=gamma(Av)`, quotients the ineffective
-   commutant, and recovers exact principal-symbol projectors. Apply those generated
-   actions to every lower-order and domain defect of the unchanged Pauli operator,
-   then compare the same channel observable with the independent bilateral route.
+1. **Nonzero first-order transfer:** G5 supports an ordered full-operator lift, but
+   its successful Pauli normal form has `C_i=0`. Supply nonzero scalar transport,
+   let the unchanged compiler select only curvature-aligned coefficients, and
+   recover the shifted longitudinal channel rule without supplying the axis.
 2. **Leverage adjudication:** retain the complete G3 selected-route break-even of
    9 separately from the stabilization-only value 8; measure runtime or prove a
    family-level symbolic bound before promoting broader computational leverage.

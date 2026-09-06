@@ -530,9 +530,7 @@ case-by-case router growth.
   differential-operator covariance. Global spin integration, curved domains,
   variable coefficients, continuous spectra, and nonlinear systems remain open.
 
-## Active open bridge
-
-### G5 — Promote constructed symbol covariance to a full PDE witness
+### G5 — Promote constructed symbol covariance to a full PDE witness (`supported bounded`)
 
 - **Upstream:** G4's generated effective base/fiber action and the existing
   bilateral Pauli lower-term/domain witness.
@@ -547,13 +545,45 @@ case-by-case router growth.
 - **Falsifier:** the lift imports the Pauli grading or rotation generators that it
   is meant to derive, skips a lower-order/domain residual, or compares a different
   observable from the existing bilateral bench.
-- **Next probe:** freeze the constant-curvature Pauli input as regression, apply
-  the G4 action to the full order-two coefficient package, compare its channel
-  projectors with the independently existing Pauli construction, and include one
-  lower-term covariance failure. Do not add curved or variable coefficients yet.
-- **Boundary:** constant-coefficient or constant-curvature local spinor operators
-  on a declared common core. Global integration and analytic completeness remain
-  separate promotion stages.
+- **Probe result:** [the full-operator lift](full-operator-covariance-lift.md)
+  applies curvature, first-order, and zeroth-order defect blocks to the generated
+  G4 quotient. The unchanged Pauli input contracts `3 -> 1` at curvature and no
+  further, remains closed, derives its grading from curvature and the Clifford
+  link, and exactly matches the independent bilateral projector and channel list.
+  The generic schema also returns the operator action without a Pauli observable.
+  Charge reversal transfers; a transverse zeroth-order term kills the last
+  generator; an unmatched half-space domain refuses promotion.
+- **Boundary:** constant exact coupled Laplace-type coefficient packages on a
+  dimension-matched boundaryless Schwartz common-core theorem contract; observable
+  recovery is tested only for Euclidean rank-three Pauli data. The successful
+  first-order coefficients are zero. Global integration, self-adjoint completion,
+  nonzero transport, and analytic completeness remain separate.
+
+## Active open bridge
+
+### G6 — Nonzero first-order transport without a case-specific symmetry rule
+
+- **Upstream:** G5's ordered coefficient compiler and exact Pauli channel witness.
+- **Tension:** G5 materializes and checks a twelve-coordinate first-order defect
+  block, but its successful Pauli fixtures have `C_i=0`; this does not test whether
+  a nonzero lower-order covector can survive the generated action or be consumed
+  without component diagonalization.
+- **Question:** can a nonzero scalar Hermitian coefficient aligned with the
+  curvature-derived kernel be selected by the unchanged defect compiler and
+  carried to an exact shifted longitudinal channel rule?
+- **Alternatives:** extend only the observable use grammar after the generic
+  compiler selects the coefficient, versus require a new route-specific symmetry
+  construction.
+- **Falsifier:** the fixture supplies the curvature axis, surviving generator,
+  grading, or shifted spectrum; the compiler is amended with an axial special
+  case; a transverse coefficient is silently discarded; or recovery omits the
+  original longitudinal momentum observable.
+- **Next probe:** use `C_i=mu f_i I/|f|` with nonzero rational `mu`, derive the axis
+  solely from `F`, retain the G5 `3 -> 1` action, complete the longitudinal square,
+  and compare `k^2+mu k+2bn` against direct substitution. Add one transverse
+  coefficient that changes the defect kernel or forces refusal.
+- **Boundary:** constant scalar longitudinal drift only. Matrix-valued spin-orbit
+  transport, variable connections, boundaries, and curved geometry remain parked.
 
 ## Parked branches and re-entry conditions
 

@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
+from coupled_operator_router import discover_document as discover_coupled_operator
 from coupled_relation_stabilizer import discover_document as discover_coupled_relation
 from matrix_adjoint_global_router import discover_document as discover_matrix_adjoint_global
 from matrix_pde_inverse_router import discover_document as discover_matrix_pde_inverse
@@ -20,6 +21,7 @@ Handler = Callable[[ProblemDocument], dict[str, object]]
 
 HANDLERS: dict[str, Handler] = {
     "coupled-carrier-covariance/v1": discover_coupled_relation,
+    "coupled-operator-covariance/v1": discover_coupled_operator,
     "quadratic-schrodinger/v1": discover_quadratic,
     "pauli-landau-bilateral/v1": discover_pauli,
     "pauli-landau-global/v1": discover_global_pauli,
