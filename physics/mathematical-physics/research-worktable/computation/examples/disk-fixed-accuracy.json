@@ -1,0 +1,8 @@
+{
+  "boundary_problem": "dirichlet-disk-polynomial.json",
+  "target_eigenvalues": 6,
+  "relative_tolerance": "2/25",
+  "radial_cell_budgets": [16, 32, 64, 128],
+  "cartesian_interval_budgets": [16, 24, 32, 48, 64],
+  "solver_tolerance": "1/10000000000"
+}

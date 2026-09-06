@@ -1,0 +1,38 @@
+{
+  "schema": "matrix-pde-inverse/v1",
+  "coefficient_generators": [
+    [["0", "1", "0"], ["0", "0", "0"], ["0", "0", "0"]],
+    [["0", "0", "0"], ["0", "0", "1"], ["0", "0", "0"]]
+  ],
+  "coefficient_differential_action": {
+    "kind": "common_scalar_eigenmodule",
+    "eigenvalue": "3"
+  },
+  "operator_family": {
+    "kind": "matrix_coefficient_tensor_laplacian",
+    "differential_order": 2,
+    "reduced_couplings": {
+      "antisymmetric_bracket": "1/2",
+      "symmetric_traceless_jordan": "3/4"
+    }
+  },
+  "preparation": {
+    "operator_parameter": [["0", "1", "0"], ["0", "0", "0"], ["0", "0", "0"]],
+    "state_parameter": [["0", "0", "0"], ["0", "0", "1"], ["0", "0", "0"]],
+    "probe": [["0", "0", "0"], ["0", "0", "0"], ["1", "0", "0"]]
+  },
+  "observable": {
+    "kind": "ordered_and_exchange_reversed_reduced_pde_amplitudes"
+  },
+  "analytic_realization": {
+    "carrier": "L2_compact_base_with_matrix_fiber",
+    "domain": "H2_sobolev",
+    "core": "smooth_sections",
+    "coefficient_regularities": "smooth_bounded"
+  },
+  "equivalence": "effective_lie_algebra_and_visible_witness",
+  "resource_budget": {
+    "maximum_matrix_size": 3,
+    "maximum_closure_dimension": 8
+  }
+}

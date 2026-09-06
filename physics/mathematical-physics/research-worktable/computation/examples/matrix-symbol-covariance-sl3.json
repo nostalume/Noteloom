@@ -1,0 +1,38 @@
+{
+  "schema": "matrix-symbol-covariance/v1",
+  "coefficient_generators": [
+    [["0", "1", "0"], ["0", "0", "0"], ["0", "0", "0"]],
+    [["0", "0", "0"], ["1", "0", "0"], ["0", "0", "0"]],
+    [["0", "0", "0"], ["0", "0", "1"], ["0", "0", "0"]],
+    [["0", "0", "0"], ["0", "0", "0"], ["0", "1", "0"]]
+  ],
+  "differential_jet": {
+    "kind": "pairing_dual_square_of_generated_derivations",
+    "covariant_pairing": {
+      "kind": "matrix_trace",
+      "scale": "2"
+    },
+    "core": "symmetric_algebra_of_coefficient_dual"
+  },
+  "operator_family": {
+    "kind": "natural_tensor_after_generated_second_order_operator",
+    "differential_order": 2,
+    "reduced_couplings": {
+      "antisymmetric_bracket": "1/2",
+      "symmetric_traceless_jordan": "3/4"
+    }
+  },
+  "preparation": {
+    "operator_parameter": [["0", "1", "0"], ["0", "0", "0"], ["0", "0", "0"]],
+    "state_parameter": [["0", "0", "0"], ["0", "0", "1"], ["0", "0", "0"]],
+    "probe": [["0", "0", "0"], ["0", "0", "0"], ["1", "0", "0"]]
+  },
+  "observable": {
+    "kind": "ordered_and_exchange_reversed_reduced_pde_amplitudes"
+  },
+  "equivalence": "effective_lie_algebra_and_visible_witness",
+  "resource_budget": {
+    "maximum_matrix_size": 3,
+    "maximum_closure_dimension": 8
+  }
+}

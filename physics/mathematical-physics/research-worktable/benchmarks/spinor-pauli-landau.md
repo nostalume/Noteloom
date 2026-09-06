@@ -1,0 +1,203 @@
+# Gauge-covariant spinor PDE decomposition in a uniform magnetic field
+
+## Purpose
+
+This bench combines the three difficulties absent from an ODE:
+
+- several cotangent directions;
+- gauge-dependent coordinate representatives;
+- a matrix-valued spinor symbol.
+
+The desired output is the energy-channel decomposition of the Pauli operator, not
+component wavefunctions in a chosen gauge.
+
+## 1. Geometric input
+
+Let oriented Euclidean three-space carry a Hermitian line-bundle connection with
+constant nonzero curvature two-form `F`.  For nonzero charge `q`, define covariant momenta
+on a common smooth core by the convention
+
+```text
+[Pi(u),Pi(v)] = i q F(u,v) I.                            (1)
+```
+
+The magnetic vector is constructed from the curvature:
+
+```text
+B = sharp(*F),       b=|q| |B|,       s=sign(q).                  (2)
+```
+
+Thus the field, not a gauge potential or coordinate axis, selects the splitting
+
+```text
+TM = span(B) + B^perp.                                  (3)
+```
+
+Choose a local oriented orthonormal frame `e_1,e_2` of `B^perp` and
+`e_3=B/|B|`.  Another such transverse frame differs by a phase rotation in the
+ladder variables below, leaving their number operator invariant.
+
+## 2. Clifford factorization
+
+Let `sigma_i` be Clifford/Pauli multiplication in this frame:
+
+```text
+sigma_i sigma_j = delta_ij I + i epsilon_ijk sigma_k.
+```
+
+The first-order Pauli--Dirac operator is
+
+```text
+Q = sigma . Pi.
+```
+
+Compute its square using the symmetric and antisymmetric parts of the Pauli
+product.  The symmetric part contracts the symmetric momentum product, while the
+antisymmetric part consumes the curvature commutator (1):
+
+```text
+Q^2
+ = sum_(i,j) sigma_i sigma_j Pi_i Pi_j
+ = Pi^2 + (i/2) sum_(i,j,k) epsilon_ijk sigma_k [Pi_i,Pi_j]
+ = Pi^2 - q sigma . B.                                  (4)
+```
+
+Equation (4) is the spin-curvature term forced by factorization.  It would be
+missed by treating the principal symbol as a scalar Laplacian and adding spin
+afterward.
+
+## 3. Curvature constructs the transverse ladders
+
+Equation (1) restricted to `B^perp` gives
+
+```text
+[Pi_1,Pi_2] = i s b I.
+```
+
+Define
+
+```text
+a   = (Pi_1 + i s Pi_2)/sqrt(2b),
+a^* = (Pi_1 - i s Pi_2)/sqrt(2b).                       (5)
+```
+
+Evaluating the commutator from (5) gives
+
+```text
+[a,a^*]
+ = (-2 i s [Pi_1,Pi_2])/(2b)
+ = I.                                                   (6)
+```
+
+The Heisenberg ladder algebra is therefore constructed from gauge curvature.  It
+is not guessed from prior knowledge of the Landau group.
+
+Let `N=a^*a` and let `Sigma=s sigma_3`; then `Sigma^2=I`.  Equations (4)--(6)
+recombine the second-order spinor PDE as
+
+```text
+H_P := Q^2
+ = Pi_3^2 + 2b(N+1/2) - b Sigma.                        (7)
+```
+
+The spin projectors
+
+```text
+P_+ = (I+Sigma)/2,       P_-=(I-Sigma)/2                (8)
+```
+
+are constructed from the curvature-selected direction.  They are not components
+chosen before the PDE is inspected.
+
+## 4. Analytic decomposition
+
+Translation parallel to the constant field strongly commutes with the transverse
+oscillator and spin projectors.  Fourier analysis in that one constructed
+direction and the Fock decomposition of `N` give
+
+```text
+H = integral_R^oplus dk direct-sum_(n>=0)
+      [(S_+ tensor M_(k,n)) + (S_- tensor M_(k,n))],     (9)
+```
+
+where `S_+` and `S_-` are the one-dimensional images of `P_+` and `P_-`, while
+`M_(k,n)` retains
+magnetic-translation degeneracy.  On these channels,
+
+```text
+E_(k,n,+) = k^2 + 2bn,
+E_(k,n,-) = k^2 + 2b(n+1).                              (10)
+```
+
+The lowest transverse level occurs in only one curvature-aligned spin sector.
+The full degeneracy per area requires the commuting guiding-center/magnetic-
+translation representation and depends on the global geometry or boundary; it is
+not inferred from (10) alone.
+
+## 5. Coordinate and gauge checks
+
+- A gauge change of the connection conjugates every `Pi_i`, hence `Q` and `H_P`,
+  by the same unitary multiplication operator.  Curvature `F`, channel energies,
+  and the decomposition class are unchanged.
+- Rotating `e_1,e_2` about `B` multiplies `a` by a phase and fixes `N`.
+- Reversing the oriented transverse frame changes the sign convention `s` and
+  exchanges the labels consistently; equation (7) is invariant.
+- The reconstruction check substitutes (5) and (8) into (7) and recovers (4) on
+  the common core.
+
+These checks compare presentations through intertwiners rather than declaring one
+coordinate gauge canonical.
+
+As an independent sign check, (4) and the unnormalized version of (6) were
+evaluated with Gaussian-integer polynomial arithmetic in a Landau-gauge
+realization on all monomials of total degree at most four.  Every residual
+vanished.  This finite calculation checks the presentation; the curvature and
+Pauli-algebra computation above supplies the invariant argument.
+
+## 6. Algebra generated by the PDE
+
+The PDE constructs several related objects:
+
+```text
+odd factor Q with Q^2=H_P,
+transverse Heisenberg algebra from [a,a^*]=I,
+longitudinal translation generator Pi_3,
+spin grading Sigma,
+magnetic-translation central extension controlling degeneracy.
+```
+
+The natural closure is graded: the odd first-order factor squares to the even
+Hamiltonian.  The spin representation also remembers the double cover of spatial
+frame rotations.  A scalar group decomposition would lose both facts.
+
+## 7. Transfer and boundary
+
+Passed structurally:
+
+- a multidimensional PDE determines its own preferred splitting through `F`;
+- different vector-potential gauges give unitarily equivalent decompositions;
+- Clifford factorization generates the spin coupling;
+- curvature generates the transverse ladder algebra;
+- the second-order PDE reduces to explicit spin/Fock/longitudinal channels.
+
+Special resources that prevent a generic claim:
+
+- `F` is constant and nonzero;
+- Euclidean space has a global spinor bundle and translation direction;
+- there is no electric potential or boundary;
+- eigenvalue crossings and variable-field mode conversion do not occur.
+
+For nonconstant `F`, the same symbol and Clifford construction survives locally,
+but `B^perp`, spin projectors, and oscillator modes acquire connection and gluing
+terms.  The next transfer should measure those residual couplings rather than
+assuming local Landau levels remain exact.
+
+## 8. Executable bilateral projection
+
+The [bilateral Pauli router](bilateral-pauli-router.md) now projects this calculus
+through the common `reduction-decision/v1` interface.  Independent
+representation-first and PDE-first probes reconstruct the same spin/Fock channel
+rule, transfer under charge-sign reversal, and expose a broken matrix
+spin-curvature term as `SpinCurvatureResidual`.  That executable result is an
+exact algebraic channel certificate; the full direct-integral measure and global
+magnetic degeneracy remain analytic/topological obligations.

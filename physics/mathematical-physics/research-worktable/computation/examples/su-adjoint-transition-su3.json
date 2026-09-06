@@ -1,0 +1,29 @@
+{
+  "schema": "su-adjoint-transition/v1",
+  "group_family": {
+    "type": "SU",
+    "defining_dimension": 3,
+    "carrier": "complexified_adjoint_as_traceless_matrices"
+  },
+  "operator_family": {
+    "kind": "type_adjoint_order_two_on_one_source_sector",
+    "differential_order": 2,
+    "invariant_source_block_factor": "4",
+    "reduced_couplings": {
+      "antisymmetric_bracket": "1/2",
+      "symmetric_traceless_jordan": "3/4"
+    }
+  },
+  "preparation": {
+    "left": [["0", "1", "0"], ["0", "0", "0"], ["0", "0", "0"]],
+    "right": [["0", "0", "0"], ["0", "0", "1"], ["0", "0", "0"]],
+    "probe": [["0", "0", "0"], ["0", "0", "0"], ["1", "0", "0"]]
+  },
+  "observable": {
+    "kind": "ordered_and_exchange_reversed_transition_amplitudes"
+  },
+  "equivalence": "simultaneous_conjugation",
+  "resource_budget": {
+    "maximum_defining_dimension": 3
+  }
+}

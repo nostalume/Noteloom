@@ -1,0 +1,37 @@
+{
+  "schema": "su-adjoint-pde/v1",
+  "group_family": {
+    "type": "SU",
+    "defining_dimension": 3,
+    "carrier": "complexified_adjoint_as_traceless_matrices"
+  },
+  "operator_family": {
+    "kind": "adjoint_natural_tensor_laplacian",
+    "differential_order": 2,
+    "differential_factor": "identity_plus_positive_biinvariant_laplacian",
+    "reduced_couplings": {
+      "antisymmetric_bracket": "1/2",
+      "symmetric_traceless_jordan": "3/4"
+    }
+  },
+  "preparation": {
+    "operator_parameter": [["0", "1", "0"], ["0", "0", "0"], ["0", "0", "0"]],
+    "state_parameter": [["0", "0", "0"], ["0", "0", "1"], ["0", "0", "0"]],
+    "probe": [["0", "0", "0"], ["0", "0", "0"], ["1", "0", "0"]]
+  },
+  "observable": {
+    "kind": "ordered_and_exchange_reversed_reduced_pde_amplitudes"
+  },
+  "analytic_realization": {
+    "carrier": "L2_of_group_with_complexified_adjoint_fiber",
+    "domain": "L2_only",
+    "core": "smooth_functions",
+    "haar_measure": "normalized_probability",
+    "laplacian": "positive_biinvariant",
+    "generator_normalization": "trace_half_delta"
+  },
+  "equivalence": "left_translation_covariance_and_visible_core_equality",
+  "resource_budget": {
+    "maximum_defining_dimension": 3
+  }
+}

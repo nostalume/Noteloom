@@ -1,0 +1,30 @@
+{
+  "schema": "pauli-landau-global/v1",
+  "local_problem_file": "pauli-landau-positive.json",
+  "global_geometry": {
+    "transverse": {
+      "type": "flat_torus",
+      "area_over_2pi": "1/2",
+      "bundle": "hermitian_line_bundle_from_constant_curvature"
+    },
+    "longitudinal": {
+      "type": "real_line",
+      "fourier_convention": "unnormalized_forward",
+      "measure": "dk/(2*pi)"
+    },
+    "boundary": "none"
+  },
+  "domain_contract": {
+    "transverse": "bochner_friedrichs_on_smooth_bundle_sections",
+    "longitudinal": "H2(R)",
+    "tensor_sum": "self_adjoint_strongly_commuting_tensor_sum"
+  },
+  "observable": {
+    "kind": "heat_trace_per_unit_longitudinal_length",
+    "inverse_temperature": "1/2",
+    "absolute_tolerance": "1/1000000"
+  },
+  "resource_budget": {
+    "maximum_landau_level": 4
+  }
+}

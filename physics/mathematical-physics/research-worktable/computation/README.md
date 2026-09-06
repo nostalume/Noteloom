@@ -1,0 +1,150 @@
+# Computation workbench
+
+This directory is the executable bench for bilateral construction between
+group/representation data and differential operators. It is intentionally
+constructive: a route must expose what it builds, what observable it preserves,
+what residuals certify it, what it costs, and where it refuses.
+
+## Public flow
+
+```text
+path
+  -> one ProblemDocument(path, decoded JSON object)
+  -> schema registry
+  -> route-specific construction
+  -> reduction-decision/v1
+  -> full certificate or compact summary + semantic exit code
+```
+
+`reduction_workbench.py` also exposes three direct backends under the common
+`reduction-witness/v1` envelope: `cyclic`, `factor-centralizer`, and
+`stratified-orbit`. Omit `--summary` to retain all route evidence.
+
+Outcomes `exact`, `controlled`, and `formal` exit 0; `obstructed` exits 2;
+`unresolved` exits 3. Refusal is evidence, not an exception hidden from the
+result.
+
+From this directory:
+
+```powershell
+uv sync --locked --dev
+uv run python reduction_workbench.py discover examples/quadratic-survival-compressed.json --summary
+uv run python reduction_workbench.py discover examples/matrix-pde-inverse-sl3.json --summary
+uv run python reduction_workbench.py discover examples/matrix-symbol-covariance-sl3.json --summary
+uv run python reduction_workbench.py discover examples/matrix-adjoint-semigroup-sl3.json --summary
+```
+
+The project follows the latest stable CPython 3.14 line. The current lock resolves
+CPython 3.14-compatible NumPy, SciPy, and Ruff versions exactly; update deliberately
+with `uv lock --upgrade`, rerun the complete suite, and inspect numerical
+tolerances before accepting a new lock.
+
+## Ownership
+
+| Owner | Responsibility |
+| --- | --- |
+| `problem_input.py` | read/decode a source-backed ProblemSpec once |
+| `problem_router.py` | schema-to-constructor registry |
+| `linear_defect_compiler.py` | exact residual-kernel intersection, rank ledger, and bounded refusal shared across typed seed adapters |
+| `tensor_seed_compression.py` | exact metric-kernel candidates, recursive symmetric-power quotients, audit orbits, tensor defects, brackets, and span certificates |
+| `natural_relation_planner.py` | lazy relation planning, symbolic admission, selected-route materialization, and explicit audit |
+| `natural_tensor_input.py` | natural-tensor JSON grammar and construction-backed relation certificates |
+| `natural_tensor_stabilizer.py` | selected-route execution, optional raw audit, and elasticity use witness |
+| `exact_gaussian_matrix.py` | exact Hermitian/skew-Hermitian matrix operations and canonical `u(S)` basis |
+| `coupled_covariance_core.py` | reusable linked-carrier covariance defects, ineffective commutant quotient, closure, and exact symbol projectors |
+| `coupled_relation_stabilizer.py` | coupled-relation JSON admission and public witness projection |
+| `adjoint_algebra.py` | immutable rational matrices, Lie/Jordan operations, exact closure, coordinates, and pairing |
+| `quadratic_route_router.py` | independent factor/cyclic probes and observable-relative selection |
+| `pauli_bilateral_router.py` | local Clifford/PDE construction and coincidence |
+| `pauli_global_router.py` | flux, domain, direct-integral, and heat promotion |
+| `su_adjoint_multiplicity_router.py` | F3 natural adjoint channels and F4 PDE lift |
+| `matrix_pde_inverse_router.py` | F5 PDE-first coefficient-algebra recovery |
+| `matrix_symbol_covariance_router.py` | F6 generated derivations, invariant pairing, and Casimir action |
+| `matrix_adjoint_global_router.py` | F7 compact real form, quotient, domain, and semigroup promotion |
+| remaining scientific modules | cyclic, centralizer, Coulomb, singular, boundary, and quotient-PDE certificates |
+
+The routers consume public algebra operations; they do not import private helpers
+from one another. Path-based `discover_problem(path)` functions remain
+compatibility entry points. A global route may decode one contained local bridge
+file, and it retains a successful local certificate when analytic promotion
+fails.
+
+## Admitted discovery families
+
+| Schema | Bilateral construction |
+| --- | --- |
+| `quadratic-schrodinger/v1` | PDE stiffness/action to factor or observable-cyclic spectral measure |
+| `pauli-landau-bilateral/v1` | Clifford/curvature data and matrix PDE to the same spin/Fock channels |
+| `pauli-landau-global/v1` | local channels to flux multiplicity, Fourier carrier, and heat observable |
+| `su-adjoint-transition/v1` | SU(2)/SU(3) adjoint data to bracket/Jordan intertwiners |
+| `su-adjoint-pde/v1` | adjoint channels to a compact Sobolev/Casimir differential block |
+| `matrix-pde-inverse/v1` | matrix PDE seeds to effective sl(2)/sl(3) and visible channels |
+| `matrix-symbol-covariance/v1` | generated algebra to covariant differential action and Casimir |
+| `matrix-adjoint-semigroup/v1` | local symbol block to compact quotient and one heat-semigroup matrix element |
+| `natural-tensor-stabilizer/v1` | supplied natural tensors to an effective stabilizer and optional elasticity plane-wave witness |
+| `coupled-carrier-covariance/v1` | metric and link relations to an effective coupled action and exact linked-symbol projectors |
+
+Detailed mathematical contracts live in the neighboring
+[benchmarks](../benchmarks/). In particular, see the
+[quadratic router](../benchmarks/backend-independent-quadratic-router.md),
+[bilateral Pauli construction](../benchmarks/bilateral-pauli-router.md),
+[adjoint PDE lift](../benchmarks/su-adjoint-multiplicity-pde.md),
+[PDE-first matrix reconstruction](../benchmarks/pde-first-matrix-lie-reconstruction.md),
+[symbol covariance](../benchmarks/matrix-symbol-covariance-casimir.md), and
+[global adjoint semigroup](../benchmarks/matrix-adjoint-semigroup-global.md).
+
+## Reproducible verification
+
+Run after every code or dependency change:
+
+```powershell
+uv sync --locked --dev
+uv run ruff check .
+uv run ruff format --check .
+uv run python -m unittest test_adjoint_algebra.py test_workbench_contract.py
+uv run python -m unittest discover -s . -p "test_*.py"
+uv run python -m unittest discover -s . -p "check_*.py"
+uv run python -m compileall -q .
+```
+
+The exact trace pairing uses
+`tr(AB) = sum(A[i,j] * B[j,i])` without materializing `AB`. On Windows with
+CPython 3.14.6 and the rank-three global fixture, seven warmed in-process runs
+moved from a 207.20 ms median to 205.02 ms. A separate 15-run CLI confirmation
+measured 307.37 ms median against the earlier 333.26 ms sample. These are local
+regression observations, not portable speed claims; exact output equality is the
+primary gate.
+
+## Boundary and extension rule
+
+The current inverse machinery is deliberately bounded to dense exact 2x2 and 3x3
+matrix carriers. It does not infer a unique global group from a Lie algebra,
+construct arbitrary real forms, prove imported elliptic/domain theorems, enumerate
+a full Peter-Weyl spectrum, or solve nonlinear PDEs by relabeling them as linear
+representations.
+
+Admit a new route only when it provides:
+
+1. input independent of the expected answer;
+2. a reusable constructed object, not a component catalogue;
+3. analysis/synthesis maps or an explicit obstruction;
+4. exact residuals or a controlled error contract;
+5. whole-route cost for a named observable;
+6. transfer and refusal tests; and
+7. a route-specific certificate preserved by the common envelope.
+
+New case-specific schema growth remains frozen. The
+[seed--defect compiler](../defect-kernel-construction.md) passes its held-out
+isotropic-elasticity transfer, and [G1](../structured-seed-compression.md) now
+constructs `g^-1 Lambda^2(V*)` candidates and symmetry-orbit residuals before
+elimination. The selected route exactly matches the raw stabilizer span with 3
+candidates and 21 residual coordinates rather than 9 and 90. The
+[G2 planner](../typed-relation-planner.md) now derives this route from certified
+capabilities and permutation generators. Its transparent cost audit finds that
+generic orbit canonicalization scans the 81-coordinate input. G3 now replaces it
+operationally with recursive quotient-coordinate emission, checks budgets before
+materialization, and confines the raw/orbit route to explicit audit. G4 then uses
+the common defect compiler on a metric/Hermitian link, constructs its effective
+coupled action in ranks two and three, and returns exact principal-symbol
+projectors. Development now targets the full lower-order/domain lift to the
+existing Pauli observable, not another tensor or symbol-only variant.

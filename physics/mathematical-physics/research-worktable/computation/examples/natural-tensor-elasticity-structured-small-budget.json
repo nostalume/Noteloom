@@ -1,0 +1,20 @@
+{
+  "schema": "natural-tensor-stabilizer/v1",
+  "dimension": 3,
+  "tensors": [
+    {
+      "kind": "metric",
+      "matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    },
+    {
+      "kind": "isotropic_elasticity",
+      "lambda": 1,
+      "mu": 1
+    }
+  ],
+  "resource_budget": {
+    "maximum_candidate_dimension": 2,
+    "maximum_residual_coordinates": 90,
+    "maximum_bracket_checks": 1200
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "matrix": [
+    [0, 1],
+    [1, 0]
+  ],
+  "preparation": [1, 0],
+  "budget": 1,
+  "time_horizon": "1/10",
+  "tolerance": "1/5"
+}

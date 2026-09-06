@@ -1,0 +1,29 @@
+{
+  "geometry": {
+    "type": "annular_cylinder",
+    "inner_radius": "1",
+    "outer_radius": "2",
+    "lower_height": "0",
+    "upper_height": "1",
+    "radial_axial_boundary": "Dirichlet",
+    "angular_boundary": "periodic"
+  },
+  "operator": {
+    "type": "axial_divergence_elliptic",
+    "a_coupling": "1/8",
+    "b_coupling": "-1/10",
+    "c_coupling": "1/6",
+    "potential_coupling": "1/13",
+    "theta_dependence": "none"
+  },
+  "manufactured_solution": {
+    "quotient_profile": "sin(pi*(r-1))*sin(pi*z)",
+    "angular_modes": [
+      {"abs_m": 1, "kind": "sin", "amplitude": "2/5"},
+      {"abs_m": 3, "kind": "cos", "amplitude": "1/4"}
+    ]
+  },
+  "quotient_cell_budgets": [6, 8, 12, 16, 24],
+  "angular_nodes": 32,
+  "relative_l2_tolerance": "1/50"
+}

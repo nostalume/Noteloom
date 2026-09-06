@@ -1,0 +1,24 @@
+{
+  "geometry": {
+    "type": "warped_axisymmetric_solid",
+    "height_interval": ["0", "1"],
+    "outer_radius": "1+(1/2)z(1-z)",
+    "warp_amplitude": "1/2",
+    "outer_and_end_boundary": "Dirichlet",
+    "axis_policy": "uniform_neumann"
+  },
+  "operator": {
+    "type": "smooth_axial_divergence_elliptic",
+    "a_coupling": "1/5",
+    "b_coupling": "1/7",
+    "c_coupling": "1/9",
+    "potential_coupling": "1/11"
+  },
+  "manufactured_modes": [
+    {"abs_m": 0, "kind": "cos", "amplitude": "1"},
+    {"abs_m": 1, "kind": "cos", "amplitude": "1/3"}
+  ],
+  "quotient_cell_budgets": [8],
+  "angular_nodes": 16,
+  "relative_l2_tolerance": "1/10"
+}

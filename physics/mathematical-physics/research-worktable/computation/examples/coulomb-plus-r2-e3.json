@@ -1,0 +1,14 @@
+{
+  "potential": [
+    {
+      "powers": [0, 0, 0],
+      "radius_squared_power": "-1/2",
+      "coefficient": "-1"
+    },
+    {
+      "powers": [0, 0, 0],
+      "radius_squared_power": "1",
+      "coefficient": "1"
+    }
+  ]
+}

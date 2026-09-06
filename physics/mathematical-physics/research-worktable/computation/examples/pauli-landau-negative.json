@@ -1,0 +1,27 @@
+{
+  "schema": "pauli-landau-bilateral/v1",
+  "representation_problem": {
+    "spatial_dimension": 3,
+    "metric": "euclidean",
+    "orientation": "positive",
+    "clifford_module_dimension": 2,
+    "charge_sign": -1,
+    "field_magnitude": "3",
+    "curvature": "constant_rank_two",
+    "parallel_translation": true
+  },
+  "pde_problem": {
+    "order": 2,
+    "principal_symbol": "euclidean_scalar_identity_on_spinors",
+    "spinor_fiber_dimension": 2,
+    "transverse_momentum_commutator_imaginary_coefficient": "-3",
+    "spin_curvature_term": [["3", "0"], ["0", "-3"]],
+    "parallel_translation_commutes": true,
+    "core": "Schwartz(R^3,C^2)"
+  },
+  "observable": {
+    "kind": "spin_resolved_transverse_energy_channels",
+    "maximum_orbital_level": 2
+  },
+  "equivalence": "unitary_spin_frame_and_gauge_conjugacy"
+}

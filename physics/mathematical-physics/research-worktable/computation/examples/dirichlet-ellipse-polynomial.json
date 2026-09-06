@@ -1,0 +1,6 @@
+{
+  "operator": "negative_laplacian",
+  "boundary_condition": "dirichlet",
+  "boundary_quadratic": [["1", "0"], ["0", "2"]],
+  "polynomial_degree": 6
+}

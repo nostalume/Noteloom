@@ -1,0 +1,31 @@
+{
+  "schema": "matrix-adjoint-semigroup/v1",
+  "local_problem_file": "matrix-symbol-covariance-sl3.json",
+  "real_form": {
+    "involution": "transpose_without_conjugation",
+    "fixed_condition": "star_skew_traceless",
+    "inner_product": "negative_trace_on_compact_real_form",
+    "normalization_scale": "2"
+  },
+  "global_carrier": {
+    "integration": "connected_star_unitary_determinant_one_matrix_group",
+    "effective_base": "adjoint_central_quotient",
+    "measure": "normalized_haar_probability"
+  },
+  "domain_contract": {
+    "carrier": "L2_effective_compact_group_with_complexified_adjoint_fiber",
+    "operator": "positive_biinvariant_laplacian",
+    "domain": "H2_sobolev",
+    "core": "smooth_sections",
+    "semigroup": "spectral_theorem_contraction"
+  },
+  "observable": {
+    "kind": "adjoint_coefficient_heat_matrix_element_and_exchange_pair",
+    "heat_time": "1/2",
+    "state_parameter": [["0", "0", "0"], ["0", "0", "1"], ["0", "0", "0"]],
+    "probe": [["0", "0", "0"], ["0", "0", "0"], ["0", "1", "0"]]
+  },
+  "resource_budget": {
+    "maximum_matrix_size": 3
+  }
+}

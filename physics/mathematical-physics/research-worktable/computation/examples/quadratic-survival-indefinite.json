@@ -1,0 +1,22 @@
+{
+  "schema": "quadratic-schrodinger/v1",
+  "operator": {
+    "kinetic": "identity",
+    "stiffness": [
+      [1, 0, 0],
+      [0, -1, 0],
+      [0, 0, 9]
+    ],
+    "core": "Schwartz(R^3)"
+  },
+  "preparation": {
+    "one_excitation": [1, 1, 1]
+  },
+  "observable": {
+    "kind": "one_excitation_survival_amplitude"
+  },
+  "reuse": "single_preparation",
+  "resource_budget": {
+    "max_cyclic_steps": 3
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "coupled-carrier-covariance/v1",
+  "base_metric": [["1", "0"], ["0", "1"]],
+  "link_matrices": [
+    [["0", "1"], ["1", "0"]],
+    [["0", "1"], ["1", "0"]]
+  ],
+  "required_capabilities": ["metric-clifford-link"],
+  "resource_budget": {
+    "maximum_candidate_dimension": 8,
+    "maximum_residual_coordinates": 11,
+    "maximum_bracket_checks": 2500
+  }
+}
