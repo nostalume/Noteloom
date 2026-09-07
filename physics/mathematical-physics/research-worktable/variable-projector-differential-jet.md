@@ -86,6 +86,6 @@ representation decomposition misses and preserves the constant-projector limit.
 
 It does not infer a spectral gap, operator norm, domain invariance, propagation
 time, or small parameter. Consequently nonzero leakage is diagnosed, not called
-adiabatically small. G12 should add a declared gap and observable window, compute a
-leakage bound, and compare the controlled reduced evolution with the full one under
-the theorem contracts already recorded in the mode-bundle calculus.
+adiabatically small. [G12](gap-aware-leakage-bound.md) now supplies a positive gap,
+momentum, scale, time, preparation, and observable for one finite two-channel
+calibration. Uniform multichannel PDE control remains a separate frontier.

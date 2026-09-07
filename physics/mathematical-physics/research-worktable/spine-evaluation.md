@@ -141,6 +141,10 @@ optional observable promotion.
   Exact transported jets construct the reduced connection and first/second
   off-block leakage, reconstruct the second product rule, recover G10 for constant
   projectors, and preserve carrier output under constant frame change.
+- The gap-aware continuation supplies the missing analytic data for one channel.
+  A constructed leakage norm and positive gap yield an exact two-channel
+  transition formula plus time/gap bounds, while a closing gap and unsupported
+  exact field are refused.
 
 ## Feasibility boundary
 
@@ -162,11 +166,10 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Gap-aware analytic promotion:** G11 now composes variable projectors with the
-   mode-bundle differential calculus exactly. Add a declared gap, bounded
-   momentum/energy window, domain, time, preparation, and observable; construct a
-   leakage bound and refuse crossings rather than calling every smooth jet
-   adiabatic.
+1. **Multichannel analytic promotion:** G12 controls one constructed leakage
+   channel at one momentum. Construct the full off-block map on a declared finite
+   window, retain preparation and observable maps, and compare full and reduced
+   propagators without treating a norm upper bound as an equality.
 2. **Leverage adjudication:** retain the complete G3 selected-route break-even of
    9 separately from the stabilization-only value 8; measure runtime or prove a
    family-level symbolic bound before promoting broader computational leverage.

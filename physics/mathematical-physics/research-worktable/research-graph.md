@@ -732,9 +732,7 @@ case-by-case router growth.
   norm, domain, time, or observable estimate is inferred; singular crossings,
   topology beyond one chart, and nonlinear feedback remain separate.
 
-## Active open bridge
-
-### G12 — Gap-aware leakage promotion to an observable bound
+### G12 — Gap-aware leakage promotion to an observable bound (`supported bounded`)
 
 - **Upstream:** G11 constructs exact off-block differential terms but deliberately
   makes no claim that they are small or that reduced evolution approximates full
@@ -749,12 +747,45 @@ case-by-case router growth.
 - **Falsifier:** the bound omits time, preparation, recovery, or construction cost;
   uses a closing gap; treats a formal commutator as bounded without a domain
   contract; or fails to recover zero error from G11 exact decoupling.
-- **Next probe:** equip the moving repeated-Pauli jet with a declared finite gap and
-  bounded momentum window, compute a first leakage bound, compare it with exact
-  finite-dimensional evolution at short time, and refuse zero gap.
+- **Probe result:** [the gap-aware leakage bound](gap-aware-leakage-bound.md)
+  constructs `epsilon(2 k K_j+L_j)` from the jet, verifies the canonical
+  two-channel Hamiltonian square identity, and derives exact time- and gap-based
+  probability bounds. The rational moving-projector bench has coupling `20/101`,
+  frequency one, and transition probability `0.032421206173191101` below
+  `400/9801`; the constant jet recovers zero and a closing gap refuses.
 - **Boundary:** finite-dimensional bounded evolution or an explicitly imported
-  energy-localized theorem contract. Unbounded global PDE evolution, crossings,
-  long-time superadiabatic optimization, and topology remain parked.
+  energy-localized theorem contract. This result treats one prepared column and
+  one momentum, not a full block or the original PDE propagator. Unbounded global
+  PDE evolution, crossings, long-time superadiabatic optimization, and topology
+  remain parked.
+
+## Active open bridge
+
+### G13 — Full-block propagation on a declared finite window
+
+- **Upstream:** G12 proves that one constructed G11 leakage column can be promoted
+  to a controlled two-channel observable once gap, time, and preparation are
+  explicit.
+- **Tension:** a scalar column norm discards multichannel interference and does not
+  compare the original full and reduced propagators. Repeating G12 column by
+  column would be exhaustive and can overcount coherent leakage.
+- **Question:** can the complete `K,L` off-block map be assembled on a finite
+  momentum window and consumed by one preparation/observable-specific Duhamel
+  comparison with exact zero-leakage recovery?
+- **Alternatives:** construct the full finite block propagator and a norm-certified
+  comparison versus sum independent two-channel bounds or infer control directly
+  from representation labels.
+- **Falsifier:** the route hard-codes two channels, calls a Frobenius upper bound an
+  exact operator norm, omits preparation or observable recovery, hides window
+  construction cost, or fails to return zero error when all G11 leakage vanishes.
+- **Next probe:** construct the full repeated-Pauli retained/complement coupling at
+  two rational momenta, compare exact finite-matrix full and reduced transition
+  observables, test a coherent two-column preparation, and refuse a window with a
+  closing supplied gap.
+- **Boundary:** finite-dimensional rational carrier and finite declared momentum
+  set. Continuous spectral windows, unbounded PDE generators, domain transport,
+  certified transcendental matrix functions, and nonlinear feedback remain
+  theorem-contract or later reconstruction problems.
 
 ## Parked branches and re-entry conditions
 

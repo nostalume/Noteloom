@@ -63,6 +63,7 @@ tolerances before accepting a new lock.
 | `exact_gaussian_linear.py` | exact Gaussian-rational rank, coordinates, and determinant |
 | `simple_block_pde.py` | primitive commutant slices, irreducible actions, quadratic-symbol use, and cost ledger |
 | `mode_bundle_jet.py` | exact transported projector/frame jets, connection, leakage, and second-order synthesis |
+| `gap_aware_leakage.py` | exact leakage-channel norm, gapped two-channel transition witness, bounds, and refusals |
 | `coefficient_algebra.py` | exact involutive two-sector algebra, restricted roots, minimal polynomial, and coefficient-derived projectors |
 | `pauli_operator_channels.py` | optional curvature grading, axial coefficient reconstruction, and Pauli channel consumer |
 | `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
@@ -184,8 +185,10 @@ constructs the noncommutative boundary: Hermitian commutator kernels recover the
 represented star-algebra and commutant, G8 splits their center, and exact block
 dimensions certify irreducible size and multiplicity. G10 constructs a primitive
 commutant slice, solves exact intertwiner coordinates for a minimal carrier, and
-verifies a multiplicity-weighted quadratic-symbol determinant. The remaining
-boundary is variable coefficient. G11 now constructs the connection and leakage
-terms of an exact transported projector jet and reconstructs a second-order section
-derivative in any tested constant reduced frame. Quantitative adiabatic promotion
-still requires gap, norm, domain, time, and observable-window contracts.
+verifies a multiplicity-weighted quadratic-symbol determinant. G11 then constructs
+the connection and leakage terms of an exact transported projector jet and
+reconstructs a second-order section derivative in any tested constant reduced
+frame. G12 now promotes one selected
+momentum-sector leakage column through a supplied gap and time to an exact
+two-channel transition formula and bound. Uniform energy-window and multichannel
+PDE propagation remain open.

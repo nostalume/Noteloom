@@ -72,6 +72,7 @@ group name.
 | recover noncommutative representation multiplicity | [finite represented star algebra](finite-represented-star-algebra.md) | commutant/bicommutant kernels, central projectors, isotypic blocks, and exact multiplicities |
 | realize and use a minimal simple block | [simple-block PDE reduction](simple-block-pde-reduction.md) | primitive commutant slice, irreducible action, determinant reconstruction, and amortization ledger |
 | differentiate a moving representation block | [variable-projector differential jet](variable-projector-differential-jet.md) | connection, second-order potential, off-block leakage, and frame-covariant synthesis |
+| promote one leakage channel analytically | [gap-aware leakage bound](gap-aware-leakage-bound.md) | exact two-channel transition formula, time/gap bounds, and closing-gap refusal |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -171,8 +172,11 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   reconstructs its determinant with multiplicity two; the complete proxy breaks
   even only after 62 queries. G11 composes this carrier with a variable projector
   jet: it constructs connection and first/second leakage terms, reconstructs the
-  second-order product rule, and retains frame covariance. The active frontier is
-  quantitative analytic promotion—gap, norm, domain, time, and observable data.
+  second-order product rule, and retains frame covariance. G12 supplies gap, time,
+  momentum, preparation, and observable data for one constructed leakage channel;
+  it verifies an exact two-channel transition formula and a controlled bound. The
+  active frontier is full multichannel propagation on a declared finite window,
+  not further special-function or scalar examples.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

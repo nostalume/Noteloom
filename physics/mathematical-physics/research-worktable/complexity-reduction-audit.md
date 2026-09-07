@@ -794,3 +794,25 @@ the full second derivative. This is correctness and human leverage: previously
 hidden product-rule terms become a compact invariant package. It is not yet a
 computational-leverage verdict because no gap, norm, time, domain, or observable
 error has been supplied. Those costs define G12's promotion gate.
+
+## 34. One leakage column becomes a bounded observable
+
+G12 adds no spectral solve. Given the G11 jet, it scans the `q` entries of one
+constructed vector `epsilon(2 k K_j+L_j)`, evaluates its exact norm, and builds a
+fixed `2 x 2` Hamiltonian. Its additional route cost is therefore
+
+```text
+coupling construction: O(q),
+transition recovery:    O(1),
+additional storage:     O(q).
+```
+
+On the rational moving-projector bench, the constructed coupling is `20/101` and
+the gap is `198/101`, so the exact frequency is one. At time two, the transition
+probability `0.032421206173191101` lies below the exact gap bound `400/9801`.
+The constant-projector route recovers zero work-visible error.
+
+This is analytical control and human compression for one prepared channel, not a
+computational speedup or an original-PDE error theorem. A complete multichannel
+comparison must include construction of the full off-block map, propagation on a
+declared window, and recovery of the same original observable.
