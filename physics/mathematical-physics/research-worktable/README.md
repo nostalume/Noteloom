@@ -77,6 +77,7 @@ group name.
 | derive a moving block from PDE coefficients | [coefficient-derived projector jet](coefficient-derived-projector-jet.md) | exact spectral projector derivatives, gap, horizontal transport, and rigid downstream adapter |
 | propagate a coefficient-derived non-rigid block | [projector-native propagation](projector-native-propagation.md) | common off-block differential jet, rigid recovery, and non-rigid bright/dark observable |
 | adjudicate complete local route cost | [complete-route leverage](complete-route-leverage.md) | same-observable admission, typed work/timing ledgers, and domain-wise disposition |
+| propagate only the prepared active carrier | [prepared-observable active subspace](prepared-observable-active-subspace.md) | minimal Gaussian-rational Krylov module, Gram/effect pullback, reusable propagation, and amortized-cost disposition |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -190,8 +191,13 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   propagation core. G16 then compares that complete local route with a sampled
   dense baseline. Exact construction has lower declared semantic depth but loses
   the observed runtime comparison because both routes still exponentiate the full
-  carrier. The active frontier is therefore observable-cyclic propagation on the
-  smallest preparation-reachable invariant subspace, not another special PDE.
+  carrier. G17 constructs the smallest preparation-reachable invariant carrier
+  directly over the Gaussian rationals, pulls back the effect without requiring
+  its invariance, and separates exact closure cost from the smaller exponential.
+  All tested blocks reduce to dimension three; one-shot timing loses, while reuse
+  over 64 times wins in all four cases. The active frontier is now one
+  coefficient-family reachable module shared across momentum specializations,
+  not another pointwise Krylov or special-PDE example.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

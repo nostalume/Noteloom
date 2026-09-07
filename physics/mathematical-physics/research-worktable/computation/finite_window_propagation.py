@@ -33,6 +33,36 @@ class FinitePropagationWindow:
 
 
 @dataclass(frozen=True)
+class PreparedMomentumBlock:
+    momentum: Fraction
+    gap: Fraction
+    leakage_columns: tuple[Vector, ...]
+    coupling_operator: gaussian.ComplexMatrix
+    baseline_hamiltonian: gaussian.ComplexMatrix
+    full_hamiltonian: gaussian.ComplexMatrix
+    effect: gaussian.ComplexMatrix
+    carrier_preparation: Vector
+    coupling_rank: int
+    frobenius_upper_squared: Fraction
+    preparation_norm_squared: Fraction
+    preparation_coupling_squared: Fraction
+    checks: dict[str, bool]
+
+
+@dataclass(frozen=True)
+class PreparedPropagationWindow:
+    window: FinitePropagationWindow
+    blocks: tuple[PreparedMomentumBlock, ...]
+    total_norm_squared: Fraction
+    short_time_bound: Fraction
+    gap_bound: Fraction
+    probability_bound: Fraction
+    differential_source: str
+    analysis_coordinate_solves: int
+    checks: dict[str, bool]
+
+
+@dataclass(frozen=True)
 class MomentumBlockWitness:
     momentum: Fraction
     gap: Fraction
@@ -183,15 +213,14 @@ def _numpy_vector(value: Vector) -> np.ndarray:
     )
 
 
-def _construct_block(
+def _prepare_block(
     model: IrreducibleModel,
     differential: OffBlockDifferentialJet,
     momentum: Fraction,
     gap: Fraction,
     slow_scale: Fraction,
-    time: Fraction,
     preparation: Vector,
-) -> tuple[MomentumBlockWitness, float]:
+) -> PreparedMomentumBlock:
     projector = differential.projector
     complement = gaussian.add(gaussian.identity(len(projector)), gaussian.scale(projector, -1))
     arrow = gaussian.scale(
@@ -210,16 +239,6 @@ def _construct_block(
     carrier_preparation = linear_combination(preparation, model.embedding_columns)
     preparation_norm = _norm_squared(carrier_preparation)
     preparation_coupling = _norm_squared(matrix_vector(arrow, carrier_preparation))
-    full_numeric = _numpy_matrix(full)
-    propagator = expm(-1j * float(time) * full_numeric)
-    state = propagator @ _numpy_vector(carrier_preparation)
-    observed = np.vdot(state, _numpy_matrix(complement) @ state)
-    observed_probability = (
-        float(observed.real / float(preparation_norm)) if preparation_norm else 0.0
-    )
-    unitarity_residual = float(
-        np.linalg.norm(propagator.conj().T @ propagator - np.eye(len(projector)), ord=2)
-    )
     checks = {
         "leakage_map_is_off_block": gaussian.multiply(projector, arrow)
         == gaussian.zero(len(projector)),
@@ -233,34 +252,68 @@ def _construct_block(
         "preparation_starts_retained": matrix_vector(complement, carrier_preparation)
         == tuple(gaussian.ZERO for _ in carrier_preparation),
     }
-    block = MomentumBlockWitness(
+    return PreparedMomentumBlock(
         momentum=momentum,
         gap=gap,
         leakage_columns=leakage,
         coupling_operator=arrow,
         baseline_hamiltonian=baseline,
         full_hamiltonian=full,
+        effect=complement,
+        carrier_preparation=carrier_preparation,
         coupling_rank=rank(arrow),
         frobenius_upper_squared=_frobenius_squared(arrow),
         preparation_norm_squared=preparation_norm,
         preparation_coupling_squared=preparation_coupling,
+        checks=checks,
+    )
+
+
+def _propagate_block(
+    prepared: PreparedMomentumBlock, time: Fraction
+) -> tuple[MomentumBlockWitness, float]:
+    full_numeric = _numpy_matrix(prepared.full_hamiltonian)
+    propagator = expm(-1j * float(time) * full_numeric)
+    state = propagator @ _numpy_vector(prepared.carrier_preparation)
+    observed = np.vdot(state, _numpy_matrix(prepared.effect) @ state)
+    observed_probability = (
+        float(observed.real / float(prepared.preparation_norm_squared))
+        if prepared.preparation_norm_squared
+        else 0.0
+    )
+    unitarity_residual = float(
+        np.linalg.norm(propagator.conj().T @ propagator - np.eye(len(prepared.effect)), ord=2)
+    )
+    block = MomentumBlockWitness(
+        momentum=prepared.momentum,
+        gap=prepared.gap,
+        leakage_columns=prepared.leakage_columns,
+        coupling_operator=prepared.coupling_operator,
+        baseline_hamiltonian=prepared.baseline_hamiltonian,
+        full_hamiltonian=prepared.full_hamiltonian,
+        coupling_rank=prepared.coupling_rank,
+        frobenius_upper_squared=prepared.frobenius_upper_squared,
+        preparation_norm_squared=prepared.preparation_norm_squared,
+        preparation_coupling_squared=prepared.preparation_coupling_squared,
         observed_transition_probability=observed_probability,
         unitarity_residual=unitarity_residual,
         expectation_imaginary_residual=(
-            abs(float(observed.imag)) / float(preparation_norm) if preparation_norm else 0.0
+            abs(float(observed.imag)) / float(prepared.preparation_norm_squared)
+            if prepared.preparation_norm_squared
+            else 0.0
         ),
-        checks=checks,
+        checks=prepared.checks,
     )
     return block, float(observed.real)
 
 
-def _construct_off_block_window(
+def _prepare_off_block_window(
     model: IrreducibleModel,
     differential: OffBlockDifferentialJet,
     window: FinitePropagationWindow,
     adapter_checks: dict[str, bool],
     analysis_coordinate_solves: int,
-) -> WindowPropagationWitness:
+) -> PreparedPropagationWindow:
     count = len(window.momenta)
     if not count or len(window.gaps) != count or len(window.preparations) != count:
         raise WindowPropagationError(
@@ -286,15 +339,13 @@ def _construct_off_block_window(
         _admit_vector(value, dimension, f"preparation[{index}]")
         for index, value in enumerate(window.preparations)
     )
-    blocks_and_numerators = tuple(
-        _construct_block(model, differential, momentum, gap, slow_scale, time, preparation)
+    blocks = tuple(
+        _prepare_block(model, differential, momentum, gap, slow_scale, preparation)
         for momentum, gap, preparation in zip(momenta, gaps, preparations, strict=True)
     )
-    blocks = tuple(item[0] for item in blocks_and_numerators)
     total_norm = sum((block.preparation_norm_squared for block in blocks), Fraction(0))
     if not total_norm:
         raise WindowPropagationError("ZeroPreparation", "the window preparation must be nonzero")
-    full_probability = sum(item[1] for item in blocks_and_numerators) / float(total_norm)
     short_bound = (
         time
         * time
@@ -309,11 +360,39 @@ def _construct_off_block_window(
         / total_norm
     )
     probability_bound = min(Fraction(1), short_bound, gap_bound)
-    observable_error = abs(full_probability)
     checks = {
         **adapter_checks,
         **differential.checks,
         "all_block_laws_hold": all(all(block.checks.values()) for block in blocks),
+    }
+    if not all(checks.values()):
+        failed = next(name for name, passed in checks.items() if not passed)
+        raise WindowPropagationError("WindowPreparationResidual", f"construction fails at {failed}")
+    return PreparedPropagationWindow(
+        FinitePropagationWindow(momenta, gaps, slow_scale, time, preparations),
+        blocks,
+        total_norm,
+        short_bound,
+        gap_bound,
+        probability_bound,
+        differential.source,
+        analysis_coordinate_solves,
+        checks,
+    )
+
+
+def propagate_prepared_window(prepared: PreparedPropagationWindow) -> WindowPropagationWitness:
+    """Evaluate the dense full-carrier route from an already assembled exact window."""
+    blocks_and_numerators = tuple(
+        _propagate_block(block, prepared.window.time) for block in prepared.blocks
+    )
+    blocks = tuple(item[0] for item in blocks_and_numerators)
+    full_probability = sum(item[1] for item in blocks_and_numerators) / float(
+        prepared.total_norm_squared
+    )
+    observable_error = abs(full_probability)
+    checks = {
+        **prepared.checks,
         "numerical_propagators_are_unitary": all(
             block.unitarity_residual <= NUMERICAL_TOLERANCE for block in blocks
         ),
@@ -322,7 +401,7 @@ def _construct_off_block_window(
         ),
         "observable_obeys_constructed_bound": -NUMERICAL_TOLERANCE
         <= full_probability
-        <= float(probability_bound) + NUMERICAL_TOLERANCE,
+        <= float(prepared.probability_bound) + NUMERICAL_TOLERANCE,
         "zero_preparation_coupling_recovers_zero_error": any(
             block.preparation_coupling_squared for block in blocks
         )
@@ -332,25 +411,48 @@ def _construct_off_block_window(
         failed = next(name for name, passed in checks.items() if not passed)
         raise WindowPropagationError("WindowPropagationResidual", f"construction fails at {failed}")
     return WindowPropagationWitness(
-        window=FinitePropagationWindow(momenta, gaps, slow_scale, time, preparations),
+        window=prepared.window,
         blocks=blocks,
         full_transition_probability=full_probability,
         reduced_transition_probability=0.0,
         observable_error=observable_error,
-        short_time_bound=short_bound,
-        gap_bound=gap_bound,
-        probability_bound=probability_bound,
+        short_time_bound=prepared.short_time_bound,
+        gap_bound=prepared.gap_bound,
+        probability_bound=prepared.probability_bound,
         numerical_tolerance=NUMERICAL_TOLERANCE,
-        differential_source=differential.source,
+        differential_source=prepared.differential_source,
         domain_contract="finite direct sum of bounded Gaussian-rational carrier blocks",
         observable="probability in the selected projector complement",
         cost=WindowPropagationCost(
-            analysis_coordinate_solves=analysis_coordinate_solves,
-            coupling_matrix_entries=count * len(model.selected_projector) ** 2,
-            propagated_blocks=count,
-            propagated_block_dimension=len(model.selected_projector),
+            analysis_coordinate_solves=prepared.analysis_coordinate_solves,
+            coupling_matrix_entries=len(blocks) * len(blocks[0].full_hamiltonian) ** 2,
+            propagated_blocks=len(blocks),
+            propagated_block_dimension=len(blocks[0].full_hamiltonian),
         ),
         checks=checks,
+    )
+
+
+def construct_off_block_prepared_window(
+    model: IrreducibleModel,
+    differential: OffBlockDifferentialJet,
+    window: FinitePropagationWindow,
+) -> PreparedPropagationWindow:
+    """Assemble exact finite Hamiltonians without evaluating a matrix exponential."""
+    return _prepare_off_block_window(model, differential, window, {}, 0)
+
+
+def _construct_off_block_window(
+    model: IrreducibleModel,
+    differential: OffBlockDifferentialJet,
+    window: FinitePropagationWindow,
+    adapter_checks: dict[str, bool],
+    analysis_coordinate_solves: int,
+) -> WindowPropagationWitness:
+    return propagate_prepared_window(
+        _prepare_off_block_window(
+            model, differential, window, adapter_checks, analysis_coordinate_solves
+        )
     )
 
 

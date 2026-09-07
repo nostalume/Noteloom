@@ -927,3 +927,34 @@ depends on two theorem contracts rather than one convergence contract. Thus huma
 semantic depth is compressed but theorem debt is not eliminated. Original-PDE
 propagation remains unpaid on both sides. The next cost-changing operation must
 compress the preparation-reachable invariant subspace before exponentiation.
+
+## 39. Active-carrier construction wins only after reuse
+
+G17 separates exact block assembly from propagation and generates
+
+```text
+K_psi=span{psi,H psi,...,H^(r-1) psi},
+H B=B A,  G=B^dagger B,  F=B^dagger Q B.
+```
+
+The first exact Krylov dependence proves minimal invariance. `G` avoids adjoining
+normalization square roots, and `F` recovers the effect without requiring `Q` to
+preserve `K_psi`. Per block, the current dense/active solve ledgers are
+
+```text
+dense:   one q x q exponential,
+active:  r H-actions + r coordinate solves + 2 r^2 pairings
+         + one r x r exponential.
+```
+
+Exact and floating operations remain separate. On every G16 transfer block,
+`r=3`: the exponential proxy falls `64 -> 27` for `q=4` and `216 -> 27` for
+`q=6`, while the same complement probability is recovered within `1.39e-17`.
+The exact construction cost dominates one-shot propagation, making the active
+route `9.01--59.38` times slower in the observed small cases.
+
+The returned carrier is reusable. Across 64 finite times, active/dense measured
+ratios fall to `0.25--0.68`, so all four cases reverse ordering. This supports an
+amortized solve-stage gain, not a universal speed claim. The next cost target is
+to construct one coefficient-family module before momentum specialization rather
+than repeat exact Krylov closure for each block.
