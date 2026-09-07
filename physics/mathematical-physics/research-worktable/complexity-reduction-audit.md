@@ -775,3 +775,22 @@ This promotes a bounded amortized proxy claim, not measured runtime dominance.
 The next complete-route cost must include connection construction and leakage
 control when projectors vary over the PDE base; otherwise a pointwise algebraic
 reduction hides the derivative work that couples its sectors.
+
+## 33. Variable projectors turn hidden derivative work into an output
+
+G11 adds no eigenvector catalogue. From a `q x d` G10 embedding and one exact
+skew-Hermitian transport generator it constructs `P'`, `B'`, `B''`, connection
+coordinates, and first/second leakage. Dense arithmetic is conservatively
+
+```text
+jet construction: O(q^3+d^2 q^2),
+stored scalars:    O(q^2+qd),
+section use:       O(qd+d^2).
+```
+
+The constant-projector branch returns zero leakage, so it adds no semantic PDE
+coupling to G10. The moving branch returns nonzero leakage and exactly reconstructs
+the full second derivative. This is correctness and human leverage: previously
+hidden product-rule terms become a compact invariant package. It is not yet a
+computational-leverage verdict because no gap, norm, time, domain, or observable
+error has been supplied. Those costs define G12's promotion gate.

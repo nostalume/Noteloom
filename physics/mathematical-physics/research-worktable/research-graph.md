@@ -707,9 +707,7 @@ case-by-case router growth.
   coefficients. Field extensions, variable connections, domains, and analytic
   completeness remain parked.
 
-## Active open bridge
-
-### G11 — Variable coefficient star-algebra bundles and derivative coupling
+### G11 — Variable coefficient star-algebra bundles and derivative coupling (`supported bounded`)
 
 - **Upstream:** G10 proves exact reduction when the algebra, primitive commutant
   projector, and embedding are constant over the differential base.
@@ -724,13 +722,39 @@ case-by-case router growth.
 - **Falsifier:** derivative coupling is omitted; gauge/frame changes alter the
   reported observable; an adiabatic estimate is presented as exact; or the
   construction loses the G10 constant-projector limit.
-- **Next probe:** use a rationally parameterized rotating repeated-Pauli carrier.
-  Construct `P(x)`, its connection, and `(I-P)dP`; recover zero leakage for constant
-  rotation and nonzero controlled coupling for a varying rotation without changing
-  the pointwise algebra constructor.
-- **Boundary:** smooth finite-rank coefficient bundles with declared derivative and
-  gap information. Singular crossings, domains, topology beyond one chart, and
-  nonlinear feedback remain separate.
+- **Probe result:** [the variable-projector differential jet](variable-projector-differential-jet.md)
+  takes a G10 carrier and exact skew transport, constructs `P'`, `B'`, `B''`, the
+  reduced connection/second potential, and first/second off-block leakage. The
+  constant limit recovers G10; a rational moving projector has nonzero leakage yet
+  exactly reconstructs the second product rule. Constant reduced-frame change
+  preserves the carrier endpoint.
+- **Boundary:** an exact Gaussian-rational first/second transported jet. No gap,
+  norm, domain, time, or observable estimate is inferred; singular crossings,
+  topology beyond one chart, and nonlinear feedback remain separate.
+
+## Active open bridge
+
+### G12 — Gap-aware leakage promotion to an observable bound
+
+- **Upstream:** G11 constructs exact off-block differential terms but deliberately
+  makes no claim that they are small or that reduced evolution approximates full
+  evolution.
+- **Tension:** “adiabatic” is analytically meaningful only relative to a spectral
+  gap, norm/energy window, time scale, domain, preparation, and observable.
+- **Question:** can the exact jet be combined with supplied gap and bounded-sector
+  data to construct a replayable leakage bound and an observable-level comparison,
+  while refusing crossings and domain mismatch?
+- **Alternatives:** a finite-dimensional Duhamel/resolvent bound on a declared
+  window versus an unqualified small-derivative label.
+- **Falsifier:** the bound omits time, preparation, recovery, or construction cost;
+  uses a closing gap; treats a formal commutator as bounded without a domain
+  contract; or fails to recover zero error from G11 exact decoupling.
+- **Next probe:** equip the moving repeated-Pauli jet with a declared finite gap and
+  bounded momentum window, compute a first leakage bound, compare it with exact
+  finite-dimensional evolution at short time, and refuse zero gap.
+- **Boundary:** finite-dimensional bounded evolution or an explicitly imported
+  energy-localized theorem contract. Unbounded global PDE evolution, crossings,
+  long-time superadiabatic optimization, and topology remain parked.
 
 ## Parked branches and re-entry conditions
 

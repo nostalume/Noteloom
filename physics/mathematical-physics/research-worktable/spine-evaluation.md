@@ -137,6 +137,10 @@ optional observable promotion.
   commutant projector constructs a minimal carrier, exact intertwining reduces all
   admitted coefficients, and a quadratic symbol determinant reconstructs with its
   multiplicity. The complete proxy supports amortization only after 62 queries.
+- The variable-projector continuation supplies the missing differential terms.
+  Exact transported jets construct the reduced connection and first/second
+  off-block leakage, reconstruct the second product rule, recover G10 for constant
+  projectors, and preserve carrier output under constant frame change.
 
 ## Feasibility boundary
 
@@ -158,10 +162,11 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Variable coefficient composition:** G10 now realizes and uses a minimal
-   simple block for constant coefficients. Compose pointwise G9/G10 projectors with
-   the existing mode-bundle calculus, construct their connection and off-block
-   derivative leakage, and retain the exact constant-projector limit.
+1. **Gap-aware analytic promotion:** G11 now composes variable projectors with the
+   mode-bundle differential calculus exactly. Add a declared gap, bounded
+   momentum/energy window, domain, time, preparation, and observable; construct a
+   leakage bound and refuse crossings rather than calling every smooth jet
+   adiabatic.
 2. **Leverage adjudication:** retain the complete G3 selected-route break-even of
    9 separately from the stabilization-only value 8; measure runtime or prove a
    family-level symbolic bound before promoting broader computational leverage.

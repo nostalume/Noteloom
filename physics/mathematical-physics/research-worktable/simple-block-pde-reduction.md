@@ -104,6 +104,6 @@ within budget. G10 upgrades multiplicity from an integer to an executable
 irreducible action and exact second-order-symbol reconstruction.
 
 If `P_r=P_r(x)` varies, derivatives produce `(partial P_r)` coupling and (5) no
-longer yields independent PDE sectors. G11 should compose this constructor with the
-existing mode-bundle calculus, construct the induced connection and leakage
-residual, and separate exact from adiabatic decoupling.
+longer yields independent PDE sectors. [G11](variable-projector-differential-jet.md)
+now constructs the induced connection and exact first/second leakage jet. A
+quantitative adiabatic error still requires gap, norm, time, and domain data.

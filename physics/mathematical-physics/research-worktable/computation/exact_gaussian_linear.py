@@ -7,6 +7,36 @@ import exact_gaussian_matrix as gaussian
 Vector = tuple[gaussian.Gaussian, ...]
 
 
+def matrix_vector(value: gaussian.ComplexMatrix, vector: Vector) -> Vector:
+    if len(value) != len(vector) or any(len(row) != len(vector) for row in value):
+        raise ValueError("matrix and vector dimensions differ")
+    return tuple(
+        sum(
+            (value[row][column] * vector[column] for column in range(len(vector))),
+            gaussian.ZERO,
+        )
+        for row in range(len(value))
+    )
+
+
+def linear_combination(coefficients: Vector, basis: tuple[Vector, ...]) -> Vector:
+    if not basis or len(coefficients) != len(basis):
+        raise ValueError("Gaussian vector combination dimensions differ")
+    dimension = len(basis[0])
+    if any(len(vector) != dimension for vector in basis):
+        raise ValueError("Gaussian vector dimensions differ")
+    return tuple(
+        sum(
+            (
+                coefficient * vector[index]
+                for coefficient, vector in zip(coefficients, basis, strict=True)
+            ),
+            gaussian.ZERO,
+        )
+        for index in range(dimension)
+    )
+
+
 def _reduced(
     rows: list[list[gaussian.Gaussian]], columns: int
 ) -> tuple[list[list[gaussian.Gaussian]], list[int]]:
