@@ -1,0 +1,290 @@
+# Active bench: rank-one symmetric-space spectral compiler
+
+## Spine binding
+
+- **Upstream anchor:** the matrix-coefficient and central-character generators in
+  [../representation-calculus.md](../nodes/representation-calculus.md).
+- **Bridge question:** can restricted-root data generate a whole family of
+  differential spectral systems, while the reverse route recovers exactly the
+  representation information retained by the radial equation?
+- **Invariant target:** the normalized `K`-spherical matrix coefficient and its
+  spectral transform, not a named special-function formula.
+- **Downstream effect:** establishes whether the calculus compresses several
+  symmetric spaces into one human-executable construction and identifies the data
+  lost by radialization.
+- **Special resource:** `(G,K)` is a Riemannian symmetric pair of real rank one.
+
+## Horizon
+
+Develop the scalar `K`-spherical channel for connected rank-one Riemannian
+symmetric spaces and their compact duals.  Treat nontrivial `K`-types, higher rank,
+non-Riemannian homogeneous spaces, and general invariant Hamiltonians as later
+branches.  The current bench does not classify global groups from a scalar ODE.
+
+## Typed input
+
+Let `X=G/K` be noncompact of rank one.  Choose `H_0` in the one-dimensional
+maximal abelian space so that the indivisible positive restricted root satisfies
+`alpha(H_0)=1`.  The positive restricted roots are contained in
+
+```text
+{alpha, 2 alpha}
+```
+
+with multiplicities
+
+```text
+m_1 = m_alpha,  m_2 = m_(2 alpha),
+```
+
+where `m_2=0` when `2 alpha` is absent.  The representation input is a spherical
+unitary representation with normalized `K`-fixed vector `v_lambda`; its spherical
+coefficient is
+
+```text
+phi_lambda(g) = <v_lambda, pi_lambda(g)v_lambda>.
+```
+
+## Construction A: roots generate radial measure
+
+Polar decomposition reduces a `K`-bi-invariant function to `f(r)` on
+`exp(rH_0)`.  Up to a constant irrelevant to logarithmic differentiation, the
+radial density is the root product
+
+```text
+J(r) = sinh(r)^m_1 sinh(2r)^m_2.
+```
+
+The radial Laplacian is forced by symmetry with respect to `J(r)dr`:
+
+```text
+L_rad f = J(r)^(-1) d/dr (J(r) f'(r))
+        = f''(r) + (J'(r)/J(r)) f'(r).
+```
+
+The logarithmic derivative is one semantic computation:
+
+```text
+J'/J
+  = m_1 coth(r) + 2m_2 coth(2r)
+  = (m_1+m_2)coth(r) + m_2 tanh(r),
+```
+
+where the second equality uses `2coth(2r)=coth(r)+tanh(r)`.  Thus two integers
+construct both the analytic measure and the differential operator.
+
+Define
+
+```text
+a = (m_1+m_2-1)/2,
+b = (m_2-1)/2,
+rho = a+b+1 = (m_1+2m_2)/2.
+```
+
+Then
+
+```text
+L_rad = d^2/dr^2 + ((2a+1)coth(r)+(2b+1)tanh(r))d/dr,
+```
+
+the Jacobi operator of type `(a,b)`.  “Jacobi” names the resulting realization;
+it is not an input to the construction.
+
+## Construction B: central character generates the spectrum
+
+The Laplace–Beltrami operator is the differential realization of the quadratic
+Casimir, subject to the chosen metric/sign normalization.  The spherical principal
+series central character supplies
+
+```text
+L_rad phi_lambda = -(lambda^2+rho^2) phi_lambda,
+phi_lambda(0)=1,  phi_lambda'(0)=0.
+```
+
+The initial conditions come from normalization at the identity and Weyl reflection
+`r -> -r`.  No boundary-value ODE is solved to discover the eigenvalue.
+
+For the compact dual, the spherical highest weights form a discrete lattice.  With
+the invariant inner product fixed by the metric, the Casimir theorem contract gives
+
+```text
+-Delta|_(V_Lambda) = <Lambda+2rho, Lambda> I.
+```
+
+Hence spectral values and degeneracies are computed from highest weights and the
+Weyl dimension formula; coordinate eigenfunctions are optional recovery data.
+
+The same root constructor also gives the compact radial realization before any
+coordinate Laplacian is expanded:
+
+```text
+J_c(r) = sin(r)^m_1 sin(2r)^m_2,
+L_rad^c f
+  = f''(r) + [m_1 cot(r)+2m_2 cot(2r)]f'(r)
+  = f''(r) + [(m_1+m_2)cot(r)-m_2 tan(r)]f'(r).
+```
+
+Here `2cot(2r)=cot(r)-tan(r)`.  The change from hyperbolic to circular
+functions is the compact/noncompact duality at the radial level; it does not
+change the restricted-root multiplicities.
+
+## Construction C: one substitution certifies the hypergeometric realization
+
+Set
+
+```text
+z = -sinh(r)^2,  phi_lambda(r)=F(z).
+```
+
+Direct differentiation gives
+
+```text
+L_rad phi_lambda
+  = -4 [z(1-z)F'' + (a+1-(rho+1)z)F'].
+```
+
+Combining this with the central-character eigenvalue produces
+
+```text
+z(1-z)F''
+  + [a+1-(rho+1)z]F'
+  - ((rho-i lambda)/2)((rho+i lambda)/2)F = 0.
+```
+
+The normalized solution is therefore represented by
+
+```text
+F(z) = 2F1((rho-i lambda)/2,
+           (rho+i lambda)/2;
+           a+1;
+           z).
+```
+
+This coordinate calculation is retained only as a coincidence certificate between
+the radial Casimir and the familiar analytic realization.
+
+## Family generated by root multiplicities
+
+The same constructor accepts the following local multiplicity data:
+
+| symmetric-space family | `m_1` | `m_2` |
+| --- | ---: | ---: |
+| real hyperbolic / spherical compact dual, dimension `n` | `n-1` | `0` |
+| complex hyperbolic/projective dual, complex dimension `n` | `2(n-1)` | `1` |
+| quaternionic hyperbolic/projective dual, quaternionic dimension `n` | `4(n-1)` | `3` |
+| Cayley hyperbolic/projective plane | `8` | `7` |
+
+The table supplies inputs, not four derivations.  Low-dimensional coincidences and
+coverings mean that `(m_1,m_2)` does not uniquely identify a global pair `(G,K)`.
+
+## First two-family run
+
+The constructor can now be executed without introducing a named polynomial
+family.  For real hyperbolic three-space the input is `(m_1,m_2)=(2,0)`, so
+
+```text
+J(r) = sinh(r)^2,
+L_rad = d^2/dr^2 + 2coth(r)d/dr,
+(a,b,rho) = (1/2,-1/2,1),
+phi_lambda(r)
+  = 2F1((1-i lambda)/2,(1+i lambda)/2;3/2;-sinh(r)^2)
+  = sin(lambda r)/(lambda sinh(r)).
+```
+
+For complex hyperbolic two-space the input is `(m_1,m_2)=(2,1)`, giving
+
+```text
+J(r) = sinh(r)^2 sinh(2r),
+L_rad = d^2/dr^2 + [3coth(r)+tanh(r)]d/dr,
+(a,b,rho) = (1,0,2),
+phi_lambda(r)
+  = 2F1(1-i lambda/2,1+i lambda/2;2;-sinh(r)^2).
+```
+
+These are two evaluations of one constructor, not two stored solution methods.
+As a secondary coincidence check, direct power-series evaluation at
+`lambda=1.3` and `r in {0.2,0.5,0.75}` gave a maximum radial-equation residual of
+`2.7e-15` in both cases; the real-hyperbolic expression agreed with its elementary
+closed form to `2.3e-16`.  This numerical expansion verifies the compact semantic
+derivation but is not part of that derivation.
+
+## Inverse bench
+
+Given a normalized radial family
+
+```text
+D = d^2/dr^2 + B(r)d/dr
+```
+
+the bounded inverse attempts to write
+
+```text
+B(r) = A coth(r) + B tanh(r).
+```
+
+If the equality holds on the declared domain, it returns
+
+```text
+m_2 = B,
+m_1 = A-B,
+rho = (A+B)/2,
+```
+
+together with checks that `m_1,m_2` are admissible nonnegative integral root
+multiplicities.  It then reconstructs the radial density and local restricted-root
+datum.
+
+The result is deliberately
+
+```text
+RankOneRootDatumCandidate(m_1,m_2,rho)
+```
+
+rather than `RecoveredGroup(G)`.  Global topology, covering, normalization, full
+`K`-type branching, and tensor-product data were erased by radialization.  A group
+claim requires those additional inputs.
+
+On the two-family run, the inverse reads `(A,B)=(2,0)` as `(m_1,m_2,rho)=(2,0,1)`
+and `(A,B)=(3,1)` as `(2,1,2)`.  It succeeds without the space names and also
+demonstrates why it cannot reconstruct them: its output contains only the local
+restricted-root datum.
+
+## Human-computability comparison
+
+### Analytic baseline
+
+For each space separately: derive the metric Laplacian in coordinates, compute the
+Jacobian, reduce the eigenvalue problem, identify the ODE, solve it, impose endpoint
+conditions, and reconstruct the spectral measure.
+
+### Representation calculus
+
+```text
+(m_1,m_2)
+  -> J
+  -> L_rad
+  -> (a,b,rho)
+  -> central-character spectrum
+  -> spherical transform.
+```
+
+The reusable route contains two input integers, one logarithmic derivative, one
+central-character evaluation, and an optional coordinate substitution.  It replaces
+space-by-space formulas while preserving the same spherical observable.
+
+## Checks and status
+
+- **Supported internally:** the density-to-operator calculation, multiplicity to
+  Jacobi-parameter map, spectral shift, hypergeometric substitution, and the
+  forward/inverse two-family run.
+- **Theorem contracts:** polar integration formula, Casimir/Laplacian
+  identification, spherical representation classification, Weyl dimension
+  formula, and Plancherel inversion.
+- **Open computation:** instantiate the compact and noncompact transforms with one
+  normalization convention and compare an explicit spherical heat kernel or
+  resolvent observable across the two routes.
+- **Stop condition:** stop this branch after the same observable is recovered for
+  at least two distinct multiplicity pairs and the inverse returns the correct root
+  data without being told the group.
+- **Re-entry:** higher rank begins only when the rank-one constructor is consumed
+  unchanged and the single radial operator is replaced by a commuting algebra.
