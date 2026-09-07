@@ -157,6 +157,7 @@ resolved row links its semantic owner; benchmark and executable detail stay ther
 | G15 | common invariant off-block differential arrows | frame and coefficient routes meet at `QP'P, QP''P` | [projector-native route](nodes/projector-native-propagation.md) |
 | G16 | same-observable complete-route adjudication | exact route has less semantic depth but loses sampled runtime comparison | [route leverage](nodes/complete-route-leverage.md) |
 | G17 | preparation-reachable active carrier | all tested blocks reduce to 3; one-shot loses, 64-time reuse wins | [active subspace](nodes/prepared-observable-active-subspace.md) |
+| G18 | coefficient-family reachable module | exact common closure and specialization; four-point construction wins, one-point loses | [family module](nodes/coefficient-family-reachable-module.md) |
 
 ## Evidence alias ledger
 
@@ -172,21 +173,25 @@ Retired fine-grained IDs remain provenance aliases, not live graph vertices.
 | `P2--P5,Z1--Z4,K1,D1--D9` | S4/S5 evidence | mode, centralizer, cyclic, route, quotient, and Pauli evidence |
 | `C0` | S5 | superseded by the bounded verdict |
 
-## Active open bridge: G18 coefficient-family reachable module
+## Active open bridge: G19 differential-operator module lift
 
-- **Upstream:** G17 repeats exact Krylov discovery for each assembled `H(k)`.
-- **Question:** for `H(k)=sum_a f_a(k)H_a`, can closure of the preparation under
-  the coefficient algebra construct one module preserved by every specialization?
-- **Required output:** common carrier, specialization-invariance certificate,
-  pulled-back effect, and whole-window construction/recovery cost.
-- **Alternatives:** one reusable coefficient-family carrier versus pointwise
-  carriers; the common carrier may grow to the ambient representation.
-- **Falsifier:** sample-dependent closure, failed invariance, changed observable,
-  ambient regrowth, or no cost reduction.
-- **Next probe:** exact bounded breadth-first closure under the constant and
-  momentum-linear coefficients already used by G15/G17.
-- **Boundary:** finite exact coefficient families with fixed preparation/effect;
-  variable domains, direct integrals, and nonlinear closure remain separate.
+- **Upstream:** G18 constructs an internal module for all finite symbol
+  specializations but evaluates only finite momentum blocks.
+- **Question:** for `D=sum_alpha L_alpha tensor H_alpha`, does a common invariant
+  module of the matrix coefficients construct an invariant function/bundle
+  module before Fourier sampling or coordinate separation?
+- **Required output:** PDE-level analysis/synthesis intertwiner, coefficient-basis
+  covariance, same-observable recovery, domain obligation, and cost ledger.
+- **Alternatives:** a coordinate-independent tensor-module lift versus a hidden
+  reliance on one scalar differential basis or Fourier window.
+- **Falsifier:** coordinate mixing changes the internal carrier, lower-order
+  coefficients escape it, domain/boundary data fail to descend, or the lifted
+  observable differs.
+- **Next probe:** exact order-two two-coordinate operator with mixed derivative
+  basis, transformed by an invertible rational coordinate change, using the same
+  spinor-compatible coefficient module on both presentations.
+- **Boundary:** finite exact internal carriers and declared scalar differential
+  operators; unbounded-domain closure and nonlinear coefficients remain separate.
 
 ## Parked branches and re-entry
 

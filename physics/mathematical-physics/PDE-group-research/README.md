@@ -36,8 +36,8 @@ recovery.
 ## Navigation
 
 - [Research graph](research-graph.md): current six-node spine, compact evidence
-  disposition, active G18 frontier, and parked branches.
-- [Research nodes](nodes/README.md): the 32 semantic construction owners, grouped
+  disposition, active G19 frontier, and parked branches.
+- [Research nodes](nodes/README.md): the 33 semantic construction owners, grouped
   by capability.
 - [Benchmark index](benchmarks/README.md): regression, transfer, refusal, analytic,
   and cost evidence.
@@ -85,13 +85,14 @@ model-independent route dominance.
 
 ## Active frontier
 
-G17 showed that a preparation-generated exact carrier can reduce every tested
-block to dimension three and win after reuse, while losing one-shot timing. The
-next discriminating bridge is G18: construct one module from the coefficient
-family `H(k)=sum_a f_a(k)H_a`, prove that every specialization preserves it,
-pull back the same effect, and compare its whole-window cost against repeated
-pointwise Krylov construction. Ambient-carrier regrowth or no cost improvement
-rejects the leverage claim without invalidating the construction.
+G18 now constructs one exact cyclic module for an entire coefficient family,
+proves specialization invariance, and conditionally beats repeated pointwise
+closure on a four-point window while honestly losing for one point. The next
+discriminating bridge is G19: lift that internal certificate to
+`D=sum_alpha L_alpha tensor H_alpha` before momentum sampling, and prove that an
+invertible change of the scalar differential basis preserves the internal module,
+PDE intertwiner, and requested observable. Domain descent remains an explicit
+obligation rather than a formal consequence.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

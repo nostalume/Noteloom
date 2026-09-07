@@ -61,6 +61,33 @@ class ActiveSubspaceWitness:
     checks: dict[str, bool]
 
 
+@dataclass(frozen=True)
+class CoefficientFamilyCost:
+    coefficient_actions: int
+    exact_coordinate_solves: int
+    gram_pairings: int
+    effect_actions: int
+    effect_pairings: int
+
+
+@dataclass(frozen=True)
+class CoefficientFamilyActiveSubspaceWitness:
+    status: str
+    ambient_dimension: int
+    active_dimension: int
+    coefficient_count: int
+    basis: tuple[Vector, ...]
+    reduced_coefficients: tuple[gaussian.ComplexMatrix, ...]
+    gram: gaussian.ComplexMatrix
+    compressed_effect: gaussian.ComplexMatrix
+    initial_coordinates: Vector
+    numerical_tolerance: float
+    no_dimension_gain: bool
+    domain_contract: str
+    cost: CoefficientFamilyCost
+    checks: dict[str, bool]
+
+
 def evaluate_active_expectation(witness: ActiveSubspaceWitness, time: object) -> float:
     """Reuse one exact active carrier for a new admitted propagation time."""
     try:
@@ -71,6 +98,51 @@ def evaluate_active_expectation(witness: ActiveSubspaceWitness, time: object) ->
         raise ActiveSubspaceError("NegativePropagationTime", "time must be nonnegative")
     value, imaginary_residual = _expectation(
         witness.reduced_hamiltonian,
+        witness.initial_coordinates,
+        witness.compressed_effect,
+        admitted_time,
+        witness.gram[0][0].real,
+    )
+    if imaginary_residual > witness.numerical_tolerance:
+        raise ActiveSubspaceError(
+            "ActiveExpectationResidual", "compressed-effect expectation is not numerically real"
+        )
+    return value
+
+
+def specialize_active_hamiltonian(
+    witness: CoefficientFamilyActiveSubspaceWitness, weights: tuple[object, ...]
+) -> gaussian.ComplexMatrix:
+    """Specialize a common active carrier at exact real coefficient weights."""
+    if not isinstance(weights, tuple) or len(weights) != witness.coefficient_count:
+        raise ActiveSubspaceError(
+            "CoefficientWeightLengthMismatch",
+            "weights and coefficient generators must have equal length",
+        )
+    try:
+        admitted = tuple(gaussian.rational(weight) for weight in weights)
+    except ValueError as error:
+        raise ActiveSubspaceError("InexactCoefficientWeight", str(error)) from error
+    result = gaussian.zero(witness.active_dimension)
+    for weight, coefficient in zip(admitted, witness.reduced_coefficients, strict=True):
+        result = gaussian.add(result, gaussian.scale(coefficient, weight))
+    return result
+
+
+def evaluate_family_expectation(
+    witness: CoefficientFamilyActiveSubspaceWitness,
+    weights: tuple[object, ...],
+    time: object,
+) -> float:
+    """Evaluate one specialization without reconstructing its invariant carrier."""
+    try:
+        admitted_time = gaussian.rational(time)
+    except ValueError as error:
+        raise ActiveSubspaceError("InexactTimeDatum", str(error)) from error
+    if admitted_time < 0:
+        raise ActiveSubspaceError("NegativePropagationTime", "time must be nonnegative")
+    value, imaginary_residual = _expectation(
+        specialize_active_hamiltonian(witness, weights),
         witness.initial_coordinates,
         witness.compressed_effect,
         admitted_time,
@@ -196,6 +268,155 @@ def _admit(
     if _inner(admitted_preparation, admitted_preparation) == gaussian.ZERO:
         raise ActiveSubspaceError("ZeroPreparation", "preparation must be nonzero")
     return admitted_hamiltonian, admitted_preparation, admitted_effect, admitted_time
+
+
+def _admit_family(
+    coefficients: object,
+    preparation: object,
+    effect: object,
+    budget: ActiveSubspaceBudget,
+    numerical_tolerance: float,
+) -> tuple[tuple[gaussian.ComplexMatrix, ...], Vector, gaussian.ComplexMatrix]:
+    if not isinstance(coefficients, tuple) or not coefficients:
+        raise ActiveSubspaceError(
+            "EmptyCoefficientFamily", "coefficient family must be a nonempty tuple"
+        )
+    admitted_coefficients = tuple(
+        _admit_matrix(value, f"coefficient[{index}]") for index, value in enumerate(coefficients)
+    )
+    dimension = len(admitted_coefficients[0])
+    if any(len(value) != dimension for value in admitted_coefficients):
+        raise ActiveSubspaceError(
+            "CoefficientDimensionMismatch", "coefficient generators must have equal dimensions"
+        )
+    if any(not gaussian.is_hermitian(value) for value in admitted_coefficients):
+        raise ActiveSubspaceError(
+            "NonHermitianCoefficient", "every coefficient generator must be Hermitian"
+        )
+    admitted_effect = _admit_matrix(effect, "effect")
+    if len(admitted_effect) != dimension:
+        raise ActiveSubspaceError("EffectDimensionMismatch", "effect and coefficients differ")
+    if not gaussian.is_hermitian(admitted_effect):
+        raise ActiveSubspaceError("NonHermitianEffect", "effect must be Hermitian")
+    admitted_preparation = _admit_vector(preparation, dimension)
+    integer_bounds = (budget.maximum_carrier_dimension, budget.maximum_active_dimension)
+    if any(
+        isinstance(value, bool) or not isinstance(value, int) or value <= 0
+        for value in integer_bounds
+    ):
+        raise ActiveSubspaceError("InvalidActiveSubspaceBudget", "bounds must be positive integers")
+    if dimension > budget.maximum_carrier_dimension:
+        raise ActiveSubspaceError("CarrierBudgetExceeded", "carrier dimension exceeds budget")
+    if not math.isfinite(numerical_tolerance) or numerical_tolerance <= 0:
+        raise ActiveSubspaceError("InvalidNumericalTolerance", "tolerance must be positive")
+    if _inner(admitted_preparation, admitted_preparation) == gaussian.ZERO:
+        raise ActiveSubspaceError("ZeroPreparation", "preparation must be nonzero")
+    return admitted_coefficients, admitted_preparation, admitted_effect
+
+
+def construct_coefficient_family_active_subspace(
+    coefficients: tuple[gaussian.ComplexMatrix, ...],
+    preparation: Vector,
+    effect: gaussian.ComplexMatrix,
+    budget: ActiveSubspaceBudget,
+    *,
+    numerical_tolerance: float = NUMERICAL_TOLERANCE,
+) -> CoefficientFamilyActiveSubspaceWitness:
+    """Construct the minimal common invariant carrier for all coefficients."""
+    coefficients, preparation, effect = _admit_family(
+        coefficients, preparation, effect, budget, numerical_tolerance
+    )
+    dimension = len(coefficients[0])
+    basis = [preparation]
+    action_records: list[list[Vector | int]] = []
+    action_images: list[list[Vector]] = []
+    basis_index = 0
+    while basis_index < len(basis):
+        records: list[Vector | int] = []
+        images: list[Vector] = []
+        for coefficient in coefficients:
+            image = matrix_vector(coefficient, basis[basis_index])
+            images.append(image)
+            coordinate = coordinates(image, tuple(basis))
+            if coordinate is None:
+                if len(basis) >= budget.maximum_active_dimension:
+                    raise ActiveSubspaceError(
+                        "ActiveSubspaceBudgetExceeded",
+                        "coefficient-family closure exceeds active-dimension budget",
+                    )
+                basis.append(image)
+                records.append(len(basis) - 1)
+            else:
+                records.append(coordinate)
+        action_records.append(records)
+        action_images.append(images)
+        basis_index += 1
+
+    active_basis = tuple(basis)
+    active_dimension = len(active_basis)
+
+    def final_coordinate(record: Vector | int) -> Vector:
+        if isinstance(record, int):
+            return _standard_vector(active_dimension, record)
+        return (*record, *(gaussian.ZERO for _ in range(active_dimension - len(record))))
+
+    reduced_coefficients = tuple(
+        _matrix_from_columns(
+            tuple(
+                final_coordinate(action_records[index][coefficient_index])
+                for index in range(active_dimension)
+            )
+        )
+        for coefficient_index in range(len(coefficients))
+    )
+    gram = _pairing_matrix(active_basis, active_basis)
+    effect_images = tuple(matrix_vector(effect, vector) for vector in active_basis)
+    compressed_effect = _pairing_matrix(active_basis, effect_images)
+    initial_coordinates = _standard_vector(active_dimension, 0)
+    checks = {
+        "basis_starts_at_preparation": active_basis[0] == preparation,
+        "every_coefficient_closes_on_basis": all(
+            linear_combination(
+                tuple(reduced[row][column] for row in range(active_dimension)), active_basis
+            )
+            == action_images[column][coefficient_index]
+            for coefficient_index, reduced in enumerate(reduced_coefficients)
+            for column in range(active_dimension)
+        ),
+        "every_reduced_coefficient_is_gram_self_adjoint": all(
+            gaussian.multiply(gram, reduced) == gaussian.multiply(gaussian.dagger(reduced), gram)
+            for reduced in reduced_coefficients
+        ),
+        "compressed_effect_is_hermitian": gaussian.is_hermitian(compressed_effect),
+        "preparation_coordinates_recover": linear_combination(initial_coordinates, active_basis)
+        == preparation,
+    }
+    if not all(checks.values()):
+        failed = next(name for name, passed in checks.items() if not passed)
+        raise ActiveSubspaceError("ActiveSubspaceResidual", f"construction fails at {failed}")
+    coefficient_count = len(coefficients)
+    return CoefficientFamilyActiveSubspaceWitness(
+        "ExactCoefficientFamilyReduction",
+        dimension,
+        active_dimension,
+        coefficient_count,
+        active_basis,
+        reduced_coefficients,
+        gram,
+        compressed_effect,
+        initial_coordinates,
+        numerical_tolerance,
+        active_dimension == dimension,
+        "finite exact Hermitian coefficient family with fixed preparation/effect",
+        CoefficientFamilyCost(
+            coefficient_count * active_dimension,
+            coefficient_count * active_dimension,
+            active_dimension * active_dimension,
+            active_dimension,
+            active_dimension * active_dimension,
+        ),
+        checks,
+    )
 
 
 def construct_active_subspace(

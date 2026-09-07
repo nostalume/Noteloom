@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import unittest
+from dataclasses import replace
 
 from active_window_propagation import (
+    construct_coefficient_family_active_window,
     construct_prepared_active_window,
     construct_projector_active_window_propagation,
     evaluate_active_window_at_time,
@@ -77,6 +79,60 @@ class ActiveWindowPropagationTests(unittest.TestCase):
         self.assertAlmostEqual(active.active_probability, full.full_transition_probability)
         self.assertEqual(active.cost.full_reference_exponentials_evaluated, 0)
         self.assertGreaterEqual(evaluate_active_window_at_time(active, 0), 0)
+
+    def test_coefficient_family_is_derived_before_samples_and_recovers_window(self) -> None:
+        problem = repeated_pauli_problem(3, 4)
+        projector = construct_projector_jet(problem.coefficient_jet, problem.projector_budget)
+        differential = construct_off_block_differential(
+            problem.model,
+            projector.projector,
+            projector.first_off_block_operator,
+            projector.second_off_block_operator,
+            "G14 coefficient-derived projector jet",
+        )
+        prepared = construct_off_block_prepared_window(problem.model, differential, problem.window)
+        full = propagate_prepared_window(prepared)
+        pointwise = construct_prepared_active_window(prepared, ActiveSubspaceBudget(6, 6))
+
+        family = construct_coefficient_family_active_window(
+            problem.model,
+            differential,
+            problem.window,
+            ActiveSubspaceBudget(6, 6),
+        )
+
+        self.assertEqual(family.coefficient_names, ("gap", "momentum", "constant"))
+        self.assertTrue(all(family.exact_specializations))
+        self.assertAlmostEqual(family.active_probability, full.full_transition_probability)
+        self.assertEqual(family.active_dimension, 3)
+        self.assertLess(
+            family.cost.exact_coordinate_solves,
+            pointwise.cost.exact_coordinate_solves,
+        )
+        self.assertTrue(all(family.checks.values()))
+
+    def test_coefficient_family_refuses_variable_preparation(self) -> None:
+        problem = repeated_pauli_problem(2, 2)
+        projector = construct_projector_jet(problem.coefficient_jet, problem.projector_budget)
+        differential = construct_off_block_differential(
+            problem.model,
+            projector.projector,
+            projector.first_off_block_operator,
+            projector.second_off_block_operator,
+            "G14 coefficient-derived projector jet",
+        )
+        changed_window = replace(
+            problem.window,
+            preparations=(problem.window.preparations[0], (1, 0)),
+        )
+
+        with self.assertRaisesRegex(ValueError, "fixed preparation"):
+            construct_coefficient_family_active_window(
+                problem.model,
+                differential,
+                changed_window,
+                ActiveSubspaceBudget(4, 4),
+            )
 
 
 if __name__ == "__main__":

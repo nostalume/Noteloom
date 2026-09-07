@@ -107,8 +107,7 @@ comparison changes neither dynamics nor observable.
 - **Unresolved:** asymptotic crossover, sparse large carriers, conditioning of
   power bases, and family-uniform construction before specializing momentum.
 
-The next consequential bridge is therefore not another pointwise Krylov example.
-It is a coefficient-family reachable module: construct one carrier invariant
-under the Hamiltonian coefficient algebra, specialize it across momentum, and
-test whether this removes repeated exact closure work without expanding back to
-the ambient representation.
+G18 resolves the next bridge with a
+[coefficient-family reachable module](coefficient-family-reachable-module.md):
+one carrier is invariant under every Hamiltonian coefficient, specializes across
+momentum, and removes repeated exact closure work after sufficient window reuse.

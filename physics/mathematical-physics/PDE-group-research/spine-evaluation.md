@@ -58,7 +58,7 @@ carrier, after which reuse—not one-shot execution—produced the measured gain
 | natural tensors/coupled carriers | relation-derived seeds and defect quotients avoid raw candidate enumeration | group-free completeness beyond the admitted relation grammar |
 | coefficient and star algebras | exact projectors, center, isotypic blocks, multiplicity, and primitive carriers are constructed without preferred eigenvectors | scalable arbitrary-dimensional decomposition |
 | variable projectors | coefficient data generate `P,P',P''`, invariant leakage arrows, and finite-window observables | a global trivialization or several-coordinate flatness |
-| active carriers | exact same-observable compression wins after sufficient reuse in the tested family | one-shot runtime dominance |
+| active carriers | pointwise and coefficient-family modules preserve the same observable and win after sufficient reuse | one-shot dominance or protection from ambient regrowth |
 
 Detailed packets are indexed in [benchmarks](benchmarks/README.md); construction
 owners are indexed in [nodes](nodes/README.md); cost claims and their denominators
@@ -81,15 +81,16 @@ or universal route dominance.
 
 ## Adjusted frontier
 
-The weakest consequential bridge is **G18 coefficient-family reachable module**.
-For `H(k)=sum_a f_a(k)H_a`, construct one exact module from the coefficient
-algebra and fixed preparation, then require:
+G18 resolves pointwise repetition for finite coefficient families: one exact
+module is preserved by every specialization, but its leverage is conditional on
+window size and it may regrow to the ambient carrier. The weakest consequential
+bridge is now **G19 differential-operator module lift**. For
+`D=sum_alpha L_alpha tensor H_alpha`, require:
 
-1. every specialization preserves the module;
-2. the same effect and observable are recovered;
-3. construction plus recovery costs less than repeated pointwise G17 closure over
-   the declared window and reuse count; and
-4. ambient-carrier regrowth is reported as a no-gain result.
+1. coefficient-module invariance constructs a PDE-level analysis/synthesis pair;
+2. invertible changes of scalar differential basis preserve that internal module;
+3. the same preparation/effect observable is recovered without Fourier sampling;
+4. lower-order, boundary, and domain escape is reported rather than hidden.
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility

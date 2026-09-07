@@ -103,8 +103,8 @@ Admit a new route only when it provides:
 6. transfer and refusal evidence; and
 7. route-specific detail preserved by the common envelope.
 
-The active G18 probe should reuse existing coefficient and active-carrier owners:
-construct one preparation-reachable module for an entire finite coefficient family
-and compare it with repeated pointwise closure. It does not justify a new
-case-specific schema unless the current grammar cannot express the required input
-or certificate.
+G18 reuses the coefficient and active-carrier owners to construct one
+preparation-reachable module for an entire finite coefficient family and compare
+it with repeated pointwise closure. The active G19 probe must lift this certificate
+to a matrix-valued differential operator without adding a case-specific schema or
+depending on a sampled momentum window.
