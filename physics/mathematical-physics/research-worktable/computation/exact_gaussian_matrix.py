@@ -42,6 +42,15 @@ class Gaussian:
             self.real * other.imaginary + self.imaginary * other.real,
         )
 
+    def __truediv__(self, other: Gaussian) -> Gaussian:
+        norm = other.real * other.real + other.imaginary * other.imaginary
+        if not norm:
+            raise ZeroDivisionError("Gaussian-rational division by zero")
+        return Gaussian(
+            (self.real * other.real + self.imaginary * other.imaginary) / norm,
+            (self.imaginary * other.real - self.real * other.imaginary) / norm,
+        )
+
     def conjugate(self) -> Gaussian:
         return Gaussian(self.real, -self.imaginary)
 

@@ -680,9 +680,7 @@ case-by-case router growth.
   representations, variable bundles, domains, and analytic spectral completeness
   remain separate.
 
-## Active open bridge
-
-### G10 — Minimal simple-block realization and PDE leverage
+### G10 — Minimal simple-block realization and PDE leverage (`supported bounded`)
 
 - **Upstream:** G9 certifies `P_r C^q ~= C^(d_r) tensor C^(m_r)` and constructs the
   isotypic projectors, but its matrices remain `q x q`.
@@ -698,13 +696,41 @@ case-by-case router growth.
   construction costs exceed the unreduced route for the declared family; the
   reduced action fails exact synthesis; or only dimensions, not a reusable PDE
   operation, are returned.
-- **Next probe:** on `M_2` acting with symbolic repetition `m`, construct one
-  irreducible action, apply it to a constant matrix-valued second-order operator,
-  recover a named spectral or propagator observable with multiplicity weight `m`,
-  and determine the break-even including construction.
-- **Boundary:** finite rationally split simple star-algebra blocks and constant
-  compatible differential coefficients; field extensions, variable connections,
-  domains, and analytic completeness remain parked.
+- **Probe result:** [the simple-block PDE reduction](simple-block-pde-reduction.md)
+  constructs a primitive commutant projector, derives an exact rank-two embedding,
+  and solves generator intertwining equations. The quadratic symbol reduces
+  `4 -> 2`; its determinant reconstructs as the square of the reduced determinant
+  before and after rational conjugation. The declared proxy breaks even at 62
+  queries, so only amortized—not single-query or runtime—leverage is supported.
+- **Boundary:** one full finite rationally split isotypic block, a rational
+  commutant splitter within budget, and constant compatible Hermitian differential
+  coefficients. Field extensions, variable connections, domains, and analytic
+  completeness remain parked.
+
+## Active open bridge
+
+### G11 — Variable coefficient star-algebra bundles and derivative coupling
+
+- **Upstream:** G10 proves exact reduction when the algebra, primitive commutant
+  projector, and embedding are constant over the differential base.
+- **Tension:** for `B=B(x)`, differentiation gives
+  `partial(B psi)=B partial(psi)+(partial B)psi`; algebraic block invariance alone
+  therefore does not imply PDE decoupling.
+- **Question:** can pointwise G9/G10 data construct the induced connection and a
+  basis-independent leakage residual, composing with the existing mode-bundle
+  calculus to distinguish exact from controlled adiabatic reduction?
+- **Alternatives:** projector connection `P dP` with off-block leakage versus local
+  diagonalization followed by untracked derivative terms.
+- **Falsifier:** derivative coupling is omitted; gauge/frame changes alter the
+  reported observable; an adiabatic estimate is presented as exact; or the
+  construction loses the G10 constant-projector limit.
+- **Next probe:** use a rationally parameterized rotating repeated-Pauli carrier.
+  Construct `P(x)`, its connection, and `(I-P)dP`; recover zero leakage for constant
+  rotation and nonzero controlled coupling for a varying rotation without changing
+  the pointwise algebra constructor.
+- **Boundary:** smooth finite-rank coefficient bundles with declared derivative and
+  gap information. Singular crossings, domains, topology beyond one chart, and
+  nonlinear feedback remain separate.
 
 ## Parked branches and re-entry conditions
 

@@ -203,8 +203,7 @@ presentations whose center splits rationally within budget. G9 constructs isotyp
 projectors and certifies irreducible and multiplicity dimensions without knowing a
 group first.
 
-The remaining leverage gap is explicit: G9 identifies `C^d tensor C^m` but does
-not construct a minimal `d`-dimensional carrier, matrix units, or a reduced
-coefficient action. G10 should adjudicate whether primitive left ideals or an
-equivalent basis-free simple-block calculus can turn the certified multiplicity
-into a smaller PDE computation with exact analysis/synthesis and whole-route cost.
+G9 alone identifies `C^d tensor C^m` but does not construct a minimal carrier.
+[G10](simple-block-pde-reduction.md) now closes that constant-coefficient gap with
+a primitive commutant slice and exact quadratic-symbol reconstruction. Variable
+projectors and their derivative coupling remain the active boundary.

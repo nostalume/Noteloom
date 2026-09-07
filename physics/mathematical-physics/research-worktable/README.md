@@ -70,6 +70,7 @@ group name.
 | decompose matrix-valued transport | [matrix-valued transport algebra](matrix-valued-transport-algebra.md) | involutive coefficient algebra, minimal polynomial, projectors, and sector polynomials |
 | construct finite commuting coefficient sectors | [finite split coefficient algebra](finite-semisimple-coefficient-algebra.md) | Krylov minimal polynomials, joint idempotents, multiplicities, and polynomial synthesis |
 | recover noncommutative representation multiplicity | [finite represented star algebra](finite-represented-star-algebra.md) | commutant/bicommutant kernels, central projectors, isotypic blocks, and exact multiplicities |
+| realize and use a minimal simple block | [simple-block PDE reduction](simple-block-pde-reduction.md) | primitive commutant slice, irreducible action, determinant reconstruction, and amortization ledger |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -164,8 +165,11 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   star-algebra and its commutant, their intersection supplies the center, and G8
   splits it into isotypic blocks. Exact double-centralizer dimensions distinguish
   irreducible size from repeated multiplicity without a group or preferred block
-  basis. The active frontier is now computational: construct a minimal simple-block
-  carrier and show that the certified multiplicity actually reduces a PDE route.
+  basis. G10 now constructs a primitive commutant slice and its exact irreducible
+  action. A quadratic differential symbol reduces from dimension four to two and
+  reconstructs its determinant with multiplicity two; the complete proxy breaks
+  even only after 62 queries. The next frontier is variable coefficients, where
+  derivatives of the constructed projectors create connection and leakage terms.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

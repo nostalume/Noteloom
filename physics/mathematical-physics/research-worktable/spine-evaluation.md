@@ -133,6 +133,10 @@ optional observable promotion.
   intersection constructs its center, and G8 returns primitive central projectors.
   Double-centralizer square dimensions separate irreducible size from repeated
   multiplicity in real, complex-spinor, mixed-isotypic, and rotated tests.
+- The simple-block continuation makes that multiplicity executable. A primitive
+  commutant projector constructs a minimal carrier, exact intertwining reduces all
+  admitted coefficients, and a quadratic symbol determinant reconstructs with its
+  multiplicity. The complete proxy supports amortization only after 62 queries.
 
 ## Feasibility boundary
 
@@ -154,12 +158,10 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Minimal simple-block realization:** G9 now constructs the algebra, center,
-   commutant, isotypic blocks, and multiplicities of finite exact noncommutative
-   Hermitian families. Construct a primitive left ideal, matrix-unit calculus, or
-   equivalent basis-free `d`-dimensional model, then compare a reduced PDE
-   computation with the original `dm`-dimensional route including construction and
-   recovery.
+1. **Variable coefficient composition:** G10 now realizes and uses a minimal
+   simple block for constant coefficients. Compose pointwise G9/G10 projectors with
+   the existing mode-bundle calculus, construct their connection and off-block
+   derivative leakage, and retain the exact constant-projector limit.
 2. **Leverage adjudication:** retain the complete G3 selected-route break-even of
    9 separately from the stabilization-only value 8; measure runtime or prove a
    family-level symbolic bound before promoting broader computational leverage.

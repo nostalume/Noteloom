@@ -752,3 +752,26 @@ full `q x q` matrices. Runtime leverage requires a constructed `d x d` simple
 model (or another reduced algebra calculus) and a same-observable PDE comparison
 including construction and synthesis. That is the next gate; the known
 multiplicity alone cannot satisfy it.
+
+## 32. A primitive commutant slice makes multiplicity executable
+
+G10 selects a rank-`d` primitive projector from the constructed commutant of a
+`q=dm` isotypic carrier, builds an exact embedding, and solves `C B=B C_red`.
+For the quadratic symbol determinant its explicit scalar-work proxy is
+
+```text
+construction:     G9 system entries + t q^4 + q d^2,
+baseline/query:   q^3,
+reduced/query:    d^3,
+recovery/query:   max(1, bit_length(m)).
+```
+
+On repeated `M_2`, `q=4`, `d=m=2`, and the first commutant candidate succeeds.
+Construction is 3344 proxy units; the per-query route falls from 64 to `8+2` and
+breaks even at 62 evaluations. Exact determinants satisfy `121=11^2` at `k=2`,
+and rational conjugation preserves the observable.
+
+This promotes a bounded amortized proxy claim, not measured runtime dominance.
+The next complete-route cost must include connection construction and leakage
+control when projectors vary over the PDE base; otherwise a pointwise algebraic
+reduction hides the derivative work that couples its sectors.
