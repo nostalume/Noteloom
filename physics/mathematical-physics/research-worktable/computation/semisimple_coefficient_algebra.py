@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from fractions import Fraction
 
 import exact_gaussian_matrix as gaussian
+from exact_rational_linear import coordinates
 from rational_polynomial import FactorizationError, split_linear_roots
 
 
@@ -74,56 +75,18 @@ class PolynomialDecomposition:
     projector_synthesis: gaussian.ComplexMatrix
 
 
-def _vector(value: gaussian.ComplexMatrix) -> tuple[Fraction, ...]:
-    return tuple(
-        coordinate for row in value for entry in row for coordinate in (entry.real, entry.imaginary)
-    )
-
-
-def _coordinates(
-    target: gaussian.ComplexMatrix, basis: list[gaussian.ComplexMatrix]
-) -> tuple[Fraction, ...] | None:
-    columns = [_vector(value) for value in basis]
-    vector = _vector(target)
-    rows = [[*(column[index] for column in columns), vector[index]] for index in range(len(vector))]
-    pivot_row = 0
-    pivots: list[int] = []
-    for column in range(len(columns)):
-        selected = next((row for row in range(pivot_row, len(rows)) if rows[row][column]), None)
-        if selected is None:
-            continue
-        rows[pivot_row], rows[selected] = rows[selected], rows[pivot_row]
-        pivot = rows[pivot_row][column]
-        rows[pivot_row] = [entry / pivot for entry in rows[pivot_row]]
-        for row in range(len(rows)):
-            if row == pivot_row or not rows[row][column]:
-                continue
-            factor = rows[row][column]
-            rows[row] = [
-                entry - factor * pivot_entry
-                for entry, pivot_entry in zip(rows[row], rows[pivot_row], strict=True)
-            ]
-        pivots.append(column)
-        pivot_row += 1
-    if any(not any(row[:-1]) and row[-1] for row in rows):
-        return None
-    if len(pivots) != len(columns):
-        raise AlgebraError("AlgebraLinearDependenceResidual", "Krylov basis lost independence")
-    result = [Fraction(0) for _ in columns]
-    for row, pivot in enumerate(pivots):
-        result[pivot] = rows[row][-1]
-    return tuple(result)
-
-
 def _minimal_polynomial(value: gaussian.ComplexMatrix) -> tuple[Fraction, ...]:
     unit = gaussian.identity(len(value))
     powers = [unit]
     power = unit
     for _degree in range(1, len(value) + 1):
         power = gaussian.multiply(power, value)
-        coordinates = _coordinates(power, powers)
-        if coordinates is not None:
-            return (*(-entry for entry in coordinates), Fraction(1))
+        power_coordinates = coordinates(
+            gaussian.vector_coordinates(power),
+            tuple(gaussian.vector_coordinates(basis_value) for basis_value in powers),
+        )
+        if power_coordinates is not None:
+            return (*(-entry for entry in power_coordinates), Fraction(1))
         powers.append(power)
     raise AlgebraError(
         "MinimalPolynomialResidual", "Cayley-Hamilton dependence was not constructed"

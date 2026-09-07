@@ -650,9 +650,7 @@ case-by-case router growth.
   noncommutative algebras, radicals, variable connections, path ordering, domains,
   and analytic completeness remain parked.
 
-## Active open bridge
-
-### G9 — Noncommutative coefficient algebras and representation multiplicity
+### G9 — Noncommutative coefficient algebras and representation multiplicity (`supported bounded`)
 
 - **Upstream:** G8 constructs primitive projectors only after all coefficient
   generators commute. Its explicit carrier multiplicities show exactly where a
@@ -670,13 +668,43 @@ case-by-case router growth.
   central projectors fail exact reconstruction; algebra and commutant dimensions
   violate the double-centralizer relation; or multiplicity is inferred from
   eigenvalue degeneracy alone.
-- **Next probe:** use exact Hermitian generators of `M_2(Q)` acting on two repeated
-  copies. Construct the one isotypic block, a four-dimensional commutant, and
-  multiplicity two; transfer by rational orthogonal conjugation and refuse a
-  non-star-closed or budget-exceeding generator family.
-- **Boundary:** finite exact matrix star-algebras. Recognition of global groups,
-  infinite-dimensional representations, variable bundles, domains, and analytic
-  spectral completeness remain separate.
+- **Probe result:** [the finite represented star algebra](finite-represented-star-algebra.md)
+  constructs Hermitian commutant and bicommutant kernels, intersects them for the
+  center, and delegates primitive central splitting to G8. Repeated `M_2` gives
+  algebra/commutant dimensions `4,4` and multiplicity two. A scalar direct summand
+  yields two isotypic blocks; rational conjugation preserves their signatures, and
+  a complex Pauli pair verifies the Gaussian-rational spinor branch.
+- **Boundary:** finite Gaussian-rational Hermitian generator presentations with a
+  rationally split center and explicit dense-elimination budget. Recognition of
+  global groups, explicit simple-block models, infinite-dimensional
+  representations, variable bundles, domains, and analytic spectral completeness
+  remain separate.
+
+## Active open bridge
+
+### G10 — Minimal simple-block realization and PDE leverage
+
+- **Upstream:** G9 certifies `P_r C^q ~= C^(d_r) tensor C^(m_r)` and constructs the
+  isotypic projectors, but its matrices remain `q x q`.
+- **Tension:** a multiplicity integer is representation-theoretic compression, yet
+  it does not reduce a differential computation until an exact analysis/synthesis
+  route removes the repeated factor.
+- **Question:** can the machine construct a primitive left ideal, matrix units, or
+  an equivalent basis-free `d_r`-dimensional action from each simple algebra block,
+  then reduce and reconstruct a matrix PDE observable at lower whole-route cost?
+- **Alternatives:** exact primitive-idempotent/left-ideal construction versus a
+  multiplication-table spectral calculus that never chooses carrier coordinates.
+- **Falsifier:** a preferred tensor basis or irreducible label enters the input;
+  construction costs exceed the unreduced route for the declared family; the
+  reduced action fails exact synthesis; or only dimensions, not a reusable PDE
+  operation, are returned.
+- **Next probe:** on `M_2` acting with symbolic repetition `m`, construct one
+  irreducible action, apply it to a constant matrix-valued second-order operator,
+  recover a named spectral or propagator observable with multiplicity weight `m`,
+  and determine the break-even including construction.
+- **Boundary:** finite rationally split simple star-algebra blocks and constant
+  compatible differential coefficients; field extensions, variable connections,
+  domains, and analytic completeness remain parked.
 
 ## Parked branches and re-entry conditions
 

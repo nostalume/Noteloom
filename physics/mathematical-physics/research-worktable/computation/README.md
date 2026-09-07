@@ -57,7 +57,9 @@ tolerances before accepting a new lock.
 | `coupled_operator_input.py` | typed coupled-operator, domain-contract, optional-observable, and budget admission |
 | `full_operator_covariance.py` | curvature, first-order, and zeroth-order defect blocks on a generated coupled action |
 | `rational_polynomial.py` | bounded exact rational splitting with explicit field and search refusals |
+| `exact_rational_linear.py` | shared exact rational nullspaces, ranks, independent bases, and coordinates |
 | `semisimple_coefficient_algebra.py` | commuting Hermitian minimal polynomials, joint idempotents, multiplicities, and polynomial synthesis |
+| `represented_star_algebra.py` | Hermitian commutant/bicommutant construction, central sectors, and double-centralizer multiplicities |
 | `coefficient_algebra.py` | exact involutive two-sector algebra, restricted roots, minimal polynomial, and coefficient-derived projectors |
 | `pauli_operator_channels.py` | optional curvature grading, axial coefficient reconstruction, and Pauli channel consumer |
 | `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
@@ -174,6 +176,9 @@ owner: exact restricted traces construct its roots, a minimal polynomial recover
 its projectors, and rotated data yields the same channel polynomials without a
 preferred spin basis. G8 passes the multi-sector discriminator directly and
 through the delegated G7 consumer: exact Krylov dependence and bounded rational
-splitting construct three joint sectors from two degenerate generators. The next
-boundary is noncommutative star-algebra
-center/commutant decomposition and representation multiplicity.
+splitting construct three joint sectors from two degenerate generators. G9 now
+constructs the noncommutative boundary: Hermitian commutator kernels recover the
+represented star-algebra and commutant, G8 splits their center, and exact block
+dimensions certify irreducible size and multiplicity. The remaining boundary is a
+minimal simple-block carrier and an end-to-end PDE cost/use comparison; dimensions
+alone do not yet remove repeated copies from runtime matrix operations.

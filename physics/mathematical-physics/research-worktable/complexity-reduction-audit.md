@@ -723,3 +723,32 @@ orientation. A single generator retains ranks `1,2`, making unpaid multiplicity
 visible. The active complexity boundary is noncommutative: center and commutant
 kernels must be constructed and compared before any representation-theoretic
 leverage can be claimed.
+
+## 31. Double centralizers separate semantic multiplicity from runtime reduction
+
+G9 admits `g` Hermitian `q x q` coefficient matrices and works in the
+`h=q^2`-dimensional Hermitian ambient space. Its first commutator system has
+`2gq^4` rational entries. If the resulting commutant has Hermitian dimension `c`,
+the bicommutant system has `2cq^4` entries. Dense exact elimination gives the
+conservative operation and storage bounds
+
+```text
+exact rational operations: O(g q^6 + c q^6) <= O(g q^6 + q^8),
+largest stored system:      O(c q^4) <= O(q^6),
+semantic output:            O(q^4) basis entries + O(s q^2) projectors,
+```
+
+before G8's bounded rational center splitting, where `s` is the number of
+isotypic blocks. Rational coefficient bit growth remains additional. The rank-four
+repeated-`M_2` discriminator records 3072 scalar system entries and returns one
+block signature `(q,d,m)=(4,2,2)`; the rank-five mixed transfer records 8750 and
+returns `(4,2,2)` plus `(1,1,1)`.
+
+The result is a semantic and human reduction, not yet a runtime victory. Two
+kernel equations, one center intersection, and the identities
+`a_r=d_r^2`, `c_r=m_r^2`, `q_r=d_r m_r` replace coordinate eigenvector matching
+and expose multiplicity without a group. But the present backend still carries
+full `q x q` matrices. Runtime leverage requires a constructed `d x d` simple
+model (or another reduced algebra calculus) and a same-observable PDE comparison
+including construction and synthesis. That is the next gate; the known
+multiplicity alone cannot satisfy it.

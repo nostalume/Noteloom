@@ -128,6 +128,11 @@ optional observable promotion.
   degenerate commuting coefficients into three joint idempotents, retain carrier
   multiplicity, and reconstruct multivariate polynomial operators. Rotation and
   generator order do not change the primitive projector set.
+- The finite represented star-algebra continuation removes commutativity. Exact
+  commutant and bicommutant kernels construct the represented algebra, their
+  intersection constructs its center, and G8 returns primitive central projectors.
+  Double-centralizer square dimensions separate irreducible size from repeated
+  multiplicity in real, complex-spinor, mixed-isotypic, and rotated tests.
 
 ## Feasibility boundary
 
@@ -149,11 +154,12 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Noncommutative representation-algebra recovery:** G8 closes the finite split
-   commutative case. Construct the algebra, center, and commutant of noncommuting
-   Hermitian generators; use primitive central idempotents and a
-   double-centralizer certificate to distinguish irreducible type from repeated
-   multiplicity without a supplied group or preferred block basis.
+1. **Minimal simple-block realization:** G9 now constructs the algebra, center,
+   commutant, isotypic blocks, and multiplicities of finite exact noncommutative
+   Hermitian families. Construct a primitive left ideal, matrix-unit calculus, or
+   equivalent basis-free `d`-dimensional model, then compare a reduced PDE
+   computation with the original `dm`-dimensional route including construction and
+   recovery.
 2. **Leverage adjudication:** retain the complete G3 selected-route break-even of
    9 separately from the stabilization-only value 8; measure runtime or prove a
    family-level symbolic bound before promoting broader computational leverage.

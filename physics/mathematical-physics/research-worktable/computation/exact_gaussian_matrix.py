@@ -132,6 +132,35 @@ def hermitian_coordinates(value: ComplexMatrix) -> tuple[Fraction, ...]:
     return tuple(coordinates)
 
 
+def vector_coordinates(value: ComplexMatrix) -> tuple[Fraction, ...]:
+    """Flatten a matrix over Q(i) into real rational coordinates."""
+    return tuple(
+        coordinate for row in value for entry in row for coordinate in (entry.real, entry.imaginary)
+    )
+
+
+def hermitian_basis(dimension: int) -> tuple[ComplexMatrix, ...]:
+    """Return the canonical rational basis of Hermitian matrices."""
+    if dimension <= 0:
+        raise ValueError("Hermitian basis dimension must be positive")
+    basis: list[ComplexMatrix] = []
+    for index in range(dimension):
+        entries = [[ZERO for _ in range(dimension)] for _ in range(dimension)]
+        entries[index][index] = ONE
+        basis.append(tuple(tuple(row) for row in entries))
+    for row in range(dimension):
+        for column in range(row + 1, dimension):
+            real_entries = [[ZERO for _ in range(dimension)] for _ in range(dimension)]
+            real_entries[row][column] = ONE
+            real_entries[column][row] = ONE
+            basis.append(tuple(tuple(entry) for entry in real_entries))
+            imaginary_entries = [[ZERO for _ in range(dimension)] for _ in range(dimension)]
+            imaginary_entries[row][column] = IMAGINARY_UNIT
+            imaginary_entries[column][row] = -IMAGINARY_UNIT
+            basis.append(tuple(tuple(entry) for entry in imaginary_entries))
+    return tuple(basis)
+
+
 def skew_hermitian_basis(dimension: int) -> tuple[tuple[str, ComplexMatrix], ...]:
     basis: list[tuple[str, ComplexMatrix]] = []
     for index in range(dimension):

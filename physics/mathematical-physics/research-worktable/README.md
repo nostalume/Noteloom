@@ -69,6 +69,7 @@ group name.
 | recover invariant first-order transport | [nonzero first-order transport](nonzero-first-order-transport.md) | curvature-derived direction, exact momentum polynomial, and distinct algebra/use refusals |
 | decompose matrix-valued transport | [matrix-valued transport algebra](matrix-valued-transport-algebra.md) | involutive coefficient algebra, minimal polynomial, projectors, and sector polynomials |
 | construct finite commuting coefficient sectors | [finite split coefficient algebra](finite-semisimple-coefficient-algebra.md) | Krylov minimal polynomials, joint idempotents, multiplicities, and polynomial synthesis |
+| recover noncommutative representation multiplicity | [finite represented star algebra](finite-represented-star-algebra.md) | commutant/bicommutant kernels, central projectors, isotypic blocks, and exact multiplicities |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -158,10 +159,13 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   without an eigensolver. G8 removes the involution assumption: several commuting
   Hermitian coefficients now generate joint idempotents from exact Krylov minimal
   polynomials, preserve repeated eigenspaces as explicit multiplicities, and
-  synthesize multivariate polynomial operators. The active frontier now reconnects
-  directly to representation theory: use center and commutant constructions to
-  recover isotypic blocks and multiplicity spaces for a noncommutative star-algebra
-  without a supplied group.
+  synthesize multivariate polynomial operators. G9 reconnects this directly to
+  representation theory: two exact commutator kernels construct a noncommutative
+  star-algebra and its commutant, their intersection supplies the center, and G8
+  splits it into isotypic blocks. Exact double-centralizer dimensions distinguish
+  irreducible size from repeated multiplicity without a group or preferred block
+  basis. The active frontier is now computational: construct a minimal simple-block
+  carrier and show that the certified multiplicity actually reduces a PDE route.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim
