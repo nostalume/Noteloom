@@ -68,6 +68,8 @@ tolerances before accepting a new lock.
 | `coefficient_projector_jet.py` | coefficient-derived spectral projectors, first/second Sylvester jets, gaps, and rigid G11 adaptation |
 | `off_block_differential.py` | exact shared admission for projector and first/second complement arrows |
 | `projector_native_propagation.py` | direct G14 projector-arrow adapter into the common finite-window core |
+| `sampled_projector_baseline.py` | three-sample dense numerical projector-jet baseline |
+| `complete_route_leverage.py` | same-observable route admission, typed cost ledgers, timings, and bounded disposition |
 | `coefficient_algebra.py` | exact involutive two-sector algebra, restricted roots, minimal polynomial, and coefficient-derived projectors |
 | `pauli_operator_channels.py` | optional curvature grading, axial coefficient reconstruction, and Pauli channel consumer |
 | `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
@@ -205,3 +207,7 @@ differential jet the common G13 input: the G11 route constructs it through frame
 analysis, while a general G14 jet supplies `Q P' P,Q P'' P` directly. A non-rigid
 zero-momentum bench proves that the second arrow reaches the observable, and the
 rigid regression recovers the prior route exactly.
+G16 compares the complete local G14--G15 route with a three-sample numerical
+projector baseline under the same model, window, preparation, observable, and
+accuracy. It preserves exact work proxies, measured timings, and declared semantic
+cost separately; the current dense exact route is not runtime-dominant.

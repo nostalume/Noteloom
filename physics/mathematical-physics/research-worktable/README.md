@@ -76,6 +76,7 @@ group name.
 | propagate the complete leakage map | [full-block finite-window propagation](full-block-finite-window-propagation.md) | frame-invariant carrier arrow, coherent observable bound, and full/reduced comparison |
 | derive a moving block from PDE coefficients | [coefficient-derived projector jet](coefficient-derived-projector-jet.md) | exact spectral projector derivatives, gap, horizontal transport, and rigid downstream adapter |
 | propagate a coefficient-derived non-rigid block | [projector-native propagation](projector-native-propagation.md) | common off-block differential jet, rigid recovery, and non-rigid bright/dark observable |
+| adjudicate complete local route cost | [complete-route leverage](complete-route-leverage.md) | same-observable admission, typed work/timing ledgers, and domain-wise disposition |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -186,8 +187,11 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   horizontal transport without eigenvectors or a group label. G15 closes the local
   non-rigid handoff: both the representation/frame route and coefficient/projector
   route now lower to the invariant arrows `Q P' P,Q P'' P` and use one observable
-  propagation core. The active frontier is no longer another special PDE example;
-  it is a complete-route computer and human leverage comparison.
+  propagation core. G16 then compares that complete local route with a sampled
+  dense baseline. Exact construction has lower declared semantic depth but loses
+  the observed runtime comparison because both routes still exponentiate the full
+  carrier. The active frontier is therefore observable-cyclic propagation on the
+  smallest preparation-reachable invariant subspace, not another special PDE.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

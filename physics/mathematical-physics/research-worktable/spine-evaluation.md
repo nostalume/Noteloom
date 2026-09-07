@@ -158,6 +158,11 @@ optional observable promotion.
   to one admitted off-block jet. A non-rigid second arrow reaches the same finite
   complement observable without a fitted group generator, while rigid recovery
   and reduced-frame covariance hold.
+- The complete-route continuation prevents semantic compression from being
+  mislabeled as speed. On the admitted finite family, exact and sampled routes
+  recover the same observable, but the exact route loses every measured runtime
+  comparison. It retains fewer semantic objects and policy choices while carrying
+  more theorem debt. Both routes leave original-PDE propagation unpaid.
 
 ## Feasibility boundary
 
@@ -179,11 +184,12 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Leverage adjudication:** retain the complete G3 selected-route break-even of
-   9 separately from the stabilization-only value 8; measure runtime or prove a
-   family-level symbolic bound before promoting broader computational leverage.
-2. **Human-cost normalization:** compare generator size, semantic steps, required
-   theorem inputs, and reconstruction depth across admitted routes.
+1. **Prepared-observable active subspace:** reuse the exact cyclic idea on each
+   Gaussian-Hermitian G15 block so unreachable carrier directions are removed
+   before matrix exponentiation; require same-effect recovery and complete cost.
+2. **Human-cost validation:** G16 now supplies a declared semantic protocol, but
+   empirical human performance remains unmeasured. Re-enter only with a blinded
+   reconstruction task rather than more authored scores.
 3. **Several-coordinate compatibility:** extend the G15 local jet only when a
    curvature/path probe supplies the missing compatibility law; do not call one
    pointwise Grassmann connection a global trivialization.

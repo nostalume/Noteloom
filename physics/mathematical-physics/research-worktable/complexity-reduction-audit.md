@@ -899,3 +899,31 @@ route. It does not establish runtime dominance because both routes still
 exponentiate the same dense finite carrier blocks. G16 must charge the upstream
 projector construction and compare complete routes at fixed observable and
 accuracy before promoting a broader computation claim.
+
+## 38. Same-observable timing rejects local exact-route runtime dominance
+
+G16 fixes the G10 model, local coefficient jet, finite window, preparation,
+complement probability, and accuracy before comparing G14--G15 with a
+three-sample dense eigensolver route. The work coordinates remain typed:
+
+```text
+exact:    0 samples + 0 eigensolves + 2 Sylvester blocks + n exponentials,
+sampled:  3 samples + 3 eigensolves + 0 Sylvester blocks + n exponentials.
+```
+
+There is no invariant scalar conversion between those operations. Both routes
+assemble `n q^2` coupling entries and exponentiate `n` dense `q x q` blocks, so
+the putative representation gain never reaches the solve stage.
+
+For non-rigid repeated-Pauli carriers `q=4,6` and windows `n=1,4`, observable
+errors stay below `3.88e-8` at step `10^-3`. Five-repetition medians observe the
+sampled route `38.3--299.6` times faster. This refutes runtime dominance of the
+current exact route on the tested family; it neither proves asymptotic inferiority
+nor changes G14/G15 correctness.
+
+The exact replay has four declared semantic objects, six transformations, and no
+route-specific numerical choice, versus six, eight, and two for sampling. It also
+depends on two theorem contracts rather than one convergence contract. Thus human
+semantic depth is compressed but theorem debt is not eliminated. Original-PDE
+propagation remains unpaid on both sides. The next cost-changing operation must
+compress the preparation-reachable invariant subspace before exponentiation.
