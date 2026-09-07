@@ -144,9 +144,10 @@ the existing Euclidean rank-three Pauli common-core contract.
 
 The reusable constructor is not intrinsically Pauli-specific, but its present
 completeness is: two nonzero grading sectors, rational restricted traces, scalar
-action on each sector, and coefficients in the Gaussian-rational field. More than
-two sectors, several commuting generators, unresolved multiplicity inside a
-sector, irreducible minimal-polynomial factors, variable connections, path
-ordering, boundaries, self-adjoint completion, and nonlinear closure remain open.
-The next bridge is therefore a finite semisimple coefficient-algebra constructor,
-not another matrix fixture.
+action on each sector, and coefficients in the Gaussian-rational field. Its
+implementation now delegates primitive-sector construction to the
+[finite split algebra](finite-semisimple-coefficient-algebra.md), which separately
+supports more than two rationally split commuting sectors and reports unresolved
+carrier multiplicity. This page retains the stricter G7 observable contract.
+Noncommutative coefficients, irreducible field extensions, variable connections,
+path ordering, domains, self-adjoint completion, and nonlinear closure remain open.

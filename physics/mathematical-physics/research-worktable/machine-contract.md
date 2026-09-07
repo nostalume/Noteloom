@@ -225,7 +225,11 @@ two-sector algebra relative to the curvature grading, checks scalar sector actio
 and derives roots, a minimal polynomial, primitive projectors, and sector momentum
 polynomials. Noncommutation or unresolved within-sector action refuses observable
 recovery while retaining the already certified generic operator candidate. None
-of these finite schemas by itself performs global group integration.
+of these finite schemas by itself performs global group integration. Independently
+of the Pauli adapter, a bounded finite-algebra operation accepts several exact
+commuting Hermitian coefficients, constructs their minimal polynomials and joint
+idempotents, reports carrier multiplicities, and verifies multivariate polynomial
+synthesis. Its rational field and factor-search budget are part of admission.
 
 The orbit constructor specializes the witness through
 
@@ -654,6 +658,10 @@ canonical form, zero test, and degree/order bounds must be recorded.
   the surviving two-sector coefficient algebra, minimal polynomial, projectors,
   and sector-dependent momentum polynomials, while noncommutation exposes its
   observable boundary. The
+  [finite split continuation](finite-semisimple-coefficient-algebra.md) removes the
+  supplied involution, refines repeated eigenspaces with further commuting
+  coefficients, and proves exact polynomial reconstruction; it refuses required
+  field extensions and bounded factor-search exhaustion. The
   [global analytic promotion](benchmarks/pauli-global-analytic.md) adds the unitary
   Landau/Fourier carrier, measure, finite Heisenberg degeneracy, self-adjoint
   domain contract, exact heat density, and topology/domain refusals on `T^2 x R`.

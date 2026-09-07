@@ -68,6 +68,7 @@ group name.
 | lift a generated action through a full coupled operator | [full-operator covariance lift](full-operator-covariance-lift.md) | ordered curvature/lower-term defects, common-core admission, and optional Pauli recovery |
 | recover invariant first-order transport | [nonzero first-order transport](nonzero-first-order-transport.md) | curvature-derived direction, exact momentum polynomial, and distinct algebra/use refusals |
 | decompose matrix-valued transport | [matrix-valued transport algebra](matrix-valued-transport-algebra.md) | involutive coefficient algebra, minimal polynomial, projectors, and sector polynomials |
+| construct finite commuting coefficient sectors | [finite split coefficient algebra](finite-semisimple-coefficient-algebra.md) | Krylov minimal polynomials, joint idempotents, multiplicities, and polynomial synthesis |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -154,9 +155,13 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   matrix-valued case through an exact two-sector coefficient algebra. It derives
   roots and projectors from restricted traces and a minimal polynomial, transfers
   under rotation, preserves scalar compatibility, and refuses noncommutation
-  without an eigensolver. The active frontier is now the genuine generalization:
-  construct primitive idempotents for finite semisimple coefficient algebras with
-  more than two sectors or commuting generators.
+  without an eigensolver. G8 removes the involution assumption: several commuting
+  Hermitian coefficients now generate joint idempotents from exact Krylov minimal
+  polynomials, preserve repeated eigenspaces as explicit multiplicities, and
+  synthesize multivariate polynomial operators. The active frontier now reconnects
+  directly to representation theory: use center and commutant constructions to
+  recover isotypic blocks and multiplicity spaces for a noncommutative star-algebra
+  without a supplied group.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

@@ -146,7 +146,8 @@ example. Detailed derivations remain in their calculus or benchmark owners.
   the common observable witness. For `natural-tensor-stabilizer/v1`, plan lazy
   tensor quotient defects; for `coupled-carrier-covariance/v1`, construct joint
   base/fiber actions from a metric and link relation and quotient their ineffective
-  commutant.
+  commutant; for `coupled-operator-covariance/v1`, lift that action through ordered
+  lower terms and optionally consume its two-sector coefficient algebra.
 - **Output:** executable `reduction-witness/v1` envelope or
   `reduction-decision/v1` with probes, candidates, coincidence, decision, and a
   compact human card.
@@ -185,7 +186,9 @@ example. Detailed derivations remain in their calculus or benchmark owners.
 - **Relation-construction benches:** the [natural-tensor chain](structured-seed-compression.md)
   constructs lazy quotient stabilizers, while the [coupled-carrier transfer](coupled-carrier-covariance.md)
   constructs metric/link covariance actions and exact principal-symbol projectors
-  in ranks two and three.
+  in ranks two and three. Its full-operator continuation derives scalar and
+  two-sector transport without changing the defect compiler; the general finite
+  commuting algebra is additionally exposed as a direct bounded operation.
 - **Checks:** common-schema tests, exact coincidence, controlled truncation,
   isotropy refusal, retained route-specific detail, and legacy regression suite.
 - **Boundary:** automatic probing is limited to a three-dimensional positive
@@ -216,11 +219,13 @@ example. Detailed derivations remain in their calculus or benchmark owners.
   Coulomb closure, fixed-accuracy boundary comparison, axial/warped quotient PDEs,
   backend-free quadratic selection, the bilateral Pauli channel bridge and its
   topology/domain/heat-density promotion, and the `SU(3)` exchange-paired
-  multiplicity decision together with its PDE-first effective-algebra recovery.
+  multiplicity decision together with its PDE-first effective-algebra recovery;
+  finite split coefficient algebras add exact joint projectors and polynomial
+  synthesis without eigenvectors.
 - **Boundary:** analytical completion is still local to particular theorem
-  contracts; the strongest open debts are lifting constructed symbol covariance
-  through lower-order/domain defects, arbitrary jets, variable bundles, and
-  cross-route human-cost normalization.
+  contracts; the strongest open debts are noncommutative isotypic/multiplicity
+  construction, arbitrary jets, variable bundles, and cross-route human-cost
+  normalization.
 
 ## Evidence ledger
 
@@ -615,9 +620,7 @@ case-by-case router growth.
   not yet a constructor for arbitrary finite coefficient algebras or unresolved
   sector multiplicity.
 
-## Active open bridge
-
-### G8 — Primitive idempotents for finite semisimple coefficient algebras
+### G8 — Primitive idempotents for finite semisimple coefficient algebras (`supported bounded`)
 
 - **Upstream:** G7 proves that the useful reduction object is the coefficient
   algebra and its idempotents, not a catalogue of Pauli components.
@@ -634,14 +637,46 @@ case-by-case router growth.
 - **Falsifier:** the constructor assumes sector roots, silently extends the exact
   field, expands a full component eigenbasis, claims primitive sectors when the
   algebra leaves multiplicity unresolved, or drops the reconstruction map.
-- **Next probe:** use one three-sector exact Hermitian carrier with two commuting
-  generated coefficients. Recover the joint algebra dimension, square-free
-  minimal polynomial, primitive idempotents, and matrix-polynomial synthesis; add
-  noncommuting and repeated-factor refusals. The fixture is evidence for this
-  algebraic contract, not a new representation family.
+- **Probe result:** [the finite split algebra](finite-semisimple-coefficient-algebra.md)
+  derives minimal polynomials from exact Krylov dependence, constructs Lagrange
+  root projectors, and intersects them into joint sectors. Two individually
+  degenerate generators yield three primitive algebra sectors and exact polynomial
+  synthesis. Rational rotation and generator reversal preserve the result;
+  noncommutation, field extension, budget, and malformed-polynomial failures are
+  distinct. G7 now consumes this general owner.
 - **Boundary:** finite-dimensional constant coefficient algebras over a declared
-  exact field. Irreducible field extensions, non-semisimple radicals, variable
-  connections, path ordering, domains, and analytic completeness remain parked.
+  exact field whose generator minimal polynomials split rationally within budget.
+  Repeated eigenspaces are retained with carrier multiplicity. Field extensions,
+  noncommutative algebras, radicals, variable connections, path ordering, domains,
+  and analytic completeness remain parked.
+
+## Active open bridge
+
+### G9 — Noncommutative coefficient algebras and representation multiplicity
+
+- **Upstream:** G8 constructs primitive projectors only after all coefficient
+  generators commute. Its explicit carrier multiplicities show exactly where a
+  commutative sector calculus stops.
+- **Tension:** matrix-valued PDEs and represented symmetry algebras commonly
+  generate noncommutative blocks. Diagonalizing one coefficient cannot distinguish
+  irreducible type from repeated copies, while a supplied group label would defeat
+  the PDE-first direction.
+- **Question:** can the machine close a finite exact star-algebra, construct its
+  center and commutant, apply G8 to primitive central idempotents, and recover
+  isotypic blocks and multiplicity spaces by a double-centralizer certificate?
+- **Alternatives:** center/commutant kernels and Wedderburn-type block witnesses
+  versus component decomposition after guessing a representation or group.
+- **Falsifier:** the input supplies irreducible labels or a preferred block basis;
+  central projectors fail exact reconstruction; algebra and commutant dimensions
+  violate the double-centralizer relation; or multiplicity is inferred from
+  eigenvalue degeneracy alone.
+- **Next probe:** use exact Hermitian generators of `M_2(Q)` acting on two repeated
+  copies. Construct the one isotypic block, a four-dimensional commutant, and
+  multiplicity two; transfer by rational orthogonal conjugation and refuse a
+  non-star-closed or budget-exceeding generator family.
+- **Boundary:** finite exact matrix star-algebras. Recognition of global groups,
+  infinite-dimensional representations, variable bundles, domains, and analytic
+  spectral completeness remain separate.
 
 ## Parked branches and re-entry conditions
 

@@ -56,6 +56,8 @@ tolerances before accepting a new lock.
 | `coupled_relation_stabilizer.py` | coupled-relation orchestration and public witness projection |
 | `coupled_operator_input.py` | typed coupled-operator, domain-contract, optional-observable, and budget admission |
 | `full_operator_covariance.py` | curvature, first-order, and zeroth-order defect blocks on a generated coupled action |
+| `rational_polynomial.py` | bounded exact rational splitting with explicit field and search refusals |
+| `semisimple_coefficient_algebra.py` | commuting Hermitian minimal polynomials, joint idempotents, multiplicities, and polynomial synthesis |
 | `coefficient_algebra.py` | exact involutive two-sector algebra, restricted roots, minimal polynomial, and coefficient-derived projectors |
 | `pauli_operator_channels.py` | optional curvature grading, axial coefficient reconstruction, and Pauli channel consumer |
 | `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
@@ -103,7 +105,9 @@ Detailed mathematical contracts live in the neighboring
 operator contract; [nonzero first-order transport](../nonzero-first-order-transport.md)
 owns its scalar longitudinal continuation, and the
 [matrix transport algebra](../matrix-valued-transport-algebra.md) owns the
-two-sector coefficient-algebra consumer.
+two-sector coefficient-algebra consumer. The
+[finite split algebra](../finite-semisimple-coefficient-algebra.md) owns its
+multi-generator generalization and exact polynomial synthesis.
 
 ## Reproducible verification
 
@@ -168,5 +172,8 @@ longitudinal polynomials. A transverse coefficient kills the action. G7 now
 consumes an axial matrix coefficient through the separate two-sector algebra
 owner: exact restricted traces construct its roots, a minimal polynomial recovers
 its projectors, and rotated data yields the same channel polynomials without a
-preferred spin basis. The next discriminator is multi-sector semisimple
-coefficient algebra, not another Pauli component rule.
+preferred spin basis. G8 passes the multi-sector discriminator directly and
+through the delegated G7 consumer: exact Krylov dependence and bounded rational
+splitting construct three joint sectors from two degenerate generators. The next
+boundary is noncommutative star-algebra
+center/commutant decomposition and representation multiplicity.

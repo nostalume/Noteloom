@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from fractions import Fraction
 
 import exact_gaussian_matrix as gaussian
+from semisimple_coefficient_algebra import AlgebraBudget, AlgebraError, Generator
+from semisimple_coefficient_algebra import construct as construct_finite_algebra
 
 
 class CoefficientAlgebraError(ValueError):
@@ -52,17 +54,6 @@ def _sector_scalar(
     return value
 
 
-def _polynomial(
-    coefficients: tuple[Fraction, ...], value: gaussian.ComplexMatrix
-) -> gaussian.ComplexMatrix:
-    result = gaussian.zero(len(value))
-    power = gaussian.identity(len(value))
-    for coefficient in coefficients:
-        result = gaussian.add(result, gaussian.scale(power, coefficient))
-        power = gaussian.multiply(power, value)
-    return result
-
-
 def construct(
     grading: gaussian.ComplexMatrix, coefficient: gaussian.ComplexMatrix
 ) -> CoefficientAlgebra:
@@ -91,6 +82,18 @@ def construct(
     )
     aligned = _sector_scalar(coefficient, plus)
     antialigned = _sector_scalar(coefficient, minus)
+    try:
+        finite = construct_finite_algebra(
+            (Generator("Sigma_F", grading), Generator("C_parallel", coefficient)),
+            AlgebraBudget(len(grading), 2, 0),
+        )
+    except AlgebraError as error:
+        raise CoefficientAlgebraError(error.kind, str(error)) from error
+    if finite.dimension != 2:
+        raise CoefficientAlgebraError(
+            "NonScalarGradingSector",
+            "the coefficient algebra refines a curvature-grading sector",
+        )
     identity_coordinate = (aligned + antialigned) / 2
     grading_coordinate = (aligned - antialigned) / 2
     reconstructed = gaussian.add(
@@ -99,14 +102,8 @@ def construct(
     )
 
     coefficient_projectors = None
-    if aligned == antialigned:
-        minimal_polynomial = (-aligned, Fraction(1))
-    else:
-        minimal_polynomial = (
-            aligned * antialigned,
-            -(aligned + antialigned),
-            Fraction(1),
-        )
+    minimal_polynomial = finite.minimal_polynomials[1]
+    if aligned != antialigned:
         difference = aligned - antialigned
         derived_plus = gaussian.scale(
             gaussian.add(coefficient, gaussian.scale(unit, -antialigned)),
@@ -120,8 +117,9 @@ def construct(
         "coefficient_commutes_with_grading": gaussian.bracket(grading, coefficient)
         == gaussian.zero(len(grading)),
         "coefficient_reconstructed": reconstructed == coefficient,
-        "minimal_polynomial_annihilates_coefficient": _polynomial(minimal_polynomial, coefficient)
-        == gaussian.zero(len(coefficient)),
+        "minimal_polynomial_annihilates_coefficient": finite.checks[
+            "minimal_polynomials_annihilate_generators"
+        ],
         "coefficient_projectors_match_grading": coefficient_projectors is None
         or coefficient_projectors == (plus, minus),
     }

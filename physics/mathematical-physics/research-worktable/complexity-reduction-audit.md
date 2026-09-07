@@ -695,3 +695,31 @@ coefficient is scalar on each. The next cost question is whether square-free
 minimal-polynomial factorization and Chinese-remainder idempotents scale better,
 symbolically and semantically, than simultaneous eigensystem enumeration for a
 finite multi-sector algebra.
+
+## 30. Joint idempotents make multiplicity and factor search visible
+
+G8 replaces G7's supplied two-sector involution by `g` commuting Hermitian
+generators on a `q`-dimensional exact carrier. For each generator, the current
+dense implementation constructs at most `q` Krylov powers and repeatedly solves
+their exact dependence. Projector functional calculus and successive intersections
+then emit `s <= q` nonzero joint sectors. A conservative bound is
+
+```text
+internal arithmetic: O(g q^5 + Bq),
+stored exact scalars: O(q^3),
+semantic output:      O(gs + T),
+```
+
+where `B` is the admitted rational-factor search and `T` is the number of terms in
+the polynomial sent to sector evaluation. This is not claimed to beat a numerical
+eigensolver for one small dense matrix. It instead provides exact construction,
+field refusal, reusable projectors, and amortization across polynomial operators
+and downstream observables.
+
+The three-sector discriminator performs no rational-root candidate search: both
+minimal polynomials are quadratic with exact discriminants. Its semantic path is
+`1 -> 2 -> 3` projectors, rather than three coordinate eigenvectors for each
+orientation. A single generator retains ranks `1,2`, making unpaid multiplicity
+visible. The active complexity boundary is noncommutative: center and commutant
+kernels must be constructed and compared before any representation-theoretic
+leverage can be claimed.
