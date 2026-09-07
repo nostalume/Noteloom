@@ -759,9 +759,7 @@ case-by-case router growth.
   PDE evolution, crossings, long-time superadiabatic optimization, and topology
   remain parked.
 
-## Active open bridge
-
-### G13 — Full-block propagation on a declared finite window
+### G13 — Full-block propagation on a declared finite window (`supported bounded`)
 
 - **Upstream:** G12 proves that one constructed G11 leakage column can be promoted
   to a controlled two-channel observable once gap, time, and preparation are
@@ -778,14 +776,48 @@ case-by-case router growth.
 - **Falsifier:** the route hard-codes two channels, calls a Frobenius upper bound an
   exact operator norm, omits preparation or observable recovery, hides window
   construction cost, or fails to return zero error when all G11 leakage vanishes.
-- **Next probe:** construct the full repeated-Pauli retained/complement coupling at
-  two rational momenta, compare exact finite-matrix full and reduced transition
-  observables, test a coherent two-column preparation, and refuse a window with a
-  closing supplied gap.
+- **Probe result:** [full-block finite-window propagation](full-block-finite-window-propagation.md)
+  constructs exact analysis `A`, assembles the frame-invariant carrier arrow
+  `T=V A`, and evaluates the same complement observable on full and reduced
+  routes. A rank-one two-column bench distinguishes a bright state with
+  `0.0897128463663037 <= 1/9` from an exact coherent dark state that columnwise
+  bounds miss. Frame covariance, zero-leakage recovery, numerical residuals, and
+  closing-gap refusal pass.
 - **Boundary:** finite-dimensional rational carrier and finite declared momentum
   set. Continuous spectral windows, unbounded PDE generators, domain transport,
   certified transcendental matrix functions, and nonlinear feedback remain
   theorem-contract or later reconstruction problems.
+
+## Active open bridge
+
+### G14 — Coefficient-derived spectral-projector jet
+
+- **Upstream:** G4--G10 can construct represented algebra blocks from operator
+  coefficients without a prior group, while G11--G13 turn a moving block into a
+  controlled finite-window observable.
+- **Tension:** the analytic continuation still receives its transport generator,
+  projector motion, and gap separately. Without deriving compatible jet data from
+  the variable differential coefficients, the PDE-to-representation-to-observable
+  route is not yet executable end to end.
+- **Question:** can an isolated constant-rank Hermitian coefficient cluster and its
+  first/second exact jets construct `P,P',P''` through differentiated commutation
+  and Sylvester equations, then supply G11/G13 without pointwise eigenvector
+  enumeration or a group label?
+- **Alternatives:** solve invariant off-diagonal Sylvester residuals for the
+  projector jet versus diagonalize each coefficient sample independently or
+  continue to supply a transport generator.
+- **Falsifier:** the constructor seeds the expected projector or group, silently
+  matches eigenvectors between points, ignores internal cluster degeneracy or gap
+  closure, changes under a frame gauge, or cannot recover a known transported
+  coefficient jet.
+- **Next probe:** generate exact first/second jets of a two-cluster Hermitian
+  coefficient from the G11 transported repeated-Pauli projector, reconstruct the
+  projector derivatives from coefficient residuals alone, transfer under rational
+  carrier conjugation, and refuse a colliding-spectrum control.
+- **Boundary:** finite Gaussian-rational Hermitian coefficient jets with an
+  isolated semisimple cluster and exact Sylvester solvability. Global spectral
+  bundles, continuous spectra, nonnormal pencils, domain variation, topology, and
+  nonlinear operators remain separate.
 
 ## Parked branches and re-entry conditions
 

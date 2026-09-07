@@ -91,6 +91,7 @@ the canonical two-channel transition observable. G12 demonstrates how differenti
 leakage plus analytic inputs becomes a controlled observable statement.
 
 It does not establish approximation of the original full PDE, uniform control on
-an energy window, multichannel interference, domain preservation, crossings, or
-long-time superadiabatic behavior. Those require a full block propagator or an
-explicit energy-localized theorem contract.
+an energy window, domain preservation, crossings, or long-time superadiabatic
+behavior. [G13](full-block-finite-window-propagation.md) now constructs the full
+multichannel arrow on a finite momentum set; continuous and domain-sensitive
+promotion still requires an explicit theorem contract.

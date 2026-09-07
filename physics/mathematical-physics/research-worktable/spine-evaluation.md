@@ -145,6 +145,10 @@ optional observable promotion.
   A constructed leakage norm and positive gap yield an exact two-channel
   transition formula plus time/gap bounds, while a closing gap and unsupported
   exact field are refused.
+- The full-window continuation removes columnwise enumeration. Exact analysis and
+  synthesis construct a frame-invariant off-block carrier map; preparation
+  quadratic forms detect coherent bright/dark combinations before finite
+  propagation and observable recovery.
 
 ## Feasibility boundary
 
@@ -166,10 +170,11 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Multichannel analytic promotion:** G12 controls one constructed leakage
-   channel at one momentum. Construct the full off-block map on a declared finite
-   window, retain preparation and observable maps, and compare full and reduced
-   propagators without treating a norm upper bound as an equality.
+1. **Coefficient-derived bundle jet:** G11--G13 still receive a transport generator
+   and gap as analytic data. Starting from an isolated variable Hermitian PDE
+   coefficient cluster, construct projector derivatives through differentiated
+   commutation/Sylvester equations, recover the transported regression, and refuse
+   crossings without pointwise eigenvector enumeration.
 2. **Leverage adjudication:** retain the complete G3 selected-route break-even of
    9 separately from the stabilization-only value 8; measure runtime or prove a
    family-level symbolic bound before promoting broader computational leverage.

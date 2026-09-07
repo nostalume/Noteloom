@@ -64,6 +64,7 @@ tolerances before accepting a new lock.
 | `simple_block_pde.py` | primitive commutant slices, irreducible actions, quadratic-symbol use, and cost ledger |
 | `mode_bundle_jet.py` | exact transported projector/frame jets, connection, leakage, and second-order synthesis |
 | `gap_aware_leakage.py` | exact leakage-channel norm, gapped two-channel transition witness, bounds, and refusals |
+| `finite_window_propagation.py` | exact full leakage arrow, preparation-specific finite-window bounds, and residual-bearing propagation |
 | `coefficient_algebra.py` | exact involutive two-sector algebra, restricted roots, minimal polynomial, and coefficient-derived projectors |
 | `pauli_operator_channels.py` | optional curvature grading, axial coefficient reconstruction, and Pauli channel consumer |
 | `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
@@ -188,7 +189,10 @@ commutant slice, solves exact intertwiner coordinates for a minimal carrier, and
 verifies a multiplicity-weighted quadratic-symbol determinant. G11 then constructs
 the connection and leakage terms of an exact transported projector jet and
 reconstructs a second-order section derivative in any tested constant reduced
-frame. G12 now promotes one selected
-momentum-sector leakage column through a supplied gap and time to an exact
+frame. G12 now promotes one selected momentum-sector leakage column through a
+supplied gap and time to an exact
 two-channel transition formula and bound. Uniform energy-window and multichannel
-PDE propagation remain open.
+PDE propagation remained open at that stage. G13 now constructs the complete
+frame-invariant leakage operator at finitely many momenta and compares full and
+reduced complement probabilities. Derivation of projector transport and gap data
+from variable PDE coefficients remains open.

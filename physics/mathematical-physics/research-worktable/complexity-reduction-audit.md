@@ -816,3 +816,29 @@ This is analytical control and human compression for one prepared channel, not a
 computational speedup or an original-PDE error theorem. A complete multichannel
 comparison must include construction of the full off-block map, propagation on a
 declared window, and recovery of the same original observable.
+
+## 35. Full-map construction captures interference before bounding
+
+G13 first pays `q` exact coordinate solves to construct the frame analysis map.
+For `n` momentum points it then builds `n q^2` entries of the invariant carrier
+arrow and propagates each `q x q` block separately:
+
+```text
+analysis:              q exact coordinate solves,
+coupling construction: O(n q^2 d),
+propagation:           O(n q^3),
+stored block evidence: O(n q^2),
+observable recovery:   O(n q^2).
+```
+
+The route is not cheaper than every column method. Its gain is semantic: the exact
+quadratic form `||T psi||^2` is computed after coherent synthesis. On the rank-one
+two-column bench, `(1,1)` produces transition probability
+`0.0897128463663037 <= 1/9`, whereas `(1,-1)` lies in the constructed kernel and
+has zero bound. Summing independent column probabilities would miss this dark
+state and cannot be a same-preparation comparison.
+
+The full finite-window route therefore establishes human and analytical leverage,
+not runtime dominance. Its cost is blockwise rather than a dense `(n q) x (n q)`
+direct-sum exponential, but a fair numerical baseline would exploit the same
+momentum block structure.
