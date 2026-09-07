@@ -85,9 +85,9 @@ bilateral comparison retains its original target.
 4. With `F_12=3` and `C_1=2I`, curvature may first leave one action, but the
    unchanged first-order defect must reduce it to zero and report
    `first-order-covariance`.
-5. An axial matrix coefficient `C_3=2 gamma_3` may preserve the operator action,
-   but scalar observable recovery must refuse while retaining the exact generic
-   candidate as partial evidence.
+5. At the frozen G6 boundary, an axial matrix coefficient `C_3=2 gamma_3` may
+   preserve the operator action, but scalar observable recovery must refuse while
+   retaining the exact generic candidate as partial evidence.
 
 The claim is falsified if the compiler learns an axial special case, the fixture
 contains `e` or `mu`, rotation changes the dispersion, the transverse coefficient
@@ -150,4 +150,6 @@ Variable coefficients, non-Euclidean metrics, irrational exact norms,
 matrix-valued transport, boundary domains, global integration, and self-adjoint
 completion remain outside `C_G6_v1`. The matrix-valued refusal identifies the next
 consequential bridge: construct an observable-relative finite coefficient algebra
-and its projectors rather than adding another Pauli component rule.
+and its projectors rather than adding another Pauli component rule. That bridge is
+now implemented separately under [`C_G7_v1`](matrix-valued-transport-algebra.md);
+this page retains the G6 closure contract and evidence counts.

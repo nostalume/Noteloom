@@ -56,7 +56,8 @@ tolerances before accepting a new lock.
 | `coupled_relation_stabilizer.py` | coupled-relation orchestration and public witness projection |
 | `coupled_operator_input.py` | typed coupled-operator, domain-contract, optional-observable, and budget admission |
 | `full_operator_covariance.py` | curvature, first-order, and zeroth-order defect blocks on a generated coupled action |
-| `pauli_operator_channels.py` | optional curvature grading, projector, scalar longitudinal transport, and Pauli channel consumer |
+| `coefficient_algebra.py` | exact involutive two-sector algebra, restricted roots, minimal polynomial, and coefficient-derived projectors |
+| `pauli_operator_channels.py` | optional curvature grading, axial coefficient reconstruction, and Pauli channel consumer |
 | `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
 | `adjoint_algebra.py` | immutable rational matrices, Lie/Jordan operations, exact closure, coordinates, and pairing |
 | `quadratic_route_router.py` | independent factor/cyclic probes and observable-relative selection |
@@ -100,7 +101,9 @@ Detailed mathematical contracts live in the neighboring
 [global adjoint semigroup](../benchmarks/matrix-adjoint-semigroup-global.md). The
 [full-operator lift](../full-operator-covariance-lift.md) owns the current coupled
 operator contract; [nonzero first-order transport](../nonzero-first-order-transport.md)
-owns its scalar longitudinal continuation and exact boundary.
+owns its scalar longitudinal continuation, and the
+[matrix transport algebra](../matrix-valued-transport-algebra.md) owns the
+two-sector coefficient-algebra consumer.
 
 ## Reproducible verification
 
@@ -161,7 +164,9 @@ projectors. G5 applies that generated action to curvature and ordered lower-term
 defects, returning a closed `3 -> 1` operator action before optional Pauli
 recovery. G6 passes nonzero curvature-aligned scalar transport through the
 unchanged compiler, derives the axis from curvature, and returns exact shifted
-longitudinal polynomials. A transverse coefficient kills the action; an axial
-matrix coefficient preserves it but refuses scalar recovery while retaining the
-generic candidate. The next discriminator is a finite coefficient-algebra
-consumer, not another scalar parameter or Pauli component rule.
+longitudinal polynomials. A transverse coefficient kills the action. G7 now
+consumes an axial matrix coefficient through the separate two-sector algebra
+owner: exact restricted traces construct its roots, a minimal polynomial recovers
+its projectors, and rotated data yields the same channel polynomials without a
+preferred spin basis. The next discriminator is multi-sector semisimple
+coefficient algebra, not another Pauli component rule.

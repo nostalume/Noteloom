@@ -587,9 +587,7 @@ case-by-case router growth.
   curvature axis in Euclidean rank three. Matrix-valued transport, variable
   connections, boundaries, and curved geometry remain outside this disposition.
 
-## Active open bridge
-
-### G7 — Observable-relative coefficient algebra for matrix-valued transport
+### G7 — Observable-relative coefficient algebra for matrix-valued transport (`supported bounded`)
 
 - **Upstream:** G6's matrix-valued axial fixture, whose generated operator action
   is exact while the scalar observable consumer refuses.
@@ -606,14 +604,44 @@ case-by-case router growth.
   the expected channel roots; the constructor exhaustively enumerates matrix
   entries instead of using the generated algebra; noncommuting coefficients are
   silently diagonalized; or recovery omits the original momentum polynomial.
-- **Next probe:** consume `C_parallel=2 gamma(e)` from the existing G6 refusal,
-  construct its algebra jointly with `Sigma_F`, derive its two idempotents from a
-  minimal polynomial, and compare the matrix polynomial at a symbolic momentum
-  with projector synthesis. Add one genuinely noncommuting coefficient and return
-  its first algebraic obstruction.
-- **Boundary:** finite exact constant Hermitian coefficient algebras on the matched
-  common core. Variable matrix connections, path ordering, boundaries, global
-  integration, and analytic completeness remain parked.
+- **Probe result:** [the matrix transport algebra](matrix-valued-transport-algebra.md)
+  reconstructs the axial coefficient, constructs the two-dimensional star-algebra
+  `span{I,Sigma_F}`, obtains its sector roots from restricted traces, derives the
+  minimal polynomial and primitive idempotents, and synthesizes the visible
+  momentum polynomials. Rotation preserves the abstract result while rotating its
+  concrete projectors. Equal roots regress to G6; noncommutation refuses.
+- **Boundary:** one exact Hermitian involution with two nonzero sectors and a
+  Hermitian coefficient scalar on each sector, over Gaussian rationals. This is
+  not yet a constructor for arbitrary finite coefficient algebras or unresolved
+  sector multiplicity.
+
+## Active open bridge
+
+### G8 — Primitive idempotents for finite semisimple coefficient algebras
+
+- **Upstream:** G7 proves that the useful reduction object is the coefficient
+  algebra and its idempotents, not a catalogue of Pauli components.
+- **Tension:** G7 obtains completeness from a supplied two-sector involution.
+  General bundle-valued PDEs may expose several commuting coefficients, more than
+  two sectors, and multiplicities not resolved by one grading.
+- **Question:** can the machine close a finite commutative Hermitian coefficient
+  algebra from surviving PDE coefficients, construct minimal polynomials and
+  primitive idempotents by exact polynomial arithmetic, and synthesize channel
+  blocks without enumerating eigenvectors or presupposing a group?
+- **Alternatives:** square-free factorization plus Chinese-remainder idempotents
+  over the declared exact field versus a generic simultaneous eigensolver; only
+  the former preserves symbolic and human auditability.
+- **Falsifier:** the constructor assumes sector roots, silently extends the exact
+  field, expands a full component eigenbasis, claims primitive sectors when the
+  algebra leaves multiplicity unresolved, or drops the reconstruction map.
+- **Next probe:** use one three-sector exact Hermitian carrier with two commuting
+  generated coefficients. Recover the joint algebra dimension, square-free
+  minimal polynomial, primitive idempotents, and matrix-polynomial synthesis; add
+  noncommuting and repeated-factor refusals. The fixture is evidence for this
+  algebraic contract, not a new representation family.
+- **Boundary:** finite-dimensional constant coefficient algebras over a declared
+  exact field. Irreducible field extensions, non-semisimple radicals, variable
+  connections, path ordering, domains, and analytic completeness remain parked.
 
 ## Parked branches and re-entry conditions
 

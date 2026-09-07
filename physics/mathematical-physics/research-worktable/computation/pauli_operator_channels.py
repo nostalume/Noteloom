@@ -7,6 +7,9 @@ from math import isqrt
 
 import exact_gaussian_matrix as gaussian
 from adjoint_algebra import Matrix as RealMatrix
+from coefficient_algebra import CoefficientAlgebraError
+from coefficient_algebra import construct as construct_coefficient_algebra
+from coefficient_algebra import witness as coefficient_algebra_witness
 
 
 class PauliChannelError(ValueError):
@@ -56,41 +59,22 @@ def _channels(data: list[Channel]) -> list[dict[str, object]]:
     return channels
 
 
-def _scalar_identity_coefficient(value: gaussian.ComplexMatrix) -> Fraction:
-    coefficient = value[0][0]
-    if coefficient.imaginary or value != gaussian.scale(
-        gaussian.identity(len(value)), coefficient.real
-    ):
-        raise PauliChannelError(
-            "UnsupportedChannelLowerOrder",
-            "Pauli transport recovery requires real scalar-identity first-order matrices",
-        )
-    return coefficient.real
-
-
-def _longitudinal_transport(
+def _axial_coefficient(
     first_order: tuple[gaussian.ComplexMatrix, ...],
     axial: tuple[Fraction, ...],
     magnitude: Fraction,
-) -> Fraction:
-    coefficients = tuple(_scalar_identity_coefficient(value) for value in first_order)
-    linear = (
-        sum(
-            (
-                coefficient * direction
-                for coefficient, direction in zip(coefficients, axial, strict=True)
-            ),
-            Fraction(0),
-        )
-        / magnitude
-    )
-    reconstructed = tuple(linear * direction / magnitude for direction in axial)
-    if coefficients != reconstructed:
+) -> gaussian.ComplexMatrix:
+    axis = tuple(direction / magnitude for direction in axial)
+    coefficient = gaussian.linear_combination(axis, first_order)
+    if any(
+        value != gaussian.scale(coefficient, direction)
+        for value, direction in zip(first_order, axis, strict=True)
+    ):
         raise PauliChannelError(
             "UnsupportedChannelLowerOrder",
-            "scalar first-order transport must be parallel to the curvature-derived axis",
+            "first-order transport must be parallel to the curvature-derived axis",
         )
-    return linear
+    return coefficient
 
 
 def _energy_text(linear: Fraction, constant: Fraction) -> str:
@@ -101,10 +85,13 @@ def _energy_text(linear: Fraction, constant: Fraction) -> str:
     return f"k^2{sign}{coefficient}*k+{gaussian.rational_text(constant)}"
 
 
-def _transport_channels(data: list[Channel], linear: Fraction) -> list[dict[str, object]]:
-    momentum_shift = linear / 2
+def _transport_channels(
+    data: list[Channel], linears: dict[str, Fraction]
+) -> list[dict[str, object]]:
     result = []
     for level, spin, constant in data:
+        linear = linears[spin]
+        momentum_shift = linear / 2
         result.append(
             {
                 "orbital_level": level,
@@ -138,7 +125,7 @@ def construct(
         )
     axial = (curvature[1][2], curvature[2][0], curvature[0][1])
     magnitude = _square_root(sum((entry * entry for entry in axial), Fraction(0)))
-    linear = _longitudinal_transport(first_order, axial, magnitude)
+    longitudinal = _axial_coefficient(first_order, axial, magnitude)
     clifford_curvature = gaussian.zero(len(zero_order))
     for left in range(3):
         for right in range(left + 1, 3):
@@ -157,6 +144,10 @@ def construct(
     minus = gaussian.scale(
         gaussian.add(unit, gaussian.scale(grading, Fraction(-1))), Fraction(1, 2)
     )
+    try:
+        algebra = construct_coefficient_algebra(grading, longitudinal)
+    except CoefficientAlgebraError as error:
+        raise PauliChannelError(error.kind, str(error)) from error
     checks = {
         "curvature_grading_hermitian": gaussian.is_hermitian(grading),
         "curvature_grading_involutive": gaussian.multiply(grading, grading) == unit,
@@ -173,7 +164,25 @@ def construct(
         )
     channel_data = _channel_data(magnitude, maximum_level)
     channels = _channels(channel_data)
-    momentum_shift = linear / 2
+    aligned, antialigned = algebra.eigenvalues
+    linears = {
+        "curvature-aligned": aligned,
+        "curvature-antialigned": antialigned,
+    }
+    if aligned == antialigned:
+        momentum_shift = aligned / 2
+        transport = {
+            "linear_coefficient": gaussian.rational_text(aligned),
+            "momentum_shift": gaussian.rational_text(momentum_shift),
+            "energy_shift": gaussian.rational_text(-(momentum_shift**2)),
+        }
+    else:
+        transport = {
+            "sector_linear_coefficients": {
+                "curvature_aligned": gaussian.rational_text(aligned),
+                "curvature_antialigned": gaussian.rational_text(antialigned),
+            }
+        }
     return {
         "kind": "spin-resolved-transverse-energy-channels",
         "field_magnitude": gaussian.rational_text(magnitude),
@@ -183,11 +192,8 @@ def construct(
             "curvature_antialigned": gaussian.serialize(minus),
         },
         "channels": channels,
-        "longitudinal_transport": {
-            "linear_coefficient": gaussian.rational_text(linear),
-            "momentum_shift": gaussian.rational_text(momentum_shift),
-            "energy_shift": gaussian.rational_text(-(momentum_shift**2)),
-        },
-        "transport_channels": _transport_channels(channel_data, linear),
+        "coefficient_algebra": coefficient_algebra_witness(algebra),
+        "longitudinal_transport": transport,
+        "transport_channels": _transport_channels(channel_data, linears),
         "checks": checks,
     }

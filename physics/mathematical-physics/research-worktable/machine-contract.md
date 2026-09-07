@@ -220,9 +220,12 @@ observable consumer; the accepted domain record is a matched common-core theorem
 contract rather than an internally proved self-adjoint completion. For Euclidean
 rank-three scalar transport, that consumer derives the curvature axis, verifies
 exact alignment, and returns both the longitudinal momentum polynomial and its
-completed square. A consumer refusal retains the already certified generic
-operator candidate. None of these finite schemas by itself performs global group
-integration.
+completed square. For a matrix-valued axial coefficient, it constructs the exact
+two-sector algebra relative to the curvature grading, checks scalar sector action,
+and derives roots, a minimal polynomial, primitive projectors, and sector momentum
+polynomials. Noncommutation or unresolved within-sector action refuses observable
+recovery while retaining the already certified generic operator candidate. None
+of these finite schemas by itself performs global group integration.
 
 The orbit constructor specializes the witness through
 
@@ -645,8 +648,12 @@ canonical form, zero test, and degree/order bounds must be recorded.
   and recovers the same projector and channels on a matched common core. The
   [nonzero transport continuation](nonzero-first-order-transport.md) passes aligned
   and rotated scalar coefficients through the unchanged first-order defect and
-  recovers exact shifted longitudinal polynomials; transverse and matrix-valued
-  inputs expose distinct construction and observable boundaries. The
+  recovers exact shifted longitudinal polynomials; transverse inputs expose the
+  construction boundary. The
+  [matrix transport continuation](matrix-valued-transport-algebra.md) constructs
+  the surviving two-sector coefficient algebra, minimal polynomial, projectors,
+  and sector-dependent momentum polynomials, while noncommutation exposes its
+  observable boundary. The
   [global analytic promotion](benchmarks/pauli-global-analytic.md) adds the unitary
   Landau/Fourier carrier, measure, finite Heisenberg degeneracy, self-adjoint
   domain contract, exact heat density, and topology/domain refusals on `T^2 x R`.

@@ -69,17 +69,48 @@ class CoupledOperatorRouterTests(unittest.TestCase):
         self.assertEqual(result["obstruction"]["kind"], "NoEffectiveOperatorSymmetry")
         self.assertEqual(result["probes"][0]["first_residual"], "first-order-covariance")
 
-    def test_matrix_valued_axial_drift_preserves_symmetry_but_refuses_scalar_recovery(self) -> None:
+    def test_matrix_valued_axial_drift_constructs_a_two_sector_coefficient_algebra(self) -> None:
         result = discover_problem(EXAMPLES / "coupled-pauli-operator-matrix-drift.json")
 
-        self.assertEqual(result["outcome"], "obstructed")
-        self.assertEqual(result["obstruction"]["kind"], "UnsupportedChannelLowerOrder")
-        self.assertEqual(result["probes"][0]["first_residual"], "observable-recovery")
-        candidate = result["candidates"][0]
-        self.assertEqual(candidate["outcome"], "exact")
-        self.assertEqual(candidate["witness"]["operator_stage"]["dimensions"]["effective"], 1)
-        self.assertIsNone(candidate["witness"]["use"])
-        self.assertEqual(candidate["witness"]["maps"], {"analysis": None, "synthesis": None})
+        self.assertEqual(result["outcome"], "exact")
+        use = result["candidates"][0]["witness"]["use"]
+        algebra = use["coefficient_algebra"]
+        self.assertEqual(algebra["dimension"], 2)
+        self.assertEqual(algebra["basis"], ["I", "Sigma_F"])
+        self.assertEqual(algebra["coefficient_coordinates"], {"identity": "0", "grading": "2"})
+        self.assertEqual(
+            algebra["sector_eigenvalues"], {"curvature_aligned": "2", "curvature_antialigned": "-2"}
+        )
+        self.assertEqual(algebra["minimal_polynomial"], ["-4", "0", "1"])
+        self.assertEqual(algebra["projectors_from_coefficient"], use["projectors"])
+        self.assertEqual(
+            use["longitudinal_transport"],
+            {
+                "sector_linear_coefficients": {
+                    "curvature_aligned": "2",
+                    "curvature_antialigned": "-2",
+                }
+            },
+        )
+        self.assertEqual(
+            [channel["energy"] for channel in use["transport_channels"]],
+            ["k^2+2*k+0", "k^2-2*k+6", "k^2+2*k+6", "k^2-2*k+12"],
+        )
+
+    def test_rotated_matrix_transport_preserves_the_abstract_algebra_and_channels(self) -> None:
+        axial = discover_problem(EXAMPLES / "coupled-pauli-operator-matrix-drift.json")
+        rotated = discover_problem(EXAMPLES / "coupled-pauli-operator-rotated-matrix-drift.json")
+
+        self.assertEqual(rotated["outcome"], "exact")
+        axial_use = axial["candidates"][0]["witness"]["use"]
+        rotated_use = rotated["candidates"][0]["witness"]["use"]
+        self.assertEqual(rotated_use["parallel_axis"], ["1", "0", "0"])
+        self.assertEqual(
+            rotated_use["coefficient_algebra"]["minimal_polynomial"],
+            axial_use["coefficient_algebra"]["minimal_polynomial"],
+        )
+        self.assertEqual(rotated_use["transport_channels"], axial_use["transport_channels"])
+        self.assertNotEqual(rotated_use["projectors"], axial_use["projectors"])
 
     def test_operator_covariance_is_available_without_a_pauli_observable(self) -> None:
         result = discover_problem(EXAMPLES / "coupled-operator-covariance-only.json")

@@ -671,3 +671,27 @@ recovery in the bounded scalar case. It is not a measured runtime advantage. The
 matrix-valued axial refusal shows the next cost boundary honestly: its symmetry
 survives, but observable recovery now requires construction of a finite coefficient
 algebra and its projectors. Treating that work as free would overstate leverage.
+
+## 29. Two-sector coefficient algebra replaces repeated diagonalization
+
+G7 leaves every relation and full-operator cost from G6 unchanged. Only after the
+one-dimensional action survives does it contract the `d` first-order matrices
+against the curvature-derived axis and verify axial reconstruction. For fiber
+dimension `q`, this costs `O(d q^2)` exact entry operations.
+
+The coefficient-algebra owner constructs two grading projectors, takes two
+restricted traces, reconstructs the coefficient in `span{I,Sigma_F}`, evaluates a
+degree-at-most-two minimal polynomial, and—when roots differ—constructs two
+Lagrange idempotents. A constant number of dense matrix products gives `O(q^3)`
+exact arithmetic and `O(q^2)` storage. Sector-channel emission remains `2(r+1)`.
+At the tested `d=3`, `q=2`, and `r=1`, this is a bounded algebra certificate plus
+four output records, with no eigenvectors or coordinate eigenfunctions.
+
+The gain is primarily human and amortized: one algebra relation and one projector
+formula replace a fresh component diagonalization for every rotated coefficient
+package and every orbital level. No runtime dominance is claimed. Moreover, the
+bound is complete only because one involution provides exactly two sectors and the
+coefficient is scalar on each. The next cost question is whether square-free
+minimal-polynomial factorization and Chinese-remainder idempotents scale better,
+symbolically and semantically, than simultaneous eigensystem enumeration for a
+finite multi-sector algebra.
