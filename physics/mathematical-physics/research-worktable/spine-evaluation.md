@@ -153,6 +153,11 @@ optional observable promotion.
   minimal-polynomial projectors and differentiated Sylvester equations construct
   `P,P',P''`, the spectral gap, and horizontal transport while retaining a
   degenerate cluster as one representation block.
+- The projector-native continuation closes the remaining local differential
+  handoff. Representation/frame and coefficient/projector constructions now lower
+  to one admitted off-block jet. A non-rigid second arrow reaches the same finite
+  complement observable without a fitted group generator, while rigid recovery
+  and reduced-frame covariance hold.
 
 ## Feasibility boundary
 
@@ -174,15 +179,14 @@ It may not claim:
 
 ## Adjusted frontier
 
-1. **Projector-native differential propagation:** G14 constructs general
-   coefficient-derived projector jets, but only its rigid constant-generator
-   subclass enters G11/G13. Consume `Q P' P` and `Q P'' P` directly through the
-   canonical Grassmann connection and recover the rigid route exactly.
-2. **Leverage adjudication:** retain the complete G3 selected-route break-even of
+1. **Leverage adjudication:** retain the complete G3 selected-route break-even of
    9 separately from the stabilization-only value 8; measure runtime or prove a
    family-level symbolic bound before promoting broader computational leverage.
-3. **Human-cost normalization:** compare generator size, semantic steps, required
+2. **Human-cost normalization:** compare generator size, semantic steps, required
    theorem inputs, and reconstruction depth across admitted routes.
+3. **Several-coordinate compatibility:** extend the G15 local jet only when a
+   curvature/path probe supplies the missing compatibility law; do not call one
+   pointwise Grassmann connection a global trivialization.
 4. **Analytic re-entry:** revisit the Pauli branch only for a boundary, variable
    curvature, noncompact transverse carrier, or explicit projector-kernel
    observable; more constant-field torus instances do not alter the verdict.

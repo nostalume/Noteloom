@@ -819,9 +819,7 @@ case-by-case router growth.
   bundles, continuous spectra, nonnormal pencils, domain variation, topology, and
   nonlinear operators remain separate.
 
-## Active open bridge
-
-### G15 — Projector-native non-rigid differential propagation
+### G15 — Projector-native non-rigid differential propagation (`supported bounded`)
 
 - **Upstream:** G14 constructs general exact first/second projector jets and the
   invariant arrows `Q P' P`, `Q P'' P`, but its current G11 adapter accepts only
@@ -837,13 +835,48 @@ case-by-case router growth.
 - **Falsifier:** the direct route assumes an orthonormal G10 frame, loses `P''`,
   changes the carrier observable under reduced-frame gauge, disagrees with G13 on
   rigid input, or calls a local canonical connection a global trivialization.
-- **Next probe:** feed G14's non-rigid rank-two cluster through the invariant arrows
-  into a finite-window bright/dark comparison, then compare the unchanged output
-  with the existing G11/G13 route on the rigid repeated-Pauli regression.
+- **Result:** G13 now admits the common exact value `(P,Q P' P,Q P'' P)`.
+  Its G11 adapter constructs the same value through one analysis map, while G14
+  supplies it without frame coordinates or a transport generator. The rigid
+  repeated-Pauli coupling operators and rational bounds agree exactly between
+  routes. At zero momentum, a non-rigid rank-one second arrow gives a bright
+  transition `0.08988742896805166 <= 8/81` and an exact coherent dark channel.
+  Constant reduced-frame change preserves the operator, bound, and observable;
+  projector mismatch and malformed off-block arrows refuse.
+- **Cost disposition:** the coefficient route removes four frame-analysis
+  coordinate solves in the regression, but both routes retain the same dense
+  finite propagation. This supports construction compression, not general runtime
+  dominance.
 - **Boundary:** one local base coordinate, finite rational Hermitian carrier,
   canonical Grassmann connection, finite momentum set, and supplied preparation.
   Several base coordinates, curvature compatibility, domain transport, continuous
   spectra, and topology remain separate.
+
+## Active open bridge
+
+### G16 — Complete-route leverage and human-cost adjudication
+
+- **Upstream:** G1, G3, G10, and G15 now return exact reductions and local proxy
+  costs, but those ledgers measure different stages and scales.
+- **Tension:** semantic compression and removal of frame choices do not by
+  themselves establish faster analytical computation or lower total human work.
+- **Question:** for one fixed model/dynamics/preparation/observable/accuracy
+  contract, when does the bilateral construction beat direct full-carrier
+  evaluation after discovery, projector construction, propagation, and recovery
+  are all charged?
+- **Alternatives:** a measurable family-level break-even with lower symbolic and
+  human transformation depth versus semantic compression without route-level
+  computational dominance.
+- **Falsifier:** the comparison omits G8/G14 construction, changes the observable
+  or accuracy, treats LOC as human effort, or promotes one repeated-Pauli instance
+  to a family claim.
+- **Next probe:** freeze a shared cost schema, then compare increasing repeated
+  multiplicity and momentum-window sizes for the G14--G15 route and a direct
+  full-carrier baseline, recording exact operation proxies, measured runtime, and
+  human semantic steps separately.
+- **Boundary:** finite rational Hermitian families and the same finite complement
+  observable. This will not adjudicate continuous PDE solvers or generic analytic
+  solvability.
 
 ## Parked branches and re-entry conditions
 

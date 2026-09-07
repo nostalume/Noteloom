@@ -11,6 +11,8 @@ from scipy.linalg import expm
 import exact_gaussian_matrix as gaussian
 from exact_gaussian_linear import Vector, coordinates, linear_combination, matrix_vector, rank
 from mode_bundle_jet import ModeBundleJet
+from off_block_differential import OffBlockDifferentialJet, construct_off_block_differential
+from simple_block_pde import IrreducibleModel
 
 NUMERICAL_TOLERANCE = 1e-11
 
@@ -67,6 +69,7 @@ class WindowPropagationWitness:
     gap_bound: Fraction
     probability_bound: Fraction
     numerical_tolerance: float
+    differential_source: str
     domain_contract: str
     observable: str
     cost: WindowPropagationCost
@@ -136,20 +139,6 @@ def _construct_analysis(jet: ModeBundleJet) -> tuple[tuple[Vector, ...], dict[st
     return analysis, checks
 
 
-def _leakage_columns(
-    jet: ModeBundleJet, momentum: Fraction, slow_scale: Fraction
-) -> tuple[Vector, ...]:
-    momentum_factor = gaussian.Gaussian(2 * momentum)
-    scale = gaussian.Gaussian(slow_scale)
-    return tuple(
-        tuple(
-            scale * (momentum_factor * first_entry + second_entry)
-            for first_entry, second_entry in zip(first, second, strict=True)
-        )
-        for first, second in zip(jet.first_leakage_columns, jet.second_leakage_columns, strict=True)
-    )
-
-
 def _carrier_arrow(
     leakage_columns: tuple[Vector, ...], analysis: tuple[Vector, ...]
 ) -> gaussian.ComplexMatrix:
@@ -195,24 +184,30 @@ def _numpy_vector(value: Vector) -> np.ndarray:
 
 
 def _construct_block(
-    jet: ModeBundleJet,
-    analysis: tuple[Vector, ...],
+    model: IrreducibleModel,
+    differential: OffBlockDifferentialJet,
     momentum: Fraction,
     gap: Fraction,
     slow_scale: Fraction,
     time: Fraction,
     preparation: Vector,
 ) -> tuple[MomentumBlockWitness, float]:
-    projector = jet.model.selected_projector
+    projector = differential.projector
     complement = gaussian.add(gaussian.identity(len(projector)), gaussian.scale(projector, -1))
-    leakage = _leakage_columns(jet, momentum, slow_scale)
-    arrow = _carrier_arrow(leakage, analysis)
+    arrow = gaussian.scale(
+        gaussian.add(
+            gaussian.scale(differential.first_operator, 2 * momentum),
+            differential.second_operator,
+        ),
+        slow_scale,
+    )
+    leakage = tuple(matrix_vector(arrow, vector) for vector in model.embedding_columns)
     coupling = gaussian.add(arrow, gaussian.dagger(arrow))
     baseline = gaussian.scale(
         gaussian.add(gaussian.identity(len(projector)), gaussian.scale(projector, -2)), gap / 2
     )
     full = gaussian.add(baseline, coupling)
-    carrier_preparation = linear_combination(preparation, jet.model.embedding_columns)
+    carrier_preparation = linear_combination(preparation, model.embedding_columns)
     preparation_norm = _norm_squared(carrier_preparation)
     preparation_coupling = _norm_squared(matrix_vector(arrow, carrier_preparation))
     full_numeric = _numpy_matrix(full)
@@ -259,8 +254,12 @@ def _construct_block(
     return block, float(observed.real)
 
 
-def construct_window_propagation(
-    jet: ModeBundleJet, window: FinitePropagationWindow
+def _construct_off_block_window(
+    model: IrreducibleModel,
+    differential: OffBlockDifferentialJet,
+    window: FinitePropagationWindow,
+    adapter_checks: dict[str, bool],
+    analysis_coordinate_solves: int,
 ) -> WindowPropagationWitness:
     count = len(window.momenta)
     if not count or len(window.gaps) != count or len(window.preparations) != count:
@@ -282,14 +281,13 @@ def construct_window_propagation(
         raise WindowPropagationError("NegativeSlowScale", "slow scale must be nonnegative")
     if time < 0:
         raise WindowPropagationError("NegativePropagationTime", "time must be nonnegative")
-    dimension = jet.model.carrier_dimension
+    dimension = model.carrier_dimension
     preparations = tuple(
         _admit_vector(value, dimension, f"preparation[{index}]")
         for index, value in enumerate(window.preparations)
     )
-    analysis, analysis_checks = _construct_analysis(jet)
     blocks_and_numerators = tuple(
-        _construct_block(jet, analysis, momentum, gap, slow_scale, time, preparation)
+        _construct_block(model, differential, momentum, gap, slow_scale, time, preparation)
         for momentum, gap, preparation in zip(momenta, gaps, preparations, strict=True)
     )
     blocks = tuple(item[0] for item in blocks_and_numerators)
@@ -313,7 +311,8 @@ def construct_window_propagation(
     probability_bound = min(Fraction(1), short_bound, gap_bound)
     observable_error = abs(full_probability)
     checks = {
-        **analysis_checks,
+        **adapter_checks,
+        **differential.checks,
         "all_block_laws_hold": all(all(block.checks.values()) for block in blocks),
         "numerical_propagators_are_unitary": all(
             block.unitarity_residual <= NUMERICAL_TOLERANCE for block in blocks
@@ -342,13 +341,44 @@ def construct_window_propagation(
         gap_bound=gap_bound,
         probability_bound=probability_bound,
         numerical_tolerance=NUMERICAL_TOLERANCE,
+        differential_source=differential.source,
         domain_contract="finite direct sum of bounded Gaussian-rational carrier blocks",
-        observable="probability in the G11 complement projector",
+        observable="probability in the selected projector complement",
         cost=WindowPropagationCost(
-            analysis_coordinate_solves=len(jet.model.selected_projector),
-            coupling_matrix_entries=count * len(jet.model.selected_projector) ** 2,
+            analysis_coordinate_solves=analysis_coordinate_solves,
+            coupling_matrix_entries=count * len(model.selected_projector) ** 2,
             propagated_blocks=count,
-            propagated_block_dimension=len(jet.model.selected_projector),
+            propagated_block_dimension=len(model.selected_projector),
         ),
         checks=checks,
+    )
+
+
+def construct_off_block_window_propagation(
+    model: IrreducibleModel,
+    differential: OffBlockDifferentialJet,
+    window: FinitePropagationWindow,
+) -> WindowPropagationWitness:
+    """Propagate one admitted invariant differential jet without frame analysis."""
+    return _construct_off_block_window(model, differential, window, {}, 0)
+
+
+def construct_window_propagation(
+    jet: ModeBundleJet, window: FinitePropagationWindow
+) -> WindowPropagationWitness:
+    """Adapt a G11 frame jet to the invariant differential propagation core."""
+    analysis, analysis_checks = _construct_analysis(jet)
+    differential = construct_off_block_differential(
+        jet.model,
+        jet.model.selected_projector,
+        _carrier_arrow(jet.first_leakage_columns, analysis),
+        _carrier_arrow(jet.second_leakage_columns, analysis),
+        "G11 frame leakage columns",
+    )
+    return _construct_off_block_window(
+        jet.model,
+        differential,
+        window,
+        analysis_checks,
+        len(jet.model.selected_projector),
     )

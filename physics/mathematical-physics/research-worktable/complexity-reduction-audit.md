@@ -866,3 +866,36 @@ the same invariant formulas retain a degenerate rank-two cluster, commute with
 rational carrier conjugation, and replace pointwise eigenvector matching by two
 projector/Sylvester operations. Field extensions and gap closure remain explicit
 boundaries rather than hidden numerical branch choices.
+
+## 37. One off-block jet removes the frame bottleneck, not propagation cost
+
+G15 changes the interface rather than adding another propagation algorithm. Both
+the G11 frame route and G14 coefficient route now lower to
+
+```text
+(P,T_1,T_2),       T_j=Q T_j P.
+```
+
+The G11 adapter still pays `q` exact coordinate solves to form its analysis map.
+The G14 adapter already owns `Q P' P,Q P'' P` and therefore pays none. Downstream
+cost remains common:
+
+```text
+projector-native analysis:  0 coordinate solves,
+coupling construction:      O(n q^2),
+propagation:                O(n q^3),
+observable recovery:        O(n q^2).
+```
+
+At zero momentum the first arrow vanishes from the assembled coupling, so the
+non-rigid regression isolates `P''`: the bright preparation gives
+`0.08988742896805166 <= 8/81`, while its coherent difference has exact zero
+coupling. The rigid projector and G11 routes construct identical carrier arrows
+and rational bounds.
+
+This establishes internal and human construction compression: no moving frame,
+coordinate analysis, or fitted constant generator is needed on the coefficient
+route. It does not establish runtime dominance because both routes still
+exponentiate the same dense finite carrier blocks. G16 must charge the upstream
+projector construction and compare complete routes at fixed observable and
+accuracy before promoting a broader computation claim.

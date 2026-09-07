@@ -108,7 +108,8 @@ complement-transition observable. G13 replaces channel enumeration by one
 frame-invariant operator and detects coherent bright/dark structure.
 
 [G14](coefficient-derived-projector-jet.md) now derives the projector jet and gap
-from an isolated exact Hermitian coefficient cluster. G13 still does not consume a
-general non-rigid projector jet directly, certify the transcendental matrix
-exponential, cover a continuous spectral window, transport operator domains, or
-treat crossings and nonlinear feedback.
+from an isolated exact Hermitian coefficient cluster, and
+[G15](projector-native-propagation.md) lowers its general non-rigid off-block
+arrows into this propagation core. The route still does not certify the
+transcendental matrix exponential, cover a continuous spectral window, transport
+operator domains, or treat crossings and nonlinear feedback.
