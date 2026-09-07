@@ -66,6 +66,7 @@ group name.
 | compress natural tensor searches before elimination | [structured seed compression](structured-seed-compression.md) | metric-derived candidates, symmetry-orbit residuals, and exact span comparison |
 | construct linked-carrier covariance algebras | [coupled-carrier covariance](coupled-carrier-covariance.md) | joint actions, ineffective commutant quotient, and linked-symbol projectors |
 | lift a generated action through a full coupled operator | [full-operator covariance lift](full-operator-covariance-lift.md) | ordered curvature/lower-term defects, common-core admission, and optional Pauli recovery |
+| recover invariant first-order transport | [nonzero first-order transport](nonzero-first-order-transport.md) | curvature-derived direction, exact momentum polynomial, and distinct algebra/use refusals |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -146,8 +147,12 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   through curvature, first-order, zeroth-order, and common-core contracts. It
   reduces `3 -> 1`, independently recovers the Pauli projectors and channels, and
   refuses both a covariance-breaking zeroth-order term and a mismatched domain.
-  The active frontier is now the first structurally nontrivial lower-order
-  transfer: nonzero longitudinal transport selected by the unchanged compiler.
+  G6 supplies nonzero scalar transport without changing the compiler: aligned and
+  rotated data retain the action and yield exact completed-square channels, while
+  transverse data is killed at the first-order defect. The active frontier is now
+  the matrix-valued case that preserves the operator symmetry but exceeds the
+  scalar observable consumer: construct its finite coefficient algebra and
+  projectors rather than add a component rule.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

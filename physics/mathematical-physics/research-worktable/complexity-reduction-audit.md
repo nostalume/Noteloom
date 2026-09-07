@@ -648,6 +648,26 @@ stage.
 
 This closes semantic and human compression for the bounded constant operator, not
 a runtime-leverage claim. Domain preservation is a matched Schwartz common-core
-theorem contract, and the successful first-order coefficients are zero. Runtime
-comparison and nonzero first-order transport remain open; the latter is the next
-structural discriminator because it can invalidate the operator-stage reuse claim.
+theorem contract. G5 itself does not test a nonzero first-order coefficient; G6
+owns that transfer.
+
+## 28. Nonzero transport reuses construction and adds linear recovery cost
+
+G6 leaves the generic plan unchanged: three generated actions, nineteen residual
+coordinates, and bracket bound 63. For scalar coefficients, the existing
+first-order residual becomes the stabilizer equation for one covector. Aligned
+transport retains the curvature-selected action; transverse transport reduces its
+dimension from one to zero. No search over axes or spin components is added.
+
+After survival, the observable consumer compares `d` fiber matrices with scalar
+identities, contracts and reconstructs two length-`d` vectors, and emits `2(r+1)`
+channel records. At the tested base dimension three, fiber size two, and orbital
+level one, this is twelve matrix-entry comparisons, two three-entry vector passes,
+and four records. Exact completion of `k^2+mu k+epsilon` needs a constant number of
+rational operations per record. No eigensolver or eigenfunction enumeration enters.
+
+This supports construction reuse, semantic compression, and linear output-sensitive
+recovery in the bounded scalar case. It is not a measured runtime advantage. The
+matrix-valued axial refusal shows the next cost boundary honestly: its symmetry
+survives, but observable recovery now requires construction of a finite coefficient
+algebra and its projectors. Treating that work as free would overstate leverage.

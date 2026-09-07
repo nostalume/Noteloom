@@ -59,6 +59,18 @@ CASES = (
     Case(
         (
             "discover",
+            str(EXAMPLES / "coupled-pauli-operator-longitudinal-drift.json"),
+            "--summary",
+        ),
+        "reduction-decision/v1",
+        "exact",
+        0,
+        "coupled-full-operator-kernel",
+        DISCOVERY_KEYS,
+    ),
+    Case(
+        (
+            "discover",
             str(EXAMPLES / "coupled-carrier-clifford-r3.json"),
             "--summary",
         ),

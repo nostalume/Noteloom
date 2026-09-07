@@ -105,6 +105,7 @@ def _ledger(compilation: object) -> list[dict[str, object]]:
 def discover_payload(payload: object) -> dict[str, object]:
     relation_plan = None
     operator_plan = None
+    use_error: PauliChannelError | None = None
     try:
         data = parse(payload)
         relation_plan = plan_relation(data.metric, data.links)
@@ -148,19 +149,20 @@ def discover_payload(payload: object) -> dict[str, object]:
                 planning=_planning(relation_plan, operator_plan),
                 first_residual=residual,
             )
-        use = (
-            None
-            if data.maximum_level is None
-            else construct_pauli_use(
-                data.metric,
-                data.links,
-                data.curvature,
-                data.first_order,
-                data.zero_order,
-                data.maximum_level,
-            )
-        )
-    except (OperatorInputError, LiftError, PauliChannelError) as error:
+        use = None
+        if data.maximum_level is not None:
+            try:
+                use = construct_pauli_use(
+                    data.metric,
+                    data.links,
+                    data.curvature,
+                    data.first_order,
+                    data.zero_order,
+                    data.maximum_level,
+                )
+            except PauliChannelError as error:
+                use_error = error
+    except (OperatorInputError, LiftError) as error:
         return _failure(
             payload,
             error.kind,
@@ -200,8 +202,16 @@ def discover_payload(payload: object) -> dict[str, object]:
         },
         "domain": data.domain_witness,
         "maps": {
-            "analysis": "parallel Fourier, curvature grading, and oscillator-number analysis",
-            "synthesis": "spin/Fock channel sum and inverse parallel Fourier transform",
+            "analysis": (
+                None
+                if use is None
+                else "parallel Fourier, curvature grading, and oscillator-number analysis"
+            ),
+            "synthesis": (
+                None
+                if use is None
+                else "spin/Fock channel sum and inverse parallel Fourier transform"
+            ),
         },
         "use": use,
         "residuals": {"all_exact": True},
@@ -220,9 +230,10 @@ def discover_payload(payload: object) -> dict[str, object]:
             "global_group_integrated": False,
         },
     }
-    return {
+    observable_blocked = use_error is not None
+    result = {
         "schema": "reduction-decision/v1",
-        "outcome": "exact",
+        "outcome": "obstructed" if observable_blocked else "exact",
         "request": {
             "problem_type": SCHEMA,
             "observable": None
@@ -232,24 +243,44 @@ def discover_payload(payload: object) -> dict[str, object]:
             "supplied_generators": False,
         },
         "planning": _planning(relation_plan, operator_plan),
-        "probes": [{"route": ROUTE, "outcome": "exact", "first_residual": None}],
+        "probes": [
+            {
+                "route": ROUTE,
+                "outcome": "obstructed" if observable_blocked else "exact",
+                "first_residual": "observable-recovery" if observable_blocked else None,
+            }
+        ],
         "candidates": [{"route": ROUTE, "outcome": "exact", "witness": witness}],
-        "coincidence": {"status": "external_bilateral_regression_target"},
+        "coincidence": (
+            None if observable_blocked else {"status": "external_bilateral_regression_target"}
+        ),
         "decision": {
-            "selected_route": ROUTE,
-            "reason": "the generated action survives every operator layer and the domain contract",
+            "selected_route": None if observable_blocked else ROUTE,
+            "reason": (
+                str(use_error)
+                if observable_blocked
+                else "the generated action survives every operator layer and the domain contract"
+            ),
             "common_transverse_channels": [] if use is None else use["channels"],
+            "longitudinal_transport_channels": ([] if use is None else use["transport_channels"]),
             "curvature_aligned_projector": (
                 None if use is None else use["projectors"]["curvature_aligned"]
             ),
         },
         "human_card": {
-            "result": "exact group-free full-operator lift",
+            "result": (
+                "operator exact; requested observable refused"
+                if observable_blocked
+                else "exact group-free full-operator lift"
+            ),
             "dimensions": f"{relation.compilation.effective_dimension}->{lifted.effective_dimension}",
             "replaced_expansion": "component PDE diagonalization and supplied rotation generators",
             "boundary": "constant Euclidean rank-three Pauli operators on the matched common core",
         },
     }
+    if use_error is not None:
+        result["obstruction"] = {"kind": use_error.kind, "reason": str(use_error)}
+    return result
 
 
 def discover_document(document: ProblemDocument) -> dict[str, object]:

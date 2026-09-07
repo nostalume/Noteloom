@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from fractions import Fraction
 from pathlib import Path
 
 from problem_router import discover_problem
@@ -9,6 +10,77 @@ EXAMPLES = Path(__file__).resolve().parent / "examples"
 
 
 class CoupledOperatorRouterTests(unittest.TestCase):
+    def test_nonzero_longitudinal_drift_is_recovered_exactly(self) -> None:
+        result = discover_problem(EXAMPLES / "coupled-pauli-operator-longitudinal-drift.json")
+
+        self.assertEqual(result["outcome"], "exact")
+        witness = result["candidates"][0]["witness"]
+        self.assertEqual(witness["operator_stage"]["dimensions"]["effective"], 1)
+        self.assertEqual(
+            [
+                (entry["name"], entry["rank_drop"])
+                for entry in witness["operator_stage"]["defect_ledger"]
+            ],
+            [
+                ("curvature-covariance", 2),
+                ("first-order-covariance", 0),
+                ("zeroth-order-covariance", 0),
+            ],
+        )
+        use = witness["use"]
+        self.assertEqual(use["parallel_axis"], ["0", "0", "1"])
+        self.assertEqual(
+            use["longitudinal_transport"],
+            {"linear_coefficient": "2", "momentum_shift": "1", "energy_shift": "-1"},
+        )
+        first = use["transport_channels"][0]
+        self.assertEqual(
+            first["energy_polynomial"], {"quadratic": "1", "linear": "2", "constant": "0"}
+        )
+        self.assertEqual(first["completed_square_constant"], "-1")
+        self.assertEqual(
+            result["decision"]["longitudinal_transport_channels"], use["transport_channels"]
+        )
+        momentum = Fraction(5, 2)
+        polynomial = momentum**2 + Fraction(2) * momentum
+        completed = (momentum + Fraction(1)) ** 2 + Fraction(-1)
+        self.assertEqual(polynomial, completed)
+
+    def test_rotated_field_transfers_without_a_preferred_axis(self) -> None:
+        axial = discover_problem(EXAMPLES / "coupled-pauli-operator-longitudinal-drift.json")
+        rotated = discover_problem(EXAMPLES / "coupled-pauli-operator-rotated-drift.json")
+
+        self.assertEqual(rotated["outcome"], "exact")
+        use = rotated["candidates"][0]["witness"]["use"]
+        self.assertEqual(use["parallel_axis"], ["1", "0", "0"])
+        self.assertEqual(
+            use["longitudinal_transport"],
+            axial["candidates"][0]["witness"]["use"]["longitudinal_transport"],
+        )
+        self.assertEqual(
+            rotated["decision"]["common_transverse_channels"],
+            axial["decision"]["common_transverse_channels"],
+        )
+
+    def test_transverse_drift_is_removed_by_the_generic_first_order_defect(self) -> None:
+        result = discover_problem(EXAMPLES / "coupled-pauli-operator-transverse-drift.json")
+
+        self.assertEqual(result["outcome"], "obstructed")
+        self.assertEqual(result["obstruction"]["kind"], "NoEffectiveOperatorSymmetry")
+        self.assertEqual(result["probes"][0]["first_residual"], "first-order-covariance")
+
+    def test_matrix_valued_axial_drift_preserves_symmetry_but_refuses_scalar_recovery(self) -> None:
+        result = discover_problem(EXAMPLES / "coupled-pauli-operator-matrix-drift.json")
+
+        self.assertEqual(result["outcome"], "obstructed")
+        self.assertEqual(result["obstruction"]["kind"], "UnsupportedChannelLowerOrder")
+        self.assertEqual(result["probes"][0]["first_residual"], "observable-recovery")
+        candidate = result["candidates"][0]
+        self.assertEqual(candidate["outcome"], "exact")
+        self.assertEqual(candidate["witness"]["operator_stage"]["dimensions"]["effective"], 1)
+        self.assertIsNone(candidate["witness"]["use"])
+        self.assertEqual(candidate["witness"]["maps"], {"analysis": None, "synthesis": None})
+
     def test_operator_covariance_is_available_without_a_pauli_observable(self) -> None:
         result = discover_problem(EXAMPLES / "coupled-operator-covariance-only.json")
 
@@ -16,6 +88,7 @@ class CoupledOperatorRouterTests(unittest.TestCase):
         witness = result["candidates"][0]["witness"]
         self.assertEqual(witness["operator_stage"]["dimensions"]["effective"], 1)
         self.assertIsNone(witness["use"])
+        self.assertEqual(witness["maps"], {"analysis": None, "synthesis": None})
         self.assertIsNone(result["request"]["observable"])
         self.assertEqual(result["decision"]["common_transverse_channels"], [])
         self.assertIsNone(result["decision"]["curvature_aligned_projector"])

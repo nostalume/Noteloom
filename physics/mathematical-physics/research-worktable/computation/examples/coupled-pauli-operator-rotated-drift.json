@@ -1,0 +1,42 @@
+{
+  "schema": "coupled-operator-covariance/v1",
+  "base_metric": [["1", "0", "0"], ["0", "1", "0"], ["0", "0", "1"]],
+  "link_matrices": [
+    [["0", "1"], ["1", "0"]],
+    [["0", ["0", "-1"]], [["0", "1"], "0"]],
+    [["1", "0"], ["0", "-1"]]
+  ],
+  "required_capabilities": ["metric-clifford-link"],
+  "operator": {
+    "kind": "constant-curvature-covariant-laplacian",
+    "order": 2,
+    "curvature_two_form": [["0", "0", "0"], ["0", "0", "3"], ["0", "-3", "0"]],
+    "first_order_matrices": [
+      [["2", "0"], ["0", "2"]],
+      [["0", "0"], ["0", "0"]],
+      [["0", "0"], ["0", "0"]]
+    ],
+    "zero_order_matrix": [["0", "-3"], ["-3", "0"]]
+  },
+  "domain_contract": {
+    "kind": "boundaryless-gauge-covariant-schwartz",
+    "core": "Schwartz(R^3,C^2)",
+    "boundary": "none"
+  },
+  "observable": {
+    "kind": "spin_resolved_transverse_energy_channels",
+    "maximum_orbital_level": 1
+  },
+  "resource_budget": {
+    "relation": {
+      "maximum_candidate_dimension": 13,
+      "maximum_residual_coordinates": 18,
+      "maximum_bracket_checks": 5000
+    },
+    "operator": {
+      "maximum_candidate_dimension": 3,
+      "maximum_residual_coordinates": 19,
+      "maximum_bracket_checks": 100
+    }
+  }
+}

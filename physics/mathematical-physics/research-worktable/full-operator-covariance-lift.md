@@ -136,18 +136,18 @@ The implementation separates five semantic owners:
 - `pauli_operator_channels.py`: curvature grading and observable recovery;
 - `coupled_operator_router.py`: thin public orchestration and witness assembly.
 
-The G5 owners contain 178, 171, 113, and 263 lines against respective caps of 190,
-220, 150, and 300; the focused public test contains 91 lines against a cap of 140.
-The 101-line shared relation admission owner remains below its 130-line cap. The
-operator plan has three candidate actions, nineteen residual coordinates, and a
-conservative bracket bound of sixty-three. It materializes no coordinate
-differential expression and performs no eigenfunction enumeration.
+At G5 closure, its owners contained 178, 171, 113, and 263 lines against respective
+caps of 190, 220, 150, and 300; the focused public test contained 91 lines against
+a cap of 140. The 101-line shared relation admission owner remained below its
+130-line cap. The operator plan has three candidate actions, nineteen residual
+coordinates, and a conservative bracket bound of sixty-three. It materializes no
+coordinate differential expression and performs no eigenfunction enumeration.
 
 ## Evidence ledger
 
-The fresh worktable gate runs 142 unit tests and 20 computational checks. Ruff lint
-and format checks pass, all 64 JSON fixtures parse, Python compilation succeeds,
-and 236 local Markdown links resolve. These counts are repository observations,
+The G5 closure gate ran 142 unit tests and 20 computational checks. Ruff lint and
+format checks passed, all 64 JSON fixtures parsed, Python compilation succeeded,
+and 236 local Markdown links resolved. These counts are repository observations,
 not mathematical evidence beyond the discriminators below.
 
 ### `E-G5-01` — positive-curvature full lift
@@ -196,10 +196,9 @@ middle language across natural tensors, coupled symbols, and one full spinor
 operator; it does not yet establish transfer of G5 itself beyond that coefficient
 package.
 
-It does not establish nonzero first-order transport, arbitrary Laplace-type
+G5 itself does not establish nonzero first-order transport, arbitrary Laplace-type
 operators, variable coefficients, boundary domains, global spin integration,
-self-adjoint completeness, or a universal PDE-to-group inverse. In particular,
-the first-order block is operational but the successful fixtures set `C_i=0`.
-The next discriminating bridge is therefore a nonzero symmetry-compatible
-first-order coefficient with a changed but exactly recoverable observable—not
-another constant-field parameter instance.
+self-adjoint completeness, or a universal PDE-to-group inverse. Its successful
+fixtures set `C_i=0`. The [G6 continuation](nonzero-first-order-transport.md) now
+tests the nonzero scalar case without changing this compiler; broader limitations
+remain in force.

@@ -56,8 +56,8 @@ tolerances before accepting a new lock.
 | `coupled_relation_stabilizer.py` | coupled-relation orchestration and public witness projection |
 | `coupled_operator_input.py` | typed coupled-operator, domain-contract, optional-observable, and budget admission |
 | `full_operator_covariance.py` | curvature, first-order, and zeroth-order defect blocks on a generated coupled action |
-| `pauli_operator_channels.py` | optional curvature grading, projector, and Pauli channel consumer |
-| `coupled_operator_router.py` | generic operator-covariance orchestration and public witness projection |
+| `pauli_operator_channels.py` | optional curvature grading, projector, scalar longitudinal transport, and Pauli channel consumer |
+| `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
 | `adjoint_algebra.py` | immutable rational matrices, Lie/Jordan operations, exact closure, coordinates, and pairing |
 | `quadratic_route_router.py` | independent factor/cyclic probes and observable-relative selection |
 | `pauli_bilateral_router.py` | local Clifford/PDE construction and coincidence |
@@ -88,7 +88,7 @@ fails.
 | `matrix-adjoint-semigroup/v1` | local symbol block to compact quotient and one heat-semigroup matrix element |
 | `natural-tensor-stabilizer/v1` | supplied natural tensors to an effective stabilizer and optional elasticity plane-wave witness |
 | `coupled-carrier-covariance/v1` | metric and link relations to an effective coupled action and exact linked-symbol projectors |
-| `coupled-operator-covariance/v1` | generated coupled action to ordered full-operator covariance, with optional Pauli channel recovery |
+| `coupled-operator-covariance/v1` | generated coupled action to ordered full-operator covariance, with optional Pauli and scalar longitudinal channel recovery |
 
 Detailed mathematical contracts live in the neighboring
 [benchmarks](../benchmarks/). In particular, see the
@@ -99,7 +99,8 @@ Detailed mathematical contracts live in the neighboring
 [symbol covariance](../benchmarks/matrix-symbol-covariance-casimir.md), and
 [global adjoint semigroup](../benchmarks/matrix-adjoint-semigroup-global.md). The
 [full-operator lift](../full-operator-covariance-lift.md) owns the current coupled
-operator contract and its exact boundary.
+operator contract; [nonzero first-order transport](../nonzero-first-order-transport.md)
+owns its scalar longitudinal continuation and exact boundary.
 
 ## Reproducible verification
 
@@ -156,8 +157,11 @@ operationally with recursive quotient-coordinate emission, checks budgets before
 materialization, and confines the raw/orbit route to explicit audit. G4 then uses
 the common defect compiler on a metric/Hermitian link, constructs its effective
 coupled action in ranks two and three, and returns exact principal-symbol
-projectors. G5 now applies that generated action to curvature and ordered
-lower-term defects, returning a closed `3 -> 1` operator action before optional
-Pauli recovery. Its successful first-order coefficients are zero; the next
-discriminator is nonzero symmetry-compatible transport through the unchanged
-compiler, not another tensor or symbol-only variant.
+projectors. G5 applies that generated action to curvature and ordered lower-term
+defects, returning a closed `3 -> 1` operator action before optional Pauli
+recovery. G6 passes nonzero curvature-aligned scalar transport through the
+unchanged compiler, derives the axis from curvature, and returns exact shifted
+longitudinal polynomials. A transverse coefficient kills the action; an axial
+matrix coefficient preserves it but refuses scalar recovery while retaining the
+generic candidate. The next discriminator is a finite coefficient-algebra
+consumer, not another scalar parameter or Pauli component rule.

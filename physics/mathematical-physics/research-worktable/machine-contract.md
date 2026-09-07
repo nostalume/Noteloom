@@ -217,8 +217,12 @@ commutant, and returns exact linked-symbol projectors.
 curvature, first-order, and zeroth-order covariance kernels, and returns the
 surviving full-operator action. Pauli grading and channels are an optional
 observable consumer; the accepted domain record is a matched common-core theorem
-contract rather than an internally proved self-adjoint completion. None of these
-finite schemas by itself performs global group integration.
+contract rather than an internally proved self-adjoint completion. For Euclidean
+rank-three scalar transport, that consumer derives the curvature axis, verifies
+exact alignment, and returns both the longitudinal momentum polynomial and its
+completed square. A consumer refusal retains the already certified generic
+operator candidate. None of these finite schemas by itself performs global group
+integration.
 
 The orbit constructor specializes the witness through
 
@@ -638,8 +642,11 @@ canonical form, zero test, and degree/order bounds must be recorded.
   checks through the public decision interface. The
   [group-free full-operator lift](full-operator-covariance-lift.md) independently
   constructs the coupled action, reduces it by curvature and lower-order defects,
-  and recovers the same projector and channels on a matched common core. Its
-  successful first-order matrices are zero, so nonzero transport remains open. The
+  and recovers the same projector and channels on a matched common core. The
+  [nonzero transport continuation](nonzero-first-order-transport.md) passes aligned
+  and rotated scalar coefficients through the unchanged first-order defect and
+  recovers exact shifted longitudinal polynomials; transverse and matrix-valued
+  inputs expose distinct construction and observable boundaries. The
   [global analytic promotion](benchmarks/pauli-global-analytic.md) adds the unitary
   Landau/Fourier carrier, measure, finite Heisenberg degeneracy, self-adjoint
   domain contract, exact heat density, and topology/domain refusals on `T^2 x R`.
