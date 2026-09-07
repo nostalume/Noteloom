@@ -1,75 +1,106 @@
-# Spin, helicity, and finite Lorentz carriers
+# Spin, helicity, carriers, and realization
 
-Status: supported in four-dimensional complex finite-spin sectors
+Status: finite complex four-dimensional sectors have an explicit orbitwise or
+cohomological realization; global analytic and countable-spin completion is open
 
 ## Obstruction
 
-The orbit alone does not specify internal states. Transport to a standard momentum
-is nonunique; the ambiguity constructs the stabilizer action that must be realized.
+Transport to a standard momentum is nonunique. Its ambiguity creates the
+stabilizer representation, while a finite Lorentz carrier generally contains more
+vectors than that physical fiber. The bridge must therefore be constructed, not
+assumed.
 
-## Massive construction
+## Construct the fibers and candidate carriers
 
-For `k_m=(m,0,0,0)`, transports differing by `B'(p)=B(p)r` obey `rk_m=k_m`.
-The stabilizer is the rotation double cover `SU(2)`. Its irreducible finite unitary
-fibers are `F_s = Sym^(2s) C^2`, with `2s` a nonnegative integer.
-
-The generators arise from differentiating the group action, not from importing
-matrices:
+For `k_m=(m,0,0,0)`, two transports differ by `B'(p)=B(p)r` with `rk_m=k_m`.
+The stabilizer is `SU(2)`, and its finite irreducible unitary fibers are
 
 ```text
-d rho_s(X)(v_1 ... v_(2s))
-  = sum_j v_1 ... (X v_j) ... v_(2s).
+F_s=Sym^(2s) C^2,  2s in Z_(>=0).
 ```
 
-This construction covers integer and half-integer spin uniformly.
+Their infinitesimal action is obtained by differentiating the product action:
 
-## Massless construction
+```text
+d rho_s(X)(v_1...v_(2s))
+ =sum_j v_1...(Xv_j)...v_(2s).
+```
 
-For a null `k_0`, the stabilizer is the double cover of `E(2)`. Finite-helicity
-particle sectors require its translation part to act trivially; the remaining
-circle character is
+For null `k_0`, the stabilizer is the double cover of `E(2)`. Finite-helicity
+sectors make its translation part trivial and retain
 
 ```text
 rho_h(theta)=exp(i h theta),  2h in Z.
 ```
 
-Nontrivial translation action would instead describe continuous-spin sectors,
-outside the present worktable.
+Nontrivial translations give continuous spin and lie outside this worktable.
 
-## Lorentz carriers
-
-The complexified Lorentz algebra splits as two commuting `sl(2)` actions. Finite
-irreducible carriers are constructed as
+The complex Lorentz algebra has two commuting `sl(2)` actions, so its finite
+irreducible carriers are
 
 ```text
-V_(j_L,j_R) = Sym^(2j_L) C^2 tensor Sym^(2j_R) conjugate(C^2).
+V_(j_L,j_R)
+ =Sym^(2j_L) C^2 tensor Sym^(2j_R) conjugate(C^2).
 ```
 
-This is a carrier catalogue, not a selection rule. Restricting `V_(j_L,j_R)` to a
-massive or massless stabilizer determines whether the requested `F_s` or `F_h`
-occurs. Multiplicity, locality, real structure, and desired operations decide
-whether the occurrence is useful.
+This catalogue does not select a presentation. Restriction to the stabilizer asks
+whether `F_s` or `F_h` occurs; locality, multiplicity, real structure, and desired
+operations determine whether that occurrence is useful.
 
-Representative families:
+## Construct the orbitwise bridge
 
-| physical label | economical carrier request | additional structure |
-| --- | --- | --- |
-| spin 0 | `(0,0)` | scalar wave symbol |
-| spin/helicity 1/2 | `(1/2,0)` or `(0,1/2)` | first-order factorization |
-| spin/helicity 1 | chiral `(1,0)`/`(0,1)` or vector potential | curvature or gauge complex |
-| spin/helicity 3/2 | vector-spinor or symmetric spinor-tensor | gamma/trace constraint |
-| spin/helicity 2 | chiral curvature or symmetric potential | differential gauge invariant |
+Choose `B(p)k=p`, put `q=Lambda(A)^(-1)p`, and calculate the two routes to `p`:
 
-## Output and edges
+```text
+B(p)k=p,
+A B(q)k=Aq=p.
+```
 
-Output: the physical fiber `F`, admissible finite carrier candidates, and the
-restriction/multiplicity question.
+Their relative map fixes `k`:
 
-- [Realization bridge](04-realization-bridge.md) constructs orbitwise maps.
-- [Natural-operation grammar](13-natural-operation-grammar.md) generates operations
-  only after a carrier law and resource budget are supplied.
+```text
+W(A,p)=B(p)^(-1)AB(q),
+W(A,p)k=k.
+```
 
-## Boundary
+Search at `k` for `u_k:F->V` satisfying
 
-The Lorentz split is special to four dimensions. Mixed-symmetry, real/parity,
-continuous-spin, and countable direct-sum completion are not generated here.
+```text
+S(r)u_k=u_k rho(r),  r in K,
+```
+
+and transport it by `u(p)=S(B(p))u_k`. Then
+
+```text
+S(A)u(q)
+ =S(AB(q))u_k
+ =S(B(p))S(W(A,p))u_k
+ =u(p)rho(W(A,p)).
+```
+
+The covariance law is thus the output of a computed composite.
+
+## Quotient realization
+
+When a gauge potential cannot contain the physical fiber injectively, construct
+
+```text
+G_p --R(p)--> V --D(p)--> E,
+D(p)R(p)=0,
+H_p=ker D(p)/im R(p).
+```
+
+Support requires an explicit bijective stabilizer intertwiner `H_k->F`; covariance
+then transports it along the orbit. Massive spin one, massless helicity one, and
+abstract-Clifford half-integer carriers are regression witnesses, not imported
+motivation.
+
+## Retained output and boundary
+
+Output: physical fiber, candidate finite carriers, and an orbitwise intertwiner or
+symbol-complex cohomology carrying the same stabilizer representation.
+
+[The local free-field complex](05-local-symbol-complex.md) adds polynomial
+locality, causal propagation, and CCR/CAR completion. The Lorentz split used here
+is dimension-specific; mixed symmetry, real/parity structure, source density,
+interactions, and countable completion remain open.

@@ -14,6 +14,6 @@ gauge, source, and factorization operations are generated and which are supplied
 It is weaker than a dynamics theorem: representation theory does not select an
 action, interaction, state, detector, or approximation.
 
-The result is consumed by nodes 09--16. Countable completion, real/parity choices,
+The result is consumed by nodes 08, 11, 13, and 15. Countable completion, real/parity choices,
 mixed symmetry, source-image density, and interacting higher-spin consistency
 remain outside it.

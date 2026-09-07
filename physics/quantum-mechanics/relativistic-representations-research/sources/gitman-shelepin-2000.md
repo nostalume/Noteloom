@@ -1,6 +1,6 @@
 # GS — Gitman and Shelepin (2000/2001)
 
-Consumed by: [representation spaces](../nodes/02-representation-spaces.md) and
+Consumed by: [determination and representation](../nodes/01-determination-boundary.md) and
 [spin, helicity, and carriers](../nodes/03-spin-helicity-carriers.md).
 
 ## Raw locator
@@ -21,7 +21,7 @@ Consumed by: [representation spaces](../nodes/02-representation-spaces.md) and
 | `GS-02` | Proper Poincare group and generalized regular representations | Left and right actions supply different commuting operator families; their meaning must be typed before use. | `N2`, `N3` |
 | `GS-03` | Discrete transformations section | `C`, `P`, and `T` are represented through automorphisms/complex conjugation on the group-function realization. | `N2`, `N7` |
 | `GS-04` | 2D/3D/4D classification sections | Dimension-specific scalar functions are classified to obtain definite mass/spin equations. | later dimensional comparison |
-| `GS-05` | 4D proper-group equations, around the Fierz--Pauli discussion | For integer spin in suitable Lorentz carriers, Klein--Gordon plus divergence-free and trace-free conditions isolate the intended massive spin. | nodes 05--08 |
+| `GS-05` | 4D proper-group equations, around the Fierz--Pauli discussion | For integer spin in suitable Lorentz carriers, Klein--Gordon plus divergence-free and trace-free conditions isolate the intended massive spin. | nodes 05 and 08 |
 | `GS-06` | 4D improper-group and comparative sections | Parity-completed systems connect `(j_1,j_2)` and `(j_2,j_1)` sectors; first-order systems occur only for restricted adjacent representations. | `N2`, `N6` |
 | `GS-07` | Comparative section, free equations | Several free systems can have the same `2(2s+1)` solutions and be related by component elimination. | `N3`, `N7` |
 | `GS-08` | Comparative section, interaction warning | Free equivalence can fail after minimal coupling because `[D_mu,D_nu]` produces field-strength terms. | `N7` |

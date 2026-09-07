@@ -1,10 +1,12 @@
 # Action-Principle Contracts
 
-Consumed by: [local symbol complex](../nodes/05-local-symbol-complex.md) and
-[carrier/source obstructions](../nodes/15-carrier-source-obstructions.md).
+Consumed by: [local symbol complex](../nodes/05-local-symbol-complex.md),
+[carrier/source obstructions](../nodes/15-carrier-source-obstructions.md), and the
+[dimension-compatible Green compiler](../nodes/20-dimension-compatible-green-compiler.md).
 
-Status: primary-source packet for `node 05`; historical action claims are bounded here,
-while adjoint identities and equivalence maps must be reconstructed internally
+Status: primary-source packet for nodes 05, 15, and 20; historical action and
+regularization claims are bounded here, while local adjoint, packet, and equivalence
+identities must be reconstructed internally
 
 ## `AP-01` — Constrained bosonic action
 
@@ -34,7 +36,7 @@ while adjoint identities and equivalence maps must be reconstructed internally
 - Source consequence: the source condition is a projected divergence condition,
   matched to the constrained gauge parameter rather than ordinary unconstrained
   conservation.
-- Internal completion: node 07 chooses the invariant complex Dirac--Fischer pairing,
+- Internal completion: node 05 chooses the invariant complex Dirac--Fischer pairing,
   constructs the gamma/metric trace-reversal map, proves its formal adjoint
   identity, and compares its Euler equation with node 05's symbol complex.
 - Remaining obligation: select a Majorana or other real Grassmann form and its
@@ -55,7 +57,7 @@ while adjoint identities and equivalence maps must be reconstructed internally
   cost.
 - Boundary: equivalence must be tested through local maps, eliminated auxiliary
   equations, and source exchange; equality of free helicity fibers is insufficient.
-- Internal status: node 14 and node 14 construct the bosonic and fermionic
+- Internal status: node 13 construct the bosonic and fermionic
   compensator-only local equation complexes from their gauge residuals and prove
   gauge-quotient equivalence with the corresponding constrained complexes. They do
   not promote those results to Euler/action or source-response equivalences; the
@@ -72,3 +74,23 @@ while adjoint identities and equivalence maps must be reconstructed internally
 - Research use: node 05 must audit equation equivalence at three different strengths:
   physical quotient, local off-shell Euler complex, and source-response kernel.
 - Boundary: this contract does not establish an interacting equivalence.
+
+## `AP-05` — Dimensional regularization and the action principle
+
+- Sources: G. 't Hooft and M. Veltman,
+  [Regularization and renormalization of gauge fields](https://doi.org/10.1016/0550-3213(72)90279-9),
+  _Nuclear Physics B_ 44 (1972), 189--213; P. Breitenlohner and D. Maison,
+  [Dimensional Renormalization and the Action Principle](https://doi.org/10.1007/BF01609069),
+  _Communications in Mathematical Physics_ 52 (1977), 11--38.
+- Contract: dimension is analytically continued as part of a common perturbative
+  prescription; in the non-anomalous cases covered by the method, shifts and Ward
+  identities can be maintained, and the renormalized action principle controls the
+  derivation of Ward identities after subtraction.
+- Research use: node 20 must carry the same symbolic `d` through trace laws,
+  pairings, vertices, and loop measure before specializing or extracting poles.
+- Internal obligation: construct the spin-two carrier identities at symbolic `d`,
+  evaluate the complete scalar graph packet, and return any regulator breaking of
+  its internal Ward residual or external ideal.
+- Boundary: these sources do not prove that the present scalar--spin-two packet is
+  anomaly-free, do not supply its counterterms, and do not establish a computational
+  advantage for the proposed compiler.

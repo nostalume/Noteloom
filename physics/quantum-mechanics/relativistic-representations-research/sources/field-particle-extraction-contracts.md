@@ -1,8 +1,10 @@
 # Field/Particle Extraction Source Contracts
 
-These contracts support [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md). They
-type when a field theory contains Wigner particles, when local operators generate
-their scattering states, and where a sharp-shell particle construction fails.
+These contracts support [equivalence and dynamical reduction](../nodes/08-realization-equivalence-boundary.md)
+and bound the observable claim of [the characteristic scalar amplitude](../nodes/29-characteristic-scalar-amplitude.md).
+They type when a field theory contains Wigner particles, when local operators
+generate their scattering states, and where a sharp-shell particle construction
+fails.
 
 ## FP-01 — Stable spectral subspace to asymptotic particle states
 
@@ -20,9 +22,10 @@ their scattering states, and where a sharp-shell particle construction fails.
   incoming/outgoing Fock states; the resulting Moller maps are isometric and
   Poincare-intertwining. LSZ reduction extracts scattering amplitudes from the
   same on-shell asymptotic content.
-- **Research use:** node 09 constructs the one-particle quotient and its covariance
+- **Research use:** node 08 constructs the one-particle quotient and its covariance
   internally. FP-01 supplies convergence, Fock inner products, and LSZ as theorem
-  contracts.
+  contracts. Node 30 uses this contract only to delimit what further assumptions
+  would turn its amputated characteristic class into a scattering observable.
 - **Boundary:** asymptotic completeness is not generic. The unitary Poincare
   representation alone does not encode the interaction; its action on local
   operators and the incoming/outgoing embeddings do. The displayed review
@@ -39,7 +42,7 @@ their scattering states, and where a sharp-shell particle construction fails.
   subspace can generate scattering states without an isolating mass gap. The
   paper names a neutral hydrogen atom in its ground state as a model physical
   situation: a sharp massive object immersed in massless photon spectrum.
-- **Research use:** node 09 distinguishes “isolated shell” from the weaker but still
+- **Research use:** node 08 distinguishes “isolated shell” from the weaker but still
   constructive “stable sharp shell plus regularity” condition. A composite bound
   object is not excluded merely because massless field excitations exist.
 - **Boundary:** the regularity condition is additional dynamics, not a consequence
@@ -56,7 +59,7 @@ their scattering states, and where a sharp-shell particle construction fails.
   translations and decompose into improper sharp-momentum components. This
   includes infraparticle situations in which Gauss-law dressing prevents a
   normalizable sharp-mass Wigner subspace.
-- **Research use:** node 09 uses this as the alternative output type when the ordinary
+- **Research use:** node 08 uses this as the alternative output type when the ordinary
   shell projection does not construct a normalizable charged one-particle space.
 - **Boundary:** a complete general scattering theory of particle weights is not
   supplied. Inclusive observables may remain meaningful even when an ordinary
@@ -71,7 +74,7 @@ their scattering states, and where a sharp-shell particle construction fails.
   them. Superselection sectors and long-range forces obstruct the naive Fock
   picture; even in ordinary local theories, asymptotic completeness remains open
   in most models.
-- **Research use:** node 09 treats completeness, countable particle inventory, and
+- **Research use:** node 08 treats completeness, countable particle inventory, and
   recovery of total conserved quantities as downstream tests rather than hidden
   assumptions.
 

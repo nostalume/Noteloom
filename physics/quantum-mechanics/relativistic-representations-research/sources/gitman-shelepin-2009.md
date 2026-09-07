@@ -1,6 +1,6 @@
 # GS09 — Field on the Poincare Group and Orientable Objects
 
-Consumed by: [representation spaces](../nodes/02-representation-spaces.md).
+Consumed by: [determination and representation](../nodes/01-determination-boundary.md).
 
 ## Raw locator
 

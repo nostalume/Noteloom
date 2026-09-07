@@ -1,10 +1,12 @@
 # Finite-Spin Green Contracts
 
-Consumed by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md).
+Consumed by: [local complex and free-field machine](../nodes/05-local-symbol-complex.md)
+and the [dimension-compatible Green compiler](../nodes/20-dimension-compatible-green-compiler.md).
 
 Recorded: 2026-08-29  
-Role: independent analytic and spin-two boundaries for node 06; the uniform flat-space
-integer-spin construction remains internal to nodes 05 and 06
+Role: independent analytic and spin-two boundaries for nodes 05 and 20; the uniform
+flat-space integer-spin construction remains internal to nodes 05 and 06, while
+node 20 internally constructs its off-shell gauge homotopy
 
 ## FG-01 — Linearized-gravity Green contract
 
@@ -20,9 +22,9 @@ Mathematical Physics* 25 (2013), 1330003,
   vector and symmetric-tensor wave operators; divergence-free compact test tensors
   generate gauge-invariant observables and causal solution representatives.
 - **Independent check:** the flat, zero-cosmological-constant specialization agrees
-  with node 06's spin-two completion and source quotient.
+  with node 05's spin-two completion and source quotient.
 - **Boundary:** transverse-traceless gauge has additional global obstructions, and
-  phase-space nondegeneracy depends on background topology. node 06 uses de Donder, not
+  phase-space nondegeneracy depends on background topology. node 05 uses de Donder, not
   TT gauge, and stays on Minkowski spacetime.
 
 ## FG-02 — Abstract linear gauge contract
@@ -39,7 +41,7 @@ Relativity and Gravitation* 45 (2013), 877-910,
 - **Semantic bridge:** Green compatibility belongs to a typed gauge complex, not to
   an isolated inverse matrix.
 - **Boundary:** the theorem does not establish the node 05 trace-constrained identities;
-  node 06 must construct those internally for every finite `s`.
+  node 05 must construct those internally for every finite `s`.
 
 ## FG-03 — Symmetric integer-spin action contract
 
@@ -59,6 +61,6 @@ spin](https://doi.org/10.1103/PhysRevD.18.3624), *Physical Review D* 18 (1978),
 
 ## Extraction rule
 
-node 06 may use MG-01's causal exact sequence and FG-01/FG-02 as theorem contracts for
+node 05 may use MG-01's causal exact sequence and FG-01/FG-02 as theorem contracts for
 Green-hyperbolic analysis. Every finite-spin carrier identity, source transformation,
-quotient map, and shell coincidence must be evaluated inside node 06.
+quotient map, and shell coincidence must be evaluated inside node 05.

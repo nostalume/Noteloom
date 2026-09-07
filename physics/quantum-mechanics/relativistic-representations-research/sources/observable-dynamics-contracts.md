@@ -54,7 +54,7 @@ all same-input branch comparisons internally.
 - **Output consumed:** the Schur/Feshbach resolvent denominator and its full-state
   recovery map are valid under those hypotheses.
 - **Internal use:** node 11 derives the block identity on bounded maps and uses these
-  contracts only when identifying it with node 09's unbounded field Hamiltonian.
+  contracts only when identifying it with node 08's unbounded field Hamiltonian.
 - **Boundary:** thresholds, resonances, unbounded generators, and nonlinear
   reductions require their own domain, boundary-value, or semigroup theorems.
 

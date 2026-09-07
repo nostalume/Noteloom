@@ -2,14 +2,14 @@
 
 Recorded: 2026-08-29  
 Used by: [computability endpoint audit](../results/computability-field-mechanics-boundary.md)
-and [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md)
+and [equivalence and dynamical reduction](../nodes/08-realization-equivalence-boundary.md)
 
 ## CE-01 — Boundary-selected free Green objects
 
 - **Sources:** Christian Baer, [Green-hyperbolic operators on globally hyperbolic
   spacetimes](https://arxiv.org/abs/1310.0738), *Communications in Mathematical
   Physics* 333 (2015), 1585--1615; the finite-spin Green contracts already bound
-  to nodes 06 and 07.
+  to node 05.
 - **Output consumed:** normally hyperbolic operators have unique retarded and
   advanced Green maps with causal support and exact sequences.
 - **Internal extension:** once any scalar distribution `g_b` satisfying
@@ -32,10 +32,10 @@ and [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.m
   eigenvalues in the spectral gap admit a min--max characterization. For a charge
   distribution with no atom of weight greater than or equal to one, the second
   source constructs the unique distinguished extension.
-- **Research use:** node 09 takes `0<=nu<1`, types the target as the projection-valued
+- **Research use:** node 08 takes `0<=nu<1`, types the target as the projection-valued
   gap spectral measure of one declared closed operator, and uses the min--max
   theorem only as a candidate computational edge. The theorem does not construct
-  node 09's carrier, connection or rotation reduction.
+  node 08's carrier, connection or rotation reduction.
 - **Boundary:** the theorem does not derive the Coulomb coupling from Poincare
   symmetry and does not construct the conserved algebra or whatever residual
   spectral computation remains after algebraic extraction.
@@ -63,7 +63,7 @@ and [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.m
   into closed half-line Dirac operators related to the sphere Dirac eigenproblem;
   the unit-sphere Dirac spectrum is the nonzero integers, with total spin
   `j=|kappa|-1/2`.
-- **Research use:** node 09 constructs the angular operator from the inherited orbital,
+- **Research use:** node 08 constructs the angular operator from the inherited orbital,
   spin and total Casimirs, evaluates both eigenvalue branches internally, and uses
   these sources only for the spinor Gauss/polar theorem, completeness, and the
   closed-realization boundary. Its later audit classifies the result as exact block
@@ -76,13 +76,13 @@ and [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.m
 
 The sources support causal scalar Green maps and the operator-theoretic typing of
 Dirac--Coulomb gap eigenvalues. The invariant lift to every separate finite
-symmetric massless potential is internal to the research graph. node 09 now constructs
+symmetric massless potential is internal to the research graph. node 08 now constructs
 the separate massive Dirac carrier, external connection, curvature obstruction,
-static Hilbert space and manifest-rotation reduction internally. node 09 further
+static Hilbert space and manifest-rotation reduction internally. node 08 further
 constructs the angular Dirac split and exact half-line spectral-measure recovery,
 then exposes its residual `M_2(C)` fiber and radial-coordinate dependence. The
 sources type the distinguished extension, polar theorem and terminal spectrum
-check. node 09 now contains an exact pre-radial
+check. node 08 now contains an exact pre-radial
 field/mechanics projected-resolvent relation, field-state recovery, and a bounded
 variation estimate for prepared gap projectors; its renormalized field
 realization, singular heavy-source limit, evaluated self-energy, computed channel

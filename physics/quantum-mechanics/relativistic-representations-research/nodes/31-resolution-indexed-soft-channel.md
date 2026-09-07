@@ -1,0 +1,227 @@
+# 31 — Resolution-indexed soft channel
+
+Status: leading-power transfer and exterior soft-effect jet generated; recurrence-
+level leverage and virtual logarithmic completion remain open
+
+Consumes: node 30's hard Compton effect and resolved three-photon density.
+
+Produces: a reusable leading-soft detector-bin instrument, an exterior soft-effect
+jet, exact endpoint certificates, and a typed boundary against false infrared
+completion.
+
+## Obstruction: a cutoff is not yet a detector operation
+
+Node 30 excludes outgoing energies below `delta`. Its event measure is finite, but
+changing `delta` changes which final states are named. A virtual graph alone cannot
+cancel a resolved real event: they belong to different detector outcomes. The
+physical split is instead
+
+```text
+no resolved extra photon = virtual correction + unresolved real emission,
+resolved extra photon    = resolved real emission.
+```
+
+The construction must therefore move weight between detector bins while preserving
+their sum. It must also reveal which divergence orders it has not generated.
+
+## Construct the jump kernel from the hard event
+
+At either endpoint of node 30, one outgoing photon becomes soft and the remaining
+kinematics is the unquotiented fermion Compton event at `theta=pi/2`. Substitution
+into node 30's already generated effect and two-body shell density gives
+
+```text
+R_hard(theta=pi/2)=1/8,
+dPhi_hard/dtheta=1/(16pi),
+H=(R_hard dPhi_hard)/dtheta=1/(128pi).          (31.1)
+```
+
+For a soft photon `k=E n`, the same one-particle normalization constructs, per unit
+soft angle,
+
+```text
+dPhi_gamma=dE/(8pi^2).                           (31.2)
+```
+
+No Clifford matrix is needed. Pair the generated incoming and outgoing massive
+momenta with the physical polarization. At the left endpoint the incoming term
+vanishes and the outgoing term gives
+
+```text
+J(k)=p'/(p' dot k)-p/(p dot k),
+J(k) dot epsilon=1/E,
+abs(J(k) dot epsilon)^2=1/E^2.                  (31.3)
+```
+
+Reflection and outgoing-arm exchange give the same result at the other endpoint.
+Thus the hard event itself generates each soft density coefficient:
+
+```text
+a=H [1/(8pi^2)] [lim E^2 abs(J dot epsilon)^2]
+ =1/(1024pi^3).                                  (31.4)
+```
+
+Direct Laurent extraction from the full three-photon compiler returns the same
+coefficient at both endpoints. This equality is the realization bridge: the local
+soft operation recovers a boundary of the complete amplitude rather than merely
+being asserted beside it.
+
+## Generate all three singular bin terms once
+
+Let `lambda < delta < Lambda` denote an infrared regulator, detector resolution,
+and the ceiling of the leading-soft region. With two exchange-related soft arms,
+one positive jump kernel has interval mass
+
+```text
+N(alpha,beta)
+ =2 g^2 [1/(8pi^2)] integral_(alpha)^beta dE/E^2
+ =2 g^2 [1/(8pi^2)] (1/alpha-1/beta).           (31.5)
+```
+
+Unitarity supplies the no-jump complement at this order. The compiler consequently
+generates
+
+```text
+V(lambda,Lambda) =-H N(lambda,Lambda),
+U(lambda,delta)  = H N(lambda,delta),
+R(delta,Lambda)  = H N(delta,Lambda).           (31.6)
+```
+
+Interval additivity is now the cancellation computation:
+
+```text
+V+U+R=0,
+[H+V]+U+R=H,
+V+U=-R.                                         (31.7)
+```
+
+The first line cancels the regulator in the inclusive effect; the second is the
+first-order channel-normalization law; the third says exactly how detector weight
+moves between the lower- and higher-multiplicity bins when `delta` changes. Three
+singular contributions are therefore views of one measure, not three separately
+calculated counterterms.
+
+## Exact audit rejects premature completion
+
+The complete density contains more than (31.4). In the physical soft energy on
+either arm, exact expansion gives
+
+```text
+rho(E)=a/E^2-a/E+O(1),  a=1/(1024pi^3).          (31.8)
+```
+
+After the leading channel removes the power term, the unresolved real remainder is
+
+```text
+-2 g^2 a log(delta/lambda).                      (31.9)
+```
+
+It is nonzero. The present tool is therefore accepted as a *leading-power bin
+transfer* and explicitly reports `singularly_complete = false`. It does not call
+(31.7) a full infrared-finite cross section. A subleading soft operation—or a
+dressed/asymptotic construction reproducing the same bins—must generate (31.8)'s
+logarithmic coefficient before the regulator can be removed.
+
+## Re-enter through the response jet, not another positive kernel
+
+The coefficient `-a` cannot be assigned to the positive jump kernel without
+destroying its meaning. A first-order detector response is signed because it
+contains interference. To expose that structure before seeking a virtual partner,
+let the quotient-reduced exterior amplitude, endpoint projectors, and shell density
+have soft expansions
+
+```text
+A(E)=E^(-1) A_(-1)+A_0+O(E),
+Pi_i(E)=Pi_(i,0)+E Pi_(i,1)+O(E),
+Pi_f(E)=Pi_(f,0)+E Pi_(f,1)+O(E),
+phi(E)=phi_0+E phi_1+O(E).                       (31.10)
+```
+
+These coefficients are generated by regularizing each exterior coefficient and
+taking its boundary value; no gamma representation or ordered-history expansion
+is introduced. For
+
+```text
+R(E)=2 <Pi_f(E) A(E) Pi_i(E) A(E)^dagger>_0,
+```
+
+exterior-product convolution computes
+
+```text
+R_(-2)=2 <Pi_(f,0) A_(-1) Pi_(i,0) A_(-1)^dagger>_0,
+
+R_(-1)=2 <
+    Pi_(f,1) A_(-1) Pi_(i,0) A_(-1)^dagger
+  + Pi_(f,0) A_(-1) Pi_(i,1) A_(-1)^dagger
+  + Pi_(f,0) A_0    Pi_(i,0) A_(-1)^dagger
+  + Pi_(f,0) A_(-1) Pi_(i,0) A_0^dagger
+>_0.                                             (31.11)
+```
+
+The density jet is a second convolution, not a new diagram rule:
+
+```text
+rho_(-2)=phi_0 R_(-2),
+rho_(-1)=phi_1 R_(-2)+phi_0 R_(-1).              (31.12)
+```
+
+On node 30's left soft arm the constructor returns
+
+```text
+R_(-2)=1/8,
+projector tangent=0,
+interference tangent=-1/4,
+
+phi_1 R_(-2)=+a,
+phi_0 R_(-1)=-2a,
+rho_(-1)=-a,       a=1/(1024pi^3).               (31.13)
+```
+
+Direct Laurent extraction of the complete density is retained only as a
+certificate; both coefficient residuals vanish. Node 30's exchange involution
+transports the same result to the other soft arm. This is evidence
+`E-SJ-01-soft-effect-jet-v1`: the exterior state contains the signed response needed
+to explain the logarithmic obstruction.
+
+It is not yet computational leverage. The probe first compiles the full subset
+amplitude `A(E)` and then extracts its coefficients, taking 498 exterior-product
+updates in the certificate path. The next discriminating construction must lift
+the subset recurrence itself to the two-term Laurent coefficient algebra. If that
+lift cannot produce `(A_(-1),A_0)` without first constructing `A(E)`, the proposed
+algebra--graph--analytic composition is post-hoc verification and must not be
+promoted.
+
+## Retained interface and cost boundary
+
+```text
+CompileLeadingSoftBinTransfer(
+  hard density, photon phase coefficient, eikonal current weights,
+  observed power/log residues, lambda, delta, Lambda, coupling)
+ -> factorization residuals
+  + virtual/unresolved/resolved bin weights
+  + channel-normalization residual
+  + unmatched logarithm and completion flag
+ | refusal(unmatched endpoint, invalid positivity/arity, unordered scales,
+           or a negative first-order no-jump weight).
+
+CompileSoftEffectJet(
+  positive soft parameter, exterior amplitude, endpoint projectors, shell density)
+ -> amplitude pole/finite jets
+  + projector/interference response jets
+  + density power/log coefficients
+  + direct coefficient residuals
+ | refusal(absent or higher soft pole, mismatched exterior frame,
+           or non-finite first-order boundary).
+```
+
+The gain is semantic and executable: one positive kernel generates every leading
+singular bin term, while one signed exterior jet constructs why the next coefficient
+is not positive. No claim is made that either replaces the finite virtual loop. The
+next bounded bench is the recurrence-level Laurent lift described above, followed
+only on success by a virtual cut/loop operation targeting the same signed
+coefficient and detector bins.
+
+The current counterexample is admitted as `E-OT-06` in
+`../results/open-tree-compiler-v1-disposition.md`. That disposition remains valid
+for `C_open-v1`; `C_soft-jet-v1` is a successor inquiry rather than retroactive
+completion of it.

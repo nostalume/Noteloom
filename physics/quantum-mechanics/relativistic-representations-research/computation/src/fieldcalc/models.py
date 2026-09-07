@@ -3,6 +3,9 @@
 from dataclasses import dataclass
 import math
 
+from .numeric import Quadrature
+from .radial import RadialData
+
 
 @dataclass(frozen=True)
 class ScalarModel:
@@ -28,20 +31,40 @@ class ScalarModel:
         return math.exp(-0.5 * (radius / self.cutoff) ** 2)
 
 
-def scalar_departure_request(model: ScalarModel):
-    from .measures import MeasureRequest
-
-    def weight(radius: float) -> float:
-        amplitude = model.coupling * model.form_factor(radius)
-        return 4.0 * math.pi * radius * radius * amplitude * amplitude
-
-    return MeasureRequest(
-        weight=weight,
-        energy=model.energy,
-        support=(0.0, math.inf),
-        provenance=(
-            f"scalar:M={model.particle_mass}:mu={model.boson_mass}:"
-            f"cutoff={model.cutoff}:g={model.coupling}"
-        ),
-        monotone=True,
+def _gaussian_tail(model: ScalarModel, radius: float) -> float:
+    if math.isinf(radius):
+        return 0.0
+    scale = model.cutoff
+    ratio = radius / scale
+    coupling_squared = model.coupling**2
+    return (
+        coupling_squared * math.pi**1.5 * scale**3 * math.erfc(ratio)
+        + 2.0 * math.pi * coupling_squared * scale**2
+        * radius * math.exp(-ratio**2)
     )
+
+
+def scalar_radial_data(model: ScalarModel) -> RadialData:
+    provenance = (
+        f"scalar:M={model.particle_mass}:mu={model.boson_mass}:"
+        f"cutoff={model.cutoff}:g={model.coupling}"
+    )
+
+    def mass(left, right):
+        return Quadrature(
+            _gaussian_tail(model, left) - _gaussian_tail(model, right), 0.0, 0
+        )
+
+    return RadialData(
+        amplitude=lambda radius: model.coupling * model.form_factor(radius),
+        energy=model.energy,
+        threshold=model.boson_mass,
+        level_gap=model.level_gap,
+        support=(0.0, math.inf),
+        provenance=provenance,
+        mass_operation=mass,
+    )
+
+
+def scalar_departure_request(model: ScalarModel):
+    return scalar_radial_data(model).measure_request()

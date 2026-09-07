@@ -1,7 +1,7 @@
 # Support-Faithfulness Contracts
 
 Recorded: 2026-08-29  
-Used by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md) and [fermionic free-field machine](../nodes/07-fermionic-free-field-machine.md)
+Used by: [local complex and free-field machine](../nodes/05-local-symbol-complex.md)
 
 ## SF-01 — Complete compatibility complex from a finite-type equation
 
@@ -16,13 +16,13 @@ Used by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md)
   kernel is the image of the original operator. The construction proceeds by
   finite prolongation, conversion to a connection-type system, and homological
   transfer back to the original bundles.
-- **Application check in node 06:** on flat spacetime,
+- **Application check in node 05:** on flat spacetime,
   `R_s=Sym partial:ker T->ker T^2` has constant coefficients and finite type. A
   rank-`s-1` Killing tensor is fixed by a finite jet and has no unrestricted
   derivatives beyond the finite prolongation order. Trace restriction is a
   constant invariant subbundle, so it does not spoil regularity.
 - **Boundary:** the source treats the general method and the ordinary Killing
-  operator in detail. node 06 applies the stated finite-type theorem contract to the
+  operator in detail. node 05 applies the stated finite-type theorem contract to the
   traceless higher-rank Killing operator; it does not attribute an explicit
   minimal higher-spin formula to the paper.
 
@@ -39,7 +39,7 @@ Used by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md)
   constant. Causally restricted cohomology is computed from the corresponding
   ordinary/compact support cohomology, with the de Rham and Calabi complexes as
   explicit applications.
-- **Internal extension used by node 06:** the finite prolongation in SF-01 turns the
+- **Internal extension used by node 05:** the finite prolongation in SF-01 turns the
   flat traceless Killing-tensor system into parallel sections of a finite-rank flat
   bundle. Its twisted de Rham resolution uses the same support homotopy as the
   constant-coefficient de Rham case. Therefore
@@ -77,10 +77,10 @@ Used by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md)
   Review D* 21 (1980), 358.
 - **Output consumed:** generalized higher-spin curvatures and generalized
   Poincare lemmas provide the local unconstrained symmetric-gradient model.
-- **Boundary:** node 06's gauge parameter is traceless. The ordinary de Wit--Freedman
+- **Boundary:** node 05's gauge parameter is traceless. The ordinary de Wit--Freedman
   curvature is gauge invariant for the larger unconstrained gradient image, so it
   is not automatically a complete compatibility operator for the smaller
-  constrained image. node 06 uses SF-01's complete compatibility construction and
+  constrained image. node 05 uses SF-01's complete compatibility construction and
   treats the traditional curvature only as a low-cost comparison.
 
 ## SF-05 — Gamma-traceless spinor-tensor specialization
@@ -90,13 +90,13 @@ Used by: [bosonic free-field machine](../nodes/06-bosonic-free-field-machine.md)
   equation with spinor coefficients is a finite direct sum of finite-type Killing
   tensor equations. Gamma contraction is constant, Lorentz equivariant, and
   commutes with flat prolongation.
-- **Output constructed in node 07:** restricting every prolonged bundle to the
+- **Output constructed in node 05:** restricting every prolonged bundle to the
   gamma-traceless constant-rank subbundle preserves finite type and produces a
   flat finite-rank prolonged local system `Z_n`. Its degree-one
   spacelike-compact obstruction is `H_c^1(R^3;Z_n)=0`.
 - **Boundary:** neither primary source states this arbitrary-rank fermionic
   specialization verbatim. The sources provide the finite-type compatibility and
-  support-cohomology machinery; node 07 owns the restriction and its application.
+  support-cohomology machinery; node 05 owns the restriction and its application.
 
 ## Supported conclusion
 
@@ -112,5 +112,5 @@ R_n:ker Gamma in Sym^(n-1) tensor Delta
     -> ker Gamma^3 in Sym^n tensor Delta.
 ```
 
-These are the exact support theorems used in node 06 and node 07. Density of compact source
+These are the exact support theorems used in node 05. Density of compact source
 amplitudes in the full induced Hilbert spaces is not part of these contracts.

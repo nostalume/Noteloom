@@ -1,83 +1,108 @@
-# Carrier and source obstruction boundary
+# Carrier, source, and observable compiler
 
-Status: supported negative/conditional comparison; no preferred universal carrier
+Status: presentation-dependent reductions are rejected unless the same visible
+response is cheaper; radial visible-measure compilation is supported
 
-## Question
+## Obstruction
 
-Can a trace-free projected carrier or curvature-first source reduce the complete
-response calculation, rather than merely reduce field components?
+Removing components from a carrier does not necessarily reduce the complete
+source-to-observable calculation. The compiler must retain a transformation that a
+consumer can apply, compare equivalent presentations at the right level, and
+refuse reductions that merely relocate work.
 
-## Projected carrier construction
+## Generate and test a projected carrier
 
-For rank `r` harmonic tensors, the failure of naive multiplication to preserve
-trace freedom computes a trace component. Cancelling it generates the projected
-raise operation
-
-```text
-R_r = P - U A/(2r+d-2).
-```
-
-The denominator is forced by applying `T` and solving `T R_r=0`. The operation is
-therefore generative once trace-free presentation is requested; trace freedom
-itself is not forced by the particle representation.
-
-## Physical discriminator
-
-At the same null momentum, constrained harmonic, compensated harmonic, and full
-symmetric complexes have equal quotient dimension and transverse-screen rank for
-the tested spins. The assembly
+For rank-`r` harmonic tensors, naive multiplication fails to preserve trace
+freedom. Cancelling the computed trace constructs
 
 ```text
-Phi = phi + U chi/(2s)
+R_r=P-U A/(2r+d-2),
+T R_r=0.
 ```
 
-identifies compensated and compressed physical content. The constrained branch
-removes as many null gauge directions as field components; no new particle content
-or automatic computation reduction follows.
+The denominator follows from solving the second equality. Trace freedom itself is
+a requested presentation, not a consequence of the physical representation.
 
-## Source obstruction
+Constrained harmonic, compensated harmonic, and full symmetric complexes have the
+same tested quotient dimension and transverse-screen rank. The assembly
 
-Restricted gauge pairing requires
+```text
+Phi=phi+U chi/(2s)
+```
+
+identifies compensated and compressed physical content. But restricted sources
+must satisfy
 
 ```text
 R^dagger j in im A^dagger,
 ```
 
 while compensation requires `R^dagger j+A^dagger k=0`. A section `S` with `AS=1`
-constructs an equivalence of source slices, but its inverse momentum degree proves
-that no polynomial-local section exists. Source equivalence is therefore nonlocal.
+equates the source slices, yet its inverse momentum degree proves that this
+equivalence is nonlocal. Direct constrained Green construction avoids the section
+but requires a deeper rank-dependent solve. Neither presentation dominates on the
+declared complete-cost metric.
 
-Direct constrained Green construction avoids that section but produces a rank-
-dependent polynomial and deeper solve. On the declared load metric it is more
-expensive than the compensated route. A preparation supported in one invariant
-layer admits one Green solve, but trace freedom simultaneously makes the competing
-adapter trivial; neither presentation dominates.
+## Factor the named observable
 
-## Curvature-visible quotient
-
-If curvature `K_s` satisfies `K_s R=0`, then every gauge-raised response layer is
-annihilated. Both carrier routes reduce on the named observable to
+If a curvature or detector `K` obeys `KR=0`, every gauge-raised layer disappears.
+Under the commuting-symbol contract both presentations reduce to
 
 ```text
-K_s G J = G_Q K_s J
+K G_D J=G_Q KJ.
 ```
 
-under the commuting-symbol contract. This is a genuine observable compression but
-is presentation-neutral.
+This is genuine observable compression and is presentation-neutral. Normalize the
+composite once, cache it per admitted source, and expose the same response to every
+detector transform.
 
-## Output and boundary
+## Generate the visible measure
 
-Output: projected operation, source/locality refusal, direct-route cost certificate,
-and curvature-visible normal form.
+Supply orbit measure, one-particle factor `b`, observable multiplier `k`, detector
+contraction `d`, coupling, and an energy map `E(r)`. The departure weight is
 
-- [Observable compiler](16-observable-measure-compiler.md) retains the useful
-  presentation-neutral quotient.
+```text
+w(r)=orbit_density(r)|b(r)k(r)d(r)|^2.
+```
 
-Carrier-global selection remains open:
+For explicitly declared monotone branches `r_i(lambda)`, change of variables
+constructs
+
+```text
+rho(lambda)=sum_i w(r_i(lambda))/|E'(r_i(lambda))|.
+```
+
+The Jacobian and threshold power are outputs, not supplied expectations. Missing
+partitions for a nonmonotone energy map cause refusal. Massless spin-`s` curvature
+in three spatial dimensions produces threshold power `2s+1`; a massive scalar
+recoil transfers the same interface to a nonlinear square-root threshold.
+
+The identical measure then feeds
+
+```text
+bound(z)=integral rho(lambda)/(z-lambda)dlambda,
+open(t)=integral |(1-exp(-it(lambda-Delta)))/(lambda-Delta)|^2
+                 rho(lambda)dlambda.
+```
+
+Values retain integration error, domain, approximation order, and one measure
+identifier so a comparison cannot silently switch physical questions.
+
+## Retained interface and boundary
+
+```text
+CompileVisibleResponse(carrier, source, observable, energy, branches)
+ -> factored response + measure + bound/open transforms + cost/provenance
+ | refusal(nonlocal adapter, no gain, missing branch, or divergent integral).
+```
+
+The current compiler filters supplied carrier candidates; it does not solve
 
 ```text
 (physical fiber, capability, locality/resources)
-  -> admissible carrier presentations.
+ -> admissible carrier presentations.
 ```
 
-The current selector can filter supplied candidates; it cannot generate them.
+Interacting measures, arbitrary anisotropic pushforwards, finite-coupling dressing,
+and fermionic detector signs remain open. [Node 18](18-observable-return-calculus.md)
+provides the common dynamical return consumed by the perturbative branch.

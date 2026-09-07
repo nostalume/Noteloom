@@ -1,9 +1,9 @@
 # Relativistic Mass-Shell Source Contracts
 
-These contracts support [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md). They
+These contracts support [equivalence and dynamical reduction](../nodes/08-realization-equivalence-boundary.md). They
 bound the two irreducible external steps: classification of a massive Poincare
 orbit and the conditions under which a sharp interacting spectral component is
-a scattering particle. node 09 constructs the shell equation, Hessian, mass
+a scattering particle. node 08 constructs the shell equation, Hessian, mass
 coincidence, and nonrelativistic recovery internally.
 
 ## RS-01 — A positive massive Poincare orbit is generated from a rest momentum
@@ -19,7 +19,7 @@ coincidence, and nonrelativistic recovery internally.
   is the Lorentz orbit of a timelike standard momentum; its residual group
   supplies the spin fiber.
 - **Research use:** N2 already constructs the orbit and stabilizer internally.
-  node 09 reuses only this classification boundary when identifying an interacting
+  node 08 reuses only this classification boundary when identifying an interacting
   stable spectral component with one such orbit.
 - **Boundary:** representation classification does not prove that a given
   interacting field theory contains the orbit or determine the mass value.
@@ -39,7 +39,7 @@ coincidence, and nonrelativistic recovery internally.
   one-particle states; under the stronger regularity theorem, a neutral massive
   particle may remain a sharp scattering species in the presence of massless
   excitations.
-- **Research use:** node 09 treats sharpness, access, and stability as inputs before
+- **Research use:** node 08 treats sharpness, access, and stability as inputs before
   applying orbit kinematics to a composite rest pole.
 - **Boundary:** neither theorem locates the composite pole, proves the required
   regularity in relativistic QED, determines its mass, or proves asymptotic
@@ -56,5 +56,5 @@ sharp stable interacting spectral component
 ```
 
 They do not license the converse claim that a mechanically computed bound level
-automatically produces a relativistic particle. node 09's rest pole, node 09's field
-access and stability, and node 09's orbit closure are separate obligations.
+automatically produces a relativistic particle. node 08's rest pole, node 08's field
+access and stability, and node 08's orbit closure are separate obligations.

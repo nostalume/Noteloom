@@ -1,9 +1,10 @@
 # Operational Bound/Open Channel Source Contracts
 
-These contracts support
-[visible spectral measure](../nodes/11-visible-spectral-measure.md). node 11 constructs its
-finite-time event and all equalities internally; the sources delimit transfer to
-physical spontaneous emission, resonances, and scattering.
+These contracts support [visible spectral measure](../nodes/11-visible-spectral-measure.md)
+and bound the readout claim of
+[the characteristic scalar measure](../nodes/29-characteristic-scalar-amplitude.md).
+Nodes 11 and 29 construct their event equalities internally; the sources delimit
+transfer to physical spontaneous emission, resonances, and scattering.
 
 ## OC-01 — A two-level system coupled to a scalar field is a field model
 
@@ -57,7 +58,8 @@ physical spontaneous emission, resonances, and scattering.
 ## Supported boundary
 
 The sources support the model class and the distinction among finite-time
-transition probability, resonance, and scattering. node 11's operator-valued measure,
-probability-conservation witness, memory identity, and regression are internally
-constructed. Exponential decay at kinetic times, complex poles, and an `S` matrix
-remain separate re-entry problems.
+transition probability, prepared amplitude weight, conditional Born measure,
+resonance, and scattering. Node 11's operator-valued measure and node 30's
+fixed-event effect and finite detector pushforward are internally constructed.
+Exponential decay, absolute cross-section normalization, infrared-complete charged
+scattering, complex poles, and an `S` matrix remain separate re-entry problems.

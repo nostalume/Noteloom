@@ -1,12 +1,11 @@
 # Quantization and One-Particle Recovery Contracts
 
 Recorded: 2026-08-30  
-Used by: [fermionic free-field machine](../nodes/07-fermionic-free-field-machine.md)
-and [fermionic free-field machine](../nodes/07-fermionic-free-field-machine.md)
+Used by: [local complex and free-field machine](../nodes/05-local-symbol-complex.md)
 
 This packet binds the analytic and operator-algebra statements needed to connect
 the already constructed causal source quotients to quantum field algebras and to
-recover their one-particle images. node 07 constructs the same-source coincidence and
+recover their one-particle images. node 05 constructs the same-source coincidence and
 its boundary internally.
 
 ## QR-01 — One-particle structure and bosonic Fock realization
@@ -22,14 +21,14 @@ its boundary internally.
   symmetric Fock space over `H`; the vacuum is the zero-particle vector; and the
   smeared free field is the sum of annihilation and creation operators applied to
   the one-particle image.
-- **Internal use:** node 07 substitutes node 06's already constructed faithful map `W_s`
+- **Internal use:** node 05 substitutes node 05's already constructed faithful map `W_s`
   for `K`, evaluates the field on the vacuum, and projects the resulting vector to
-  the positive shell. The source does not prove that node 06's particular compact
+  the positive shell. The source does not prove that node 05's particular compact
   source image is dense in the whole N3 Wigner space.
 - **Boundary:** the theorem is stated for the scalar Klein--Gordon field. The
-  Fock/one-particle theorem is used abstractly after node 06 has independently
+  Fock/one-particle theorem is used abstractly after node 05 has independently
   constructed the higher-spin symplectic and positive structures; locality and
-  gauge faithfulness remain owned by node 06.
+  gauge faithfulness remain owned by node 05.
 
 ## QR-02 — CCR/CAR quantization of linear gauge systems
 
@@ -44,10 +43,10 @@ its boundary internally.
   positive-type fermionic quotient admits a self-dual CAR quantization; field
   equations and gauge equivalence are encoded in the observable classes rather
   than imposed after quantization.
-- **Internal use:** node 07 computes the CCR directly from node 06's inner product and
-  constructs the self-dual CAR representation from node 07's positive realification.
-  node 07 supplies the missing internal equality witness: the source/causal-Green
-  form is reduced to node 07's positive two-shell form on the same source pair.
+- **Internal use:** node 05 computes the CCR directly from node 05's inner product and
+  constructs the self-dual CAR representation from node 05's positive realification.
+  node 05 supplies the missing internal equality witness: the source/causal-Green
+  form is reduced to node 05's positive two-shell form on the same source pair.
 - **Boundary:** positivity is a real restriction for fermionic gauge systems; a
   formally Hermitian field equation alone does not guarantee a physical CAR
   representation. Existence of the abstract algebra does not choose a state,
@@ -63,7 +62,7 @@ its boundary internally.
   after a state is chosen.
 - **Research use:** this is the spin-`1/2` external regression for the fermionic
   branch. It supports the existence of a correct local CAR construction but does
-  not by itself prove the normalization equality for node 07's all-rank
+  not by itself prove the normalization equality for node 05's all-rank
   spinor-screen map.
 
 ## QR-04 — Interacting particles are recovered asymptotically
@@ -77,8 +76,8 @@ its boundary internally.
 - **Output consumed:** the one-particle projection is recovered by time-smeared
   field operators; products with separated velocity supports construct isometric
   incoming and outgoing Fock embeddings.
-- **Internal use:** node 07 uses this only to type the interacting deformation of the
-  free recovery diamond. The detailed stable-shell quotient remains in node 09 and
+- **Internal use:** node 05 uses this only to type the interacting deformation of the
+  free recovery diamond. The detailed stable-shell quotient remains in node 08 and
   its existing `FP-01` contract.
 - **Boundary:** the asymptotic Fock space need not equal the microscopic field
   Hilbert space, and asymptotic completeness is not automatic. Infraparticles,

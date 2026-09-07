@@ -1,60 +1,88 @@
-# Determination boundary
+# Determination and representation boundary
 
-Status: supported kinematic boundary; dynamics remains supplied
+Status: the kinematic datum and its representation spaces are constructed;
+dynamics and a local carrier remain supplied choices
 
-## Question
+## Obstruction
 
-What can a unitary Poincare representation determine before a field equation,
-action, Hamiltonian, state, preparation, or observable is supplied?
+“The representation” may mean a physical Hilbert space, equivariant functions on
+the group, finite coefficients, or spacetime fields. Identifying them hides both
+what symmetry determines and the maps that must preserve physical content.
 
-## Construction
+## Construct the physical datum
 
-Let `G = R^(1,3) semidirect L` and let `U` be a strongly continuous unitary
-representation. Translation covariance gives commuting self-adjoint generators
-`P_mu` through the one-parameter groups
-
-```text
-U(t e_mu) U(s e_mu) = U((t+s)e_mu),
-U(t e_mu) = exp(i t P_mu).
-```
-
-Because translations commute, their joint spectral measure `E` constructs
+Let `G=R^(1,3) semidirect L` and `U` be a strongly continuous unitary
+representation. Translation composition gives self-adjoint generators:
 
 ```text
-U(a) = integral exp(i <a,p>) dE(p).
+U(t e_mu)U(s e_mu)=U((t+s)e_mu),
+U(t e_mu)=exp(i t P_mu).
 ```
 
-Lorentz covariance transports the spectrum:
+Because the translations commute, their joint spectral measure `E` constructs
 
 ```text
-U(A) U(a) U(A)^(-1) = U(Lambda(A)a)
-=> U(A) E(Delta) U(A)^(-1) = E(Lambda(A)Delta).
+U(a)=integral exp(i<a,p>) dE(p).
 ```
 
-An irreducible positive-energy sector therefore selects one Lorentz orbit and one
-unitary stabilizer representation. That pair is the physical representation datum.
+Lorentz covariance then transports the spectrum:
 
-## Determined and supplied objects
+```text
+U(A)U(a)U(A)^(-1)=U(Lambda(A)a)
+=> U(A)E(Delta)U(A)^(-1)=E(Lambda(A)Delta).
+```
 
-The datum determines orbit, mass/sign sector, spin or helicity fiber, and induced
-Poincare action up to unitary equivalence. It constrains admissible finite carriers
-and equivariant local operators.
+An irreducible positive-energy sector therefore supplies one Lorentz orbit `O`
+and one unitary representation `rho:K->U(F)` of the stabilizer of a standard
+momentum `k`. This pair, rather than a field equation, is the physical datum.
 
-It does not determine a carrier presentation, gauge redundancy, differential
-order, action normalization, interaction, quantum state, detector, boundary
-condition, or approximation. These require explicit additional inputs.
+## Construct the typed realizations
 
-## Output and edges
+The induced physical space is
 
-Output: `(orbit, little-group fiber, induced unitary action)`.
+```text
+H_phys=L^2(O,dmu;F),
+(U(a,A)psi)(p)
+ =exp(i<a,p>)rho(W(A,p))psi(Lambda(A)^(-1)p).
+```
 
-- [Representation spaces](02-representation-spaces.md) separates this output from
-  coefficient and field realizations.
-- [Spin, helicity, and carriers](03-spin-helicity-carriers.md) constructs the two
-  stabilizer types and possible finite carriers.
+Equivariant group functions `f(g kappa)=rho(kappa)^(-1)f(g)` are optional
+packaging. A finite Lorentz module `V` is instead a generally nonunitary
+coefficient carrier. A covariant field is a `V`-valued distribution or section;
+equations and gauge maps must still select its physical quotient.
 
-## Checks and boundary
+Choose transports `B(p)k=p`. An orbitwise map `u(p):F->V` represents the same
+state only when
 
-The spectral covariance equation is the decisive equality witness. The boundary
-fails for reducible sectors unless the spectral decomposition is retained, and it
-does not infer dynamics from symmetry alone.
+```text
+S(A)u(q)=u(p)rho(W(A,p)),
+q=Lambda(A)^(-1)p.
+```
+
+Indeed, both routes act on the same `v in F` and land in `V`:
+
+```text
+S(A)u(q)v=u(p)rho(W(A,p))v.
+```
+
+This equality is the semantic certificate. It does not identify `V` with
+`H_phys`, nor prove injectivity, locality, completeness, or quotient recovery.
+
+## Retained output and boundary
+
+Output:
+
+```text
+(orbit O, stabilizer fiber F, induced action, typed realization obligation).
+```
+
+The datum determines mass/sign sector, spin or helicity fiber, and the induced
+Poincare action up to unitary equivalence. It constrains possible carriers and
+equivariant operations, but does not choose a carrier, gauge redundancy,
+differential order, action, interaction, state, detector, boundary condition, or
+approximation.
+
+[Spin, helicity, and realization](03-spin-helicity-carriers.md) constructs the
+fiber, finite carrier, and actual bridge. Reducible sectors require their full
+spectral decomposition; reality, parity, domains, and countable completion remain
+open.

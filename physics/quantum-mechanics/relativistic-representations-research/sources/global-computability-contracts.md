@@ -1,9 +1,9 @@
 # Global Semantic-Computability Source Contracts
 
-Consumed by: [field--mechanics boundary](../nodes/09-field-mechanics-reduction-boundary.md)
-and [certified observable window](../nodes/12-certified-observable-window.md).
+Consumed by: [equivalence and dynamical reduction](../nodes/08-realization-equivalence-boundary.md)
+and [visible spectral measure](../nodes/11-visible-spectral-measure.md).
 
-These sources type irreducible theorem inputs and boundaries for node 09. They do not
+These sources type irreducible theorem inputs and boundaries for node 08. They do not
 replace the internal same-observable computations in that node.
 
 ## GC-01 — Isospectral sector elimination
