@@ -74,6 +74,7 @@ group name.
 | differentiate a moving representation block | [variable-projector differential jet](variable-projector-differential-jet.md) | connection, second-order potential, off-block leakage, and frame-covariant synthesis |
 | promote one leakage channel analytically | [gap-aware leakage bound](gap-aware-leakage-bound.md) | exact two-channel transition formula, time/gap bounds, and closing-gap refusal |
 | propagate the complete leakage map | [full-block finite-window propagation](full-block-finite-window-propagation.md) | frame-invariant carrier arrow, coherent observable bound, and full/reduced comparison |
+| derive a moving block from PDE coefficients | [coefficient-derived projector jet](coefficient-derived-projector-jet.md) | exact spectral projector derivatives, gap, horizontal transport, and rigid downstream adapter |
 | lift symbol centralizers | [filtered centralizer calculus](filtered-centralizer-calculus.md) | commuting differential operators |
 | generate bounded quadratic candidates | [quadratic centralizer generator](quadratic-centralizer-generator.md) | complete rank-two modules and kernels |
 | realize representations differentially | [representation calculus](representation-calculus.md) | matrix coefficients and spectral channels |
@@ -179,8 +180,11 @@ refusals. Its expanded cost audit also exposes 648 orbit-canonicalization checks
   then constructs the complete frame-invariant off-block operator on a finite
   momentum window. Its preparation-specific bound detects coherent bright/dark
   structure and compares full with reduced transition probabilities. The active
-  frontier returns to the bilateral direction: derive the projector jet and gap
-  data from variable PDE coefficients instead of supplying transport by hand.
+  G14 returns to the bilateral direction: exact Hermitian coefficient jets now
+  construct their isolated projector, gap, first/second derivatives, and canonical
+  horizontal transport without eigenvectors or a group label. The active frontier
+  is the non-rigid case: consume the invariant projector jet directly rather than
+  force it into constant-generator G11 transport.
 
 Further scalar axial examples, additional polynomial catalogues, arbitrary higher
 dimension, and nonlinear generalization are parked until a named downstream claim

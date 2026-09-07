@@ -842,3 +842,27 @@ The full finite-window route therefore establishes human and analytical leverage
 not runtime dominance. Its cost is blockwise rather than a dense `(n q) x (n q)`
 direct-sum exponential, but a fair numerical baseline would exploit the same
 momentum block structure.
+
+## 36. Spectral projectors are differentiated without eigenvector matching
+
+G14 reuses G8's exact minimal-polynomial split rather than diagonalizing the
+coefficient at neighboring points. If that split produces `s` sectors on a
+`q`-dimensional carrier, the new derivative work is
+
+```text
+first cross-sector blocks:  s-1,
+second cross-sector blocks: s-1,
+jet arithmetic:             O(s q^3),
+stored projector evidence:  O(s q^2).
+```
+
+Factor-candidate checks and the original coefficient-algebra construction remain
+visible in the returned cost record. On the repeated-Pauli regression, two sectors
+require one complement block, recover a rank-two cluster and gap three, and pass
+through G11/G13 to `0.07932539505161444 <= 4/45`.
+
+The gain is not a faster generic spectral algorithm. It is structural and human:
+the same invariant formulas retain a degenerate rank-two cluster, commute with
+rational carrier conjugation, and replace pointwise eigenvector matching by two
+projector/Sylvester operations. Field extensions and gap closure remain explicit
+boundaries rather than hidden numerical branch choices.

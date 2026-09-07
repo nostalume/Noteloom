@@ -788,9 +788,7 @@ case-by-case router growth.
   certified transcendental matrix functions, and nonlinear feedback remain
   theorem-contract or later reconstruction problems.
 
-## Active open bridge
-
-### G14 — Coefficient-derived spectral-projector jet
+### G14 — Coefficient-derived spectral-projector jet (`supported bounded`)
 
 - **Upstream:** G4--G10 can construct represented algebra blocks from operator
   coefficients without a prior group, while G11--G13 turn a moving block into a
@@ -810,14 +808,42 @@ case-by-case router growth.
   matches eigenvectors between points, ignores internal cluster degeneracy or gap
   closure, changes under a frame gauge, or cannot recover a known transported
   coefficient jet.
-- **Next probe:** generate exact first/second jets of a two-cluster Hermitian
-  coefficient from the G11 transported repeated-Pauli projector, reconstruct the
-  projector derivatives from coefficient residuals alone, transfer under rational
-  carrier conjugation, and refuse a colliding-spectrum control.
+- **Probe result:** [the coefficient-derived projector jet](coefficient-derived-projector-jet.md)
+  uses G8 minimal-polynomial projectors and cross-sector Sylvester formulas to
+  construct `P,P',P''`, gap, off-block arrows, and horizontal transport from
+  `C,C',C''`. It recovers the rigid repeated-Pauli transport and its G13 observable,
+  commutes with rational carrier conjugation, retains a degenerate rank-two
+  cluster, and refuses closed/absent/non-Hermitian/non-rigid adapter cases.
 - **Boundary:** finite Gaussian-rational Hermitian coefficient jets with an
   isolated semisimple cluster and exact Sylvester solvability. Global spectral
   bundles, continuous spectra, nonnormal pencils, domain variation, topology, and
   nonlinear operators remain separate.
+
+## Active open bridge
+
+### G15 — Projector-native non-rigid differential propagation
+
+- **Upstream:** G14 constructs general exact first/second projector jets and the
+  invariant arrows `Q P' P`, `Q P'' P`, but its current G11 adapter accepts only
+  constant-generator rigid jets.
+- **Tension:** fitting a general variable coefficient family to one constant `R`
+  discards projector acceleration. Refusing every non-rigid jet leaves the newly
+  constructed PDE-to-bundle relation without an observable consumer.
+- **Question:** can the G13 full-map route consume the projector arrows directly
+  using the canonical Grassmann connection, preserve reduced-frame covariance,
+  and exactly recover the rigid G11 route?
+- **Alternatives:** a projector-native connection/acceleration interface versus
+  fitting local transport generators or extending frame coordinates case by case.
+- **Falsifier:** the direct route assumes an orthonormal G10 frame, loses `P''`,
+  changes the carrier observable under reduced-frame gauge, disagrees with G13 on
+  rigid input, or calls a local canonical connection a global trivialization.
+- **Next probe:** feed G14's non-rigid rank-two cluster through the invariant arrows
+  into a finite-window bright/dark comparison, then compare the unchanged output
+  with the existing G11/G13 route on the rigid repeated-Pauli regression.
+- **Boundary:** one local base coordinate, finite rational Hermitian carrier,
+  canonical Grassmann connection, finite momentum set, and supplied preparation.
+  Several base coordinates, curvature compatibility, domain transport, continuous
+  spectra, and topology remain separate.
 
 ## Parked branches and re-entry conditions
 

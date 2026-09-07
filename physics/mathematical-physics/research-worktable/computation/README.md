@@ -65,6 +65,7 @@ tolerances before accepting a new lock.
 | `mode_bundle_jet.py` | exact transported projector/frame jets, connection, leakage, and second-order synthesis |
 | `gap_aware_leakage.py` | exact leakage-channel norm, gapped two-channel transition witness, bounds, and refusals |
 | `finite_window_propagation.py` | exact full leakage arrow, preparation-specific finite-window bounds, and residual-bearing propagation |
+| `coefficient_projector_jet.py` | coefficient-derived spectral projectors, first/second Sylvester jets, gaps, and rigid G11 adaptation |
 | `coefficient_algebra.py` | exact involutive two-sector algebra, restricted roots, minimal polynomial, and coefficient-derived projectors |
 | `pauli_operator_channels.py` | optional curvature grading, axial coefficient reconstruction, and Pauli channel consumer |
 | `coupled_operator_router.py` | generic operator-covariance orchestration, partial-evidence preservation, and public witness projection |
@@ -195,4 +196,7 @@ two-channel transition formula and bound. Uniform energy-window and multichannel
 PDE propagation remained open at that stage. G13 now constructs the complete
 frame-invariant leakage operator at finitely many momenta and compares full and
 reduced complement probabilities. Derivation of projector transport and gap data
-from variable PDE coefficients remains open.
+from variable PDE coefficients remained open at that stage. G14 now constructs
+those data exactly for isolated rational Hermitian clusters and passes its rigid
+transport subclass through G11 into G13. Projector-native propagation for general
+non-rigid second jets remains open.

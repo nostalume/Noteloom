@@ -107,6 +107,8 @@ carrier blocks, positive supplied gaps, exact retained preparations, and the
 complement-transition observable. G13 replaces channel enumeration by one
 frame-invariant operator and detects coherent bright/dark structure.
 
-It does not derive the projector jet or gap from PDE coefficients, certify the
-transcendental matrix exponential, cover a continuous spectral window, transport
-operator domains, or treat crossings and nonlinear feedback.
+[G14](coefficient-derived-projector-jet.md) now derives the projector jet and gap
+from an isolated exact Hermitian coefficient cluster. G13 still does not consume a
+general non-rigid projector jet directly, certify the transcendental matrix
+exponential, cover a continuous spectral window, transport operator domains, or
+treat crossings and nonlinear feedback.
