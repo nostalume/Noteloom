@@ -13,6 +13,7 @@ from matrix_symbol_covariance_router import discover_document as discover_matrix
 from natural_tensor_stabilizer import discover_document as discover_natural_tensor
 from pauli_bilateral_router import discover_document as discover_pauli
 from pauli_global_router import discover_document as discover_global_pauli
+from polynomial_active_module_router import discover_document as discover_polynomial_active_module
 from problem_input import ProblemDocument, ProblemInputError, load_problem
 from quadratic_route_router import discover_document as discover_quadratic
 from su_adjoint_multiplicity_router import discover_document as discover_su_adjoint
@@ -31,6 +32,7 @@ HANDLERS: dict[str, Handler] = {
     "matrix-symbol-covariance/v1": discover_matrix_symbol,
     "matrix-adjoint-semigroup/v1": discover_matrix_adjoint_global,
     "natural-tensor-stabilizer/v1": discover_natural_tensor,
+    "polynomial-active-module/v1": discover_polynomial_active_module,
 }
 
 

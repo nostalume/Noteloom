@@ -214,6 +214,29 @@ calculus** at the deduction, constant-regression, one non-Pauli transfer, and
 adversarial-refusal levels. It exactly rejects the implications “coefficient
 invariance implies PDE invariance,” “flat connection implies no leakage,” “local
 Lie covariance implies domain symmetry,” and “a finite jet certifies a
-neighborhood.” It does not establish an executable G19 route, complete polynomial
-rank certification on a prescribed large region, controlled leakage, global
-integration, or computational leverage.
+neighborhood.” The maintained route described below now establishes the bounded
+local executable slice, but not complete rank certification on a prescribed large
+region, controlled leakage, global integration, or computational leverage.
+
+## Executable vertical slice
+
+The public `polynomial-active-module/v1` route now replays this contract from
+sparse exact input. The maintained fixtures are:
+
+```powershell
+uv run python reduction_workbench.py discover examples/polynomial-active-constant.json --summary
+uv run python reduction_workbench.py discover examples/polynomial-active-variable.json --summary
+uv run python reduction_workbench.py discover examples/polynomial-active-escape.json --summary
+uv run python reduction_workbench.py discover examples/polynomial-active-rank-unresolved.json --summary
+```
+
+They return `exact`, `formal`, `obstructed/CoefficientOrDerivativeEscape`, and
+`unresolved/RankRegionUnresolved`, respectively. The variable fixture constructs
+the two provenance nodes `psi,H psi`, the normalized frame (3), a certified
+rational subbox, and every coefficient of (7)-(8). The constructor retains the
+nonzero residual rather than adding a third word. Exact Horner interval failure is
+reported with attempted boxes; it is not promoted to a rank-jump assertion.
+
+This upgrades the disposition to an **executable bounded local construction**.
+It still makes no controlled-error, observable-propagation, boundary-descent,
+residual-factorization, Lie-closure, or global-group claim.

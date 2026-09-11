@@ -32,10 +32,11 @@ uv run python reduction_workbench.py discover examples/quadratic-survival-compre
 uv run python reduction_workbench.py discover examples/matrix-pde-inverse-sl3.json --summary
 uv run python reduction_workbench.py discover examples/matrix-symbol-covariance-sl3.json --summary
 uv run python reduction_workbench.py discover examples/matrix-adjoint-semigroup-sl3.json --summary
+uv run python reduction_workbench.py discover examples/polynomial-active-variable.json --summary
 ```
 
 The project targets the current stable CPython 3.14 line and pins compatible
-NumPy, SciPy, and Ruff versions in `uv.lock`. Upgrade deliberately with
+NumPy, SciPy, SymPy, and Ruff versions in `uv.lock`. Upgrade deliberately with
 `uv lock --upgrade`, then rerun all checks and inspect numerical tolerances.
 
 ## Ownership
@@ -43,7 +44,7 @@ NumPy, SciPy, and Ruff versions in `uv.lock`. Upgrade deliberately with
 | Owner group | Modules | Responsibility |
 | --- | --- | --- |
 | admission/routing | `problem_input.py`, `problem_router.py`, route input modules | decode once into typed schemas and select one constructor |
-| exact linear algebra | `exact_rational_linear.py`, `exact_gaussian_linear.py`, `exact_gaussian_matrix.py`, `rational_polynomial.py` | ranks, kernels, coordinates, splitting, and bounded refusal |
+| exact linear algebra | `exact_rational_linear.py`, `exact_gaussian_linear.py`, `exact_gaussian_matrix.py`, `exact_polynomial_matrix.py`, `rational_polynomial.py` | ranks, kernels, multivariate polynomial matrices, coordinates, splitting, and bounded refusal |
 | seed/relation construction | `linear_defect_compiler.py`, `tensor_seed_compression.py`, `natural_relation_planner.py`, `natural_tensor_stabilizer.py` | structured candidates, lazy quotient relations, defect kernels, closure, and audit |
 | coupled covariance | `coupled_covariance_core.py`, coupled input/router modules, `full_operator_covariance.py` | linked base/fiber actions and ordered full-operator lift |
 | finite represented algebras | `coefficient_algebra.py`, `semisimple_coefficient_algebra.py`, `represented_star_algebra.py`, `simple_block_pde.py` | projectors, center, multiplicity, primitive carriers, and PDE use |
@@ -64,6 +65,7 @@ retain that successful certificate if analytic promotion fails.
 | Pauli | `pauli-landau-bilateral/v1`, `pauli-landau-global/v1` |
 | adjoint | `su-adjoint-transition/v1`, `su-adjoint-pde/v1`, `matrix-pde-inverse/v1`, `matrix-symbol-covariance/v1`, `matrix-adjoint-semigroup/v1` |
 | relation-derived covariance | `natural-tensor-stabilizer/v1`, `coupled-carrier-covariance/v1`, `coupled-operator-covariance/v1` |
+| variable PDE modules | `polynomial-active-module/v1`: provenance-derived local frame, exact rank chart, reduced operator, and leakage |
 
 These schemas are bounded scientific grammars, not a catalogue to extend for each
 new example. Mathematical contracts are indexed in
@@ -103,13 +105,14 @@ Admit a new route only when it provides:
 6. transfer and refusal evidence; and
 7. route-specific detail preserved by the common envelope.
 
-G18 reuses the coefficient and active-carrier owners to construct one
-preparation-reachable module for an entire finite coefficient family and compare
-it with repeated pointwise closure. No G19 executable route exists. Its frozen
-research contract now restricts neighborhood claims to exact polynomial data or
-jets with a verified remainder enclosure, continues only base-point admitted
-provenance, and requires bounded rank-search refusal plus exact product-rule
-residuals. An implementation must be architecture-planned as one vertical slice
-inside this workbench and pass the contract's regression/transfer/refusal family;
-the active inquiry remains in the
-[research graph](../research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
+G18 constructs one preparation-reachable module for a finite Hermitian coefficient
+family. G19's `polynomial-active-module/v1` route now evaluates a general exact
+polynomial coefficient family at a base point, retains only the admitted
+reachable-expression DAG, continues that DAG polynomially, certifies one local
+rank chart by bounded rational Horner intervals, and returns the exact product-rule
+reduced operator and leakage. `formal` means the reconstruction identity is exact
+but leakage is nonzero and unbounded; requesting exact closure instead returns
+`CoefficientOrDerivativeEscape`. Exhausted chart search returns
+`RankRegionUnresolved`, never a guessed rank jump. V1 admits only
+compact-supported smooth sections without boundary trace and does not construct a
+global group. See the [G19 node](../nodes/variable-active-module-bundle.md).

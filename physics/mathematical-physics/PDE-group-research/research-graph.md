@@ -301,23 +301,26 @@ trace, or boundary condition does not descend.
 **Discriminating benches.** The supplied-frame covariance/rank controls, deductive
 constant-frame regression, provenance-derived non-Pauli transfer, finite-jet rank
 counterexample, coefficient escape, and boundary/domain refusal are exact. They
-support only the frozen polynomial/local-chart dimensions; no use-level observable
-propagation or cost comparison has been completed.
+support only the frozen polynomial/local-chart dimensions. The public
+`polynomial-active-module/v1` route now replays constant exact closure, the
+non-Pauli variable transfer, coefficient escape, and rank-budget exhaustion while
+checking equations (3)-(4) coefficientwise. No use-level observable propagation
+or complete-route cost comparison has been completed.
 
-**Next discriminating action.** Plan one executable vertical slice of
-`C_G19_v1` in the existing workbench: exact polynomial input, base-point G18
-provenance, constant pivot, one certified rational box, product-rule
-`ReductionWitness`, and the three regression/transfer/refusal outcomes above. The
-implementation must return `RankRegionUnresolved` rather than invoke an unnamed
-symbolic positivity solver. Residual factorization remains a downstream candidate
-generator and cannot promote a global group without bracket, integration, and
-domain tests.
+**Next discriminating action.** Consume the executable residual coefficient family
+without changing G19: factor common base-direction symbols under a bounded exact
+grammar, solve the induced coefficient-covariance defect, and then test bracket,
+integration, and domain flow separately. The successful rectangular bench should
+recover the local rotation candidate but refuse global domain symmetry; an
+adversarial residual with no common vector-field factor must refuse rather than
+guess a group.
 
 **Horizon.** Exact polynomial local charts, finite jets with certified remainders,
 and one named observable. Global bundle integration, unbounded closure,
-unrestricted analytic domains, and nonlinear PDEs are outside this inquiry. No
-G19 executable route or node exists; the frozen contract remains owned here until
-an implementation passes its full bench family.
+unrestricted analytic domains, and nonlinear PDEs are outside this inquiry. The
+bounded exact-polynomial route and
+[G19 node](nodes/variable-active-module-bundle.md) now exist. Global integration,
+controlled recovery, and unrestricted domains remain outside this result.
 
 ## Parked branches and re-entry
 

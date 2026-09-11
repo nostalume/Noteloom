@@ -1,0 +1,22 @@
+{
+  "schema": "polynomial-active-module/v1",
+  "coordinates": ["x"],
+  "operator_terms": [
+    {"derivative": [2], "coefficient": {"terms": [{"powers": [0], "matrix": [[-1, 0], [0, -1]]}]}},
+    {"derivative": [0], "coefficient": {"terms": [{"powers": [0], "matrix": [[1, 0], [0, 2]]}]}}
+  ],
+  "preparation": {"terms": [{"powers": [0], "vector": [1, 0]}]},
+  "effect": {"terms": [{"powers": [0], "matrix": [[1, 0], [0, 0]]}]},
+  "base_point": ["0"],
+  "region": [["-1", "1"]],
+  "domain": {"core": "compact-supported-smooth", "boundary": "none"},
+  "requested_capability": "exact-closed-reduction",
+  "resource_budget": {
+    "maximum_carrier_dimension": 2,
+    "maximum_active_dimension": 2,
+    "maximum_derivative_order": 2,
+    "maximum_polynomial_terms": 128,
+    "maximum_rank_refinements": 4,
+    "maximum_output_terms": 2048
+  }
+}

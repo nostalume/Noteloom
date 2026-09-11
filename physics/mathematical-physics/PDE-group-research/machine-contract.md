@@ -162,8 +162,9 @@ too structured to flatten into the comparison fields.  Consequently this envelop
 is a common capability and ranking interface, not a claim that every mathematical
 witness has the same internal coordinates.
 
-The direct executable registry covers factor/centralizer, observable-cyclic, and
-stratified-orbit constructors. Its implementation and admission rule are in the
+The direct executable registry covers factor/centralizer, observable-cyclic,
+stratified-orbit, and exact polynomial active-module constructors. Its
+implementation and admission rule are in the
 [computation workbench](computation/README.md). Bundle-valued Pauli construction,
 its bounded global analytic promotion, `SU(2)/SU(3)` adjoint outer-multiplicity
 selection, and an exact order-two lift on one adjoint matrix-coefficient core now
@@ -175,6 +176,16 @@ The coupled-operator continuation now applies generated base/fiber actions to
 curvature and ordered lower terms before an optional Pauli observable consumer.
 Full regular-representation synthesis, arbitrary polynomial-jet stabilizers, and
 analytic promotion outside declared theorem contracts remain contract-level.
+
+The `polynomial-active-module/v1` schema admits Gaussian-rational multivariate
+polynomial matrix coefficients, preparation/effect, a rational base point and box,
+the compact-supported smooth core without boundary trace, and finite budgets. It
+constructs base-point reachability provenance, replays only admitted expressions
+as a polynomial frame, certifies a nonzero pivot minor on one nested rational box,
+and returns equations (3)-(4) of `C_G19_v1` coefficientwise. Nonzero leakage is a
+`formal` exact identity when requested, an obstruction when exact closure is
+required, and failed interval certification is `RankRegionUnresolved`. No result
+from this schema alone is a Lie algebra or global group.
 
 For bounded backend-independent discovery, the executable projection is
 `reduction-decision/v1`:

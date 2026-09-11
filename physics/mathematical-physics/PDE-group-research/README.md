@@ -37,7 +37,7 @@ recovery.
 
 - [Research graph](research-graph.md): current six-node spine, compact evidence
   disposition, active G19 frontier, and parked branches.
-- [Research nodes](nodes/README.md): the 33 semantic construction owners, grouped
+- [Research nodes](nodes/README.md): the 34 semantic construction owners, grouped
   by capability.
 - [Benchmark index](benchmarks/README.md): regression, transfer, refusal, analytic,
   and cost evidence.
@@ -86,13 +86,12 @@ model-independent route dominance.
 ## Active frontier
 
 G18 constructs one exact cyclic module for an entire coefficient family. G19 now
-has a frame-covariant witness shell and one polynomial matrix-PDE transfer whose
-frame and rank region are generated from G18 provenance. Its leakage constructs a
-local infinitesimal rotation but also proves that potential invariance, full-PDE
-invariance, and domain symmetry do not coincide. The reusable polynomial
-provenance grammar is now frozen, including a proof that finite jets without
-remainder control cannot certify neighborhood rank. Its executable vertical
-slice, controlled recovery, and general boundary descent remain open.
+has an executable exact-polynomial vertical slice: it generates a variable frame
+from base-point reachability provenance, certifies a local rank box, and computes
+the full product-rule reduced PDE plus off-module leakage. The non-Pauli transfer
+still proves that potential invariance, full-PDE invariance, and domain symmetry
+do not coincide. Controlled recovery, residual-to-Lie compilation, global bundle
+gluing, and general boundary descent remain open.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

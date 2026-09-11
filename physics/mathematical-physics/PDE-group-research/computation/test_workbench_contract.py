@@ -19,6 +19,7 @@ from matrix_symbol_covariance_router import discover_problem as discover_matrix_
 from natural_tensor_stabilizer import discover_problem as discover_natural_tensor
 from pauli_bilateral_router import discover_problem as discover_pauli
 from pauli_global_router import discover_problem as discover_pauli_global
+from polynomial_active_module_router import discover_problem as discover_polynomial_active
 from problem_router import discover_problem
 from quadratic_route_router import discover_problem as discover_quadratic
 from su_adjoint_multiplicity_router import discover_problem as discover_su_adjoint
@@ -44,6 +45,54 @@ DIRECT_KEYS = frozenset({"backend", "decision", "outcome", "schema", "witness"})
 
 
 CASES = (
+    Case(
+        (
+            "discover",
+            str(EXAMPLES / "polynomial-active-constant.json"),
+            "--summary",
+        ),
+        "reduction-decision/v1",
+        "exact",
+        0,
+        "polynomial-active-module",
+        DISCOVERY_KEYS,
+    ),
+    Case(
+        (
+            "discover",
+            str(EXAMPLES / "polynomial-active-variable.json"),
+            "--summary",
+        ),
+        "reduction-decision/v1",
+        "formal",
+        0,
+        "polynomial-active-module",
+        DISCOVERY_KEYS,
+    ),
+    Case(
+        (
+            "discover",
+            str(EXAMPLES / "polynomial-active-escape.json"),
+            "--summary",
+        ),
+        "reduction-decision/v1",
+        "obstructed",
+        2,
+        None,
+        DISCOVERY_KEYS,
+    ),
+    Case(
+        (
+            "discover",
+            str(EXAMPLES / "polynomial-active-rank-unresolved.json"),
+            "--summary",
+        ),
+        "reduction-decision/v1",
+        "unresolved",
+        3,
+        None,
+        DISCOVERY_KEYS,
+    ),
     Case(
         (
             "discover",
@@ -191,6 +240,7 @@ CASES = (
 )
 
 DIRECT_DISCOVERY_CASES = (
+    (discover_polynomial_active, "polynomial-active-variable.json"),
     (discover_coupled_operator, "coupled-pauli-operator-positive.json"),
     (discover_coupled_relation, "coupled-carrier-clifford-r3.json"),
     (discover_quadratic, "quadratic-survival-compressed.json"),

@@ -76,6 +76,11 @@ class CoefficientFamilyActiveSubspaceTests(unittest.TestCase):
 
         self.assertEqual(family.active_dimension, 3)
         self.assertTrue(family.no_dimension_gain)
+        self.assertEqual(family.status, "ExactCoefficientFamilyReduction")
+        self.assertEqual(family.coefficient_count, 2)
+        self.assertEqual(family.cost.coefficient_actions, 6)
+        self.assertEqual(family.cost.exact_coordinate_solves, 6)
+        self.assertTrue(all(family.checks.values()))
         self.assertEqual(pointwise.active_dimension, 1)
 
     def test_family_domain_and_specialization_refusals_are_distinct(self) -> None:

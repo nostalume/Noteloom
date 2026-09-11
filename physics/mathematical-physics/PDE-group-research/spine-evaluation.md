@@ -99,11 +99,14 @@ cannot determine neighborhood rank, even for polynomial continuations. Exact
 whole-polynomial data, a degree/remainder bound, or a pointwise-only output is
 therefore mandatory.
 
-The weakest consequential bridge has moved to one executable vertical slice of
-that frozen contract in the existing workbench. It must use a constructive local
-rank enclosure and reproduce all three outcome classes without a general-purpose
-positivity oracle. Controlled leakage, observable propagation, and general
-boundary descent remain downstream obligations. The complete inquiry lives in the
+That executable vertical slice now exists in the workbench. It uses a constructive
+local rank enclosure and reproduces exact, formal, obstructed, and unresolved
+outcomes without a general-purpose positivity oracle. The weakest consequential
+bridge is now residual-to-Lie compilation: factor constructed leakage into bounded
+base-direction candidates, solve coefficient covariance, then keep bracket,
+integration, and domain-flow promotion separate. Controlled leakage, observable
+propagation, and general boundary descent remain downstream obligations. The
+complete inquiry lives in the
 [G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.

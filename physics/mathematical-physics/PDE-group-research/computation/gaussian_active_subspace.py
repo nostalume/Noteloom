@@ -11,6 +11,11 @@ from scipy.linalg import expm
 
 import exact_gaussian_matrix as gaussian
 from exact_gaussian_linear import Vector, coordinates, linear_combination, matrix_vector
+from gaussian_reachable_module import (
+    ReachableModuleBudget,
+    ReachableModuleError,
+    construct_reachable_module,
+)
 
 NUMERICAL_TOLERANCE = 1e-11
 
@@ -327,62 +332,26 @@ def construct_coefficient_family_active_subspace(
         coefficients, preparation, effect, budget, numerical_tolerance
     )
     dimension = len(coefficients[0])
-    basis = [preparation]
-    action_records: list[list[Vector | int]] = []
-    action_images: list[list[Vector]] = []
-    basis_index = 0
-    while basis_index < len(basis):
-        records: list[Vector | int] = []
-        images: list[Vector] = []
-        for coefficient in coefficients:
-            image = matrix_vector(coefficient, basis[basis_index])
-            images.append(image)
-            coordinate = coordinates(image, tuple(basis))
-            if coordinate is None:
-                if len(basis) >= budget.maximum_active_dimension:
-                    raise ActiveSubspaceError(
-                        "ActiveSubspaceBudgetExceeded",
-                        "coefficient-family closure exceeds active-dimension budget",
-                    )
-                basis.append(image)
-                records.append(len(basis) - 1)
-            else:
-                records.append(coordinate)
-        action_records.append(records)
-        action_images.append(images)
-        basis_index += 1
-
-    active_basis = tuple(basis)
-    active_dimension = len(active_basis)
-
-    def final_coordinate(record: Vector | int) -> Vector:
-        if isinstance(record, int):
-            return _standard_vector(active_dimension, record)
-        return (*record, *(gaussian.ZERO for _ in range(active_dimension - len(record))))
-
-    reduced_coefficients = tuple(
-        _matrix_from_columns(
-            tuple(
-                final_coordinate(action_records[index][coefficient_index])
-                for index in range(active_dimension)
-            )
+    try:
+        module = construct_reachable_module(
+            coefficients,
+            preparation,
+            ReachableModuleBudget(
+                budget.maximum_carrier_dimension, budget.maximum_active_dimension
+            ),
         )
-        for coefficient_index in range(len(coefficients))
-    )
+    except ReachableModuleError as error:
+        raise ActiveSubspaceError(error.kind, str(error)) from error
+    active_basis = module.basis
+    active_dimension = len(active_basis)
+    reduced_coefficients = module.reduced_actions
     gram = _pairing_matrix(active_basis, active_basis)
     effect_images = tuple(matrix_vector(effect, vector) for vector in active_basis)
     compressed_effect = _pairing_matrix(active_basis, effect_images)
     initial_coordinates = _standard_vector(active_dimension, 0)
     checks = {
         "basis_starts_at_preparation": active_basis[0] == preparation,
-        "every_coefficient_closes_on_basis": all(
-            linear_combination(
-                tuple(reduced[row][column] for row in range(active_dimension)), active_basis
-            )
-            == action_images[column][coefficient_index]
-            for coefficient_index, reduced in enumerate(reduced_coefficients)
-            for column in range(active_dimension)
-        ),
+        "every_coefficient_closes_on_basis": module.checks["every_generator_closes_on_basis"],
         "every_reduced_coefficient_is_gram_self_adjoint": all(
             gaussian.multiply(gram, reduced) == gaussian.multiply(gaussian.dagger(reduced), gram)
             for reduced in reduced_coefficients

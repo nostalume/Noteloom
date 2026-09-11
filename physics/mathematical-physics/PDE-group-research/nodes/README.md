@@ -61,6 +61,7 @@ through the [computation workbench](../computation/README.md).
 | [complete-route leverage](complete-route-leverage.md) | compare exact and sampled routes for the same observable | mixed bounded |
 | [prepared observable active subspace](prepared-observable-active-subspace.md) | construct the minimal preparation-reachable carrier and pull back the effect | mixed; wins after reuse |
 | [coefficient-family reachable module](coefficient-family-reachable-module.md) | construct one cyclic module preserved by every coefficient specialization | supported; window-amortized |
+| [variable active-module bundle](variable-active-module-bundle.md) | continue base-point reachability into a certified local PDE decomposition | supported exact-polynomial slice |
 
 ## Ownership rule
 
