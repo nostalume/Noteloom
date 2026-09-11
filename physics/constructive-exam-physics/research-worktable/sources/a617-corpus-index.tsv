@@ -1,0 +1,127 @@
+problem_id	year	number	pdf_page	area	family	evidence	next_operator	synopsis
+A25-01	2025	1	4	mechanics	dynamics-evolution	candidate-unexecuted	ode-residual-closure	Disk and rod compound pendulum with free versus fixed disk
+A25-02	2025	2	4	mechanics	event-invariant	executed-full	executed-polynomial-elimination	Tangential satellite impulse with escape threshold and apocentre
+A25-03	2025	3	4	relativity	frame-kinematics	executed-full	finite-polynomial-elimination	Proper crossing time for a relativistic electron through a galaxy
+A25-04	2025	4	4	matter	constitutive-explanation	qualitative-only	qualitative-rubric	Microscopic paramagnetism and nonlinear magnetization regimes
+A25-05	2025	5	5	electromagnetism	continuous-field	executed-shape-only	continuous-operator	Layered and continuously varying dielectric field and bound charge
+A25-06	2025	6	5	electromagnetism	linear-response	executed-full	harmonic-response-operator	Numerical series RLC impedance current power and power factor
+A25-07	2025	7	5	atomic	spectral-algebra	outside-current-grammar	representation-rule-engine	Positronium binding fine structure states and Balmer splitting
+A25-08	2025	8	5	atomic	spectral-algebra	outside-current-grammar	representation-rule-engine	Sodium D-line energy gap and weak-field level crossing
+A24-01	2024	1	6	mechanics	dynamics-evolution	outside-current-grammar	ode-residual-closure	Weakly damped small-angle pendulum period
+A24-02	2024	2	6	relativity	event-invariant	candidate-unexecuted	event-branch-compiler	Two-body decay with photon recoil momentum and velocity
+A24-03	2024	3	6	mechanics	dynamics-evolution	outside-current-grammar	contact-constraint-engine	Toppling uniform rod and proof that contact point moves
+A24-04	2024	4	6	electromagnetism	continuous-field	outside-current-grammar	green-image-operator	Charged conducting sphere with central and displaced point charge
+A24-05	2024	5	6	electromagnetism	continuous-field	executed-shape-only	continuous-operator	Sinusoidal solenoid field induced electric field and rod heating
+A24-06	2024	6	7	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Charged current-carrying cylinder fields motion and energy flow
+A24-07	2024	7	7	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Calcium and calcium-ion terms moments and Stern-Gerlach splitting
+A24-08	2024	8	7	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Excited helium configurations terms diagram and energy comparison
+A24-09	2024	9	7	electromagnetism	continuous-field	executed-full	finite-polynomial-elimination	Parallel-plate capacitor with inserted conductor or dielectric and work
+A23-01	2023	1	8	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Beads on a suspended ring and lift-off condition
+A23-02	2023	2	8	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Satellite orbit after central mass is suddenly halved
+A23-03	2023	3	8	relativity	dynamics-evolution	outside-current-grammar	symbolic-differential-operator	Relativistic force for a prescribed position-time law
+A23-04	2023	4	8	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Potential expansion near a charged ring and full-space field
+A23-05	2023	5	9	electromagnetism	linear-response	executed-full	harmonic-product-operator	Rotating square coil with resistance inductance current and torque
+A23-06	2023	6	9	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Accelerating coaxial charged tubes with fields and Poynting flow
+A23-07	2023	7	9	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Hydrogen n=2 fine structure Lamb shift and magnetic moments
+A23-08	2023	8	9	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Alkali ground-state angular momentum Zeeman splitting and spin flip
+A22-01	2022	1	10	mechanics	constraint-proof	outside-current-grammar	contact-constraint-engine	Rolling cylinder and torque about the instantaneous contact axis
+A22-02	2022	2	10	mechanics	event-invariant	outside-current-grammar	continuous-operator	Coulomb scattering angle
+A22-03	2022	3	10	relativity	frame-kinematics	executed-full	finite-polynomial-elimination	Relativistic acceleration for force parallel or perpendicular to velocity
+A22-04	2022	4	10	matter	constitutive-explanation	qualitative-only	qualitative-rubric	Polarization mechanisms and temperature in inorganic and organic molecules
+A22-05	2022	5	10	electromagnetism	continuous-field	outside-current-grammar	green-image-operator	Conducting spherical shell with dielectric and internal point charge
+A22-06	2022	6	10	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Rotating charged conducting sphere moment field and energy flow
+A22-07	2022	7	11	atomic	spectral-algebra	outside-current-grammar	representation-rule-engine	Lithium ionization effective charge quantum defect and orbital radius
+A22-08	2022	8	11	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Magnesium terms levels transitions and weak-field polarization
+A21-01	2021	1	12	mechanics	dynamics-evolution	outside-current-grammar	variable-mass-operator	Accreting spherical raindrop radius velocity and limiting acceleration
+A21-02	2021	2	12	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Ball orbiting inside a cone after a speed increase
+A21-03	2021	3	12	waves	linear-response	executed-full	harmonic-response-operator	Incident-reflected standing wave nodes antinodes and point value
+A21-04	2021	4	13	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Uniformly charged thick spherical shell field potential and energy
+A21-05	2021	5	13	electromagnetism	linear-response	outside-current-grammar	continuous-operator	Moving magnetic dipole and resistive loop flux current and interaction energy
+A21-06	2021	6	13	electromagnetism	dynamics-evolution	outside-current-grammar	ode-residual-closure	RC discharge network with plate magnetic field and energy flow
+A21-07	2021	7	14	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Oxygen ground-state Stern-Gerlach and paramagnetic resonance
+A21-08	2021	8	14	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Calcium configurations terms levels and allowed transitions
+A20-01	2020	1	15	mechanics	event-invariant	outside-current-grammar	hybrid-event-engine	Two rough-incline blocks with repeated elastic collisions
+A20-02	2020	2	15	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Earth-to-Mars transfer orbit and launch speed
+A20-03	2020	3	15	mechanics	dynamics-evolution	executed-full	finite-polynomial-elimination	Initial angular accelerations of two hinged rods
+A20-04	2020	4	16	electromagnetism	continuous-field	outside-current-grammar	green-image-operator	Charged metal sphere and external charge with zero-force condition
+A20-05	2020	5	16	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Nonuniform charged rotating disk density field moment and torque
+A20-06	2020	6	16	electromagnetism	dynamics-evolution	outside-current-grammar	nonlinear-ode-operator	Conducting rail bar with resistance inductance current and motion
+A20-07	2020	7	16	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Hydrogen excitation line counts terms diagram and allowed transitions
+A20-08	2020	8	17	atomic	spectral-algebra	outside-current-grammar	representation-rule-engine	Sodium D-line fine structure internal field and level crossing
+A19-01	2019	1	18	mechanics	dynamics-evolution	outside-current-grammar	nonlinear-ode-operator	Sliding block with direction-dependent kinetic friction
+A19-02	2019	2	18	mechanics	dynamics-evolution	candidate-unexecuted	ode-residual-closure	Coupled ring and pendulum velocities and small oscillation period
+A19-03	2019	3	18	mechanics	event-invariant	outside-current-grammar	hybrid-event-engine	Impulsed rod on a rough table with hinge impulse and stopping angle
+A19-04	2019	4	19	electromagnetism	continuous-field	outside-current-grammar	green-image-operator	Grounded conducting sphere force surface charge and energy
+A19-05	2019	5	19	electromagnetism	linear-response	outside-current-grammar	continuous-operator	Concentric coils mutual inductance induced current and magnetic energy
+A19-06	2019	6	19	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Angularly accelerated charged cylinder fields and energy flow
+A19-07	2019	7	19	atomic	spectral-algebra	executed-full	finite-polynomial-elimination	Hydrogen ground energy angular momentum and magnetic moment
+A19-08	2019	8	19	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Carbon configurations LS terms and allowed transitions
+A19-09	2019	9	20	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Cesium spectral-line weak Zeeman components and shifts
+A18-01	2018	1	21	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Spring slider on a circular surface at loss of contact
+A18-02	2018	2	21	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Earth and comet orbital period curvature aphelion speed and period
+A18-03	2018	3	21	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Cut square lamina balance point and small oscillation period
+A18-04	2018	4	21	electromagnetism	continuous-field	executed-full	finite-polynomial-elimination	Concentric charged shell and grounded sphere fields energy and capacitance
+A18-05	2018	5	22	electromagnetism	hybrid-event	outside-current-grammar	hybrid-event-engine	Moving overlapping loops in a magnetic field with currents and forces
+A18-06	2018	6	22	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Alternating infinite solenoid field and displacement current
+A18-07	2018	7	22	modern-physics	conceptual-experiment	qualitative-only	qualitative-rubric	Rutherford Franck-Hertz and Stern-Gerlach experiment explanations
+A18-08	2018	8	22	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Excited helium 2p energy levels and allowed transitions
+A18-09	2018	9	22	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Cesium weak Zeeman energy difference and spin-flip frequency
+A16-01	2016	1	23	mechanics	continuous-field	outside-current-grammar	continuous-operator	Radial rod orbiting the Sun and centre tension
+A16-02	2016	2	23	mechanics	dynamics-evolution	outside-current-grammar	nonlinear-ode-operator	Two masses joined by a spring after a transverse impulse
+A16-03	2016	3	23	mechanics	event-invariant	executed-full	finite-polynomial-elimination	Hinged regular-hexagon rods after an impulse
+A16-04	2016	4	24	electromagnetism	continuous-field	executed-partial	finite-polynomial-elimination	Concentric conductor shells dielectric charges and electrostatic energy
+A16-05	2016	5	24	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Parallel current sheets with two magnetic media
+A16-06	2016	6	24	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Separated coaxial loops mutual inductance and force
+A16-07	2016	7	24	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Classification of allowed and forbidden electric-dipole transitions
+A16-08	2016	8	24	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Triplet spacings and Lande interval rule term identification
+A16-09	2016	9	24	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Weak-field alkali P and D Lande factors and splitting
+A15-01	2015	1	25	mechanics	event-invariant	executed-full	event-branch-compiler	Pendulum angle when the resultant force is horizontal
+A15-02	2015	2	25	mechanics	hybrid-event	executed-full	impact-projection-operator	Oblique impact of a ball with a rough wall
+A15-03	2015	3	25	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Bead on a rotating hoop and minimum speed to reach the axis point
+A15-04	2015	4	25	electromagnetism	optimization	outside-current-grammar	inequality-optimizer	Three charges on a ring with minimum electrostatic interaction energy
+A15-05	2015	5	25	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Uniformly charged rotating cylinder fields and electromagnetic energy
+A15-06	2015	6	26	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Coaxial cable with three magnetic sectors field energy and inductance
+A15-07	2015	7	26	atomic	spectral-algebra	executed-full	finite-polynomial-elimination	Total energy needed to ionize both helium electrons
+A15-08	2015	8	26	modern-physics	spectral-algebra	executed-full	finite-polynomial-elimination	Thermal-neutron de Broglie wavelength
+A15-09	2015	9	26	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Helium configurations terms levels and allowed transitions
+A14-01	2014	1	27	mechanics	dynamics-evolution	outside-current-grammar	variable-mass-operator	Falling end of a suspended flexible rope and support force
+A14-02	2014	2	27	mechanics	event-invariant	candidate-unexecuted	inequality-optimizer	Ten cylinders rolling without slipping and slope bound
+A14-03	2014	3	27	mechanics	dynamics-evolution	outside-current-grammar	continuous-operator	Gravitational fall time of one fixed or two moving masses
+A14-04	2014	4	27	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Concentric conductors with radially varying dielectric and voltage
+A14-05	2014	5	27	electromagnetism	continuous-field	outside-current-grammar	green-image-operator	Point charge near a grounded sphere force and energy distinctions
+A14-06	2014	6	28	electromagnetism	continuous-field	executed-full	path-functional-operator	Induced nonconservative field and path-dependent voltage between points
+A14-07	2014	7	28	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Multielectron configuration terms ground state and transitions
+A14-08	2014	8	28	atomic	spectral-algebra	executed-partial	finite-polynomial-elimination	Hydrogen-tritium isotope shift of the first Balmer line
+A13-01	2013	1	29	mechanics	frame-kinematics	executed-full	finite-polynomial-elimination	Coriolis height difference across a northward-flowing canal
+A13-02	2013	2	29	mechanics	event-invariant	executed-full	finite-polynomial-elimination	Water-jet momentum flux supporting a cylinder at a height
+A13-03	2013	3	29	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Three hinged masses falling on a smooth table
+A13-04	2013	4	29	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Parallel-plate capacitor split between two dielectrics
+A13-05	2013	5	30	electromagnetism	continuous-field	outside-current-grammar	continuous-operator	Straight wire and trapezoid loop forces and mutual inductance
+A13-06	2013	6	30	electromagnetism	linear-response	executed-full	finite-polynomial-elimination	Conduction-current to displacement-current ratio in an AC conductor
+A13-07	2013	7	30	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Electron configurations of Ne Mg P and Ar
+A13-08	2013	8	30	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Carbon fine-structure term identification and line counting
+A13-09	2013	9	30	atomic	spectral-algebra	executed-full	finite-polynomial-elimination	Sodium weak-field crossing from D-line wavelengths
+A12-01	2012	1	31	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Bullet embeds in a spring-coupled block pair
+A12-02	2012	2	31	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Projectile launched near Earth at orbital-scale speed and maximum height
+A12-03	2012	3	31	relativity	event-invariant	candidate-unexecuted	event-branch-compiler	Minimum photon energy to accelerate an electron by backscattering
+A12-04	2012	4	31	matter	constitutive-explanation	qualitative-only	qualitative-rubric	Microscopic polarization of liquid water and temperature dependence
+A12-05	2012	5	31	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Spherical cavity in uniform magnetization
+A12-06	2012	6	31	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Spherical capacitor half-filled with two conducting dielectrics
+A12-07	2012	7	32	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Magnesium configurations terms levels and transitions through 3s4d
+A12-08	2012	8	32	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Weak-field splitting and polarization of a triplet transition
+A11-01	2011	1	33	mechanics	dynamics-evolution	outside-current-grammar	continuous-operator	Chain sliding from a semicircular tube
+A11-02	2011	2	33	mechanics	event-invariant	candidate-unexecuted	inequality-optimizer	Pulled spool pure-rolling condition and accelerations
+A11-03	2011	3	33	relativity	frame-kinematics	executed-full	finite-polynomial-elimination	Light signal catching the head of a moving spacecraft
+A11-04	2011	4	33	electromagnetism	continuous-field	outside-current-grammar	green-image-operator	Point charge between perpendicular grounded half-planes
+A11-05	2011	5	34	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Two-layer conducting spherical capacitor current and interface charge
+A11-06	2011	6	34	electromagnetism	linear-response	executed-full	harmonic-product-operator	Rotating small coil in a large coil field with current and torque
+A11-07	2011	7	34	atomic	spectral-algebra	executed-partial	finite-polynomial-elimination	Muonic helium energy radius and chemical analogy
+A11-08	2011	8	34	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Two nonequivalent d electrons in jj versus LS coupling
+A10-01	2010	1	35	mechanics	frame-kinematics	executed-full	finite-polynomial-elimination	Pulley masses in an accelerating elevator from two frames
+A10-02	2010	2	35	mechanics	event-invariant	candidate-unexecuted	event-branch-compiler	Bullet embeds in a spring-coupled block pair
+A10-03	2010	3	35	relativity	frame-kinematics	executed-full	finite-polynomial-elimination	Reciprocal length measurement for oppositely moving rulers
+A10-04	2010	4	35	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Charged slab between two dielectrics with field and voltage
+A10-05	2010	5	36	electromagnetism	continuous-field	outside-current-grammar	boundary-interface-operator	Line current at a magnetic-medium interface
+A10-06	2010	6	36	electromagnetism	continuous-field	executed-full	path-functional-operator	Induced nonconservative field and voltage along alternative arcs
+A10-07	2010	7	36	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Sodium excitation by light or electron impact and observed transitions
+A10-08	2010	8	36	atomic	representation-selection	outside-current-grammar	representation-rule-engine	Neon configuration LS terms Lande factor and pair coupling
