@@ -84,11 +84,13 @@ or universal route dominance.
 G18 resolves pointwise repetition for finite coefficient families: one exact
 module is preserved by every specialization, but its leverage is conditional on
 window size and it may regrow to the ambient carrier. A constant tensor lift is
-already formal once its common-core hypotheses hold. The weakest consequential
-bridge is instead whether the preparation-reachable carrier can vary over the PDE
-base without hiding product-rule connection, leakage, rank change, observable
-recovery, or domain/boundary failure. The complete alternatives, falsifiers,
-benches, and finite local horizon live only in the [G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
+already formal once its common-core hypotheses hold. A supplied constant-rank
+variable frame now has an exact frame-covariant reduced operator and leakage
+witness, and a rank-jump control proves that pointwise success is insufficient.
+The weakest consequential bridge is constructing that frame and its constant-rank
+region from coefficient jets without supplying a projector or enumerating words;
+observable and domain/boundary descent remain downstream obligations. The complete
+inquiry lives in the [G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility

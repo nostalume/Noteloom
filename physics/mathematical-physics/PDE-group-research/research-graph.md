@@ -200,6 +200,15 @@ lower-order terms, and off-module leakage. Finally descend the preparation,
 effect, common core, and boundary trace, returning exact identities or controlled
 residuals with their cost.
 
+**First admitted distinction.** For any supplied smooth constant-rank frame, the
+[variable active-frame jet probe](benchmarks/variable-active-frame-jet.md)
+constructs `A_B=G^(-1)B^dagger`, `P=S_B A_B`, `D_B=A_B D S_B`, and
+`R_B=(I-P)D S_B`. It proves `D S_B=S_B D_B+R_B` and covariance under every admitted
+variable reduced-frame change, with derivatives acting through operator
+composition. A polynomial control shows that a rank jump makes `G^(-1)` fail.
+Thus frame choice alone is not the obstruction; generating `B` from coefficient
+jets and certifying its region are now the weakest missing operations.
+
 **Live alternatives.** The result may be (i) a global constant module, (ii) a
 variable module with a nonzero connection and exact or controlled leakage, or
 (iii) refusal because of rank jump, coefficient escape, or domain/boundary
@@ -210,10 +219,16 @@ recovered observable; induced lower-order terms escape without a reported
 residual; the rank certificate fails on the admitted region; or the common core,
 trace, or boundary condition does not descend.
 
-**Discriminating benches.** Require a constant-frame regression, a nonconstant
-frame with nonzero connection, a structurally different non-Pauli transfer, a
-rank-jump adversarial case, and a boundary/domain refusal. Parameter variation
-inside the Pauli seed family cannot substitute for the transfer bench.
+**Discriminating benches.** The witness-level nonconstant-frame and rank-jump
+probes are now exact. Constructor-level evaluation still requires a constant-frame
+regression, a structurally different non-Pauli transfer, and a boundary/domain
+refusal. Parameter variation inside the Pauli seed family cannot substitute for
+the transfer bench.
+
+**Next discriminating action.** Starting only from bounded coefficient jets and a
+preparation, differentiate G18 admitted-basis provenance to construct or refuse
+`B,B_1,B_2` on a constant-rank region. The result must feed (1)--(3) of the probe
+without adding coefficient words or a supplied projector.
 
 **Horizon.** Finite local exact/polynomial jets and one named observable. Global
 bundle integration, unbounded closure, unrestricted analytic domains, and

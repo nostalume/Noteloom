@@ -85,10 +85,10 @@ model-independent route dominance.
 
 ## Active frontier
 
-G18 now constructs one exact cyclic module for an entire coefficient family; the
-[active G19 frontier](research-graph.md#active-open-bridge-g19-variable-active-module-bundle)
-asks whether it continues to a variable PDE active subbundle with product-rule,
-rank, observable, and domain obligations all made explicit.
+G18 constructs one exact cyclic module for an entire coefficient family; the first
+[G19 probe](research-graph.md#active-open-bridge-g19-variable-active-module-bundle)
+now makes variable-frame reduction covariant, while coefficient-jet generation,
+rank-region certification, observable recovery, and domain descent remain open.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

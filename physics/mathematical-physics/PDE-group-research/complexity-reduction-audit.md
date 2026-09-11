@@ -100,7 +100,7 @@ exists.
 | G15 common arrows | frame and coefficient routes share `QP'P,QP''P` and one propagation core | several-coordinate compatibility remains open |
 | G16 complete route | exact construction has lower semantic depth but loses every sampled runtime comparison | runtime-dominance claim rejected; original-PDE propagation unpaid |
 | G17 active carrier | every tested block reduces to dimension 3; one-shot loses, 64-time reuse wins in all four cases | leverage is reuse-dependent and family-bounded |
-| G18 family module | three-generator closure stays dimension 3; exact solves `9/3` for one point and `9/12` for four | one-point loses; four-point runtime is 12--15% lower; ambient regrowth remains possible |
+| G18 family module | three-generator closure stays dimension 3; exact solves `9/3` for one point and `9/12` for four | one-point loses; four-point local medians are lower, with overlapping ranges in one case; ambient regrowth remains possible |
 
 The numerical proxies compare declared primitive operations, not portable wall
 clock. Timing observations remain attached to their executable benchmark and

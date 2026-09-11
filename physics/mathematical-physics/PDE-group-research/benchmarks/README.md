@@ -29,6 +29,7 @@ executable entrypoints remain in the [computation workbench](../computation/READ
 - [axial quotient PDE](axial-nonseparable-quotient-pde.md) and [warped stratified quotient](warped-axis-stratified-quotient-pde.md): coordinate-independent reduction to lower-dimensional PDEs with descended strata.
 - [spinor Pauli--Landau](spinor-pauli-landau.md), [bilateral Pauli router](bilateral-pauli-router.md), and [global Pauli promotion](pauli-global-analytic.md): Clifford channels, PDE-first coincidence, topology, domain, and heat observable.
 - [spin-texture adiabatic transfer](spin-texture-adiabatic.md): variable-projector connection and leakage boundary.
+- [variable active-frame jet](variable-active-frame-jet.md): G19 witness covariance, differential-order redistribution, and exact rank-jump boundary.
 
 ## Adversarial boundary
 
