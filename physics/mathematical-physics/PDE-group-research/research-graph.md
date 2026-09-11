@@ -186,10 +186,13 @@ continued as a variable active subbundle whose product-rule connection, off-modu
 leakage, induced lower coefficients, preparation/effect, and domain/boundary data
 are constructed or explicitly refused before coordinate separation?
 
-**Admitted input.** Supply bounded exact or polynomial coefficient jets through
-the PDE order; one preparation and effect; a base point, neighborhood, and rank
-contract; a common core plus boundary/trace description; and finite resource
-bounds. No group label, global frame, or expected reduced operator is supplied.
+**Admitted input.** Version 1 accepts an exact multivariate polynomial matrix
+operator, preparation, and effect on a rational box; a rational base point; a
+common core plus boundary/trace description; and finite closure, rank-search, and
+output bounds. A later controlled adapter may accept finite coefficient jets with
+an explicit remainder enclosure. Jet data without such an enclosure is admitted
+only for a pointwise witness. No group label, global frame, or expected reduced
+operator is supplied.
 
 **Candidate construction.** Reuse G18 breadth-first admitted-basis provenance at
 the base point. Continue only those admitted basis expressions as `B(x)`, never a
@@ -199,6 +202,61 @@ actions; then apply the PDE product rule to compute the induced connection,
 lower-order terms, and off-module leakage. Finally descend the preparation,
 effect, common core, and boundary trace, returning exact identities or controlled
 residuals with their cost.
+
+### Frozen local contract `C_G19_v1`
+
+For real base coordinates and Gaussian-rational polynomial data, write
+
+```text
+D=sum_(alpha in A) C_alpha(x) partial^alpha,       |alpha|<=m.              (1)
+```
+
+At `x_0`, run G18 closure on the finite family `{C_alpha(x_0)}` and retain only
+the admitted basis-expression DAG: preparation leaves, constant linear
+combinations, and `Apply(alpha,parent)` edges. A rejected dependent word can never
+re-enter away from `x_0`. Continue the admitted expressions and their derivatives
+by the finite multi-index Leibniz rule
+
+```text
+partial^gamma(C_alpha w)
+ =sum_(delta<=gamma) binom(gamma,delta)
+    (partial^delta C_alpha)(partial^(gamma-delta)w).                         (2)
+```
+
+Apply only an invertible constant pivot transformation selected at `x_0`. Choose
+pivot rows `I`, form `mu(x)=det B_I(x)` and `p=mu^dagger mu`, and search nested
+rational boxes about `x_0`. Exact rational interval evaluation with lower bound
+`p>0` certifies a rank-`r` chart. An exact point `x_*` where direct elimination
+gives `rank B(x_*)<r` is a rank-jump certificate; exhausted enclosure/search budget
+is `RankRegionUnresolved`, not evidence of a jump.
+
+For every reduced derivative multi-index `beta`, construct the ambient product-rule
+coefficient
+
+```text
+K_beta=sum_(alpha>=beta) binom(alpha,beta)
+          C_alpha partial^(alpha-beta)B.                                    (3)
+```
+
+Then return
+
+```text
+G=B^dagger B,             A_B=G^(-1)B^dagger,       P=B A_B,
+D_B=sum_beta A_B K_beta partial^beta,
+R_B=sum_beta (I-P)K_beta partial^beta,
+D S_B=S_B D_B+R_B,        A_B R_B=0,                                 (4)
+alpha_prep=A_B psi,        F=B^dagger Q B.
+```
+
+The constructor reports every coefficient or derivative escape in `R_B`; it does
+not enlarge the DAG after seeing the residual. Exact compact-core typing is part
+of v1. Boundary descent, leakage control, residual factorization, Lie brackets,
+and group integration are separate consumers and may refuse independently.
+
+Finite jets alone cannot certify a neighborhood: for any order `m`, the scalar
+polynomials `1` and `1-(x/epsilon)^(m+1)` have the same `m`-jet at zero, while the
+second vanishes at `epsilon`. Therefore a polynomial degree bound/whole polynomial
+or a remainder enclosure is an irreducible input, not an implementation detail.
 
 **First admitted distinction.** For any supplied smooth constant-rank frame, the
 [variable active-frame jet probe](benchmarks/variable-active-frame-jet.md)
@@ -221,6 +279,15 @@ invariance, and domain symmetry are three distinct tests. The rectangular bench
 passes the first, fails the second generically, and refuses global rotational
 domain symmetry.
 
+**Frozen-contract disposition.** The same `C_G19_v1` interface has now passed the
+constant-frame regression and an adversarial coefficient-escape control. A
+provenance-derived rank-jump family also proves that finite jets through any fixed
+order cannot certify a neighborhood: indistinguishable polynomial continuations
+can have different nearby rank. The contract is therefore supported for exact
+polynomial boxes with local certified charts, restricted to pointwise output for
+bare finite jets, and unresolved for exhausted interval/rank budgets. These are
+typed domain dispositions, not one scalar success label.
+
 **Live alternatives.** The result may be (i) a global constant module, (ii) a
 variable module with a nonzero connection and exact or controlled leakage, or
 (iii) refusal because of rank jump, coefficient escape, or domain/boundary
@@ -231,28 +298,26 @@ recovered observable; induced lower-order terms escape without a reported
 residual; the rank certificate fails on the admitted region; or the common core,
 trace, or boundary condition does not descend.
 
-**Discriminating benches.** The supplied-frame covariance/rank controls and one
-provenance-derived, structurally non-Pauli polynomial transfer are exact. That
-transfer also supplies a boundary/domain refusal. Constructor-level evaluation
-still requires a constant-frame regression under the same provenance interface
-and an adversarial polynomial case whose rank certificate is unresolved or whose
-continued coefficient expressions escape. Parameter variation inside the Pauli
-seed family cannot substitute for these benches.
+**Discriminating benches.** The supplied-frame covariance/rank controls, deductive
+constant-frame regression, provenance-derived non-Pauli transfer, finite-jet rank
+counterexample, coefficient escape, and boundary/domain refusal are exact. They
+support only the frozen polynomial/local-chart dimensions; no use-level observable
+propagation or cost comparison has been completed.
 
-**Next discriminating action.** Freeze the smallest reusable constructor grammar
-that reproduces both G18 constant frames and the polynomial transfer: exact
-multivariate coefficient matrices, a preparation, a base point, an admitted
-expression-provenance DAG, constant pivot transformations, derivative order, and
-a rank-region certificate or refusal. Then test it unchanged on the constant
-regression and one adversarial rank/escape case before admitting executable G19.
-Residual factorization may propose infinitesimal generators, but cannot promote a
-global group without bracket, integration, and domain tests.
+**Next discriminating action.** Plan one executable vertical slice of
+`C_G19_v1` in the existing workbench: exact polynomial input, base-point G18
+provenance, constant pivot, one certified rational box, product-rule
+`ReductionWitness`, and the three regression/transfer/refusal outcomes above. The
+implementation must return `RankRegionUnresolved` rather than invoke an unnamed
+symbolic positivity solver. Residual factorization remains a downstream candidate
+generator and cannot promote a global group without bracket, integration, and
+domain tests.
 
-**Horizon.** Finite local exact/polynomial jets and one named observable. Global
-bundle integration, unbounded closure, unrestricted analytic domains, and
-nonlinear PDEs are outside this inquiry. No G19 executable route or node exists;
-implementation awaits a separately settled coefficient-jet and rank-certificate
-grammar.
+**Horizon.** Exact polynomial local charts, finite jets with certified remainders,
+and one named observable. Global bundle integration, unbounded closure,
+unrestricted analytic domains, and nonlinear PDEs are outside this inquiry. No
+G19 executable route or node exists; the frozen contract remains owned here until
+an implementation passes its full bench family.
 
 ## Parked branches and re-entry
 

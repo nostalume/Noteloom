@@ -101,7 +101,7 @@ exists.
 | G16 complete route | exact construction has lower semantic depth but loses every sampled runtime comparison | runtime-dominance claim rejected; original-PDE propagation unpaid |
 | G17 active carrier | every tested block reduces to dimension 3; one-shot loses, 64-time reuse wins in all four cases | leverage is reuse-dependent and family-bounded |
 | G18 family module | three-generator closure stays dimension 3; exact solves `9/3` for one point and `9/12` for four | one-point loses; four-point local medians are lower, with overlapping ranges in one case; ambient regrowth remains possible |
-| G19 variable provenance probe | two admitted expressions generate a rank-two bundle where constant polynomial-coefficient closure is ambient rank three | exact potential compression is offset by angular PDE leakage; no complete-route gain yet |
+| G19 variable provenance calculus | admitted-expression DAG generates a rank-two bundle where constant polynomial-coefficient closure is ambient rank three | exact potential compression is offset by angular PDE leakage; finite jets alone cannot certify neighborhood rank |
 
 The numerical proxies compare declared primitive operations, not portable wall
 clock. Timing observations remain attached to their executable benchmark and
@@ -150,10 +150,17 @@ closure regrows to rank three. But its angular leakage makes unrestricted reduce
 propagation inexact; the rectangular boundary also blocks promotion of the
 constructed local rotation to a domain symmetry.
 
-The unpaid G19 costs are a reusable coefficient-jet/provenance grammar, general
-rank-region certification, controlled leakage or full-block propagation, trace
-descent, and same-observable recovery. Until those terms have an exact or
-controlled ledger across the frozen regression/transfer/refusal family, G19 has no
+The frozen G19 grammar replaces word-tree enumeration by a base-point admitted
+expression DAG. For `n` variables and derivative order `m`, it retains
+`binom(n+m,m)` jets per basis expression; one application edge uses
+`binom(2n+m,m)` Leibniz pairs through that order. This is finite structural growth,
+not a dimension-free claim. Rank certification uses one selected pivot minor and
+bounded exact interval evaluations on nested rational boxes instead of all-minor
+enumeration or a complete polynomial-positivity solve.
+
+The unpaid G19 costs are implementation of that grammar, controlled leakage or
+full-block propagation, trace descent, and same-observable recovery. Until those
+terms have an exact or controlled executable ledger, G19 has no
 computational-leverage verdict.
 
 ## 8. Audit rule

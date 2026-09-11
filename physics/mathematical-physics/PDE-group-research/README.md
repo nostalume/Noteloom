@@ -89,9 +89,10 @@ G18 constructs one exact cyclic module for an entire coefficient family. G19 now
 has a frame-covariant witness shell and one polynomial matrix-PDE transfer whose
 frame and rank region are generated from G18 provenance. Its leakage constructs a
 local infinitesimal rotation but also proves that potential invariance, full-PDE
-invariance, and domain symmetry do not coincide. A reusable coefficient-jet
-grammar, general rank/escape refusal, controlled recovery, and boundary descent
-remain open.
+invariance, and domain symmetry do not coincide. The reusable polynomial
+provenance grammar is now frozen, including a proof that finite jets without
+remainder control cannot certify neighborhood rank. Its executable vertical
+slice, controlled recovery, and general boundary descent remain open.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

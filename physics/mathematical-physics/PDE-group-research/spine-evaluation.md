@@ -92,12 +92,19 @@ its flat in-bundle connection coexists with exact angular leakage. Factoring tha
 leakage constructs a local infinitesimal rotation and represented internal action,
 while the boundary refuses a global domain symmetry.
 
-The weakest consequential bridge has therefore moved from one frame construction
-to a reusable coefficient-jet provenance grammar with typed rank/escape refusal.
-It must reproduce a constant frame and survive an adversarial polynomial case
-before executable admission. Controlled leakage, observable propagation, and
-general boundary descent remain downstream obligations. The complete inquiry lives
-in the [G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
+The reusable coefficient-jet provenance grammar is now frozen and has exact
+constant regression, non-Pauli transfer, rank-jump, and coefficient-escape
+controls. The rank control exposes an information boundary: finite jets alone
+cannot determine neighborhood rank, even for polynomial continuations. Exact
+whole-polynomial data, a degree/remainder bound, or a pointwise-only output is
+therefore mandatory.
+
+The weakest consequential bridge has moved to one executable vertical slice of
+that frozen contract in the existing workbench. It must use a constructive local
+rank enclosure and reproduce all three outcome classes without a general-purpose
+positivity oracle. Controlled leakage, observable propagation, and general
+boundary descent remain downstream obligations. The complete inquiry lives in the
+[G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility

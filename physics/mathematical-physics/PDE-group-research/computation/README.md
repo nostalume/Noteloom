@@ -105,8 +105,11 @@ Admit a new route only when it provides:
 
 G18 reuses the coefficient and active-carrier owners to construct one
 preparation-reachable module for an entire finite coefficient family and compare
-it with repeated pointwise closure. No G19 executable route exists. A later
-approved implementation stage must first settle the exact/polynomial
-coefficient-jet grammar, local rank certificate, product-rule residual, and
-domain/boundary representation; the active inquiry remains in the
+it with repeated pointwise closure. No G19 executable route exists. Its frozen
+research contract now restricts neighborhood claims to exact polynomial data or
+jets with a verified remainder enclosure, continues only base-point admitted
+provenance, and requires bounded rank-search refusal plus exact product-rule
+residuals. An implementation must be architecture-planned as one vertical slice
+inside this workbench and pass the contract's regression/transfer/refusal family;
+the active inquiry remains in the
 [research graph](../research-graph.md#active-open-bridge-g19-variable-active-module-bundle).

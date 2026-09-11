@@ -139,6 +139,56 @@ one product-rule witness, and one residual factorization. It does not enumerate
 polynomial monomials, angular modes, or representation components. This is a
 semantic compression result, not yet a scaling result.
 
+## Frozen-interface regression and adversarial controls
+
+`E_G19_probe_3` tests the subsequently frozen `C_G19_v1` contract without adding
+rules from this successful transfer.
+
+**Constant regression.** If all coefficient fields and the preparation are
+constant, every positive-order provenance jet vanishes. In the multi-index
+product rule, only the term `alpha=beta` remains, so
+
+```text
+K_beta=C_beta B,       D_B=sum_beta A_B C_beta B partial^beta,       R_B=0,  (12)
+```
+
+whenever G18 closure certifies `C_beta B` lies in `range(B)`. The selected pivot
+minor is constant. Thus the same interface recovers the G18 constant
+differential-operator lift exactly; no separate constant-frame rule is required.
+
+**Finite-jet rank no-go.** Fix any derivative order `m`, nonzero rational
+`epsilon`, preparation `e_1`, and
+
+```text
+b_0(x)=1,                    b_epsilon(x)=1-(x/epsilon)^(m+1),
+H_b(x)=[[0,b(x)],[b(x),0]].                                               (13)
+```
+
+The two matrix fields have identical `m`-jets at zero. Base-point closure admits
+the same expressions `e_1,H_b e_1`, but their continued frame determinants are
+respectively `1` and `b_epsilon`; the latter vanishes at `x=epsilon`. Therefore
+no operation receiving only the finite jet can certify constant rank on a
+neighborhood containing `epsilon`. Whole bounded-degree polynomial data or a
+verified remainder enclosure is logically necessary.
+
+**Coefficient escape.** Take
+
+```text
+H(x)=[[0,1,0],[1,0,x],[0,x,0]],       psi=e_1,       x_0=0.                (14)
+```
+
+Base-point closure admits `B=[e_1,H psi]=[e_1,e_2]`, which continues as a constant
+rank-two frame. Nevertheless
+
+```text
+A_B H B=[[0,1],[1,0]],
+(I-P)H B=[[0,0],[0,0],[0,x]].                                             (15)
+```
+
+The unchanged contract reports (15) as exact zero-order leakage. It does not add
+the rejected word `H^2 psi` away from the base point. This prevents adaptive word
+enumeration from being hidden inside “continuation.”
+
 ## Reproduction and disposition
 
 The identities (3)--(11) were independently checked coefficient-by-coefficient
@@ -151,10 +201,19 @@ canonical result SHA-256:
 The exact calculation is retained here; scratch source and raw output are not a
 second computation project or a production G19 route.
 
-Disposition: **exact transfer support on this polynomial matrix-PDE domain** for
-provenance-derived `B,B_i,B_ij`, rank-region certification, witness construction,
-and residual-derived infinitesimal covariance. It also exactly rejects the
-implications “coefficient invariance implies PDE invariance,” “flat connection
-implies no leakage,” and “local Lie covariance implies domain symmetry.” It does
-not establish a general coefficient-jet grammar, general polynomial positivity,
-controlled leakage, global integration, or computational leverage.
+Equations (12)--(15) were separately replayed in the same environment at base
+revision `ae1208f11dfd3255544d7528d2afd5a6df9d77ed`. Control-checker SHA-256:
+`877B29EBD5687BF188FA83F1E8603D645929D98028519AB07E895A8E97A76B5C`;
+canonical control-result SHA-256:
+`e22c37adfbd2b75965ea6e1ada69d0c0d4d919c7fbcfa39a9b08b6893a7934c6`.
+The run instantiated (13) at `m=2, epsilon=1/4`; the displayed arbitrary-`m`
+identity is the exact polynomial argument, not an extrapolation from that run.
+
+Disposition: **exact bounded support for the frozen polynomial provenance
+calculus** at the deduction, constant-regression, one non-Pauli transfer, and
+adversarial-refusal levels. It exactly rejects the implications “coefficient
+invariance implies PDE invariance,” “flat connection implies no leakage,” “local
+Lie covariance implies domain symmetry,” and “a finite jet certifies a
+neighborhood.” It does not establish an executable G19 route, complete polynomial
+rank certification on a prescribed large region, controlled leakage, global
+integration, or computational leverage.
