@@ -33,6 +33,7 @@ uv run python reduction_workbench.py discover examples/matrix-pde-inverse-sl3.js
 uv run python reduction_workbench.py discover examples/matrix-symbol-covariance-sl3.json --summary
 uv run python reduction_workbench.py discover examples/matrix-adjoint-semigroup-sl3.json --summary
 uv run python reduction_workbench.py discover examples/polynomial-active-variable.json --summary
+uv run python -m unittest check_residual_direction_lift.py
 ```
 
 The project targets the current stable CPython 3.14 line and pins compatible
@@ -116,3 +117,10 @@ but leakage is nonzero and unbounded; requesting exact closure instead returns
 `RankRegionUnresolved`, never a guessed rank jump. V1 admits only
 compact-supported smooth sections without boundary trace and does not construct a
 global group. See the [G19 node](../nodes/variable-active-module-bundle.md).
+
+The maintained `check_residual_direction_lift.py` is an exploratory G20
+certificate, not a registered route. It filters G19 residual order, checks the
+rank-one projective direction, compiles the exact full-operator commutator kernel,
+and verifies no-lift, rank-two, coefficient-only, and variable-gauge controls. See
+the [G20 node](../nodes/residual-direction-lie-lift.md); production architecture
+and public-schema admission remain open.

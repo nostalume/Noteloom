@@ -31,6 +31,7 @@ executable entrypoints remain in the [computation workbench](../computation/READ
 - [spin-texture adiabatic transfer](spin-texture-adiabatic.md): variable-projector connection and leakage boundary.
 - [variable active-frame jet](variable-active-frame-jet.md): G19 witness covariance, differential-order redistribution, and exact rank-jump boundary.
 - [coefficient-generated variable module](coefficient-generated-variable-module.md): executable polynomial-provenance calculus with constant regression, non-Pauli transfer, finite-jet/rank no-go, coefficient escape, and a residual-derived infinitesimal `SO(2)` candidate.
+- [residual-derived infinitesimal lift](residual-derived-infinitesimal-lift.md): exact residual-line construction, full-operator lift, gauge invariance, and rank/no-lift refusals without a supplied generator.
 
 ## Adversarial boundary
 

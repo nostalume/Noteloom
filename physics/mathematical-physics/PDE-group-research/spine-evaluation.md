@@ -99,15 +99,17 @@ cannot determine neighborhood rank, even for polynomial continuations. Exact
 whole-polynomial data, a degree/remainder bound, or a pointwise-only output is
 therefore mandatory.
 
-That executable vertical slice now exists in the workbench. It uses a constructive
-local rank enclosure and reproduces exact, formal, obstructed, and unresolved
-outcomes without a general-purpose positivity oracle. The weakest consequential
-bridge is now residual-to-Lie compilation: factor constructed leakage into bounded
-base-direction candidates, solve coefficient covariance, then keep bracket,
-integration, and domain-flow promotion separate. Controlled leakage, observable
-propagation, and general boundary descent remain downstream obligations. The
+That executable G19 slice now exists in the workbench. G20 has isolated the next
+semantic object: the first-order residual row space. Rank one constructs a
+projective derivation line; the full polynomial commutator kernel separately
+decides whether it lifts. Exact probes distinguish a successful lift, the same
+line destroyed by `xI`, rank-two nonselection, coefficient-only nonselection, and
+variable-frame gauge invariance. The weakest consequential bridge is now a public
+reusable implementation of this frozen line/lift contract, followed—not merged—by
+multi-line bracket closure, integration, and domain flow. Controlled leakage,
+observable propagation, and boundary descent remain downstream obligations. The
 complete inquiry lives in the
-[G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
+[G20 frontier owner](research-graph.md#active-open-bridge-g20-residual-direction-to-infinitesimal-lie-lift).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility

@@ -158,6 +158,7 @@ resolved row links its semantic owner; benchmark and executable detail stay ther
 | G16 | same-observable complete-route adjudication | exact route has less semantic depth but loses sampled runtime comparison | [route leverage](nodes/complete-route-leverage.md) |
 | G17 | preparation-reachable active carrier | all tested blocks reduce to 3; one-shot loses, 64-time reuse wins | [active subspace](nodes/prepared-observable-active-subspace.md) |
 | G18 | coefficient-family reachable module | exact common closure and specialization; four-point construction wins, one-point loses | [family module](nodes/coefficient-family-reachable-module.md) |
+| G19 | variable active-module bundle | exact polynomial provenance, local rank chart, and full product-rule leakage; global/domain promotion excluded | [variable module](nodes/variable-active-module-bundle.md) |
 
 ## Evidence alias ledger
 
@@ -173,7 +174,7 @@ Retired fine-grained IDs remain provenance aliases, not live graph vertices.
 | `P2--P5,Z1--Z4,K1,D1--D9` | S4/S5 evidence | mode, centralizer, cyclic, route, quotient, and Pauli evidence |
 | `C0` | S5 | superseded by the bounded verdict |
 
-## Active open bridge: G19 variable active-module bundle
+## Resolved bridge: G19 variable active-module bundle
 
 **Upstream distinction.** G18 constructs the preparation-generated cyclic carrier
 of a finite internal coefficient family; it is not the isolated spectral
@@ -321,6 +322,78 @@ unrestricted analytic domains, and nonlinear PDEs are outside this inquiry. The
 bounded exact-polynomial route and
 [G19 node](nodes/variable-active-module-bundle.md) now exist. Global integration,
 controlled recovery, and unrestricted domains remain outside this result.
+
+## Active open bridge: G20 residual direction to infinitesimal Lie lift
+
+**Upstream distinction.** G19 owns the active frame and exact coefficient family
+`R_B`. G20 consumes that witness without reopening its provenance DAG. G0 supplies
+kernel/quotient semantics and G5 supplies an ordered operator-defect pattern;
+neither constructs a base direction from leakage.
+
+**Question.** When does a G19 residual construct a coordinate-aware infinitesimal
+base direction, and when does that direction lift to a represented symmetry of the
+whole PDE without a supplied group or generator?
+
+**Frozen alternatives.** The first positive-order residual may have no first-order
+part, a unique common direction line, or tensor rank greater than one. A unique
+line may lift through the full commutator defect or fail there. These outcomes are
+distinct; no failed case authorizes a guessed generator.
+
+**Candidate construction.** Over the certified chart's rational-function field,
+flatten the first-order coefficients
+
+```text
+R_B^(1)=sum_i R_i partial_i,       A_R[(ambient,active),i]=(R_i)_(ambient,active).
+```
+
+`rank(A_R)=1` constructs only the projective derivation line
+`Lambda_R=Row(A_R)`. Clear denominators, divide polynomial content, and normalize
+one leading unit to obtain a bounded chart representative `v`; the retained
+semantic object remains `Lambda_R`, not that coordinate normalization. Rank zero
+returns `NoDirectionalLeakage`; rank greater than one returns
+`ResidualNotLineGenerated`. Nonzero residual order above one returns
+`HigherOrderResidualNotVectorField`.
+
+For `L_v=v^i partial_i`, construct the exact linear map
+
+```text
+Phi(lambda,J)=[D, lambda L_v-J],
+Phi: k direct_sum u(V) -> Diff_<=m(V).                                  (5)
+```
+
+Here `J` is a constant skew-adjoint internal endomorphism. The visible projection
+of `ker Phi` to `lambda` decides whether the line lifts. The fiber over a visible
+lift records internal-centralizer ambiguity. Bracket closure, complete flow,
+real-form integration, and domain preservation remain later certificates.
+
+**First exact probe.** The non-Pauli G19 fixture has `rank(A_R)=1`, primitive line
+`span{y partial_x-x partial_y}`, and a one-dimensional joint kernel. Its generator
+is the same local rotation pair previously derived by hand. A variable reduced
+frame gauge leaves `Row(A_R)` unchanged. Adding `xI` to the potential preserves
+the residual line but makes `ker Phi` have no visible element: a scalar trace
+defect cannot be canceled by an internal commutator. The preparation
+`B=(1,x,y)^T` under the free Laplacian gives `rank(A_R)=2`, so this route refuses to
+choose between coordinate directions even though the PDE has other symmetries.
+Pure coefficient escape has rank zero and yields no direction.
+
+**Disposition.** The [G20 node](nodes/residual-direction-lie-lift.md) and
+[exact probe](benchmarks/residual-derived-infinitesimal-lift.md) freeze a bounded
+contract and support its rank/lift distinctions deductively and executablely. No
+public constructor exists yet. A preparation-relative residual can expose only
+directions visible through that failed module; this is not a complete symmetry
+classifier.
+
+**Next discriminating action.** Architecture-plan one exact reusable constructor
+for residual order filtering, rank-one line normalization, and the full polynomial
+commutator kernel. Its unchanged interface must replay the four probes before any
+multi-direction atlas, Lie closure, integration, or boundary-flow implementation
+is admitted.
+
+**Horizon.** Exact Gaussian-rational polynomial operators of bounded order on one
+certified G19 chart, constant fiber metric, constant internal action, and local
+differential-expression covariance. Variable internal gauges, nonlinear symmetry
+determining equations, pseudogroups, global bundle gluing, and invisible symmetry
+completeness are outside `C_G20_v1`.
 
 ## Parked branches and re-entry
 

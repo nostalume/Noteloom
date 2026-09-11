@@ -36,8 +36,8 @@ recovery.
 ## Navigation
 
 - [Research graph](research-graph.md): current six-node spine, compact evidence
-  disposition, active G19 frontier, and parked branches.
-- [Research nodes](nodes/README.md): the 34 semantic construction owners, grouped
+  disposition, active G20 frontier, and parked branches.
+- [Research nodes](nodes/README.md): the 35 semantic construction owners, grouped
   by capability.
 - [Benchmark index](benchmarks/README.md): regression, transfer, refusal, analytic,
   and cost evidence.
@@ -85,12 +85,14 @@ model-independent route dominance.
 
 ## Active frontier
 
-G18 constructs one exact cyclic module for an entire coefficient family. G19 now
-has an executable exact-polynomial vertical slice: it generates a variable frame
-from base-point reachability provenance, certifies a local rank box, and computes
-the full product-rule reduced PDE plus off-module leakage. The non-Pauli transfer
-still proves that potential invariance, full-PDE invariance, and domain symmetry
-do not coincide. Controlled recovery, residual-to-Lie compilation, global bundle
+G19 now has an executable exact-polynomial vertical slice from base-point
+reachability provenance to a local variable frame and full product-rule leakage.
+G20 freezes the next consumer: first-order leakage constructs a projective
+derivation line only at tensor rank one, and a separate full-operator commutator
+kernel decides whether that line lifts to a represented infinitesimal symmetry.
+The exploratory probe passes a rotation lift, a same-line/no-lift control,
+rank-two and coefficient-only refusals, and a variable-frame gauge check. A public
+G20 constructor, controlled recovery, Lie closure, global integration, bundle
 gluing, and general boundary descent remain open.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
