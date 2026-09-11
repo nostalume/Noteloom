@@ -104,6 +104,7 @@ exists.
 | G19 variable provenance calculus | admitted-expression DAG generates a rank-two bundle where constant polynomial-coefficient closure is ambient rank three | exact potential compression is offset by angular PDE leakage; finite jets alone cannot certify neighborhood rank |
 | G20 residual Lie lift | one function-field rank and one `1+n^2` defect kernel replace group catalogues and componentwise generator guesses | exact local construction; quadratic internal seed and polynomial swell remain; no solve/recovery leverage claim |
 | G21 polynomial lift closure | incremental constant-span brackets generate a finite visible quotient when closure terminates | closure dimension can be unbounded even for a linear second-order PDE; a budget is semantic, not optional |
+| G22 affine symbol symmetry | `d(d+1)/2+n^2` intrinsic candidates and one defect kernel replace arbitrary polynomial-field search in the constant scalar-symbol class | residual lowering, cubic generic bracket certification, internal quadratic growth, and observable recovery remain |
 
 The numerical proxies compare declared primitive operations, not portable wall
 clock. Timing observations remain attached to their executable benchmark and
@@ -168,6 +169,15 @@ and exact polynomial lowering can swell. This is a construction and human
 compression result, not a runtime or complete-route leverage verdict. Controlled
 leakage, full-block propagation, trace descent, and same-observable recovery remain
 unpaid.
+
+G22 removes open-ended G21 closure cost only where the principal symbol proves a
+finite-type bound. For base dimension `d` and carrier dimension `n`, it constructs
+`N=d(d+1)/2+n^2` candidates without a degree cutoff or monomial ansatz, lowers one
+universal commutator map to `R` exact residual coordinates, and eliminates once.
+The radial `d=n=3` probe uses `N=15`, `R=75`, and 3629 generic bracket/ideal
+checks. This is strong human and symbolic search compression, not a dimension-free
+runtime claim: `n^2` internal growth, exact coefficient swell, generic cubic
+closure certification, spectral solution, and observable recovery are still paid.
 
 ## 8. Audit rule
 

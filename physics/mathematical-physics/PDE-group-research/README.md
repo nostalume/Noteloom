@@ -36,8 +36,8 @@ recovery.
 ## Navigation
 
 - [Research graph](research-graph.md): current six-node spine, compact evidence
-  disposition, active G21 closure frontier, and parked branches.
-- [Research nodes](nodes/README.md): the 36 semantic construction owners, grouped
+  disposition, active G22 symbol-construction frontier, and parked branches.
+- [Research nodes](nodes/README.md): the 37 semantic construction owners, grouped
   by capability.
 - [Benchmark index](benchmarks/README.md): regression, transfer, refusal, analytic,
   and cost evidence.
@@ -94,14 +94,21 @@ coefficient-only, complex-real-form, higher-order, and budget outcomes while
 retaining G19 evidence. Multi-line Lie closure, controlled recovery, global
 integration, bundle gluing, and boundary descent remain open.
 
-The next frontier is no longer “find another generator.” G21 closes several exact
-local lifts over constant real scalars and quotients pure internal ambiguity. Its
-first probe constructs a three-dimensional visible rotation algebra, but a
-degenerate second-order PDE proves that polynomial lift closure can be infinite.
-For a constant nondegenerate scalar principal symbol, however, the top-order
-Killing equation forces an affine candidate space of dimension at most
-`d(d+1)/2`. A production constructor should use that structural bound when
-available and retain a dimension-budgeted fallback otherwise.
+G21 closes several exact local lifts over constant real scalars and quotients pure
+internal ambiguity, while its degenerate-symbol control proves that generic
+polynomial closure can be infinite. G22 now removes the remaining seed privilege
+for a common class: a constant nondegenerate scalar principal symbol constructs
+all `d(d+1)/2` affine Killing candidates, a canonical `u(n)` seed supplies the
+constant internal lifts, and one exact full-operator kernel returns the visible
+local Lie algebra. Free, anisotropic, nonorthogonal-coordinate, and radial matrix
+tests discriminate the unchanged constructor; an independent G20 route agrees on
+the public fixture.
+
+The next structural frontier is not another potential or named group. It is a
+finite-type symbol-stabilizer/prolongation certificate for variable or
+matrix-valued principal symbols, with an explicit refusal when no bounded
+candidate module is justified. Global integration, domain flow, spectral use, and
+complete-route leverage remain separate gates.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

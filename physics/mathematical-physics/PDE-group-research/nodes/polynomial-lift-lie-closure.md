@@ -142,6 +142,7 @@ Disposition: **frozen exploratory contract with an exact positive transfer, an
 exact infinite-closure counterexample, and a constructed flat nondegenerate-symbol
 finiteness gate**. The maintained checker constructs the quotient table for (5),
 recovers all six affine Killing directions from a quadratic ansatz, refuses a
-broken internal lift, and stops (6) at its stated budget. A reusable production
-owner, G20-witness aggregation, variable-symbol finiteness, integration, and
-boundary flow remain open.
+broken internal lift, and stops (6) at its stated budget. G22 consumes the
+finite-symbol gate with an intrinsic candidate constructor; G20-witness
+aggregation, variable-symbol finiteness, integration, and boundary flow remain
+open.

@@ -161,6 +161,7 @@ resolved row links its semantic owner; benchmark and executable detail stay ther
 | G19 | variable active-module bundle | exact polynomial provenance, local rank chart, and full product-rule leakage; global/domain promotion excluded | [variable module](nodes/variable-active-module-bundle.md) |
 | G20 | residual direction and local Lie lift | exact rank-one real line plus visible full-operator commutator kernel; no global group | [residual Lie lift](nodes/residual-direction-lie-lift.md) |
 | G21 | constant-real closure of local lift pairs | exact finite quotient when closure terminates; degenerate second-order PDE proves unbounded growth | [lift Lie closure](nodes/polynomial-lift-lie-closure.md) |
+| G22 | principal symbol to complete affine candidate algebra | exact kernel/quotient for constant nondegenerate scalar symbols; variable and matrix symbols open | [affine symbol symmetry](nodes/principal-symbol-affine-symmetry.md) |
 
 ## Evidence alias ledger
 
@@ -207,7 +208,7 @@ and [benchmark](benchmarks/residual-derived-infinitesimal-lift.md). G20 proves o
 one local common-core infinitesimal symmetry; it does not infer Lie closure or a
 global group.
 
-## Active open bridge: G21 polynomial lift Lie closure
+## Resolved exploratory bridge: G21 polynomial lift Lie closure
 
 **Question.** Given several exact local lift pairs for the same polynomial `D`,
 does their smallest constant-real bracket closure terminate, and what Lie algebra
@@ -238,9 +239,47 @@ all higher polynomial degrees, proving that finite closure is not general.
 constant-scalar closure, ambiguity-ideal, and bounded-unresolved distinctions. A
 constant nondegenerate scalar principal symbol additionally forces affine Killing
 directions and supplies the finite bound `d(d+1)/2`; a degenerate symbol need not.
-A production owner and variable/matrix-symbol finiteness criteria remain open.
-Integration, flow completeness, domain preservation, group uniqueness, and
-observable recovery are later gates.
+A production owner and variable/matrix-symbol finiteness criteria remained open at
+this disposition. G22 now consumes the constant nondegenerate-symbol gate rather
+than reopening generic closure. Integration, flow completeness, domain
+preservation, group uniqueness, and observable recovery remain later gates.
+
+## Active open bridge: G22 symbol-derived affine symmetry
+
+**Question.** Can a PDE construct a complete finite local Lie candidate algebra
+without supplied generators, a group label, or a preparation-relative residual?
+
+**Frozen candidate.** For
+`D_2=-G^(ij) partial_i partial_j I_n` with constant nondegenerate rational `G`,
+the top-order Killing equation forces `v=a+A x` and
+`A^T G^(-1)+G^(-1)A=0`. Construct translations and `A=G S` for a skew basis
+`S`, add the canonical real `u(n)` constant internal lifts, and compile
+
+```text
+Psi_D(v,J)=[D,L_v-J]
+```
+
+once. The exact kernel is a Lie algebra; the zero-base kernel is an ideal; their
+quotient is the visible algebra. Variable, nonscalar, degenerate, and higher-order
+symbols are typed as route refusals rather than absence of symmetry.
+
+**Discriminating evidence.** The unchanged constructor preserves three visible
+motions for the free two-dimensional scalar operator in both orthogonal and
+nonorthogonal constant metrics, removes all visible motions for
+`-Delta+x^2+2y^2`, and constructs the three simultaneous rotations of
+`-Delta I_3+x x^T` from 15 intrinsic candidates. On the public G20 fixture its
+one visible direction has joint rank one with the independently residual-derived
+direction. The degenerate `-partial_y^2` case is refused at symbol admission.
+
+**Disposition.** [C_G22_v0](nodes/principal-symbol-affine-symmetry.md) and
+[E-G22-01](benchmarks/principal-symbol-affine-symmetry.md) support an exact
+exploratory PDE-to-local-Lie construction in the constant-scalar/constant-internal
+class. This resolves seed origin there, but not a public route or a general
+symbol calculus. The weakest next bridge is a finite-type stabilizer/prolongation
+certificate for variable or matrix-valued symbols; it must construct a bounded
+candidate module or refuse without exhaustive vector-field enumeration. Variable
+internal lifts require a connection-aware extension. Integration, domain flow,
+spectral decomposition, and complete-route cost remain later independent gates.
 
 ## Parked branches and re-entry
 

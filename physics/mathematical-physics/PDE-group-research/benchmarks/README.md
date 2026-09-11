@@ -33,6 +33,7 @@ executable entrypoints remain in the [computation workbench](../computation/READ
 - [coefficient-generated variable module](coefficient-generated-variable-module.md): executable polynomial-provenance calculus with constant regression, non-Pauli transfer, finite-jet/rank no-go, coefficient escape, and a residual-derived infinitesimal `SO(2)` candidate.
 - [residual-derived infinitesimal lift](residual-derived-infinitesimal-lift.md): exact residual-line construction, full-operator lift, gauge invariance, and rank/no-lift refusals without a supplied generator.
 - [polynomial lift Lie closure](polynomial-lift-lie-closure.md): constant-scalar generated closure, internal-ambiguity quotient, invalid-seed refusal, and infinite-growth boundary.
+- [principal-symbol affine symmetry](principal-symbol-affine-symmetry.md): group-free affine candidate construction, exact lower-order filtering, nonorthogonal-coordinate transfer, G20 coincidence, and degenerate-symbol refusal.
 
 ## Adversarial boundary
 

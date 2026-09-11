@@ -104,18 +104,27 @@ first-order residual row space constructs a real projective derivation line; one
 full polynomial commutator kernel separately decides whether it has a visible
 constant skew-Hermitian lift. Public and direct tests distinguish successful lift,
 the same line destroyed by `xI`, rank-two and coefficient-only nonselection,
-complex/no-real-form, higher-order, covariance, and bounded exhaustion. G21 now
-freezes that multi-line operation: close exact lift pairs over constant
-real scalars, then quotient the zero-base internal ideal. Two lifts of the radial
-matrix Schrödinger operator generate a three-dimensional visible rotation algebra.
-But `-partial_y^2` admits polynomial symmetries whose brackets have unbounded
-degree, so finite closure is false for common second-order PDEs without further
-hypotheses. In the constant nondegenerate scalar-symbol region, the top-order
-Killing equation supplies the finite affine bound `d(d+1)/2`. The weakest
-consequential bridge is now a reusable constructor that selects this bounded
-principal-symbol module before falling back to budgeted closure; integration and
-domain flow remain separate. The active inquiry lives in the
-[G21 owner](research-graph.md#active-open-bridge-g21-polynomial-lift-lie-closure).
+complex/no-real-form, higher-order, covariance, and bounded exhaustion. G21 then
+freezes the multi-line operation: close exact lift pairs over constant real
+scalars and quotient the zero-base internal ideal. Its `-partial_y^2` control
+proves that finite closure is false for common second-order PDEs without further
+hypotheses.
+
+G22 now constructs the missing hypotheses into an operation. A constant
+nondegenerate scalar principal symbol generates all `d(d+1)/2` affine Killing
+candidates directly; adjoining constant `u(n)` lifts and taking one exact
+full-operator defect kernel produces the local represented symmetry algebra and
+visible quotient. The radial matrix, free scalar, nonorthogonal-coordinate, and
+anisotropic tests use one frozen constructor, and the public G20 fixture gives an
+independent same-operator coincidence. This is a genuine PDE-to-Lie construction,
+not only a closure optimization, but completeness is restricted to affine base
+fields and constant internal lifts in the admitted symbol class.
+
+The weakest consequential bridge is now a finite-type symbol-stabilizer or
+prolongation certificate for variable and matrix-valued principal symbols. It
+must generate a bounded candidate module or refuse without exhaustive field
+enumeration. Integration and domain flow remain separate. The active inquiry
+lives in the [G22 owner](research-graph.md#active-open-bridge-g22-symbol-derived-affine-symmetry).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility

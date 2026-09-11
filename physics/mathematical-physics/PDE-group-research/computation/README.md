@@ -36,6 +36,7 @@ uv run python reduction_workbench.py discover examples/polynomial-active-variabl
 uv run python reduction_workbench.py discover examples/polynomial-lie-lift.json --summary
 uv run python -m unittest check_residual_direction_lift.py
 uv run python -m unittest check_polynomial_lift_lie_closure.py
+uv run python -m unittest check_affine_symbol_symmetry.py
 ```
 
 The project targets the current stable CPython 3.14 line and pins compatible
@@ -130,3 +131,12 @@ separately; every downstream refusal retains the G19 witness. The maintained
 `check_residual_direction_lift.py` remains an independent certificate. See the
 [G20 node](../nodes/residual-direction-lie-lift.md). This route proves a local
 common-core identity, not Lie closure, group integration, or domain preservation.
+
+The maintained G22 checker constructs the complete affine Killing candidate
+algebra directly from any admitted constant nondegenerate rational scalar
+second-order symbol, adds constant `u(n)` lifts, and feeds one full-operator
+commutator block plus the intrinsic bracket to `linear_defect_compiler.py`. Its
+output is the exact local kernel, internal ideal, and visible quotient table. It
+is an exploratory certificate rather than a public schema; variable/matrix
+symbols, variable internal lifts, domain flow, and global integration remain
+outside the operation. See the [G22 node](../nodes/principal-symbol-affine-symmetry.md).
