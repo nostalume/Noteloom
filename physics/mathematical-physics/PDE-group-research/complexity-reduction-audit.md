@@ -136,13 +136,17 @@ G18 shows that pointwise G17 discovery is avoidable after sufficient parameter
 reuse. Given `H(k)=sum_a f_a(k)H_a`, exact coefficient-algebra closure constructs
 one module before specialization. On the frozen three-generator bench it costs
 nine exact solves: three times pointwise cost at one sample, but 25% less at four
-samples. Local runtime follows the same crossover; a cancellation control shows
-that sampled closure cannot replace coefficient closure.
+samples. The [nine-repetition packet](benchmarks/coefficient-family-active-module.md)
+records lower local family medians at four points, with overlap in one route pair;
+a cancellation control shows that sampled closure cannot replace coefficient
+closure.
 
-G19 now asks whether this reduction is genuinely PDE-level. It must construct an
-intertwiner for `D=sum_alpha L_alpha tensor H_alpha`, retain it under invertible
-mixing of the scalar differential operators, and preserve the same observable
-without sampling momentum. Domain and boundary descent remain separate costs.
+The unpaid G19 costs are construction and certification of a variable admitted
+basis, constant-rank region, Gram/projector data, product-rule connection,
+off-module residual, and descended preparation/effect. Recovery must also price
+the named observable, common-core restriction, trace, and boundary data. Until
+those terms have a settled grammar and exact or controlled ledger, G19 has no
+computational-leverage verdict.
 
 ## 8. Audit rule
 

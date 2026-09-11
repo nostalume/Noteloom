@@ -105,6 +105,8 @@ Admit a new route only when it provides:
 
 G18 reuses the coefficient and active-carrier owners to construct one
 preparation-reachable module for an entire finite coefficient family and compare
-it with repeated pointwise closure. The active G19 probe must lift this certificate
-to a matrix-valued differential operator without adding a case-specific schema or
-depending on a sampled momentum window.
+it with repeated pointwise closure. No G19 executable route exists. A later
+approved implementation stage must first settle the exact/polynomial
+coefficient-jet grammar, local rank certificate, product-rule residual, and
+domain/boundary representation; the active inquiry remains in the
+[research graph](../research-graph.md#active-open-bridge-g19-variable-active-module-bundle).

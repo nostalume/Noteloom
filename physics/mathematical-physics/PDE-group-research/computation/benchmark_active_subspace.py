@@ -8,6 +8,7 @@ import sys
 from dataclasses import replace
 from fractions import Fraction
 from importlib.metadata import version
+from math import isfinite
 from statistics import median
 from time import perf_counter
 
@@ -52,6 +53,19 @@ def _retime(prepared, time: Fraction):
         short_time_bound=short_bound,
         probability_bound=probability_bound,
     )
+
+
+def _timing_summary(samples: list[float]) -> dict:
+    if not samples or any(sample < 0 or not isfinite(sample) for sample in samples):
+        raise ValueError("timing samples must be nonempty, finite, and nonnegative")
+    center = median(samples)
+    return {
+        "sample_count": len(samples),
+        "median_seconds": center,
+        "median_absolute_deviation_seconds": median(abs(sample - center) for sample in samples),
+        "minimum_seconds": min(samples),
+        "maximum_seconds": max(samples),
+    }
 
 
 def _reuse_benchmark(prepared, budget, queries: int, repetitions: int) -> dict:
@@ -114,6 +128,11 @@ def benchmark_case(multiplicity: int, window_size: int, repetitions: int = 5) ->
     dense_median = median(dense_times)
     active_median = median(active_times)
     family_median = median(family_times)
+    timing_summaries = {
+        "dense": _timing_summary(dense_times),
+        "pointwise_active": _timing_summary(active_times),
+        "family": _timing_summary(family_times),
+    }
     return {
         "multiplicity": multiplicity,
         "ambient_dimension": 2 * multiplicity,
@@ -125,6 +144,7 @@ def benchmark_case(multiplicity: int, window_size: int, repetitions: int = 5) ->
         "dense_median_seconds": dense_median,
         "active_median_seconds": active_median,
         "family_median_seconds": family_median,
+        "timing_summaries": timing_summaries,
         "active_over_dense_runtime_ratio": active_median / dense_median,
         "family_over_pointwise_runtime_ratio": family_median / active_median,
         "full_exponential_cubic_proxy": active.cost.full_exponential_cubic_proxy,

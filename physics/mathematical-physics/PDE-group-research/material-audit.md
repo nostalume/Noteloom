@@ -1,16 +1,35 @@
-# Local material audit
+# Original source-note audit
 
-## Verdict
+## Scope and revision boundary
 
-The present notes contain most of the raw ingredients for the forward direction:
-unbounded operators, spectral resolution, separation of variables, classical
-special functions, vector fields, Lie brackets, naturality, and kernels/quotients.
-They do not yet define the object preserved between representation decomposition
-and differential-equation decomposition.  Several analytic claims also need repair
-before they can certify a machine output.
+This is a located audit of the original mathematical-physics source notes, not a
+verdict on the present PDE-group worktable or its implemented capabilities. The
+findings and line locators below refer to these Git objects:
 
-This audit leaves the notes untouched.  It states what the worktable may safely
-consume.
+| Source owner | Git blob | Last-modifying commit |
+| --- | --- | --- |
+| `physics/mathematical-physics/functional-and-spectral-methods.typ` | `dfa70950e10c8d66c947e1783c7ef01a614b8e40` | `bce47ffaf3cbc0f635eae381420fc5c38ef0c642` |
+| `physics/mathematical-physics/differential-geometry.typ` | `2def606481470ce4c18468cd9cfcfdc8db203ab7` | `bce47ffaf3cbc0f635eae381420fc5c38ef0c642` |
+| `physics/mathematical-physics/category-and-homology.typ` | `ee98449f2468d750119225a1df81a9d053dcfe9e` | `bce47ffaf3cbc0f635eae381420fc5c38ef0c642` |
+| `physics/mathematical-physics/homology.typ` | `3053476761beca3a5854faf2a820e0a61586a447` | `bce47ffaf3cbc0f635eae381420fc5c38ef0c642` |
+| `physics/mathematical-physics/homology.pdf` | `55879a14d8f33f778a97b141f5431df1cf11ddf9` | `8980ab9d8d216e3c6ca0a9853b3c7b78aca27e58` |
+
+The PDF is only a rendered projection of `homology.typ`, not independent
+evidence. Later worktable constructions are owned by the research graph and nodes;
+they do not retroactively change this source-note audit.
+
+## Verdict on the audited notes
+
+At those revisions, the notes contain most raw ingredients for the forward
+direction: unbounded operators, spectral resolution, separation of variables,
+classical special functions, vector fields, Lie brackets, naturality, and
+kernels/quotients. They do not yet define the object preserved between
+representation decomposition and differential-equation decomposition. Several
+analytic claims also need repair before they can certify a machine output.
+
+This audit leaves the source notes untouched. It states what may be consumed from
+those pinned revisions and which claims require independent repair or theorem
+contracts.
 
 ## `functional-and-spectral-methods.typ`
 

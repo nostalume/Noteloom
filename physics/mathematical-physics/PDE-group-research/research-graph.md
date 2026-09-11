@@ -173,25 +173,53 @@ Retired fine-grained IDs remain provenance aliases, not live graph vertices.
 | `P2--P5,Z1--Z4,K1,D1--D9` | S4/S5 evidence | mode, centralizer, cyclic, route, quotient, and Pauli evidence |
 | `C0` | S5 | superseded by the bounded verdict |
 
-## Active open bridge: G19 differential-operator module lift
+## Active open bridge: G19 variable active-module bundle
 
-- **Upstream:** G18 constructs an internal module for all finite symbol
-  specializations but evaluates only finite momentum blocks.
-- **Question:** for `D=sum_alpha L_alpha tensor H_alpha`, does a common invariant
-  module of the matrix coefficients construct an invariant function/bundle
-  module before Fourier sampling or coordinate separation?
-- **Required output:** PDE-level analysis/synthesis intertwiner, coefficient-basis
-  covariance, same-observable recovery, domain obligation, and cost ledger.
-- **Alternatives:** a coordinate-independent tensor-module lift versus a hidden
-  reliance on one scalar differential basis or Fourier window.
-- **Falsifier:** coordinate mixing changes the internal carrier, lower-order
-  coefficients escape it, domain/boundary data fail to descend, or the lifted
-  observable differs.
-- **Next probe:** exact order-two two-coordinate operator with mixed derivative
-  basis, transformed by an invertible rational coordinate change, using the same
-  spinor-compatible coefficient module on both presentations.
-- **Boundary:** finite exact internal carriers and declared scalar differential
-  operators; unbounded-domain closure and nonlinear coefficients remain separate.
+**Upstream distinction.** G18 constructs the preparation-generated cyclic carrier
+of a finite internal coefficient family; it is not the isolated spectral
+projector constructed in G11/G14. G11 and G14 supply first/second projector-jet
+operations, while G5 supplies the full-operator covariance and lower-term defect
+pattern. Their operations are inputs here, not a replacement active module.
+
+**Question.** Can a locally constant-rank preparation-reachable family be
+continued as a variable active subbundle whose product-rule connection, off-module
+leakage, induced lower coefficients, preparation/effect, and domain/boundary data
+are constructed or explicitly refused before coordinate separation?
+
+**Admitted input.** Supply bounded exact or polynomial coefficient jets through
+the PDE order; one preparation and effect; a base point, neighborhood, and rank
+contract; a common core plus boundary/trace description; and finite resource
+bounds. No group label, global frame, or expected reduced operator is supplied.
+
+**Candidate construction.** Reuse G18 breadth-first admitted-basis provenance at
+the base point. Continue only those admitted basis expressions as `B(x)`, never a
+catalogue of coefficient words. Certify constant rank on the admitted region;
+construct the Gram matrix `G(x)`, projector `P(x)`, and reduced coefficient
+actions; then apply the PDE product rule to compute the induced connection,
+lower-order terms, and off-module leakage. Finally descend the preparation,
+effect, common core, and boundary trace, returning exact identities or controlled
+residuals with their cost.
+
+**Live alternatives.** The result may be (i) a global constant module, (ii) a
+variable module with a nonzero connection and exact or controlled leakage, or
+(iii) refusal because of rank jump, coefficient escape, or domain/boundary
+obstruction.
+
+**Falsifiers.** Reject or restrict the candidate if a frame change alters the
+recovered observable; induced lower-order terms escape without a reported
+residual; the rank certificate fails on the admitted region; or the common core,
+trace, or boundary condition does not descend.
+
+**Discriminating benches.** Require a constant-frame regression, a nonconstant
+frame with nonzero connection, a structurally different non-Pauli transfer, a
+rank-jump adversarial case, and a boundary/domain refusal. Parameter variation
+inside the Pauli seed family cannot substitute for the transfer bench.
+
+**Horizon.** Finite local exact/polynomial jets and one named observable. Global
+bundle integration, unbounded closure, unrestricted analytic domains, and
+nonlinear PDEs are outside this inquiry. No G19 executable route or node exists;
+implementation awaits a separately settled coefficient-jet and rank-certificate
+grammar.
 
 ## Parked branches and re-entry
 

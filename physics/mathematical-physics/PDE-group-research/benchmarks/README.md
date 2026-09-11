@@ -20,6 +20,7 @@ executable entrypoints remain in the [computation workbench](../computation/READ
 ## Observable-relative and route comparison
 
 - [observable-cyclic quadratic](observable-cyclic-quadratic.md), [quartic cyclic transfer](quartic-cyclic-transfer.md), and [singular oscillator polynomial closure](singular-oscillator-polynomial.md): visible-carrier construction and nonlinear closure boundary.
+- [coefficient-family active module](coefficient-family-active-module.md): exact family closure, same-observable recovery, robustness, and local solve-stage cost.
 - [oscillator cross-probe](oscillator-cross-probe.md), [backend-independent quadratic router](backend-independent-quadratic-router.md), [singular interbasis comparison](singular-interbasis-cross-probe.md), and [cross-regime decision engine](decision-engine-cross-regime.md): same-observable route selection.
 - [boundary/domain cost](boundary-domain-symmetry-complexity.md) and [fixed-accuracy boundary comparison](boundary-fixed-accuracy-comparison.md): complete-route cost reversal.
 

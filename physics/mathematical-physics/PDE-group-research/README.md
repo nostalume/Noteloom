@@ -85,14 +85,10 @@ model-independent route dominance.
 
 ## Active frontier
 
-G18 now constructs one exact cyclic module for an entire coefficient family,
-proves specialization invariance, and conditionally beats repeated pointwise
-closure on a four-point window while honestly losing for one point. The next
-discriminating bridge is G19: lift that internal certificate to
-`D=sum_alpha L_alpha tensor H_alpha` before momentum sampling, and prove that an
-invertible change of the scalar differential basis preserves the internal module,
-PDE intertwiner, and requested observable. Domain descent remains an explicit
-obligation rather than a formal consequence.
+G18 now constructs one exact cyclic module for an entire coefficient family; the
+[active G19 frontier](research-graph.md#active-open-bridge-g19-variable-active-module-bundle)
+asks whether it continues to a variable PDE active subbundle with product-rule,
+rank, observable, and domain obligations all made explicit.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

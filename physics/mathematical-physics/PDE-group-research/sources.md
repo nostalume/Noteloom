@@ -479,22 +479,28 @@ evidence for one universal notion of “the group of a differential equation.”
       by boundary-symmetry discovery, sector construction, or the sector stopping
       certificate.
 
-46. SciPy developers, `scipy.linalg.eigh_tridiagonal`, SciPy `1.16.1`
-    documentation. [SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eigh_tridiagonal.html)
+46. SciPy developers, `scipy.linalg.eigh_tridiagonal`, SciPy `1.16.1` API
+    contract. [SciPy](https://docs.scipy.org/doc/scipy-1.16.1/reference/generated/scipy.linalg.eigh_tridiagonal.html)
 
     - **Use here:** numerical substrate for selected eigenpairs of each real
       symmetric tridiagonal radial-sector operator.
     - **Boundary:** SciPy supplies the eigensolver, not the representation label,
       quotient equation, continuum convergence, or multiplicity semantics.
 
-47. SciPy developers, `scipy.sparse.linalg.eigsh`, SciPy `1.16.1`
-    documentation. [SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.eigsh.html)
+47. SciPy developers, `scipy.sparse.linalg.eigsh`, SciPy `1.16.1` API contract.
+    [SciPy](https://docs.scipy.org/doc/scipy-1.16.1/reference/generated/scipy.sparse.linalg.eigsh.html)
 
     - **Use here:** numerical substrate for the Cartesian sparse symmetric
       partial-spectrum baseline, including shift-invert selection near zero.
     - **Boundary:** this baseline is one declared five-point staircase-grid route;
       its outcome is not transferred to all finite elements, preconditioners, or
       sparse eigensolvers.
+
+Entries 46--47 deliberately pin the official 1.16.1 API pages rechecked on
+2026-09-11. The executable workbench is locked to SciPy 1.18.1; its tests, not the
+older documentation label, certify compatibility with that runtime. The registry
+therefore records an older consumed API contract and a newer execution environment
+rather than implying that their versions are equal.
 
 48. SciPy developers, `scipy.sparse.linalg.spsolve`, SciPy documentation.
     [SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html)

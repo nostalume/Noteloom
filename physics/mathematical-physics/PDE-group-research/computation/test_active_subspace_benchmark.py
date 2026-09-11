@@ -21,6 +21,16 @@ class ActiveSubspaceBenchmarkTests(unittest.TestCase):
         self.assertGreater(result["dense_median_seconds"], 0)
         self.assertGreater(result["active_median_seconds"], 0)
         self.assertGreater(result["family_median_seconds"], 0)
+        self.assertEqual(
+            set(result["timing_summaries"]),
+            {"dense", "pointwise_active", "family"},
+        )
+        for summary in result["timing_summaries"].values():
+            self.assertEqual(summary["sample_count"], 1)
+            self.assertGreaterEqual(summary["minimum_seconds"], 0)
+            self.assertLessEqual(summary["minimum_seconds"], summary["median_seconds"])
+            self.assertLessEqual(summary["median_seconds"], summary["maximum_seconds"])
+            self.assertEqual(summary["median_absolute_deviation_seconds"], 0)
 
 
 if __name__ == "__main__":

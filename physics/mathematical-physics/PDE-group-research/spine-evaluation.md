@@ -83,21 +83,19 @@ or universal route dominance.
 
 G18 resolves pointwise repetition for finite coefficient families: one exact
 module is preserved by every specialization, but its leverage is conditional on
-window size and it may regrow to the ambient carrier. The weakest consequential
-bridge is now **G19 differential-operator module lift**. For
-`D=sum_alpha L_alpha tensor H_alpha`, require:
-
-1. coefficient-module invariance constructs a PDE-level analysis/synthesis pair;
-2. invertible changes of scalar differential basis preserve that internal module;
-3. the same preparation/effect observable is recovered without Fourier sampling;
-4. lower-order, boundary, and domain escape is reported rather than hidden.
+window size and it may regrow to the ambient carrier. A constant tensor lift is
+already formal once its common-core hypotheses hold. The weakest consequential
+bridge is instead whether the preparation-reachable carrier can vary over the PDE
+base without hiding product-rule connection, leakage, rank change, observable
+recovery, or domain/boundary failure. The complete alternatives, falsifiers,
+benches, and finite local horizon live only in the [G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility
 probe. Analytic Pauli work re-enters only when boundary, variable curvature,
 noncompact carrier, or a projector-kernel observable changes the current verdict.
 
-Further scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
-systems stay parked until they expose a failure of the common witness or change the
-bounded capability claim. The authoritative dependency and re-entry view is the
-[research graph](research-graph.md).
+Further scalar examples, polynomial catalogues, arbitrary dimension, global bundle
+integration, unbounded domains, and nonlinear systems stay parked until they
+expose a failure of the common witness or change the bounded capability claim. The
+authoritative dependency and re-entry view is the [research graph](research-graph.md).

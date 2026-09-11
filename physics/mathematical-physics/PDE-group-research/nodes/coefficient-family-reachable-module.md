@@ -82,51 +82,52 @@ uses `sum_j r_j` Hamiltonian actions and solves. Neither expression includes the
 shared reduced exponentials, and neither is collapsed into a fabricated scalar
 cost.
 
+## Constant differential-operator lift
+
+Let `D=sum_a L_a tensor H_a` on a common tensor/core domain, where each scalar
+differential operator `L_a` acts only on the base variable and the constant map
+`B` acts only on the internal carrier. Applying (3) before any coordinate
+expansion gives
+
+```text
+D (I tensor B)
+ = sum_a L_a tensor (H_a B)
+ = (I tensor B) sum_a L_a tensor A_a.                         (6)
+```
+
+Thus the same generated module reduces the whole constant-coefficient internal
+family. Linear mixing of the scalar differential basis or its coefficient basis
+preserves (6). This is a tensorial corollary of the coefficient intertwining, not
+a claim about arbitrary PDE domains. If `B=B(x)` varies, derivatives act on the
+frame and produce additional product-rule terms; (6) no longer closes the problem.
+
 ## Evidence packet `E_G18_1`
 
-The unchanged repeated-Pauli family was tested at multiplicities `m=2,3`, ambient
-dimensions `q=4,6`, and window sizes `n=1,4`. The family has three generators.
-In every case both the family and pointwise carriers have dimension three; every
-block specializes exactly and complement-probability error is at most
-`2.1e-17`.
+The [coefficient-family active-module benchmark](../benchmarks/coefficient-family-active-module.md)
+owns the frozen request, exact ledgers, numerical errors, nine-sample timing
+summaries, environment, and digests. It reproduced dimension three and exact
+specialization on all four repeated-Pauli workloads. The multiplicity and window
+variations support robustness within that family, not structural transfer.
 
-Three alternating-order repetitions used CPython 3.14.6, NumPy 2.5.2, and SciPy
-1.18.1 on Windows 11. G14 construction and exact block assembly were shared.
-
-| `q` | `n` | family / pointwise exact solves | family / pointwise runtime |
-| ---: | ---: | ---: | ---: |
-| 4 | 1 | `9 / 3 = 3.00` | `2.43` |
-| 4 | 4 | `9 / 12 = 0.75` | `0.88` |
-| 6 | 1 | `9 / 3 = 3.00` | `2.56` |
-| 6 | 4 | `9 / 12 = 0.75` | `0.85` |
-
-So one-point use rejects the leverage claim, while a four-point window removes
-25% of exact discovery solves and was 12--15% faster on this environment. The
-instrument is `computation/benchmark_active_subspace.py`; timings are local
-observations, while closure and specialization equalities are exact tests.
-
-An algebraic control has two Hermitian generators whose sum cancels the only
-initial coupling. Pointwise closure at that sample has dimension one, whereas
-the true family module has ambient dimension three. This proves that samplewise
-agreement cannot certify family invariance and exercises the required no-gain
-result.
+The synthetic cancellation control remains adversarial: one sampled Hamiltonian
+has a one-dimensional pointwise carrier while the common family module is the
+three-dimensional ambient carrier. Samplewise agreement therefore cannot certify
+family invariance.
 
 ## Disposition
 
 - **Constructed exactly:** minimal common cyclic module, reduced generators,
   specialization intertwining, Gram self-adjointness, and effect pullback.
-- **Supported transfer:** the G15/G17 family remains dimension three for two
-  ambient multiplicities and all four momentum points.
-- **Supported conditional leverage:** construction work crosses over between one
-  and four points on this bench; no universal runtime claim follows.
+- **Supported robustness:** the G15/G17 Pauli family remains dimension three for
+  two ambient multiplicities and all four momentum points.
+- **Supported conditional leverage:** the exact construction ledger crosses over
+  between one and four points on this bench; timings are local and descriptive.
 - **Refused explicitly:** empty or non-Hermitian families, inexact/incorrect
   weights, exhausted budgets, and varying preparation/effect.
 - **Negative control:** a common module can regrow to ambient dimension even when
   a sampled Hamiltonian has a tiny cyclic carrier.
-- **Unresolved:** sparse scaling, conditioning, parameter-dependent
-  preparations, unbounded coefficients, and PDE-domain lift.
-
-The next bridge must therefore leave the sampled-block setting: lift (3) to an
-actual matrix-valued differential operator `D=sum_alpha L_alpha tensor H_alpha`
-and prove that coordinate changes of the scalar differential basis do not alter
-the internal active module.
+- **Constant PDE corollary:** (6) holds under its common-core, scalar-action, and
+  constant-frame hypotheses.
+- **Unresolved:** cross-family physical transfer, sparse scaling, conditioning,
+  parameter-dependent preparations, variable frames, unbounded coefficients,
+  and PDE domain/boundary descent.
