@@ -160,6 +160,7 @@ resolved row links its semantic owner; benchmark and executable detail stay ther
 | G18 | coefficient-family reachable module | exact common closure and specialization; four-point construction wins, one-point loses | [family module](nodes/coefficient-family-reachable-module.md) |
 | G19 | variable active-module bundle | exact polynomial provenance, local rank chart, and full product-rule leakage; global/domain promotion excluded | [variable module](nodes/variable-active-module-bundle.md) |
 | G20 | residual direction and local Lie lift | exact rank-one real line plus visible full-operator commutator kernel; no global group | [residual Lie lift](nodes/residual-direction-lie-lift.md) |
+| G21 | constant-real closure of local lift pairs | exact finite quotient when closure terminates; degenerate second-order PDE proves unbounded growth | [lift Lie closure](nodes/polynomial-lift-lie-closure.md) |
 
 ## Evidence alias ledger
 
@@ -191,78 +192,55 @@ to a compact-supported smooth core on one certified chart; controlled leakage,
 boundary descent, global integration, and same-observable recovery are not part of
 that resolved bridge. G20 consumes its residual witness without reopening the DAG.
 
-## Resolved local bridge: G20 residual direction to infinitesimal Lie lift
+## Resolved local bridge ledger: G20 residual Lie lift
 
-**Upstream distinction.** G19 owns the active frame and exact coefficient family
-`R_B`. G20 consumes that witness without reopening its provenance DAG. G0 supplies
-kernel/quotient semantics and G5 supplies an ordered operator-defect pattern;
-neither constructs a base direction from leakage.
+G20 consumes one G19 residual witness, constructs a real projective direction only
+at first-order function-field rank one, and tests its visible lift through the
+exact kernel of `(lambda,J) -> [D,lambda L_v-J]`. The public capability retains
+internal-centralizer ambiguity and the completed G19 witness on every downstream
+refusal. Rank zero/two, higher residual order, absent real form, absent visible
+lift, and exhausted resources remain distinct outcomes.
 
-**Question.** When does a G19 residual construct a coordinate-aware infinitesimal
-base direction, and when does that direction lift to a represented symmetry of the
-whole PDE without a supplied group or generator?
+The contract, commutator equation, four public dispositions, covariance laws, and
+local/global boundary live with the [G20 node](nodes/residual-direction-lie-lift.md)
+and [benchmark](benchmarks/residual-derived-infinitesimal-lift.md). G20 proves only
+one local common-core infinitesimal symmetry; it does not infer Lie closure or a
+global group.
 
-**Frozen alternatives.** The first positive-order residual may have no first-order
-part, a unique common direction line, or tensor rank greater than one. A unique
-line may lift through the full commutator defect or fail there. These outcomes are
-distinct; no failed case authorizes a guessed generator.
+## Active open bridge: G21 polynomial lift Lie closure
 
-**Candidate construction.** Over the certified chart's rational-function field,
-flatten the first-order coefficients
+**Question.** Given several exact local lift pairs for the same polynomial `D`,
+does their smallest constant-real bracket closure terminate, and what Lie algebra
+remains after quotienting pure internal ambiguity?
 
-```text
-R_B^(1)=sum_i R_i partial_i,       A_R[(ambient,active),i]=(R_i)_(ambient,active).
-```
-
-`rank(A_R)=1` constructs only the projective derivation line
-`Lambda_R=Row(A_R)`. Clear denominators, divide polynomial content, and normalize
-one leading unit to obtain a bounded chart representative `v`; the retained
-semantic object remains `Lambda_R`, not that coordinate normalization. Rank zero
-returns `NoDirectionalLeakage`; rank greater than one returns
-`ResidualNotLineGenerated`. Nonzero residual order above one returns
-`HigherOrderResidualNotVectorField`.
-
-For `L_v=v^i partial_i`, construct the exact linear map
+**Candidate.** For `K_a=L_(v_a)-J_a`, use the forced pair bracket
 
 ```text
-Phi(lambda,J)=[D, lambda L_v-J],
-Phi: k direct_sum u(V) -> Diff_<=m(V).                                  (5)
+[(v_a,J_a),(v_b,J_b)]=([v_a,v_b],-[J_a,J_b]).
 ```
 
-Here `J` is a constant skew-adjoint internal endomorphism. The visible projection
-of `ker Phi` to `lambda` decides whether the line lifts. The fiber over a visible
-lift records internal-centralizer ambiguity. Bracket closure, complete flow,
-real-form integration, and domain preservation remain later certificates.
+Validate every seed against the same operator/core, add a bracket only when it
+increases the constant-real span, and stop at closure or before exceeding the
+dimension budget. The zero-base kernel is an ideal by Jacobi, so its quotient is
+the visible local algebra. Function-field span is deliberately rejected: it would
+construct an involutive module or Lie algebroid rather than constant structure
+coefficients.
 
-**Exact construction.** The non-Pauli G19 fixture has `rank(A_R)=1`, primitive line
-`span{y partial_x-x partial_y}`, and a one-dimensional joint kernel. Its generator
-is the same local rotation pair previously derived by hand. A variable reduced
-frame gauge leaves `Row(A_R)` unchanged. Adding `xI` to the potential preserves
-the residual line but makes `ker Phi` have no visible element: a scalar trace
-defect cannot be canceled by an internal commutator. The preparation
-`B=(1,x,y)^T` under the free Laplacian gives `rank(A_R)=2`, so this route refuses to
-choose between coordinate directions even though the PDE has other symmetries.
-Pure coefficient escape has rank zero and yields no direction.
+**First exact probe.** For `D=-Delta I_3+x x^T`, two rotation lift pairs generate
+the third. With scalar `iI` ambiguity the full algebra has dimension four and the
+visible quotient has the exact three-dimensional `so(3)` table. A missing internal
+lift is refused before closure. Conversely, the second-order degenerate operator
+`D=-partial_y^2` admits `x^2 partial_x,x^3 partial_x`; their brackets generate
+all higher polynomial degrees, proving that finite closure is not general.
 
-**Disposition.** The [G20 node](nodes/residual-direction-lie-lift.md),
-[benchmark](benchmarks/residual-derived-infinitesimal-lift.md), and public
-`construct-local-infinitesimal-symmetry` capability now implement this bounded
-contract. Four public fixtures separate visible success, same-line/no-lift,
-rank-two, and coefficient-only outcomes; budget exhaustion is unresolved and all
-downstream failures retain the exact G19 witness. A preparation-relative residual
-can expose only directions visible through that failed module, so this is not a
-complete symmetry classifier.
-
-**Next discriminating action.** Construct a finite atlas of independently visible
-lines and test their brackets modulo internal ambiguity. This is a new semantic
-gate: it must not be inferred from one successful line, and it precedes real-form
-integration, boundary flow, or observable recovery.
-
-**Horizon.** Exact Gaussian-rational polynomial operators of bounded order on one
-certified G19 chart, constant fiber metric, constant internal action, and local
-differential-expression covariance. Variable internal gauges, nonlinear symmetry
-determining equations, pseudogroups, global bundle gluing, and invisible symmetry
-completeness are outside `C_G20_v1`.
+**Disposition.** [C_G21_v0](nodes/polynomial-lift-lie-closure.md) and its
+[maintained probe](benchmarks/polynomial-lift-lie-closure.md) freeze the
+constant-scalar closure, ambiguity-ideal, and bounded-unresolved distinctions. A
+constant nondegenerate scalar principal symbol additionally forces affine Killing
+directions and supplies the finite bound `d(d+1)/2`; a degenerate symbol need not.
+A production owner and variable/matrix-symbol finiteness criteria remain open.
+Integration, flow completeness, domain preservation, group uniqueness, and
+observable recovery are later gates.
 
 ## Parked branches and re-entry
 

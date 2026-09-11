@@ -36,8 +36,8 @@ recovery.
 ## Navigation
 
 - [Research graph](research-graph.md): current six-node spine, compact evidence
-  disposition, resolved G20 local bridge, and parked branches.
-- [Research nodes](nodes/README.md): the 35 semantic construction owners, grouped
+  disposition, active G21 closure frontier, and parked branches.
+- [Research nodes](nodes/README.md): the 36 semantic construction owners, grouped
   by capability.
 - [Benchmark index](benchmarks/README.md): regression, transfer, refusal, analytic,
   and cost evidence.
@@ -93,6 +93,15 @@ skew-Hermitian lift. The route distinguishes lift, same-line/no-lift, rank-two,
 coefficient-only, complex-real-form, higher-order, and budget outcomes while
 retaining G19 evidence. Multi-line Lie closure, controlled recovery, global
 integration, bundle gluing, and boundary descent remain open.
+
+The next frontier is no longer “find another generator.” G21 closes several exact
+local lifts over constant real scalars and quotients pure internal ambiguity. Its
+first probe constructs a three-dimensional visible rotation algebra, but a
+degenerate second-order PDE proves that polynomial lift closure can be infinite.
+For a constant nondegenerate scalar principal symbol, however, the top-order
+Killing equation forces an affine candidate space of dimension at most
+`d(d+1)/2`. A production constructor should use that structural bound when
+available and retain a dimension-budgeted fallback otherwise.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

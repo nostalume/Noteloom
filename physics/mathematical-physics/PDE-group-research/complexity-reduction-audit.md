@@ -103,6 +103,7 @@ exists.
 | G18 family module | three-generator closure stays dimension 3; exact solves `9/3` for one point and `9/12` for four | one-point loses; four-point local medians are lower, with overlapping ranges in one case; ambient regrowth remains possible |
 | G19 variable provenance calculus | admitted-expression DAG generates a rank-two bundle where constant polynomial-coefficient closure is ambient rank three | exact potential compression is offset by angular PDE leakage; finite jets alone cannot certify neighborhood rank |
 | G20 residual Lie lift | one function-field rank and one `1+n^2` defect kernel replace group catalogues and componentwise generator guesses | exact local construction; quadratic internal seed and polynomial swell remain; no solve/recovery leverage claim |
+| G21 polynomial lift closure | incremental constant-span brackets generate a finite visible quotient when closure terminates | closure dimension can be unbounded even for a linear second-order PDE; a budget is semantic, not optional |
 
 The numerical proxies compare declared primitive operations, not portable wall
 clock. Timing observations remain attached to their executable benchmark and

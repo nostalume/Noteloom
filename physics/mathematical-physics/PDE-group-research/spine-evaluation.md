@@ -104,12 +104,18 @@ first-order residual row space constructs a real projective derivation line; one
 full polynomial commutator kernel separately decides whether it has a visible
 constant skew-Hermitian lift. Public and direct tests distinguish successful lift,
 the same line destroyed by `xI`, rank-two and coefficient-only nonselection,
-complex/no-real-form, higher-order, covariance, and bounded exhaustion. The next
-feasible action is a multi-line bracket atlas modulo internal ambiguity, followed
-—not merged—by integration and domain flow. Controlled leakage, observable
-propagation, and boundary descent remain downstream obligations. The completed
-local bridge lives in the
-[G20 owner](research-graph.md#resolved-local-bridge-g20-residual-direction-to-infinitesimal-lie-lift).
+complex/no-real-form, higher-order, covariance, and bounded exhaustion. G21 now
+freezes that multi-line operation: close exact lift pairs over constant
+real scalars, then quotient the zero-base internal ideal. Two lifts of the radial
+matrix Schrödinger operator generate a three-dimensional visible rotation algebra.
+But `-partial_y^2` admits polynomial symmetries whose brackets have unbounded
+degree, so finite closure is false for common second-order PDEs without further
+hypotheses. In the constant nondegenerate scalar-symbol region, the top-order
+Killing equation supplies the finite affine bound `d(d+1)/2`. The weakest
+consequential bridge is now a reusable constructor that selects this bounded
+principal-symbol module before falling back to budgeted closure; integration and
+domain flow remain separate. The active inquiry lives in the
+[G21 owner](research-graph.md#active-open-bridge-g21-polynomial-lift-lie-closure).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility

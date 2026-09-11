@@ -63,6 +63,7 @@ through the [computation workbench](../computation/README.md).
 | [coefficient-family reachable module](coefficient-family-reachable-module.md) | construct one cyclic module preserved by every coefficient specialization | supported; window-amortized |
 | [variable active-module bundle](variable-active-module-bundle.md) | continue base-point reachability into a certified local PDE decomposition | supported exact-polynomial slice |
 | [residual direction and Lie lift](residual-direction-lie-lift.md) | construct a projective base direction from leakage and test its full PDE lift | supported exact-polynomial slice |
+| [polynomial lift Lie closure](polynomial-lift-lie-closure.md) | close several exact lift pairs and quotient internal ambiguity | frozen exploratory contract |
 
 ## Ownership rule
 

@@ -35,6 +35,7 @@ uv run python reduction_workbench.py discover examples/matrix-adjoint-semigroup-
 uv run python reduction_workbench.py discover examples/polynomial-active-variable.json --summary
 uv run python reduction_workbench.py discover examples/polynomial-lie-lift.json --summary
 uv run python -m unittest check_residual_direction_lift.py
+uv run python -m unittest check_polynomial_lift_lie_closure.py
 ```
 
 The project targets the current stable CPython 3.14 line and pins compatible
