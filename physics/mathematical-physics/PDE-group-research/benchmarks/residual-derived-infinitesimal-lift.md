@@ -141,8 +141,9 @@ sends each first-order coefficient to `R_i U`. Exact row reduction before and
 after this transformation is identical. This checks that the constructed object
 is the derivation line, not a preferred active-frame basis.
 
-The probe performs one `(nr) x d` exact rank, one polynomial primitive-content
-normalization, and one linear kernel in `1+dim so(3)=4` unknowns. It enumerates no
+The public constructor performs one `(nr) x d` exact rank, one polynomial
+primitive-content normalization, and one linear kernel in the canonical
+`1+dim u(3)=10` real unknowns. It enumerates no
 special functions, group catalogue, angular modes, or representation components.
 No runtime or complete-route leverage claim is made.
 
@@ -150,11 +151,21 @@ From `computation/`:
 
 ```powershell
 uv run python -m unittest check_residual_direction_lift.py
+uv run python -m unittest test_polynomial_residual_lie.py test_polynomial_active_module_router.py
+uv run python reduction_workbench.py discover examples/polynomial-lie-lift.json --summary
 ```
 
-Under CPython 3.14.6 and SymPy 1.14.0, all five exact checks pass. The calculation
-starts from G19 base revision `b4e9030`; the maintained checker is the reproducible
-certificate rather than an unretained scratch transcript.
+Under CPython 3.14 and SymPy 1.14, the independent five-check certificate and the
+public contract suite pass. Four additive fixtures cover success,
+same-line/no-lift, rank-two, and coefficient-only refusal; a bounded candidate
+control exits unresolved. The four older G19 public outputs retain their canonical
+SHA-256 digests after the shared coefficient-iterator refactor.
+
+Final stage receipt: 232 unit tests and 25 independent check tests pass; Ruff,
+format, compileall, and all 77 JSON examples pass. Nonblank LOC are 339 for the new
+math owner, 118 for the shared polynomial owner, 237 for admission, 300 for the
+router, 202 for the new tests, and the retained checker remains 149. The new owner
+plus net production growth elsewhere is 500 lines, below the frozen 700-line cap.
 
 ## Evidence disposition
 
@@ -167,9 +178,10 @@ operation: filter residual order; flatten first-order coefficients; compute rank
 result: rank-one/lift success; same-line/no-lift control; rank-two refusal;
         coefficient-only rank-zero refusal; variable-gauge invariance
 permitted consequence: freeze the exact-polynomial local constructor contract
-boundary: no production route, multi-direction completeness, Lie closure,
-          global integration, domain promotion, or leverage result
+boundary: no multi-direction completeness, Lie closure, global integration,
+          domain promotion, or leverage result
 ```
 
-Disposition: **support for the frozen exploratory distinction**. The next step is
-implementation planning against these unchanged cases, not another fitted example.
+Disposition: **implemented support for the frozen local distinction**. The next
+semantic question is closure of several independently visible lines modulo their
+internal ambiguity, not another fitted one-line example.

@@ -3,7 +3,7 @@
 ## Frozen question
 
 `E_G19_probe_2` tests the first constructor-level transfer in the
-[G19 inquiry](../research-graph.md#active-open-bridge-g19-variable-active-module-bundle):
+[G19 inquiry](../research-graph.md#resolved-bridge-ledger-g19-variable-active-module-bundle):
 can G18 basis provenance, rather than a supplied frame or projector, generate a
 constant-rank variable module and expose the precise failure of full PDE closure?
 

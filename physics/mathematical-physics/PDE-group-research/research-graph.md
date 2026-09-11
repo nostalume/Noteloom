@@ -159,6 +159,7 @@ resolved row links its semantic owner; benchmark and executable detail stay ther
 | G17 | preparation-reachable active carrier | all tested blocks reduce to 3; one-shot loses, 64-time reuse wins | [active subspace](nodes/prepared-observable-active-subspace.md) |
 | G18 | coefficient-family reachable module | exact common closure and specialization; four-point construction wins, one-point loses | [family module](nodes/coefficient-family-reachable-module.md) |
 | G19 | variable active-module bundle | exact polynomial provenance, local rank chart, and full product-rule leakage; global/domain promotion excluded | [variable module](nodes/variable-active-module-bundle.md) |
+| G20 | residual direction and local Lie lift | exact rank-one real line plus visible full-operator commutator kernel; no global group | [residual Lie lift](nodes/residual-direction-lie-lift.md) |
 
 ## Evidence alias ledger
 
@@ -174,156 +175,23 @@ Retired fine-grained IDs remain provenance aliases, not live graph vertices.
 | `P2--P5,Z1--Z4,K1,D1--D9` | S4/S5 evidence | mode, centralizer, cyclic, route, quotient, and Pauli evidence |
 | `C0` | S5 | superseded by the bounded verdict |
 
-## Resolved bridge: G19 variable active-module bundle
+## Resolved bridge ledger: G19 variable active-module bundle
 
-**Upstream distinction.** G18 constructs the preparation-generated cyclic carrier
-of a finite internal coefficient family; it is not the isolated spectral
-projector constructed in G11/G14. G11 and G14 supply first/second projector-jet
-operations, while G5 supplies the full-operator covariance and lower-term defect
-pattern. Their operations are inputs here, not a replacement active module.
+G19 consumes G18 base-point reachability provenance, replays only its admitted
+expression DAG as a polynomial frame, certifies one constant-rank rational box,
+and constructs the complete product-rule reduced operator and horizontal leakage.
+Its public `polynomial-active-module/v1` route distinguishes exact closure, formal
+leakage, coefficient/derivative escape, and exhausted rank certification without a
+supplied group, frame, or reduced operator.
 
-**Question.** Can a locally constant-rank preparation-reachable family be
-continued as a variable active subbundle whose product-rule connection, off-module
-leakage, induced lower coefficients, preparation/effect, and domain/boundary data
-are constructed or explicitly refused before coordinate separation?
+The exact contract, equations, covariance laws, finite-jet no-go result, and
+transfer evidence now live with the [G19 node](nodes/variable-active-module-bundle.md)
+and [benchmark](benchmarks/coefficient-generated-variable-module.md). G19 is local
+to a compact-supported smooth core on one certified chart; controlled leakage,
+boundary descent, global integration, and same-observable recovery are not part of
+that resolved bridge. G20 consumes its residual witness without reopening the DAG.
 
-**Admitted input.** Version 1 accepts an exact multivariate polynomial matrix
-operator, preparation, and effect on a rational box; a rational base point; a
-common core plus boundary/trace description; and finite closure, rank-search, and
-output bounds. A later controlled adapter may accept finite coefficient jets with
-an explicit remainder enclosure. Jet data without such an enclosure is admitted
-only for a pointwise witness. No group label, global frame, or expected reduced
-operator is supplied.
-
-**Candidate construction.** Reuse G18 breadth-first admitted-basis provenance at
-the base point. Continue only those admitted basis expressions as `B(x)`, never a
-catalogue of coefficient words. Certify constant rank on the admitted region;
-construct the Gram matrix `G(x)`, projector `P(x)`, and reduced coefficient
-actions; then apply the PDE product rule to compute the induced connection,
-lower-order terms, and off-module leakage. Finally descend the preparation,
-effect, common core, and boundary trace, returning exact identities or controlled
-residuals with their cost.
-
-### Frozen local contract `C_G19_v1`
-
-For real base coordinates and Gaussian-rational polynomial data, write
-
-```text
-D=sum_(alpha in A) C_alpha(x) partial^alpha,       |alpha|<=m.              (1)
-```
-
-At `x_0`, run G18 closure on the finite family `{C_alpha(x_0)}` and retain only
-the admitted basis-expression DAG: preparation leaves, constant linear
-combinations, and `Apply(alpha,parent)` edges. A rejected dependent word can never
-re-enter away from `x_0`. Continue the admitted expressions and their derivatives
-by the finite multi-index Leibniz rule
-
-```text
-partial^gamma(C_alpha w)
- =sum_(delta<=gamma) binom(gamma,delta)
-    (partial^delta C_alpha)(partial^(gamma-delta)w).                         (2)
-```
-
-Apply only an invertible constant pivot transformation selected at `x_0`. Choose
-pivot rows `I`, form `mu(x)=det B_I(x)` and `p=mu^dagger mu`, and search nested
-rational boxes about `x_0`. Exact rational interval evaluation with lower bound
-`p>0` certifies a rank-`r` chart. An exact point `x_*` where direct elimination
-gives `rank B(x_*)<r` is a rank-jump certificate; exhausted enclosure/search budget
-is `RankRegionUnresolved`, not evidence of a jump.
-
-For every reduced derivative multi-index `beta`, construct the ambient product-rule
-coefficient
-
-```text
-K_beta=sum_(alpha>=beta) binom(alpha,beta)
-          C_alpha partial^(alpha-beta)B.                                    (3)
-```
-
-Then return
-
-```text
-G=B^dagger B,             A_B=G^(-1)B^dagger,       P=B A_B,
-D_B=sum_beta A_B K_beta partial^beta,
-R_B=sum_beta (I-P)K_beta partial^beta,
-D S_B=S_B D_B+R_B,        A_B R_B=0,                                 (4)
-alpha_prep=A_B psi,        F=B^dagger Q B.
-```
-
-The constructor reports every coefficient or derivative escape in `R_B`; it does
-not enlarge the DAG after seeing the residual. Exact compact-core typing is part
-of v1. Boundary descent, leakage control, residual factorization, Lie brackets,
-and group integration are separate consumers and may refuse independently.
-
-Finite jets alone cannot certify a neighborhood: for any order `m`, the scalar
-polynomials `1` and `1-(x/epsilon)^(m+1)` have the same `m`-jet at zero, while the
-second vanishes at `epsilon`. Therefore a polynomial degree bound/whole polynomial
-or a remainder enclosure is an irreducible input, not an implementation detail.
-
-**First admitted distinction.** For any supplied smooth constant-rank frame, the
-[variable active-frame jet probe](benchmarks/variable-active-frame-jet.md)
-constructs `A_B=G^(-1)B^dagger`, `P=S_B A_B`, `D_B=A_B D S_B`, and
-`R_B=(I-P)D S_B`. It proves `D S_B=S_B D_B+R_B` and covariance under every admitted
-variable reduced-frame change, with derivatives acting through operator
-composition. A polynomial control shows that a rank jump makes `G^(-1)` fail.
-Thus the first probe moved the obstruction from frame choice to generating `B`
-from coefficient jets and certifying its region.
-
-**Second admitted distinction.** The
-[coefficient-generated polynomial module](benchmarks/coefficient-generated-variable-module.md)
-continues only the two G18 provenance expressions `psi,H psi` and certifies a
-rank-two frame on a stated two-dimensional region. Its matrix potential preserves
-the frame and its in-bundle connection is flat, yet the Laplacian has nonzero
-off-module leakage. Factoring that residual constructs the angular vector field
-`L=-y partial_x+x partial_y`; a coefficient-defect solve then gives a represented
-internal generator `J` with `L(H)=[J,H]`. Thus coefficient invariance, full-PDE
-invariance, and domain symmetry are three distinct tests. The rectangular bench
-passes the first, fails the second generically, and refuses global rotational
-domain symmetry.
-
-**Frozen-contract disposition.** The same `C_G19_v1` interface has now passed the
-constant-frame regression and an adversarial coefficient-escape control. A
-provenance-derived rank-jump family also proves that finite jets through any fixed
-order cannot certify a neighborhood: indistinguishable polynomial continuations
-can have different nearby rank. The contract is therefore supported for exact
-polynomial boxes with local certified charts, restricted to pointwise output for
-bare finite jets, and unresolved for exhausted interval/rank budgets. These are
-typed domain dispositions, not one scalar success label.
-
-**Live alternatives.** The result may be (i) a global constant module, (ii) a
-variable module with a nonzero connection and exact or controlled leakage, or
-(iii) refusal because of rank jump, coefficient escape, or domain/boundary
-obstruction.
-
-**Falsifiers.** Reject or restrict the candidate if a frame change alters the
-recovered observable; induced lower-order terms escape without a reported
-residual; the rank certificate fails on the admitted region; or the common core,
-trace, or boundary condition does not descend.
-
-**Discriminating benches.** The supplied-frame covariance/rank controls, deductive
-constant-frame regression, provenance-derived non-Pauli transfer, finite-jet rank
-counterexample, coefficient escape, and boundary/domain refusal are exact. They
-support only the frozen polynomial/local-chart dimensions. The public
-`polynomial-active-module/v1` route now replays constant exact closure, the
-non-Pauli variable transfer, coefficient escape, and rank-budget exhaustion while
-checking equations (3)-(4) coefficientwise. No use-level observable propagation
-or complete-route cost comparison has been completed.
-
-**Next discriminating action.** Consume the executable residual coefficient family
-without changing G19: factor common base-direction symbols under a bounded exact
-grammar, solve the induced coefficient-covariance defect, and then test bracket,
-integration, and domain flow separately. The successful rectangular bench should
-recover the local rotation candidate but refuse global domain symmetry; an
-adversarial residual with no common vector-field factor must refuse rather than
-guess a group.
-
-**Horizon.** Exact polynomial local charts, finite jets with certified remainders,
-and one named observable. Global bundle integration, unbounded closure,
-unrestricted analytic domains, and nonlinear PDEs are outside this inquiry. The
-bounded exact-polynomial route and
-[G19 node](nodes/variable-active-module-bundle.md) now exist. Global integration,
-controlled recovery, and unrestricted domains remain outside this result.
-
-## Active open bridge: G20 residual direction to infinitesimal Lie lift
+## Resolved local bridge: G20 residual direction to infinitesimal Lie lift
 
 **Upstream distinction.** G19 owns the active frame and exact coefficient family
 `R_B`. G20 consumes that witness without reopening its provenance DAG. G0 supplies
@@ -366,7 +234,7 @@ of `ker Phi` to `lambda` decides whether the line lifts. The fiber over a visibl
 lift records internal-centralizer ambiguity. Bracket closure, complete flow,
 real-form integration, and domain preservation remain later certificates.
 
-**First exact probe.** The non-Pauli G19 fixture has `rank(A_R)=1`, primitive line
+**Exact construction.** The non-Pauli G19 fixture has `rank(A_R)=1`, primitive line
 `span{y partial_x-x partial_y}`, and a one-dimensional joint kernel. Its generator
 is the same local rotation pair previously derived by hand. A variable reduced
 frame gauge leaves `Row(A_R)` unchanged. Adding `xI` to the potential preserves
@@ -376,18 +244,19 @@ defect cannot be canceled by an internal commutator. The preparation
 choose between coordinate directions even though the PDE has other symmetries.
 Pure coefficient escape has rank zero and yields no direction.
 
-**Disposition.** The [G20 node](nodes/residual-direction-lie-lift.md) and
-[exact probe](benchmarks/residual-derived-infinitesimal-lift.md) freeze a bounded
-contract and support its rank/lift distinctions deductively and executablely. No
-public constructor exists yet. A preparation-relative residual can expose only
-directions visible through that failed module; this is not a complete symmetry
-classifier.
+**Disposition.** The [G20 node](nodes/residual-direction-lie-lift.md),
+[benchmark](benchmarks/residual-derived-infinitesimal-lift.md), and public
+`construct-local-infinitesimal-symmetry` capability now implement this bounded
+contract. Four public fixtures separate visible success, same-line/no-lift,
+rank-two, and coefficient-only outcomes; budget exhaustion is unresolved and all
+downstream failures retain the exact G19 witness. A preparation-relative residual
+can expose only directions visible through that failed module, so this is not a
+complete symmetry classifier.
 
-**Next discriminating action.** Architecture-plan one exact reusable constructor
-for residual order filtering, rank-one line normalization, and the full polynomial
-commutator kernel. Its unchanged interface must replay the four probes before any
-multi-direction atlas, Lie closure, integration, or boundary-flow implementation
-is admitted.
+**Next discriminating action.** Construct a finite atlas of independently visible
+lines and test their brackets modulo internal ambiguity. This is a new semantic
+gate: it must not be inferred from one successful line, and it precedes real-form
+integration, boundary flow, or observable recovery.
 
 **Horizon.** Exact Gaussian-rational polynomial operators of bounded order on one
 certified G19 chart, constant fiber metric, constant internal action, and local

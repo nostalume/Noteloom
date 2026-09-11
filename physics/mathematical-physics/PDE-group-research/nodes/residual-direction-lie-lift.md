@@ -157,9 +157,9 @@ Failure at a later gate does not erase the earlier local identity. Conversely, a
 rank-two residual refusal does not assert that the PDE has no symmetry; it says
 this one preparation-relative leakage does not canonically select one direction.
 
-## Evidence and disposition
+## Executable realization and disposition
 
-The [exact probe](../benchmarks/residual-derived-infinitesimal-lift.md) checks four
+The [benchmark](../benchmarks/residual-derived-infinitesimal-lift.md) checks four
 frozen alternatives:
 
 - rank-one leakage and a one-dimensional visible lift in the variable non-Pauli
@@ -168,10 +168,14 @@ frozen alternatives:
 - rank-two leakage for the free Laplacian with preparation `(1,x,y)^T`;
 - rank-zero first-order leakage for pure coefficient escape.
 
-A variable reduced-frame gauge also preserves the computed row space exactly.
-The maintained checker executes all five assertions with SymPy exact arithmetic.
+A variable reduced-frame gauge, constant carrier action, rational coordinate
+action, common complex phase, and a direct mixed-order operator-composition law
+also preserve the claimed identities. `polynomial_residual_lie.py` owns the pure
+construction; the existing schema router exposes
+`construct-local-infinitesimal-symmetry` without adding another handler. It uses
+the shared exact defect compiler with `1+n^2` candidates and retains G19 on every
+later refusal.
 
-Disposition: **frozen, deductively supported exploratory contract**. The line/lift
-separation, naturality law, and refusal types are supported; a reusable public
-constructor, multi-line closure, global integration, domain flow, and
-same-observable leverage are not yet implemented or promoted.
+Disposition: **implemented, deductively and executablely supported local
+contract**. Multi-line closure, global integration, domain flow, and
+same-observable leverage are not implemented or promoted.

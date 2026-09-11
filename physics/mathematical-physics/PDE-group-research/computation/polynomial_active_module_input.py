@@ -9,9 +9,11 @@ from fractions import Fraction
 import sympy as sp
 
 from exact_polynomial_matrix import ExactPolynomialError, fraction, polynomial_array, term_count
+from linear_defect_compiler import DefectBudget
 from problem_input import ProblemDocument
 
 SCHEMA = "polynomial-active-module/v1"
+LIFT_CAPABILITY = "construct-local-infinitesimal-symmetry"
 
 
 class PolynomialInputError(ValueError):
@@ -47,6 +49,12 @@ class PolynomialProblem:
     requested_capability: str
     budget: PolynomialBudget
     domain_contract: str
+
+
+@dataclass(frozen=True)
+class PolynomialLiftRequest:
+    problem: PolynomialProblem
+    budget: DefectBudget
 
 
 def _powers(value: object, dimension: int, name: str) -> tuple[int, ...]:
@@ -87,7 +95,24 @@ def _budget(value: object) -> PolynomialBudget:
     return PolynomialBudget(*values)
 
 
-def parse(payload: object) -> PolynomialProblem:
+def _lift_budget(value: object) -> DefectBudget:
+    if not isinstance(value, dict):
+        raise PolynomialInputError(
+            "MissingResidualLieBudget", "resource_budget.residual_lie must be an object"
+        )
+    candidate = value.get("maximum_candidate_dimension")
+    residual = value.get("maximum_residual_coordinates")
+    if any(
+        isinstance(item, bool) or not isinstance(item, int) or item <= 0
+        for item in (candidate, residual)
+    ):
+        raise PolynomialInputError(
+            "InvalidResidualLieBudget", "residual Lie bounds must be positive integers"
+        )
+    return DefectBudget(candidate, residual)
+
+
+def parse(payload: object) -> PolynomialProblem | PolynomialLiftRequest:
     if not isinstance(payload, dict) or payload.get("schema") != SCHEMA:
         raise PolynomialInputError("UnsupportedProblemType", f"expected {SCHEMA}")
     raw_names = payload.get("coordinates")
@@ -104,7 +129,8 @@ def parse(payload: object) -> PolynomialProblem:
             "InvalidCoordinates", "coordinates must be unique identifier strings"
         )
     coordinates = tuple(sp.Symbol(name, real=True) for name in raw_names)
-    budget = _budget(payload.get("resource_budget"))
+    raw_budget = payload.get("resource_budget")
+    budget = _budget(raw_budget)
     raw_terms = payload.get("operator_terms")
     if not isinstance(raw_terms, list) or not raw_terms:
         raise PolynomialInputError("MissingOperator", "operator_terms must be a nonempty list")
@@ -200,7 +226,11 @@ def parse(payload: object) -> PolynomialProblem:
             "v1 admits only compact-supported smooth sections without boundary trace",
         )
     capability = payload.get("requested_capability")
-    if capability not in {"decompose-with-residual", "exact-closed-reduction"}:
+    if capability not in {
+        "decompose-with-residual",
+        "exact-closed-reduction",
+        LIFT_CAPABILITY,
+    }:
         raise PolynomialInputError("UnsupportedCapability", "unsupported reduction capability")
     terms = sum(term_count(term.coefficient, coordinates) for term in operator_terms)
     terms += term_count(preparation, coordinates) + term_count(effect, coordinates)
@@ -213,7 +243,7 @@ def parse(payload: object) -> PolynomialProblem:
         raise PolynomialInputError(
             "ZeroPreparation", "preparation must be nonzero at the base point"
         )
-    return PolynomialProblem(
+    problem = PolynomialProblem(
         coordinates,
         operator_terms,
         preparation,
@@ -224,7 +254,11 @@ def parse(payload: object) -> PolynomialProblem:
         budget,
         "C_c^infinity(region; C^n), boundary none",
     )
+    if capability == LIFT_CAPABILITY:
+        assert isinstance(raw_budget, dict)
+        return PolynomialLiftRequest(problem, _lift_budget(raw_budget.get("residual_lie")))
+    return problem
 
 
-def admit_document(document: ProblemDocument) -> PolynomialProblem:
+def admit_document(document: ProblemDocument) -> PolynomialProblem | PolynomialLiftRequest:
     return parse(document.payload)

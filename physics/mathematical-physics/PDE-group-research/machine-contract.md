@@ -184,8 +184,18 @@ constructs base-point reachability provenance, replays only admitted expressions
 as a polynomial frame, certifies a nonzero pivot minor on one nested rational box,
 and returns equations (3)-(4) of `C_G19_v1` coefficientwise. Nonzero leakage is a
 `formal` exact identity when requested, an obstruction when exact closure is
-required, and failed interval certification is `RankRegionUnresolved`. No result
-from this schema alone is a Lie algebra or global group.
+required, and failed interval certification is `RankRegionUnresolved`.
+
+Its additive `construct-local-infinitesimal-symmetry` capability consumes that
+same G19 witness once. For first-order residual flattening `A_R`, exact rank one
+over `Frac(QQ(i)[x])` constructs a projective line only when it has a real
+polynomial representative. The machine then computes
+`ker((lambda,J) -> [D,lambda L_v-J])` for constant `J in u(n)` and succeeds only
+when projection to `lambda` is nonzero. The kernel over `lambda=0` is returned as
+internal ambiguity. Higher residual order, rank zero or greater than one, missing
+real form, missing visible lift, and bounded exhaustion are distinct outcomes.
+This certificate is a local differential-expression symmetry on the declared
+common core; it is not Lie closure, a global group, or a domain-preserving flow.
 
 For bounded backend-independent discovery, the executable projection is
 `reduction-decision/v1`:

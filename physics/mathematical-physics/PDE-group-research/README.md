@@ -36,7 +36,7 @@ recovery.
 ## Navigation
 
 - [Research graph](research-graph.md): current six-node spine, compact evidence
-  disposition, active G20 frontier, and parked branches.
+  disposition, resolved G20 local bridge, and parked branches.
 - [Research nodes](nodes/README.md): the 35 semantic construction owners, grouped
   by capability.
 - [Benchmark index](benchmarks/README.md): regression, transfer, refusal, analytic,
@@ -85,15 +85,14 @@ model-independent route dominance.
 
 ## Active frontier
 
-G19 now has an executable exact-polynomial vertical slice from base-point
-reachability provenance to a local variable frame and full product-rule leakage.
-G20 freezes the next consumer: first-order leakage constructs a projective
-derivation line only at tensor rank one, and a separate full-operator commutator
-kernel decides whether that line lifts to a represented infinitesimal symmetry.
-The exploratory probe passes a rotation lift, a same-line/no-lift control,
-rank-two and coefficient-only refusals, and a variable-frame gauge check. A public
-G20 constructor, controlled recovery, Lie closure, global integration, bundle
-gluing, and general boundary descent remain open.
+G19 constructs a local variable frame and full product-rule leakage from
+base-point reachability provenance. G20 now consumes that leakage publicly:
+first-order function-field rank one yields a real projective derivation line, and
+one exact full-operator commutator kernel decides whether it has a visible
+skew-Hermitian lift. The route distinguishes lift, same-line/no-lift, rank-two,
+coefficient-only, complex-real-form, higher-order, and budget outcomes while
+retaining G19 evidence. Multi-line Lie closure, controlled recovery, global
+integration, bundle gluing, and boundary descent remain open.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

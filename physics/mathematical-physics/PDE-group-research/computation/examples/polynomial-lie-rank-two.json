@@ -1,0 +1,27 @@
+{
+  "schema": "polynomial-active-module/v1",
+  "coordinates": ["x", "y"],
+  "operator_terms": [
+    {"derivative": [2, 0], "coefficient": {"terms": [{"powers": [0, 0], "matrix": [[-1, 0, 0], [0, -1, 0], [0, 0, -1]]}]}},
+    {"derivative": [0, 2], "coefficient": {"terms": [{"powers": [0, 0], "matrix": [[-1, 0, 0], [0, -1, 0], [0, 0, -1]]}]}}
+  ],
+  "preparation": {"terms": [
+    {"powers": [0, 0], "vector": [1, 0, 0]},
+    {"powers": [1, 0], "vector": [0, 1, 0]},
+    {"powers": [0, 1], "vector": [0, 0, 1]}
+  ]},
+  "effect": {"terms": [{"powers": [0, 0], "matrix": [[1, 0, 0], [0, 0, 0], [0, 0, 0]]}]},
+  "base_point": ["0", "0"],
+  "region": [["-1", "1"], ["-1", "1"]],
+  "domain": {"core": "compact-supported-smooth", "boundary": "none"},
+  "requested_capability": "construct-local-infinitesimal-symmetry",
+  "resource_budget": {
+    "maximum_carrier_dimension": 3,
+    "maximum_active_dimension": 3,
+    "maximum_derivative_order": 2,
+    "maximum_polynomial_terms": 512,
+    "maximum_rank_refinements": 4,
+    "maximum_output_terms": 4096,
+    "residual_lie": {"maximum_candidate_dimension": 10, "maximum_residual_coordinates": 100}
+  }
+}

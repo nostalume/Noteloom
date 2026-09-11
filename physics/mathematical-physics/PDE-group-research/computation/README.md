@@ -33,6 +33,7 @@ uv run python reduction_workbench.py discover examples/matrix-pde-inverse-sl3.js
 uv run python reduction_workbench.py discover examples/matrix-symbol-covariance-sl3.json --summary
 uv run python reduction_workbench.py discover examples/matrix-adjoint-semigroup-sl3.json --summary
 uv run python reduction_workbench.py discover examples/polynomial-active-variable.json --summary
+uv run python reduction_workbench.py discover examples/polynomial-lie-lift.json --summary
 uv run python -m unittest check_residual_direction_lift.py
 ```
 
@@ -66,7 +67,7 @@ retain that successful certificate if analytic promotion fails.
 | Pauli | `pauli-landau-bilateral/v1`, `pauli-landau-global/v1` |
 | adjoint | `su-adjoint-transition/v1`, `su-adjoint-pde/v1`, `matrix-pde-inverse/v1`, `matrix-symbol-covariance/v1`, `matrix-adjoint-semigroup/v1` |
 | relation-derived covariance | `natural-tensor-stabilizer/v1`, `coupled-carrier-covariance/v1`, `coupled-operator-covariance/v1` |
-| variable PDE modules | `polynomial-active-module/v1`: provenance-derived local frame, exact rank chart, reduced operator, and leakage |
+| variable PDE modules | `polynomial-active-module/v1`: provenance-derived local frame, exact rank chart, leakage, and optional residual-derived local infinitesimal lift |
 
 These schemas are bounded scientific grammars, not a catalogue to extend for each
 new example. Mathematical contracts are indexed in
@@ -118,9 +119,13 @@ but leakage is nonzero and unbounded; requesting exact closure instead returns
 compact-supported smooth sections without boundary trace and does not construct a
 global group. See the [G19 node](../nodes/variable-active-module-bundle.md).
 
-The maintained `check_residual_direction_lift.py` is an exploratory G20
-certificate, not a registered route. It filters G19 residual order, checks the
-rank-one projective direction, compiles the exact full-operator commutator kernel,
-and verifies no-lift, rank-two, coefficient-only, and variable-gauge controls. See
-the [G20 node](../nodes/residual-direction-lie-lift.md); production architecture
-and public-schema admission remain open.
+The additive `construct-local-infinitesimal-symmetry` capability first completes
+G19, then filters residual order, computes the exact first-order function-field
+rank, normalizes a real projective direction, and compiles
+`[D,lambda L_v-J]` over the canonical `u(n)` seed. A visible kernel vector returns
+the local lift and internal-centralizer ambiguity. Rank zero/two, absent real
+form, higher-order leakage, absent visible lift, and resource exhaustion are typed
+separately; every downstream refusal retains the G19 witness. The maintained
+`check_residual_direction_lift.py` remains an independent certificate. See the
+[G20 node](../nodes/residual-direction-lie-lift.md). This route proves a local
+common-core identity, not Lie closure, group integration, or domain preservation.

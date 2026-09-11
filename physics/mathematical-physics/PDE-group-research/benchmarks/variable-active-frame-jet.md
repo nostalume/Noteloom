@@ -3,7 +3,7 @@
 ## Target and role
 
 `E_G19_probe_1` targets the frame-covariance and rank dimensions of the
-[G19 inquiry](../research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
+[G19 inquiry](../research-graph.md#resolved-bridge-ledger-g19-variable-active-module-bundle).
 It is a discovery probe, not evidence that a variable active module can already
 be generated from arbitrary PDE coefficients.
 

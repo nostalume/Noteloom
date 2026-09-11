@@ -121,14 +121,21 @@ def fraction_text(value: Fraction) -> str:
     )
 
 
-def serialize_polynomial(expression: sp.Expr, coordinates: tuple[sp.Symbol, ...]):
-    result = []
+def polynomial_coefficients(expression: sp.Expr, coordinates: tuple[sp.Symbol, ...]):
+    """Yield canonical powers and exact real/imaginary coefficient parts."""
+
     for powers, coefficient in sp.Poly(sp.expand(expression), *coordinates, domain=QQ_I).terms():
         real, imaginary = sp.expand(coefficient).as_real_imag()
-        real_text = fraction_text(rational_fraction(real))
+        yield powers, rational_fraction(real), rational_fraction(imaginary)
+
+
+def serialize_polynomial(expression: sp.Expr, coordinates: tuple[sp.Symbol, ...]):
+    result = []
+    for powers, real, imaginary in polynomial_coefficients(expression, coordinates):
+        real_text = fraction_text(real)
         value = real_text
-        if imaginary != 0:
-            value = {"real": real_text, "imaginary": fraction_text(rational_fraction(imaginary))}
+        if imaginary:
+            value = {"real": real_text, "imaginary": fraction_text(imaginary)}
         result.append({"powers": list(powers), "coefficient": value})
     return result
 

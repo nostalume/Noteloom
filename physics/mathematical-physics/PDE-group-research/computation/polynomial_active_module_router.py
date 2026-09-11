@@ -21,10 +21,17 @@ from polynomial_active_module import (
     ReductionWitness,
     construct_reduction,
 )
-from polynomial_active_module_input import SCHEMA, PolynomialInputError, parse
+from polynomial_active_module_input import (
+    SCHEMA,
+    PolynomialInputError,
+    PolynomialLiftRequest,
+    parse,
+)
+from polynomial_residual_lie import ResidualLieError, ResidualLieWitness, construct_lift
 from problem_input import ProblemDocument, ProblemInputError, load_problem
 
 ROUTE = "polynomial-active-module"
+LIFT_ROUTE = "polynomial-residual-lie-lift"
 
 
 def _rational_matrix(value: RationalMatrix, coordinates):
@@ -122,6 +129,8 @@ def _failure(payload: object, kind: str, reason: str, details=None) -> dict[str,
         "RankRegionUnresolved",
         "PolynomialTermBudgetExceeded",
         "OutputTermBudgetExceeded",
+        "CandidateBudgetExceeded",
+        "ResidualBudgetExceeded",
     }
     outcome = "unresolved" if unresolved else "obstructed"
     bounded_details = dict(details or {})
@@ -141,9 +150,120 @@ def _failure(payload: object, kind: str, reason: str, details=None) -> dict[str,
     }
 
 
+def _serialize_lift(witness: ResidualLieWitness, coordinates, maximum_terms):
+    direction = witness.direction
+    matrices = (
+        sp.Matrix(direction.vector),
+        direction.normal_factor.numerator,
+        sp.Matrix([direction.normal_factor.denominator]),
+        witness.internal_generator,
+        *witness.internal_ambiguity,
+    )
+    output_terms = sum(term_count(value, coordinates) for value in matrices)
+    if output_terms > maximum_terms:
+        raise ResidualLieError(
+            "OutputTermBudgetExceeded",
+            "serialized residual Lie witness exceeds the output-term budget",
+            {"observed_terms": output_terms, "maximum_terms": maximum_terms},
+        )
+    return {
+        "direction": [serialize_polynomial(value, coordinates) for value in direction.vector],
+        "normal_factor": _rational_matrix(direction.normal_factor, coordinates),
+        "internal_generator": serialize_matrix(witness.internal_generator, coordinates),
+        "internal_ambiguity": [
+            serialize_matrix(value, coordinates) for value in witness.internal_ambiguity
+        ],
+        "candidate_coordinates": [fraction_text(value) for value in witness.candidate_coordinates],
+        "defect_ledger": [asdict(value) for value in witness.compilation.ledger],
+        "cost": asdict(witness.cost),
+        "checks": witness.checks,
+        "domain_contract": witness.domain_contract,
+        "global_group": "not constructed",
+    }
+
+
+def _lift_failure(payload, error: ResidualLieError, reduction, upstream_outcome):
+    details = dict(error.details)
+    compilation = details.pop("compilation", None)
+    if compilation is not None:
+        details.update(
+            candidate_dimension=compilation.candidate_dimension,
+            kernel_dimension=compilation.kernel_dimension,
+            defect_ledger=[asdict(value) for value in compilation.ledger],
+        )
+    result = _failure(payload, error.kind, str(error), details)
+    result["probes"] = [
+        {"route": ROUTE, "outcome": upstream_outcome, "first_residual": None},
+        {
+            "route": LIFT_ROUTE,
+            "outcome": result["outcome"],
+            "first_residual": error.kind,
+        },
+    ]
+    result["candidates"] = [{"route": ROUTE, "outcome": upstream_outcome, "witness": reduction}]
+    result["human_card"]["retained_construction"] = "exact G19 active-module witness"
+    return result
+
+
+def _discover_lift(payload, request: PolynomialLiftRequest):
+    problem = request.problem
+    reduction = construct_reduction(problem)
+    serialized_reduction = _serialize_witness(
+        reduction, problem.coordinates, problem.budget.maximum_output_terms
+    )
+    upstream_outcome = "exact" if reduction.leakage_is_zero else "formal"
+    try:
+        lift = construct_lift(problem, reduction, request.budget)
+        serialized_lift = _serialize_lift(
+            lift, problem.coordinates, problem.budget.maximum_output_terms
+        )
+    except ResidualLieError as error:
+        return _lift_failure(payload, error, serialized_reduction, upstream_outcome)
+    checks = {**reduction.checks, **lift.checks}
+    return {
+        "schema": "reduction-decision/v1",
+        "outcome": "exact",
+        "request": {
+            "problem_type": SCHEMA,
+            "supplied_group_name": False,
+            "supplied_frame": False,
+            "supplied_projector": False,
+            "supplied_reduced_operator": False,
+        },
+        "probes": [
+            {"route": ROUTE, "outcome": upstream_outcome, "first_residual": None},
+            {"route": LIFT_ROUTE, "outcome": "exact", "first_residual": None},
+        ],
+        "candidates": [
+            {"route": ROUTE, "outcome": upstream_outcome, "witness": serialized_reduction},
+            {"route": LIFT_ROUTE, "outcome": "exact", "witness": serialized_lift},
+        ],
+        "coincidence": {
+            "status": "exact_local_infinitesimal_commutator",
+            "all_passed": all(checks.values()),
+            "checks": checks,
+        },
+        "decision": {
+            "selected_route": LIFT_ROUTE,
+            "reason": "rank-one leakage admits an exact visible skew-Hermitian lift",
+            "active_dimension": reduction.active_dimension,
+            "global_group": "not constructed",
+        },
+        "human_card": {
+            "result": "exact",
+            "primitive_objects": "constructed residual line and the full polynomial operator",
+            "construction": "G19 residual -> real direction -> exact commutator kernel",
+            "boundary": "local common core only; no global Lie integration or boundary descent",
+        },
+    }
+
+
 def discover_payload(payload: object) -> dict[str, object]:
     try:
-        problem = parse(payload)
+        admitted = parse(payload)
+        if isinstance(admitted, PolynomialLiftRequest):
+            return _discover_lift(payload, admitted)
+        problem = admitted
         witness = construct_reduction(problem)
         serialized = _serialize_witness(
             witness, problem.coordinates, problem.budget.maximum_output_terms

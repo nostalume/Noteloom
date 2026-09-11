@@ -102,6 +102,7 @@ exists.
 | G17 active carrier | every tested block reduces to dimension 3; one-shot loses, 64-time reuse wins in all four cases | leverage is reuse-dependent and family-bounded |
 | G18 family module | three-generator closure stays dimension 3; exact solves `9/3` for one point and `9/12` for four | one-point loses; four-point local medians are lower, with overlapping ranges in one case; ambient regrowth remains possible |
 | G19 variable provenance calculus | admitted-expression DAG generates a rank-two bundle where constant polynomial-coefficient closure is ambient rank three | exact potential compression is offset by angular PDE leakage; finite jets alone cannot certify neighborhood rank |
+| G20 residual Lie lift | one function-field rank and one `1+n^2` defect kernel replace group catalogues and componentwise generator guesses | exact local construction; quadratic internal seed and polynomial swell remain; no solve/recovery leverage claim |
 
 The numerical proxies compare declared primitive operations, not portable wall
 clock. Timing observations remain attached to their executable benchmark and
@@ -158,10 +159,14 @@ not a dimension-free claim. Rank certification uses one selected pivot minor and
 bounded exact interval evaluations on nested rational boxes instead of all-minor
 enumeration or a complete polynomial-positivity solve.
 
-The unpaid G19 costs are implementation of that grammar, controlled leakage or
-full-block propagation, trace descent, and same-observable recovery. Until those
-terms have an exact or controlled executable ledger, G19 has no
-computational-leverage verdict.
+G20 now pays the next structural cost explicitly: exact residual-order filtering,
+one `(nr) x d` function-field rank, primitive real-line normalization, and one
+commutator defect kernel with `1+n^2` candidates. It avoids a group catalogue and
+componentwise generator enumeration, but the canonical internal seed is quadratic
+and exact polynomial lowering can swell. This is a construction and human
+compression result, not a runtime or complete-route leverage verdict. Controlled
+leakage, full-block propagation, trace descent, and same-observable recovery remain
+unpaid.
 
 ## 8. Audit rule
 

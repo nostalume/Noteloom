@@ -46,6 +46,38 @@ DIRECT_KEYS = frozenset({"backend", "decision", "outcome", "schema", "witness"})
 
 CASES = (
     Case(
+        ("discover", str(EXAMPLES / "polynomial-lie-lift.json"), "--summary"),
+        "reduction-decision/v1",
+        "exact",
+        0,
+        "polynomial-residual-lie-lift",
+        DISCOVERY_KEYS,
+    ),
+    Case(
+        ("discover", str(EXAMPLES / "polynomial-lie-no-lift.json"), "--summary"),
+        "reduction-decision/v1",
+        "obstructed",
+        2,
+        None,
+        DISCOVERY_KEYS,
+    ),
+    Case(
+        ("discover", str(EXAMPLES / "polynomial-lie-rank-two.json"), "--summary"),
+        "reduction-decision/v1",
+        "obstructed",
+        2,
+        None,
+        DISCOVERY_KEYS,
+    ),
+    Case(
+        ("discover", str(EXAMPLES / "polynomial-lie-coefficient-only.json"), "--summary"),
+        "reduction-decision/v1",
+        "obstructed",
+        2,
+        None,
+        DISCOVERY_KEYS,
+    ),
+    Case(
         (
             "discover",
             str(EXAMPLES / "polynomial-active-constant.json"),
@@ -240,6 +272,7 @@ CASES = (
 )
 
 DIRECT_DISCOVERY_CASES = (
+    (discover_polynomial_active, "polynomial-lie-lift.json"),
     (discover_polynomial_active, "polynomial-active-variable.json"),
     (discover_coupled_operator, "coupled-pauli-operator-positive.json"),
     (discover_coupled_relation, "coupled-carrier-clifford-r3.json"),
@@ -308,6 +341,29 @@ class WorkbenchCliContractTests(unittest.TestCase):
             with self.subTest(filename=filename):
                 path = EXAMPLES / filename
                 self.assertEqual(direct(path), discover_problem(path))
+
+    def test_polynomial_lie_outputs_are_deterministic_and_budget_exit_is_three(self):
+        fixtures = (
+            "polynomial-lie-lift.json",
+            "polynomial-lie-no-lift.json",
+            "polynomial-lie-rank-two.json",
+            "polynomial-lie-coefficient-only.json",
+        )
+        for filename in fixtures:
+            with self.subTest(filename=filename):
+                arguments = ("discover", str(EXAMPLES / filename))
+                self.assertEqual(self.run_cli(*arguments).stdout, self.run_cli(*arguments).stdout)
+
+        payload = json.loads((EXAMPLES / fixtures[0]).read_text(encoding="utf-8"))
+        payload["resource_budget"]["residual_lie"]["maximum_candidate_dimension"] = 9
+        with tempfile.TemporaryDirectory() as root:
+            path = Path(root) / "budget.json"
+            path.write_text(json.dumps(payload), encoding="utf-8")
+            completed = self.run_cli("discover", str(path))
+        self.assertEqual(completed.returncode, 3)
+        self.assertEqual(
+            json.loads(completed.stdout)["obstruction"]["kind"], "CandidateBudgetExceeded"
+        )
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ from __future__ import annotations
 import copy
 import unittest
 
-from polynomial_active_module_input import PolynomialInputError, parse
+from polynomial_active_module_input import PolynomialInputError, PolynomialLiftRequest, parse
 
 
 def problem() -> dict[str, object]:
@@ -89,6 +89,36 @@ class PolynomialActiveModuleInputTests(unittest.TestCase):
         with self.assertRaises(PolynomialInputError) as caught:
             parse(nonhermitian)
         self.assertEqual(caught.exception.kind, "NonHermitianEffect")
+
+    def test_residual_lie_capability_has_a_tagged_nested_budget(self) -> None:
+        value = problem()
+        value["requested_capability"] = "construct-local-infinitesimal-symmetry"
+        value["resource_budget"]["residual_lie"] = {
+            "maximum_candidate_dimension": 10,
+            "maximum_residual_coordinates": 100,
+        }
+
+        result = parse(value)
+
+        self.assertIsInstance(result, PolynomialLiftRequest)
+        assert isinstance(result, PolynomialLiftRequest)
+        self.assertEqual(result.budget.maximum_candidate_dimension, 10)
+        self.assertEqual(result.problem.requested_capability, value["requested_capability"])
+
+    def test_residual_lie_budget_is_required_and_exact(self) -> None:
+        value = problem()
+        value["requested_capability"] = "construct-local-infinitesimal-symmetry"
+        with self.assertRaises(PolynomialInputError) as caught:
+            parse(value)
+        self.assertEqual(caught.exception.kind, "MissingResidualLieBudget")
+
+        value["resource_budget"]["residual_lie"] = {
+            "maximum_candidate_dimension": True,
+            "maximum_residual_coordinates": 100,
+        }
+        with self.assertRaises(PolynomialInputError) as caught:
+            parse(value)
+        self.assertEqual(caught.exception.kind, "InvalidResidualLieBudget")
 
 
 if __name__ == "__main__":

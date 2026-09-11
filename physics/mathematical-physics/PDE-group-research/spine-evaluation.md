@@ -99,17 +99,17 @@ cannot determine neighborhood rank, even for polynomial continuations. Exact
 whole-polynomial data, a degree/remainder bound, or a pointwise-only output is
 therefore mandatory.
 
-That executable G19 slice now exists in the workbench. G20 has isolated the next
-semantic object: the first-order residual row space. Rank one constructs a
-projective derivation line; the full polynomial commutator kernel separately
-decides whether it lifts. Exact probes distinguish a successful lift, the same
-line destroyed by `xI`, rank-two nonselection, coefficient-only nonselection, and
-variable-frame gauge invariance. The weakest consequential bridge is now a public
-reusable implementation of this frozen line/lift contract, followed—not merged—by
-multi-line bracket closure, integration, and domain flow. Controlled leakage,
-observable propagation, and boundary descent remain downstream obligations. The
-complete inquiry lives in the
-[G20 frontier owner](research-graph.md#active-open-bridge-g20-residual-direction-to-infinitesimal-lie-lift).
+That executable G19 slice now feeds an executable G20 constructor. Rank-one
+first-order residual row space constructs a real projective derivation line; one
+full polynomial commutator kernel separately decides whether it has a visible
+constant skew-Hermitian lift. Public and direct tests distinguish successful lift,
+the same line destroyed by `xI`, rank-two and coefficient-only nonselection,
+complex/no-real-form, higher-order, covariance, and bounded exhaustion. The next
+feasible action is a multi-line bracket atlas modulo internal ambiguity, followed
+—not merged—by integration and domain flow. Controlled leakage, observable
+propagation, and boundary descent remain downstream obligations. The completed
+local bridge lives in the
+[G20 owner](research-graph.md#resolved-local-bridge-g20-residual-direction-to-infinitesimal-lie-lift).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility
