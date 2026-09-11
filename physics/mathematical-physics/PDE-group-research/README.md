@@ -85,10 +85,13 @@ model-independent route dominance.
 
 ## Active frontier
 
-G18 constructs one exact cyclic module for an entire coefficient family; the first
-[G19 probe](research-graph.md#active-open-bridge-g19-variable-active-module-bundle)
-now makes variable-frame reduction covariant, while coefficient-jet generation,
-rank-region certification, observable recovery, and domain descent remain open.
+G18 constructs one exact cyclic module for an entire coefficient family. G19 now
+has a frame-covariant witness shell and one polynomial matrix-PDE transfer whose
+frame and rank region are generated from G18 provenance. Its leakage constructs a
+local infinitesimal rotation but also proves that potential invariance, full-PDE
+invariance, and domain symmetry do not coincide. A reusable coefficient-jet
+grammar, general rank/escape refusal, controlled recovery, and boundary descent
+remain open.
 
 More scalar examples, polynomial catalogues, arbitrary dimension, and nonlinear
 systems remain parked until they change a current contract, witness, or boundary.

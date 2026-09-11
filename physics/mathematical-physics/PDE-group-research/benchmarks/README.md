@@ -30,6 +30,7 @@ executable entrypoints remain in the [computation workbench](../computation/READ
 - [spinor Pauli--Landau](spinor-pauli-landau.md), [bilateral Pauli router](bilateral-pauli-router.md), and [global Pauli promotion](pauli-global-analytic.md): Clifford channels, PDE-first coincidence, topology, domain, and heat observable.
 - [spin-texture adiabatic transfer](spin-texture-adiabatic.md): variable-projector connection and leakage boundary.
 - [variable active-frame jet](variable-active-frame-jet.md): G19 witness covariance, differential-order redistribution, and exact rank-jump boundary.
+- [coefficient-generated variable module](coefficient-generated-variable-module.md): a non-Pauli polynomial frame derived from G18 provenance, exact PDE leakage, and a residual-derived infinitesimal `SO(2)` candidate with domain refusal.
 
 ## Adversarial boundary
 

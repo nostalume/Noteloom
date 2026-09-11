@@ -206,8 +206,20 @@ constructs `A_B=G^(-1)B^dagger`, `P=S_B A_B`, `D_B=A_B D S_B`, and
 `R_B=(I-P)D S_B`. It proves `D S_B=S_B D_B+R_B` and covariance under every admitted
 variable reduced-frame change, with derivatives acting through operator
 composition. A polynomial control shows that a rank jump makes `G^(-1)` fail.
-Thus frame choice alone is not the obstruction; generating `B` from coefficient
-jets and certifying its region are now the weakest missing operations.
+Thus the first probe moved the obstruction from frame choice to generating `B`
+from coefficient jets and certifying its region.
+
+**Second admitted distinction.** The
+[coefficient-generated polynomial module](benchmarks/coefficient-generated-variable-module.md)
+continues only the two G18 provenance expressions `psi,H psi` and certifies a
+rank-two frame on a stated two-dimensional region. Its matrix potential preserves
+the frame and its in-bundle connection is flat, yet the Laplacian has nonzero
+off-module leakage. Factoring that residual constructs the angular vector field
+`L=-y partial_x+x partial_y`; a coefficient-defect solve then gives a represented
+internal generator `J` with `L(H)=[J,H]`. Thus coefficient invariance, full-PDE
+invariance, and domain symmetry are three distinct tests. The rectangular bench
+passes the first, fails the second generically, and refuses global rotational
+domain symmetry.
 
 **Live alternatives.** The result may be (i) a global constant module, (ii) a
 variable module with a nonzero connection and exact or controlled leakage, or
@@ -219,16 +231,22 @@ recovered observable; induced lower-order terms escape without a reported
 residual; the rank certificate fails on the admitted region; or the common core,
 trace, or boundary condition does not descend.
 
-**Discriminating benches.** The witness-level nonconstant-frame and rank-jump
-probes are now exact. Constructor-level evaluation still requires a constant-frame
-regression, a structurally different non-Pauli transfer, and a boundary/domain
-refusal. Parameter variation inside the Pauli seed family cannot substitute for
-the transfer bench.
+**Discriminating benches.** The supplied-frame covariance/rank controls and one
+provenance-derived, structurally non-Pauli polynomial transfer are exact. That
+transfer also supplies a boundary/domain refusal. Constructor-level evaluation
+still requires a constant-frame regression under the same provenance interface
+and an adversarial polynomial case whose rank certificate is unresolved or whose
+continued coefficient expressions escape. Parameter variation inside the Pauli
+seed family cannot substitute for these benches.
 
-**Next discriminating action.** Starting only from bounded coefficient jets and a
-preparation, differentiate G18 admitted-basis provenance to construct or refuse
-`B,B_1,B_2` on a constant-rank region. The result must feed (1)--(3) of the probe
-without adding coefficient words or a supplied projector.
+**Next discriminating action.** Freeze the smallest reusable constructor grammar
+that reproduces both G18 constant frames and the polynomial transfer: exact
+multivariate coefficient matrices, a preparation, a base point, an admitted
+expression-provenance DAG, constant pivot transformations, derivative order, and
+a rank-region certificate or refusal. Then test it unchanged on the constant
+regression and one adversarial rank/escape case before admitting executable G19.
+Residual factorization may propose infinitesimal generators, but cannot promote a
+global group without bracket, integration, and domain tests.
 
 **Horizon.** Finite local exact/polynomial jets and one named observable. Global
 bundle integration, unbounded closure, unrestricted analytic domains, and

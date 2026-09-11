@@ -101,6 +101,7 @@ exists.
 | G16 complete route | exact construction has lower semantic depth but loses every sampled runtime comparison | runtime-dominance claim rejected; original-PDE propagation unpaid |
 | G17 active carrier | every tested block reduces to dimension 3; one-shot loses, 64-time reuse wins in all four cases | leverage is reuse-dependent and family-bounded |
 | G18 family module | three-generator closure stays dimension 3; exact solves `9/3` for one point and `9/12` for four | one-point loses; four-point local medians are lower, with overlapping ranges in one case; ambient regrowth remains possible |
+| G19 variable provenance probe | two admitted expressions generate a rank-two bundle where constant polynomial-coefficient closure is ambient rank three | exact potential compression is offset by angular PDE leakage; no complete-route gain yet |
 
 The numerical proxies compare declared primitive operations, not portable wall
 clock. Timing observations remain attached to their executable benchmark and
@@ -141,11 +142,18 @@ records lower local family medians at four points, with overlap in one route pai
 a cancellation control shows that sampled closure cannot replace coefficient
 closure.
 
-The unpaid G19 costs are construction and certification of a variable admitted
-basis, constant-rank region, Gram/projector data, product-rule connection,
-off-module residual, and descended preparation/effect. Recovery must also price
-the named observable, common-core restriction, trace, and boundary data. Until
-those terms have a settled grammar and exact or controlled ledger, G19 has no
+The polynomial G19 transfer now pays, for one exact case, construction of a
+variable admitted basis from two G18 provenance expressions, a Gram rank bound,
+projector/connection data, product-rule residual, preparation/effect pullback, and
+a common-core check. It retains rank two where global polynomial-coefficient
+closure regrows to rank three. But its angular leakage makes unrestricted reduced
+propagation inexact; the rectangular boundary also blocks promotion of the
+constructed local rotation to a domain symmetry.
+
+The unpaid G19 costs are a reusable coefficient-jet/provenance grammar, general
+rank-region certification, controlled leakage or full-block propagation, trace
+descent, and same-observable recovery. Until those terms have an exact or
+controlled ledger across the frozen regression/transfer/refusal family, G19 has no
 computational-leverage verdict.
 
 ## 8. Audit rule

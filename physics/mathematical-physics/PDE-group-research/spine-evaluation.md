@@ -84,13 +84,20 @@ or universal route dominance.
 G18 resolves pointwise repetition for finite coefficient families: one exact
 module is preserved by every specialization, but its leverage is conditional on
 window size and it may regrow to the ambient carrier. A constant tensor lift is
-already formal once its common-core hypotheses hold. A supplied constant-rank
-variable frame now has an exact frame-covariant reduced operator and leakage
-witness, and a rank-jump control proves that pointwise success is insufficient.
-The weakest consequential bridge is constructing that frame and its constant-rank
-region from coefficient jets without supplying a projector or enumerating words;
-observable and domain/boundary descent remain downstream obligations. The complete
-inquiry lives in the [G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
+already formal once its common-core hypotheses hold. G19 now has both a general
+witness shell for supplied constant-rank frames and one non-Pauli polynomial
+transfer in which the frame and rank region are derived from two G18 provenance
+expressions. The transfer separates potential invariance from full-PDE invariance:
+its flat in-bundle connection coexists with exact angular leakage. Factoring that
+leakage constructs a local infinitesimal rotation and represented internal action,
+while the boundary refuses a global domain symmetry.
+
+The weakest consequential bridge has therefore moved from one frame construction
+to a reusable coefficient-jet provenance grammar with typed rank/escape refusal.
+It must reproduce a constant frame and survive an adversarial polynomial case
+before executable admission. Controlled leakage, observable propagation, and
+general boundary descent remain downstream obligations. The complete inquiry lives
+in the [G19 frontier owner](research-graph.md#active-open-bridge-g19-variable-active-module-bundle).
 
 Human-cost experiments re-enter only through a blinded reconstruction task.
 Several-coordinate geometry re-enters only with a curvature/path compatibility
